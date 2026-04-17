@@ -1,5 +1,58 @@
 ---
-title: "ISSS608 Visual Analytics and Application"
+format:
+  html:
+    toc: false
+    css: styles.css
 ---
 
-**Welcome to ISSS608 Visual Analytics and Application.**
+## [Welcome]{style="color: #2C5282; font-size: 32px;"}
+
+Hi, I'm **Mark Yee** — welcome to my course portfolio for **ISSS608 Visual Analytics and Applications**.
+
+This site consist of my journey through then course, updated regularly as I progress through the semester. Head to the [About](about.html) page to learn more about the course.
+
+## [Latest Updates]{style="color: #2C5282; font-size: 28px;"}
+
+::::: {style="display: flex; align-items: center; gap: 20px; border-left: 4px solid #2C5282; padding: 15px; margin-bottom: 20px; background-color: #f8f9fa; border-radius: 5px;"}
+::: {style="flex: 0 0 200px;"}
+![](images/clipboard-618185879.png){width="244"}
+:::
+
+::: {style="flex: 1;"}
+### [Hands-on Exercise 1]{style="color: #366092;"}
+
+**A Layered Grammar of Graphics: ggplot2 methods**
+
+Explored the essential components of ggplot2 through the layered grammar of graphics framework — covering data, aesthetics, geometries, facets, statistics, coordinates, and themes.
+
+[Read more →](HO_EX01.html)
+:::
+:::::
+
+## [All Work]{style="color: #2C5282; font-size: 28px;"}
+
+:::::: grid
+::: g-col-4
+### [Hands-on Exercises]{style="color: #366092;"}
+
+Weekly practical exercises applying visual analytics techniques in R.
+
+[View all →](hands-on/index.html)
+:::
+
+::: g-col-4
+### [In-class Exercises]{style="color: #366092;"}
+
+Short exercises completed during lessons to reinforce key concepts.
+
+[View all →](in-class/index.html)
+:::
+
+::: g-col-4
+### [Take-home Assignments]{style="color: #366092;"}
+
+Independent projects applying visual analytics to real-world datasets.
+
+[View all →](take-home/index.html)
+:::
+::::::

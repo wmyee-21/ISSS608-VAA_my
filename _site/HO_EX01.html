@@ -161,8 +161,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-principles-and-essential-components-of-ggplot2" id="toc-basic-principles-and-essential-components-of-ggplot2" class="nav-link active" data-scroll-target="#basic-principles-and-essential-components-of-ggplot2"><span style="color:  #4682B4; font-size: 38px;">Basic Principles and Essential Components of ggplot2</span></a></li>
+  <li><a href="#installing-and-loading-the-required-libraries" id="toc-installing-and-loading-the-required-libraries" class="nav-link" data-scroll-target="#installing-and-loading-the-required-libraries"><span style="color:  #2C5282; font-size: 28px;">1. Installing and loading the required libraries</span></a></li>
+  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span style="color:  #2C5282; font-size: 28px;">2. Importing Data</span></a></li>
+  <li><a href="#r-graphics-vs-ggplot" id="toc-r-graphics-vs-ggplot" class="nav-link" data-scroll-target="#r-graphics-vs-ggplot"><span style="color:  #2C5282; font-size: 28px;">3. R Graphics VS ggplot</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-data" id="toc-essential-grammatical-elements-in-ggplot2-data" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-data"><span style="color:  #2C5282; font-size: 28px;">4. Essential Grammatical Elements in ggplot2: data</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-aesthetic-mappings" id="toc-essential-grammatical-elements-in-ggplot2-aesthetic-mappings" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-aesthetic-mappings"><span style="color:  #2C5282; font-size: 28px;">5. Essential Grammatical Elements in ggplot2: Aesthetic mappings</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-geom" id="toc-essential-grammatical-elements-in-ggplot2-geom" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-geom"><span style="color:  #2C5282; font-size: 28px;">6. Essential Grammatical Elements in ggplot2: geom</span></a></li>
+  <li><a href="#geometric-objects-geom_bar" id="toc-geometric-objects-geom_bar" class="nav-link" data-scroll-target="#geometric-objects-geom_bar"><span style="color:  #366092; font-size: 24px;">6.1 Geometric Objects: geom_bar()</span></a></li>
+  <li><a href="#geometric-objects-geom_dotplot" id="toc-geometric-objects-geom_dotplot" class="nav-link" data-scroll-target="#geometric-objects-geom_dotplot"><span style="color:  #366092; font-size: 24px;">6.2 Geometric Objects: geom_dotplot()</span></a></li>
+  <li><a href="#geometric-objects-geom_histogram" id="toc-geometric-objects-geom_histogram" class="nav-link" data-scroll-target="#geometric-objects-geom_histogram"><span style="color:  #366092; font-size: 24px;">6.3 Geometric Objects: geom_histogram()</span></a></li>
+  <li><a href="#modifying-a-geometric-object-by-changing-geom" id="toc-modifying-a-geometric-object-by-changing-geom" class="nav-link" data-scroll-target="#modifying-a-geometric-object-by-changing-geom"><span style="color:  #366092; font-size: 24px;">6.4 Modifying a Geometric Object by Changing geom()</span></a></li>
+  <li><a href="#modifying-a-geometric-object-by-changing-aes" id="toc-modifying-a-geometric-object-by-changing-aes" class="nav-link" data-scroll-target="#modifying-a-geometric-object-by-changing-aes"><span style="color:  #366092; font-size: 24px;">6.5 Modifying a Geometric Object by Changing aes()</span></a></li>
+  <li><a href="#geometric-objects-geom_density" id="toc-geometric-objects-geom_density" class="nav-link" data-scroll-target="#geometric-objects-geom_density"><span style="color:  #366092; font-size: 24px;">6.6 Geometric Objects: geom_density()</span></a></li>
+  <li><a href="#geometric-objects-geom_boxplot" id="toc-geometric-objects-geom_boxplot" class="nav-link" data-scroll-target="#geometric-objects-geom_boxplot"><span style="color:  #366092; font-size: 24px;">6.7 Geometric Objects: geom_boxplot()</span></a></li>
+  <li><a href="#geometric-objects-geom_violin" id="toc-geometric-objects-geom_violin" class="nav-link" data-scroll-target="#geometric-objects-geom_violin"><span style="color:  #366092; font-size: 24px;">6.8 Geometric Objects: geom_violin()</span></a></li>
+  <li><a href="#geometric-objects-geom_point" id="toc-geometric-objects-geom_point" class="nav-link" data-scroll-target="#geometric-objects-geom_point"><span style="color:  #366092; font-size: 24px;">6.9 Geometric Objects: geom_point()</span></a></li>
+  <li><a href="#geom-objects-can-be-combined" id="toc-geom-objects-can-be-combined" class="nav-link" data-scroll-target="#geom-objects-can-be-combined"><span style="color:  #366092; font-size: 24px;">6.10 geom Objects can be Combined</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-stat" id="toc-essential-grammatical-elements-in-ggplot2-stat" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-stat"><span style="color:  #2C5282; font-size: 28px;">7. Essential Grammatical Elements in ggplot2: stat</span></a></li>
+  <li><a href="#working-with-stat" id="toc-working-with-stat" class="nav-link" data-scroll-target="#working-with-stat"><span style="color:  #366092; font-size: 24px;">7.1 Working with stat()</span></a></li>
+  <li><a href="#working-with-stat---the-stat_summary-method" id="toc-working-with-stat---the-stat_summary-method" class="nav-link" data-scroll-target="#working-with-stat---the-stat_summary-method"><span style="color:  #366092; font-size: 24px;">7.2 Working with stat - the stat_summary() method</span></a></li>
+  <li><a href="#working-with-stat---the-geom-method" id="toc-working-with-stat---the-geom-method" class="nav-link" data-scroll-target="#working-with-stat---the-geom-method"><span style="color:  #366092; font-size: 24px;">7.3 Working with stat - the geom() method</span></a></li>
+  <li><a href="#adding-a-best-fit-curve-on-a-scatterplot" id="toc-adding-a-best-fit-curve-on-a-scatterplot" class="nav-link" data-scroll-target="#adding-a-best-fit-curve-on-a-scatterplot"><span style="color:  #366092; font-size: 24px;">7.4 Adding a Best Fit Curve on a Scatterplot</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-facets" id="toc-essential-grammatical-elements-in-ggplot2-facets" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-facets"><span style="color:  #2C5282; font-size: 28px;">8. Essential Grammatical Elements in ggplot2: Facets</span></a></li>
+  <li><a href="#working-with-facet_wrap" id="toc-working-with-facet_wrap" class="nav-link" data-scroll-target="#working-with-facet_wrap"><span style="color:  #366092; font-size: 24px;">8.1 Working with facet_wrap()</span></a></li>
+  <li><a href="#facet_grid-function" id="toc-facet_grid-function" class="nav-link" data-scroll-target="#facet_grid-function"><span style="color:  #366092; font-size: 24px;">8.2 facet_grid() Function</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-coordinates" id="toc-essential-grammatical-elements-in-ggplot2-coordinates" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-coordinates"><span style="color:  #2C5282; font-size: 28px;">9. Essential Grammatical Elements in ggplot2: Coordinates</span></a></li>
+  <li><a href="#working-with-coordinate" id="toc-working-with-coordinate" class="nav-link" data-scroll-target="#working-with-coordinate"><span style="color:  #366092; font-size: 24px;">9.1 Working with Coordinate</span></a></li>
+  <li><a href="#changing-the-y--and-x-axis-range" id="toc-changing-the-y--and-x-axis-range" class="nav-link" data-scroll-target="#changing-the-y--and-x-axis-range"><span style="color:  #366092; font-size: 24px;">9.2 Changing the y- and x-axis Range</span></a></li>
+  <li><a href="#essential-grammatical-elements-in-ggplot2-themes" id="toc-essential-grammatical-elements-in-ggplot2-themes" class="nav-link" data-scroll-target="#essential-grammatical-elements-in-ggplot2-themes"><span style="color:  #2C5282; font-size: 28px;">10. Essential Grammatical Elements in ggplot2: themes</span></a></li>
+  <li><a href="#working-with-theme" id="toc-working-with-theme" class="nav-link" data-scroll-target="#working-with-theme"><span style="color:  #366092; font-size: 24px;">10.1 Working with theme</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -193,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 15, 2026</p>
+      <p class="date-modified">April 17, 2026</p>
     </div>
   </div>
     
@@ -204,12 +239,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="basic-principles-and-essential-components-of-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="basic-principles-and-essential-components-of-ggplot2"><span style="color:  #4682B4; font-size: 38px;">Basic Principles and Essential Components of ggplot2</span></h2>
+<p>This page introduces the <strong>Layered Grammar of Graphics</strong> and demonstrates how ggplot2 implements it through its essential components.</p>
+<p><img src="images/clipboard-618185879.png" class="img-fluid" width="518"></p>
+</section>
+<section id="installing-and-loading-the-required-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="installing-and-loading-the-required-libraries"><span style="color:  #2C5282; font-size: 28px;">1. Installing and loading the required libraries</span></h2>
+<p>Load the required packages:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="importing-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-data"><span style="color:  #2C5282; font-size: 28px;">2. Importing Data</span></h2>
+<ul>
+<li><p>The code chunk below imports exam_data.csv into R environment by using read_csv() function of readr package.</p></li>
+<li><p>readr is one of the tidyverse package.</p></li>
+</ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>exam_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Exam_data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="r-graphics-vs-ggplot" class="level2">
+<h2 class="anchored" data-anchor-id="r-graphics-vs-ggplot"><span style="color:  #2C5282; font-size: 28px;">3. R Graphics VS ggplot</span></h2>
+<p>Let us compare how R Graphics, the core graphical functions of Base R and ggplot plot a simple histogram.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exam_data<span class="sc">$</span>MATHS)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -235,6 +289,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>The code chunk is relatively simple if R Graphics is used. Then, the question is why ggplot2 is recommended?</p>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-data" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-data"><span style="color:  #2C5282; font-size: 28px;">4. Essential Grammatical Elements in ggplot2: data</span></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -245,6 +303,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<ul>
+<li><p>A blank canvas appears.</p></li>
+<li><p><code>ggplot()</code> initializes a ggplot object.</p></li>
+<li><p>The <em>data</em> argument defines the dataset to be used for plotting.</p></li>
+<li><p>If the dataset is not already a data.frame, it will be converted to one by <code>fortify()</code>.</p></li>
+</ul>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-aesthetic-mappings" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-aesthetic-mappings"><span style="color:  #2C5282; font-size: 28px;">5. Essential Grammatical Elements in ggplot2: Aesthetic mappings</span></h2>
+<p>The aesthetic mappings take attributes of the data and and use them to influence visual characteristics, such as position, colour, size, shape, or transparency. Each visual characteristic can thus encode an aspect of the data and be used to convey information.</p>
+<p>All aesthetics of a plot are specified in the <a href="https://ggplot2.tidyverse.org/reference/aes.html"><code>aes()</code></a> function call (in later part of this lesson, you will see that each <em>geom</em> layer can have its own aes specification)</p>
+<p>Code chunk below adds the aesthetic element into the plot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -256,6 +326,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-geom" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-geom"><span style="color:  #2C5282; font-size: 28px;">6. Essential Grammatical Elements in ggplot2: geom</span></h2>
+<p>Geometric objects are the actual marks we put on a plot. Examples include:</p>
+<ul>
+<li><p><em>geom_point</em> for drawing individual points (e.g., a scatter plot)</p></li>
+<li><p><em>geom_line</em> for drawing lines (e.g., for a line charts)</p></li>
+<li><p><em>geom_smooth</em> for drawing smoothed lines (e.g., for simple trends or approximations)</p></li>
+<li><p><em>geom_bar</em> for drawing bars (e.g., for bar charts)</p></li>
+<li><p><em>geom_histogram</em> for drawing binned values (e.g.&nbsp;a histogram)</p></li>
+<li><p><em>geom_polygon</em> for drawing arbitrary shapes</p></li>
+<li><p><em>geom_map</em> for drawing polygons in the shape of a map! (You can access the data to use for these maps by using the map_data() function).</p></li>
+</ul>
+<p><img src="images/clipboard-3829529658.png" class="img-fluid" width="601"></p>
+<ul>
+<li><p>A plot must have at least one geom; there is no upper limit. You can add a geom to a plot using the <strong>+</strong> operator.</p></li>
+<li><p>For complete list, please refer to <a href="https://ggplot2.tidyverse.org/reference/#section-layer-geoms">here</a>.</p></li>
+</ul>
+</section>
+<section id="geometric-objects-geom_bar" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_bar"><span style="color:  #366092; font-size: 24px;">6.1 Geometric Objects: geom_bar()</span></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -268,6 +359,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_dotplot" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_dotplot"><span style="color:  #366092; font-size: 24px;">6.2 Geometric Objects: geom_dotplot()</span></h2>
+<p>In a dot plot, the width of a dot corresponds to the bin width (or maximum width, depending on the binning algorithm), and dots are stacked, with each dot representing one observation.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MATHS)) <span class="sc">+</span></span>
@@ -295,6 +390,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_histogram" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_histogram"><span style="color:  #366092; font-size: 24px;">6.3 Geometric Objects: geom_histogram()</span></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MATHS)) <span class="sc">+</span></span>
@@ -307,6 +405,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="modifying-a-geometric-object-by-changing-geom" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-a-geometric-object-by-changing-geom"><span style="color:  #366092; font-size: 24px;">6.4 Modifying a Geometric Object by Changing geom()</span></h2>
+<p>In the code chunk below,</p>
+<ul>
+<li><p><em>bins</em> argument is used to change the number of bins to 20,</p></li>
+<li><p><em>fill</em> argument is used to shade the histogram with light blue color, and</p></li>
+<li><p><em>color</em> argument is used to change the outline colour of the bars in black</p></li>
+</ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS)) <span class="sc">+</span></span>
@@ -321,6 +428,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="modifying-a-geometric-object-by-changing-aes" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-a-geometric-object-by-changing-aes"><span style="color:  #366092; font-size: 24px;">6.5 Modifying a Geometric Object by Changing aes()</span></h2>
+<p>The code chunk below changes the interior colour of the histogram (i.e.&nbsp;<em>fill</em>) by using sub-group of <em>aesthetic()</em>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, </span>
@@ -335,6 +446,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_density" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_density"><span style="color:  #366092; font-size: 24px;">6.6 Geometric Objects: geom_density()</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_density.html"><code>geom-density()</code></a> computes and plots <a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">kernel density estimate</a>, which is a smoothed version of the histogram.</p>
+<p>It is a useful alternative to the histogram for continuous data that comes from an underlying smooth distribution.</p>
+<p>The code below plots the distribution of Maths scores in a kernel density estimate plot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MATHS)) <span class="sc">+</span></span>
@@ -347,6 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>The code chunk below plots two kernel density lines by using <em>colour</em> or <em>fill</em> arguments of <em>aes()</em></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MATHS, </span>
@@ -360,6 +478,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_boxplot" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_boxplot"><span style="color:  #366092; font-size: 24px;">6.7 Geometric Objects: geom_boxplot()</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html"><code>geom_boxplot()</code></a> displays continuous value list. It visualises five summary statistics (the median, two hinges and two whiskers), and all “outlying” points individually.</p>
+<p>The code chunk below plots boxplots by using <a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html"><code>geom_boxplot()</code></a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS,       </span>
@@ -373,6 +496,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p><a href="https://sites.google.com/site/davidsstatistics/home/notched-box-plots"><strong>Notches</strong></a> are used in box plots to help visually assess whether the medians of distributions differ. If the notches do not overlap, this is evidence that the medians are different.</p>
+<p>The code chunk below plots the distribution of Maths scores by gender in notched plot instead of boxplot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, </span>
@@ -386,6 +511,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_violin" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_violin"><span style="color:  #366092; font-size: 24px;">6.8 Geometric Objects: geom_violin()</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html"><code>geom_violin</code></a> is designed for creating violin plot. Violin plots are a way of comparing multiple data distributions. With ordinary density curves, it is difficult to compare more than just a few distributions because the lines visually interfere with each other. With a violin plot, it’s easier to compare several distributions since they’re placed side by side.</p>
+<p>The code below plot the distribution of Maths score by gender in violin plot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, </span>
@@ -399,6 +529,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geometric-objects-geom_point" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-objects-geom_point"><span style="color:  #366092; font-size: 24px;">6.9 Geometric Objects: geom_point()</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_point.html"><code>geom_point()</code></a> is especially useful for creating scatterplot.</p>
+<p>The code chunk below plots a scatterplot showing the Maths and English grades of pupils by using <code>geom_point()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, </span>
@@ -412,6 +547,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="geom-objects-can-be-combined" class="level2">
+<h2 class="anchored" data-anchor-id="geom-objects-can-be-combined"><span style="color:  #366092; font-size: 24px;">6.10 geom Objects can be Combined</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_point.html"><code>geom_point()</code></a> is especially useful for creating scatterplot.</p>
+<p>The code chunk below plots the data points on the boxplots by using both&nbsp;<code>geom_boxplot()</code>&nbsp;and&nbsp;<code>geom_point()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, </span>
@@ -427,6 +567,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-stat" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-stat"><span style="color:  #2C5282; font-size: 28px;">7. Essential Grammatical Elements in ggplot2: stat</span></h2>
+<p>The <a href="https://ggplot2.tidyverse.org/reference/index.html#stats">Statistics functions</a> statistically transform data, usually as some form of summary. For example:</p>
+<ul>
+<li><p>frequency of values of a variable (bar graph)</p>
+<ul>
+<li><p>a mean</p></li>
+<li><p>a confidence limit</p></li>
+</ul></li>
+<li><p>There are two ways to use these functions:</p>
+<ul>
+<li><p>add a <code>stat_()</code> function and override the default geom, or</p></li>
+<li><p>add a <code>geom_()</code> function and override the default stat.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="working-with-stat" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-stat"><span style="color:  #366092; font-size: 24px;">7.1 Working with stat()</span></h2>
+<p>The boxplots below are incomplete because the positions of the means were not shown.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, <span class="at">x=</span> GENDER)) <span class="sc">+</span></span>
@@ -439,6 +599,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="working-with-stat---the-stat_summary-method" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-stat---the-stat_summary-method"><span style="color:  #366092; font-size: 24px;">7.2 Working with stat - the stat_summary() method</span></h2>
+<p>The code chunk below adds mean values by using&nbsp;<a href="https://ggplot2.tidyverse.org/reference/stat_summary.html"><code>stat_summary()</code></a>&nbsp;function and overriding the default geom.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, <span class="at">x=</span> GENDER)) <span class="sc">+</span></span>
@@ -455,6 +619,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="working-with-stat---the-geom-method" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-stat---the-geom-method"><span style="color:  #366092; font-size: 24px;">7.3 Working with stat - the geom() method</span></h2>
+<p>The code chunk below adding mean values by using&nbsp;<code>geom_()</code>&nbsp;function and overriding the default stat.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> MATHS, <span class="at">x=</span> GENDER)) <span class="sc">+</span></span>
@@ -471,6 +639,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="adding-a-best-fit-curve-on-a-scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-best-fit-curve-on-a-scatterplot"><span style="color:  #366092; font-size: 24px;">7.4 Adding a Best Fit Curve on a Scatterplot</span></h2>
+<p>The scatterplot below shows the relationship of Maths and English grades of pupils. The interpretability of this graph can be improved by adding a best fit curve.</p>
+<p>In the code chunk below,&nbsp;<a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html"><code>geom_smooth()</code></a>&nbsp;is used to plot a best fit curve on the scatterplot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, <span class="at">y=</span>ENGLISH)) <span class="sc">+</span></span>
@@ -484,6 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>The default smoothing method can be overridden as shown below.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, </span>
@@ -499,6 +673,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-facets" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-facets"><span style="color:  #2C5282; font-size: 28px;">8. Essential Grammatical Elements in ggplot2: Facets</span></h2>
+<p>Facetting generates small multiples (sometimes also called trellis plot), each displaying a different subset of the data. They are an alternative to aesthetics for displaying additional discrete variables. ggplot2 supports two types of factes, namely:&nbsp;<a href="https://ggplot2.tidyverse.org/reference/facet_grid.html"><code>facet_grid()</code></a>&nbsp;and&nbsp;<a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a>.</p>
+</section>
+<section id="working-with-facet_wrap" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-facet_wrap"><span style="color:  #366092; font-size: 24px;">8.1 Working with facet_wrap()</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a> wraps a 1d sequence of panels into 2d. This is generally a better use of screen space than facet_grid because most displays are roughly rectangular.</p>
+<p>The code chunk below plots a trellis plot using <code>facet-wrap()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS)) <span class="sc">+</span></span>
@@ -512,6 +695,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="facet_grid-function" class="level2">
+<h2 class="anchored" data-anchor-id="facet_grid-function"><span style="color:  #366092; font-size: 24px;">8.2 facet_grid() Function</span></h2>
+<p><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html"><code>facet_grid()</code></a> forms a matrix of panels defined by row and column facetting variables. It is most useful when you have two discrete variables, and all combinations of the variables exist in the data.</p>
+<p>The code chunk below plots a trellis plot using <code>facet_grid()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS)) <span class="sc">+</span></span>
@@ -525,6 +713,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-coordinates"><span style="color:  #2C5282; font-size: 28px;">9. Essential Grammatical Elements in ggplot2: Coordinates</span></h2>
+<p>The&nbsp;<em>Coordinates</em>&nbsp;functions map the position of objects onto the plane of the plot. There are a number of different possible coordinate systems to use, they are:</p>
+<div style="overflow-x: auto; white-space: nowrap; border: 1px solid #2C5282; border-radius: 5px; padding: 12px; background-color: #f8f9fa;">
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html"><code>coord_cartesian()</code></a>: the default cartesian coordinate systems, where you specify x and y values (e.g.&nbsp;allows you to zoom in or out).</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html"><code>coord_flip()</code></a>: a cartesian system with the x and y flipped.</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html"><code>coord_fixed()</code></a>: a cartesian system with a “fixed” aspect ratio (e.g.&nbsp;1.78 for a “widescreen” plot).</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/coord_map.html"><code>coord_quickmap()</code></a>: a coordinate system that approximates a good aspect ratio for maps.</li>
+</ul>
+</div>
+</section>
+<section id="working-with-coordinate" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-coordinate"><span style="color:  #366092; font-size: 24px;">9.1 Working with Coordinate</span></h2>
+<p>By the default, the bar chart of ggplot2 is in vertical form.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -537,6 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>The code chunk below flips the horizontal bar chart into vertical bar chart by using <code>coord_flip()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -550,6 +755,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="changing-the-y--and-x-axis-range" class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-y--and-x-axis-range"><span style="color:  #366092; font-size: 24px;">9.2 Changing the y- and x-axis Range</span></h2>
+<p>The scatterplot on the right is slightly misleading because the y-aixs and x-axis range are not equal.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, <span class="at">y=</span>ENGLISH)) <span class="sc">+</span></span>
@@ -563,6 +772,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>The code chunk below fixed both the y-axis and x-axis range from 0-100.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span> MATHS, <span class="at">y=</span>ENGLISH)) <span class="sc">+</span></span>
@@ -579,6 +789,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="essential-grammatical-elements-in-ggplot2-themes" class="level2">
+<h2 class="anchored" data-anchor-id="essential-grammatical-elements-in-ggplot2-themes"><span style="color:  #2C5282; font-size: 28px;">10. Essential Grammatical Elements in ggplot2: themes</span></h2>
+<p>Themes control elements of the graph not related to the data. For example:</p>
+<ul>
+<li><p>background colour</p></li>
+<li><p>size of fonts</p></li>
+<li><p>gridlines</p></li>
+<li><p>colour of labels</p></li>
+</ul>
+<p>Built-in themes include: - <code>theme_gray()</code> (default) - <code>theme_bw()</code> - <code>theme_classic()</code></p>
+<p>A list of theme can be found at this <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">link</a>. Each theme element can be conceived of as either a line (e.g.&nbsp;x-axis), a rectangle (e.g.&nbsp;graph background), or text (e.g.&nbsp;axis title).</p>
+</section>
+<section id="working-with-theme" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-theme"><span style="color:  #366092; font-size: 24px;">10.1 Working with theme</span></h2>
+<p>The code chunk below plot a horizontal bar chart using&nbsp;<code>theme_gray()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -593,6 +819,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>A horizontal bar chart plotted using <code>theme_classic()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -607,6 +834,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>A horizontal bar chart plotted using <code>theme_minimal()</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>RACE)) <span class="sc">+</span></span>
@@ -621,8 +849,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>:::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

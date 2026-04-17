@@ -1,1 +1,28 @@
 /* css styles */
+
+#TOC a span {
+  color: #2C5282 !important;
+  font-size: 14px !important;
+}
+
+/* Active TOC link */
+#TOC a.active span {
+  color: #1B4F72 !important;
+  font-weight: bold !important;
+}
+
+/* Hover state */
+#TOC a:hover span {
+  color: #6495ED !important;
+}
+
+/* TOC title */
+#toc-title {
+  color: #2C5282 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+body {
+  background-color: white;
+}
