@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "Hi, i am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
+    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
   },
   {
     "objectID": "HO_EX01.html",
@@ -235,7 +235,7 @@
     "href": "index.html#welcome",
     "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "Hi, i am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
+    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
   },
   {
     "objectID": "index.html#about-the-course",
@@ -270,7 +270,7 @@
     "href": "index.html#all-work",
     "title": "ISSS608-VAA_my",
     "section": "All Work",
-    "text": "All Work\n\n\nHands-on Exercises\nWeekly practical exercises applying visual analytics techniques in R.\nView all →\n\n\nIn-class Exercises\nShort exercises completed during lessons to reinforce key concepts.\nView all →\n\n\nTake-home Assignments\nIndependent projects applying visual analytics to real-world datasets.\nView all →"
+    "text": "All Work\n\n\nHands-on Exercises\n\n\nIn-class Exercises\n\n\nTake-home Assignments\n\n\nWeekly practical exercises applying visual analytics techniques in R.\nView all →\n\n\nShort exercises completed during lessons to reinforce key concepts.\nView all →\n\n\nIndependent projects applying visual analytics to real-world datasets.\nView all →"
   },
   {
     "objectID": "index.html#currently-working-on",
@@ -289,22 +289,22 @@
   {
     "objectID": "about.html#about-the-course",
     "href": "about.html#about-the-course",
-    "title": "About",
+    "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, ’‘’detect the expected and discover the unexpected’’’ without having to deal with complex statistical formulas and programming.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
+    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
   },
   {
     "objectID": "about.html#learning-goals",
     "href": "about.html#learning-goals",
-    "title": "About",
+    "title": "ISSS608-VAA_my",
     "section": "Learning Goals",
     "text": "Learning Goals\nThrough this course, I aim to:\n\nUnderstand the basic concepts, theories and methodologies of visual analytics.\nAnalyse data using appropriate visual thinking and visual analytics techniques.\nPresent data using appropriate visual communication and graphical methods.\nDesign and implement cutting-edge visual analytics system for supporting decision making."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
-    "title": "About",
+    "title": "ISSS608-VAA_my",
     "section": "About Me",
-    "text": "About Me\nMark Yee Master of IT in Business (MITB) Singapore Management University"
+    "text": "About Me\nMark Yee · Master of IT in Business (MITB) · Singapore Management University"
   }
 ]

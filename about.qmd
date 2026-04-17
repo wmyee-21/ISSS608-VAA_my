@@ -1,19 +1,18 @@
 ---
-title: About
+title: " "
 format:
   html:
-    toc: false
+    toc: true
     css: styles.css
 ---
 
-## [About the Course]{style="color: #2C5282; font-size: 28px;"}
+## [About the Course]{style="color: #4682B4; font-size: 38px;"}
 
-In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, ’‘’detect the expected and discover the unexpected’’’ without having to deal with complex statistical formulas and programming.
+In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, *detect the expected and discover the unexpected* without having to deal with complex statistical formulas and programming.
 
 The goals of this course are:
 
 -   To share with you the principles, best practices and methods of visual analytics
-
 -   To provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications.
 
 ## [Learning Goals]{style="color: #2C5282; font-size: 28px;"}
@@ -21,15 +20,12 @@ The goals of this course are:
 Through this course, I aim to:
 
 -   Understand the basic concepts, theories and methodologies of visual analytics.
-
 -   Analyse data using appropriate visual thinking and visual analytics techniques.
-
 -   Present data using appropriate visual communication and graphical methods.
-
 -   Design and implement cutting-edge visual analytics system for supporting decision making.
 
 ## [About Me]{style="color: #2C5282; font-size: 28px;"}
 
-**Mark Yee** Master of IT in Business (MITB) Singapore Management University
+**Mark Yee** · Master of IT in Business (MITB) · Singapore Management University
 
-------------------------------------------------------------------------
+---
