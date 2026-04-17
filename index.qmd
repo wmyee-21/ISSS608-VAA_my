@@ -7,7 +7,7 @@ format:
 
 ## [Welcome]{style="color: #2C5282; font-size: 32px;"}
 
-Hi, I'm **Mark Yee** — welcome to my course portfolio for **ISSS608 Visual Analytics and Applications**.
+Hi, i am **Mark Yee** and welcome to my course portfolio for **ISSS608 Visual Analytics and Applications**.
 
 This site consist of my journey through then course, updated regularly as I progress through the semester. Head to the [About](about.html) page to learn more about the course.
 
