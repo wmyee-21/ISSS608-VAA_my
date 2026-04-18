@@ -4,14 +4,49 @@
     "href": "index.html",
     "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
+    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consists of my journey through the course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "ISSS608-VAA_my",
+    "section": "",
+    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consists of my journey through the course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
+  },
+  {
+    "objectID": "index.html#latest-updates",
+    "href": "index.html#latest-updates",
+    "title": "ISSS608-VAA_my",
+    "section": "Latest Updates",
+    "text": "Latest Updates\n\n\n\n\n\nHands-on Exercise 1\nA Layered Grammar of Graphics: ggplot2 methods\nExplored the essential components of ggplot2 through the layered grammar of graphics framework — covering data, aesthetics, geometries, facets, statistics, coordinates, and themes.\nRead more →"
+  },
+  {
+    "objectID": "index.html#all-work",
+    "href": "index.html#all-work",
+    "title": "ISSS608-VAA_my",
+    "section": "All Work",
+    "text": "All Work\n\n\nHands-on Exercises\n\n\nIn-class Exercises\n\n\nTake-home Assignments\n\n\nWeekly practical exercises applying visual analytics techniques in R.\nView all →\n\n\nShort exercises completed during lessons to reinforce key concepts.\nView all →\n\n\nIndependent projects applying visual analytics to real-world datasets.\nView all →"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "ISSS608-VAA_my",
     "section": "",
-    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
+    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThis course is taught by Dr. Kam Tin Seong, Associate Professor of Information Systems.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
+  },
+  {
+    "objectID": "about.html#about-the-course",
+    "href": "about.html#about-the-course",
+    "title": "ISSS608-VAA_my",
+    "section": "",
+    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThis course is taught by Dr. Kam Tin Seong, Associate Professor of Information Systems.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
+  },
+  {
+    "objectID": "about.html#learning-goals",
+    "href": "about.html#learning-goals",
+    "title": "ISSS608-VAA_my",
+    "section": "Learning Goals",
+    "text": "Learning Goals\nThrough this course, I aim to:\n\nUnderstand the basic concepts, theories and methodologies of visual analytics.\nAnalyse data using appropriate visual thinking and visual analytics techniques.\nPresent data using appropriate visual communication and graphical methods.\nDesign and implement cutting-edge visual analytics system for supporting decision making."
   },
   {
     "objectID": "HO_EX01.html",
@@ -229,82 +264,5 @@
     "title": "Hands-on Exercise 1",
     "section": "10.1 Working with theme",
     "text": "10.1 Working with theme\nThe code chunk below plot a horizontal bar chart using theme_gray().\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_gray()\n\n\n\n\n\n\n\n\nA horizontal bar chart plotted using theme_classic().\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_classic()\n\n\n\n\n\n\n\n\nA horizontal bar chart plotted using theme_minimal().\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_minimal()\n\n\n\n\n\n\n\n\n:::"
-  },
-  {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
-    "title": "ISSS608-VAA_my",
-    "section": "",
-    "text": "Hi, I am Mark Yee and welcome to my course portfolio for ISSS608 Visual Analytics and Applications.\nThis site consist of my journey through then course, updated regularly as I progress through the semester. Head to the About page to learn more about the course."
-  },
-  {
-    "objectID": "index.html#about-the-course",
-    "href": "index.html#about-the-course",
-    "title": "ISSS608 Visual Analytics and Application",
-    "section": "About the Course",
-    "text": "About the Course\nISSS608 introduces the theory and practice of visual analytics, combining data analysis, statistical reasoning, and graphic design to turn data into actionable insight. Topics covered include:\n\nThe grammar of graphics and ggplot2\nInteractive and animated visualisations\nGeospatial and network analytics\nTime-series and multivariate data visualisation\nDashboard design and storytelling with data"
-  },
-  {
-    "objectID": "index.html#what-youll-find-here",
-    "href": "index.html#what-youll-find-here",
-    "title": "ISSS608 Visual Analytics and Application",
-    "section": "What You’ll Find Here",
-    "text": "What You’ll Find Here\nThis portfolio is organised into three main sections:\n\n\nHands-on Exercises\nWeekly practical exercises applying concepts introduced in class. Each exercise builds fluency with a specific visualisation technique or R package.\nView exercises →\n\n\nIn-class Exercises\nShort exercises completed during lessons to reinforce key ideas and experiment with new methods in real time.\nView exercises →\n\n\nTake-home Assignments\nLarger, independent projects that apply visual analytics to real-world datasets, culminating in polished deliverables.\nView assignments →"
-  },
-  {
-    "objectID": "index.html#latest-work",
-    "href": "index.html#latest-work",
-    "title": "ISSS608 Visual Analytics and Application",
-    "section": "Latest Work",
-    "text": "Latest Work\n\nHands-on Exercise 1 — A Layered Grammar of Graphics: ggplot2 methods (April 2026)\n\n\nThis site is built with Quarto and hosted on Netlify."
-  },
-  {
-    "objectID": "index.html#latest-updates",
-    "href": "index.html#latest-updates",
-    "title": "ISSS608-VAA_my",
-    "section": "Latest Updates",
-    "text": "Latest Updates\n\n\n\n\n\nHands-on Exercise 1\nA Layered Grammar of Graphics: ggplot2 methods\nExplored the essential components of ggplot2 through the layered grammar of graphics framework — covering data, aesthetics, geometries, facets, statistics, coordinates, and themes.\nRead more →"
-  },
-  {
-    "objectID": "index.html#all-work",
-    "href": "index.html#all-work",
-    "title": "ISSS608-VAA_my",
-    "section": "All Work",
-    "text": "All Work\n\n\nHands-on Exercises\n\n\nIn-class Exercises\n\n\nTake-home Assignments\n\n\nWeekly practical exercises applying visual analytics techniques in R.\nView all →\n\n\nShort exercises completed during lessons to reinforce key concepts.\nView all →\n\n\nIndependent projects applying visual analytics to real-world datasets.\nView all →"
-  },
-  {
-    "objectID": "index.html#currently-working-on",
-    "href": "index.html#currently-working-on",
-    "title": "Mark Yee — ISSS608 Portfolio",
-    "section": "Currently Working On",
-    "text": "Currently Working On\n\nHands-on Exercise 2 (coming soon)\nPreparing for Take-home Assignment 1\n\n\nLast updated: last-modified"
-  },
-  {
-    "objectID": "about.html#about-this-portfolio",
-    "href": "about.html#about-this-portfolio",
-    "title": "About",
-    "section": "",
-    "text": "This website is my personal portfolio for ISSS608 Visual Analytics and Applications, a core module in the Master of IT in Business (MITB) programme at Singapore Management University. It documents my learning journey — capturing exercises, assignments, and reflections throughout the semester."
-  },
-  {
-    "objectID": "about.html#about-the-course",
-    "href": "about.html#about-the-course",
-    "title": "ISSS608-VAA_my",
-    "section": "",
-    "text": "In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, detect the expected and discover the unexpected without having to deal with complex statistical formulas and programming.\nThe goals of this course are:\n\nTo share with you the principles, best practices and methods of visual analytics\nTo provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications."
-  },
-  {
-    "objectID": "about.html#learning-goals",
-    "href": "about.html#learning-goals",
-    "title": "ISSS608-VAA_my",
-    "section": "Learning Goals",
-    "text": "Learning Goals\nThrough this course, I aim to:\n\nUnderstand the basic concepts, theories and methodologies of visual analytics.\nAnalyse data using appropriate visual thinking and visual analytics techniques.\nPresent data using appropriate visual communication and graphical methods.\nDesign and implement cutting-edge visual analytics system for supporting decision making."
-  },
-  {
-    "objectID": "about.html#about-me",
-    "href": "about.html#about-me",
-    "title": "ISSS608-VAA_my",
-    "section": "About Me",
-    "text": "About Me\nMark Yee · Master of IT in Business (MITB) · Singapore Management University"
   }
 ]

@@ -8,9 +8,15 @@ format:
 
 ## [Welcome]{style="color: #4682B4; font-size: 38px;"}
 
+:::: {style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;"}
+![](images/clipboard-2119725846.png){width="162"}
+
+::: {style="flex: 1;"}
 Hi, I am **Mark Yee** and welcome to my course portfolio for **ISSS608 Visual Analytics and Applications**.
 
-This site consist of my journey through then course, updated regularly as I progress through the semester. Head to the [About](about.html) page to learn more about the course.
+This site consists of my journey through the course, updated regularly as I progress through the semester. Head to the [About](about.html) page to learn more about the course.
+:::
+::::
 
 ## [Latest Updates]{style="color: #2C5282; font-size: 28px;"}
 
@@ -32,17 +38,16 @@ Explored the essential components of ggplot2 through the layered grammar of grap
 
 ## [All Work]{style="color: #2C5282; font-size: 28px;"}
 
-:::: {.grid}
-
-::: {.g-col-4}
+::::::::: grid
+::: g-col-4
 ### [Hands-on Exercises]{style="color: #2C5282;"}
 :::
 
-::: {.g-col-4}
-### [ In-class Exercises]{style="color: #2C5282;"}
+::: g-col-4
+### [In-class Exercises]{style="color: #2C5282;"}
 :::
 
-::: {.g-col-4}
+::: g-col-4
 ### [Take-home Assignments]{style="color: #2C5282;"}
 :::
 
@@ -63,5 +68,4 @@ Independent projects applying visual analytics to real-world datasets.
 
 [View all →](take-home/index.html)
 :::
-
-::::
+:::::::::
