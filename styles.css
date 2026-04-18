@@ -27,3 +27,30 @@ body {
   background-color: white;
 }
 
+/*navbar*/
+
+.navbar {
+  background-color: #1B2A4A !important;
+  border-bottom: 3px solid #4A90C4 !important;
+  box-shadow: 0 2px 12px rgba(27, 42, 74, 0.15);
+}
+
+.navbar-brand,
+.navbar-title {
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.80) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(74, 144, 196, 0.25) !important;
+  border-radius: 6px;
+}

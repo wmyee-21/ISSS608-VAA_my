@@ -8,7 +8,7 @@ format:
 
 ## [About the Course]{style="color: #4682B4; font-size: 38px;"}
 
-![](images/clipboard-3386125734.png){width="655"}
+![](images/clipboard-2588935923.png){width="674"}
 
 In this competitive global environment, the ability to explore visual representation of business data interactively and to detect meaningful patterns, trends and exceptions from these data are increasingly becoming an important skill for data analysts and business practitioners. Drawing from research and practice on Data Visualisation, Human-Computer Interaction, Data Analytics, Data Mining and Usability Engineering, this course aims to share with you how visual analytics techniques can be used to interact with data from various sources and formats, explore relationship, *detect the expected and discover the unexpected* without having to deal with complex statistical formulas and programming.
 
