@@ -38,9 +38,15 @@ exam_data <- read_csv("data/Exam_data.csv")
 
 Let us compare how R Graphics, the core graphical functions of Base R and ggplot plot a simple histogram.
 
+::: {.panel-tabset}
+
+## R Graphics
+
 ```{r}
 hist(exam_data$MATHS)
 ```
+
+## ggplot
 
 ```{r}
 ggplot(data=exam_data, aes(x = MATHS)) +
@@ -50,6 +56,8 @@ ggplot(data=exam_data, aes(x = MATHS)) +
                  fill="grey") +
   ggtitle("Distribution of Maths scores")
 ```
+
+:::
 
 The code chunk is relatively simple if R Graphics is used. Then, the question is why ggplot2 is recommended?
 

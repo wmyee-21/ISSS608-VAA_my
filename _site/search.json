@@ -81,7 +81,7 @@
     "href": "HO_EX01.html#r-graphics-vs-ggplot",
     "title": "Hands-on Exercise 1",
     "section": "3. R Graphics VS ggplot",
-    "text": "3. R Graphics VS ggplot\nLet us compare how R Graphics, the core graphical functions of Base R and ggplot plot a simple histogram.\n\nhist(exam_data$MATHS)\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, aes(x = MATHS)) +\n  geom_histogram(bins=10, \n                 boundary = 100,\n                 color=\"black\", \n                 fill=\"grey\") +\n  ggtitle(\"Distribution of Maths scores\")\n\n\n\n\n\n\n\n\nThe code chunk is relatively simple if R Graphics is used. Then, the question is why ggplot2 is recommended?"
+    "text": "3. R Graphics VS ggplot\nLet us compare how R Graphics, the core graphical functions of Base R and ggplot plot a simple histogram.\n\nR Graphicsggplot\n\n\n\nhist(exam_data$MATHS)\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, aes(x = MATHS)) +\n  geom_histogram(bins=10, \n                 boundary = 100,\n                 color=\"black\", \n                 fill=\"grey\") +\n  ggtitle(\"Distribution of Maths scores\")\n\n\n\n\n\n\n\n\n\n\n\nThe code chunk is relatively simple if R Graphics is used. Then, the question is why ggplot2 is recommended?"
   },
   {
     "objectID": "HO_EX01.html#essential-grammatical-elements-in-ggplot2-data",
