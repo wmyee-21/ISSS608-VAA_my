@@ -37,12 +37,12 @@ Explored several ggplot2 extensions for creaing more elegant and effective stati
 ### [🖥️ In-class Exercises]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-4035837502.png){width="220"}
+![](images/clipboard-667902076.png){width="225"}
 
 ::: {style="flex: 1;"}
-**In-Class Exercise 1 — coming soon**
+**In-Class Exercise 1 — Tableau Desktop**
 
-In-class exercises completed during lessons to reinforce key concepts introduced in lecture.
+Installed and explored Tableau Desktop.
 
 [Read more →](IC_EX01.html)
 :::

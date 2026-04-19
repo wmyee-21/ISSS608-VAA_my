@@ -4,6 +4,8 @@ project:
 website:
   title: "My Visual Analytics Journey"
   navbar:
+    logo: /images/site-logo.png
+    logo-alt: "My Visual Analytics Journey"
     left:
     - text: "Hands-on Exercises"
       menu:

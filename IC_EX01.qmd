@@ -8,6 +8,17 @@ execute:
   echo: true
   warning: false
   freeze: true
+format:
+  html:
+    css: styles.css
 ---
 
-In-Class Exercise 1
+## [Tableau Desktop]{style="color:  #4682B4; font-size: 38px;"}
+
+Tableau Desktop connects to Excel files directly through its **Connect** pane. *Superstore* excel file was imported.
+
+![](images/clipboard-1402989831.png)
+
+A **sheet** in Tableau is a single visualisation workspace. Sheets from *Superstore* were explored.
+
+![](images/clipboard-53065662.png)

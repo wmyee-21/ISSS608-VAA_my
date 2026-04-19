@@ -119,6 +119,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/site-logo.png" alt="My Visual Analytics Journey" class="navbar-logo light-content">
+    <img src="./images/site-logo.png" alt="My Visual Analytics Journey" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">My Visual Analytics Journey</span>
     </a>
@@ -136,11 +140,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-hands-on-exercises">    
         <li>
     <a class="dropdown-item" href="./HO_EX01.html">
- <span class="dropdown-text">Hand-on Exercise_1</span></a>
+ <span class="dropdown-text">Hands-on Exercise_1</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./HO_EX02.html">
- <span class="dropdown-text">Hand-on Exercise_2</span></a>
+ <span class="dropdown-text">Hands-on Exercise_2</span></a>
   </li>  
     </ul>
   </li>
@@ -201,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#working-with-ggrepel" id="toc-working-with-ggrepel" class="nav-link" data-scroll-target="#working-with-ggrepel"><span style="color:  #366092; font-size: 24px;">2.3.1 Working with ggrepel</span></a></li>
   <li><a href="#beyond-ggplot2-themes" id="toc-beyond-ggplot2-themes" class="nav-link" data-scroll-target="#beyond-ggplot2-themes"><span style="color:  #2C5282; font-size: 28px;">2.4 Beyond ggplot2 Themes</span></a></li>
   <li><a href="#working-with-ggtheme-package" id="toc-working-with-ggtheme-package" class="nav-link" data-scroll-target="#working-with-ggtheme-package"><span style="color:  #366092; font-size: 24px;">2.4.1 Working with ggtheme Package</span></a></li>
-  <li><a href="#working-with-hrbthems-package" id="toc-working-with-hrbthems-package" class="nav-link" data-scroll-target="#working-with-hrbthems-package"><span style="color:  #366092; font-size: 24px;">2.4.2 Working with hrbthems Package</span></a></li>
+  <li><a href="#working-with-hrbthemes-package" id="toc-working-with-hrbthemes-package" class="nav-link" data-scroll-target="#working-with-hrbthemes-package"><span style="color:  #366092; font-size: 24px;">2.4.2 Working with hrbthemes Package</span></a></li>
   <li><a href="#beyond-single-graph" id="toc-beyond-single-graph" class="nav-link" data-scroll-target="#beyond-single-graph"><span style="color:  #2C5282; font-size: 28px;">2.5 Beyond Single Graph</span></a></li>
   <li><a href="#creating-composite-graphics-patchwork-method" id="toc-creating-composite-graphics-patchwork-method" class="nav-link" data-scroll-target="#creating-composite-graphics-patchwork-method"><span style="color:  #366092; font-size: 24px;">2.5.1 Creating Composite Graphics: Patchwork Method</span></a></li>
   <li><a href="#combining-two-ggplot2-graphs" id="toc-combining-two-ggplot2-graphs" class="nav-link" data-scroll-target="#combining-two-ggplot2-graphs"><span style="color:  #366092; font-size: 24px;">2.5.2 Combining Two ggplot2 Graphs</span></a></li>
@@ -209,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#combining-a-composite-figure-with-tag" id="toc-combining-a-composite-figure-with-tag" class="nav-link" data-scroll-target="#combining-a-composite-figure-with-tag"><span style="color:  #366092; font-size: 24px;">2.5.4 Combining a Composite Figure with Tag</span></a></li>
   <li><a href="#basic-tag-levels" id="toc-basic-tag-levels" class="nav-link" data-scroll-target="#basic-tag-levels">Basic tag levels</a></li>
   <li><a href="#creating-figure-with-insert" id="toc-creating-figure-with-insert" class="nav-link" data-scroll-target="#creating-figure-with-insert"><span style="color:  #366092; font-size: 24px;">2.5.5 Creating Figure with Insert</span></a></li>
-  <li><a href="#creating-a-composute-figure-by-using-patchwork-and-ggtheme" id="toc-creating-a-composute-figure-by-using-patchwork-and-ggtheme" class="nav-link" data-scroll-target="#creating-a-composute-figure-by-using-patchwork-and-ggtheme"><span style="color:  #366092; font-size: 24px;">2.5.6 Creating a Composute Figure by Using Patchwork and ggtheme</span></a></li>
+  <li><a href="#creating-a-composite-figure-by-using-patchwork-and-ggtheme" id="toc-creating-a-composite-figure-by-using-patchwork-and-ggtheme" class="nav-link" data-scroll-target="#creating-a-composite-figure-by-using-patchwork-and-ggtheme"><span style="color:  #366092; font-size: 24px;">2.5.6 Creating a Composite Figure by Using Patchwork and ggtheme</span></a></li>
   <li><a href="#level-complete" id="toc-level-complete" class="nav-link" data-scroll-target="#level-complete">🕹️ LEVEL COMPLETE 🕹️</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">★ ★ ★ ★ ★</a>
@@ -265,10 +269,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview"><span style="color:  #2C5282; font-size: 28px;">2.1 Overview</span></h2>
-<p>This chapter goes beyond basic <code>ggplot2</code> and introduces <strong>four extension packages</strong> that that together can transform the exploratory plots into publication ready figures. The three main skills are:</p>
+<p>This chapter goes beyond basic <code>ggplot2</code> and introduces <strong>four extension packages</strong> that together can transform the exploratory plots into publication ready figures. The three main skills are:</p>
 <ol type="1">
-<li><p><strong>Controlling label placement</strong> - <code>ggrepel</code> solves the common problem of overlapping text labels by repelling annotations away from each other and their data points — a simple swap from <code>geom_text()</code> to <code>geom_text_repel()</code></p></li>
-<li><p><strong>Professional publication themes</strong> - <code>ggthemes</code> and <code>hrbrthemes</code> elevate plot aesthetics beyond the eight built-in themes, offering publication-style looks (<em>Economist</em>, <em>FiveThirtyEight</em>, <em>WSJ</em>) and typography-focused designs respectively, with fine-grained control over font sizes, gridlines, and label placement.</p></li>
+<li><p><strong>Controlling label placement</strong> - <code>ggrepel</code> solves the common problem of overlapping text labels by repelling annotations away from each other and their data points using a simple swap from <code>geom_text()</code> to <code>geom_text_repel()</code></p></li>
+<li><p><strong>Professional publication themes</strong> - <code>ggthemes</code> and <code>hrbrthemes</code> elevate plot aesthetics beyond the eight built-in themes, offering publication-style looks (<em>Economist</em>, <em>FiveThirtyEight</em>, <em>WSJ</em>) and typography-focused designs respectively, with fine-grained control over font sizes, grid-lines, and label placement.</p></li>
 <li><p><strong>Combining multiple plots into one figure</strong> - <code>patchwork</code> addresses figure composition, using operator syntax (<code>+</code> for side-by-side, <code>/</code> for stacked, <code>()</code> for grouping, <code>&amp;</code> to apply themes uniformly) to combine multiple plots into a single coherent figure, complete with auto-tagging for academic referencing and inset capabilities for layered visualisations.</p></li>
 </ol>
 <p>These skills operate at three distinct layers (1) <strong>readability</strong> (annotations), (2) <strong>aesthetics</strong> (themes), and (3) <strong>composition</strong> (layout) and applying them together lets you move a plot from “looks fine in RStudio” to “professional look ready for a report or paper”.</p>
@@ -278,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installing-and-loading-the-required-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="installing-and-loading-the-required-libraries"><span style="color:  #366092; font-size: 24px;">2.2.1 Installing and Loading the Required Libraries</span></h2>
-<p>Four extensions from <code>tidyverse</code>are used :</p>
+<p>Four ggplot2 extension packages are used alongside tidyverse:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -511,8 +515,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="working-with-hrbthems-package" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-hrbthems-package"><span style="color:  #366092; font-size: 24px;">2.4.2 Working with hrbthems Package</span></h2>
+<section id="working-with-hrbthemes-package" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-hrbthemes-package"><span style="color:  #366092; font-size: 24px;">2.4.2 Working with hrbthemes Package</span></h2>
 <p><a href="https://cran.r-project.org/web/packages/hrbrthemes/index.html"><strong>hrbrthemes</strong></a>&nbsp;package provides a base theme that focuses on typographic elements, including where various labels are placed as well as the fonts that are used.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Code</a></li></ul>
@@ -542,7 +546,7 @@ Warning
 </div>
 </div>
 </div>
-<p>The second goal centers around productivity for a production workflow in terms of font choice, label spacing, readability. Consult <a href="Why hrbrthemes? • hrbrthemes">this vignette</a> to learn more.</p>
+<p>The second goal centers around productivity for a production workflow in terms of font choice, label spacing and readability. Consult <a href="Why hrbrthemes? • hrbrthemes">this vignette</a> to learn more.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">Code</a></li></ul>
 <div class="tab-content">
@@ -595,7 +599,7 @@ Warning
 <h2 class="anchored" data-anchor-id="beyond-single-graph"><span style="color:  #2C5282; font-size: 28px;">2.5 Beyond Single Graph</span></h2>
 <p>Multiple plots together often tell a better story than one. This section builds three plots (histograms of MATHS, ENGLISH, then a MATHS-vs-ENGLISH scatterplot) then combines them.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">The plot (Maths)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href="">The code (Maths)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false" href="">The plot (English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-4" role="tab" aria-controls="tabset-7-4" aria-selected="false" href="">The code (English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-5" role="tab" aria-controls="tabset-7-5" aria-selected="false" href="">The plot (Maths vs English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-6" role="tab" aria-controls="tabset-7-6" aria-selected="false" href="">The code (Maths vs English)</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">Plot (Maths)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href="">Code (Maths)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false" href="">Plot (English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-4" role="tab" aria-controls="tabset-7-4" aria-selected="false" href="">Code (English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-5" role="tab" aria-controls="tabset-7-5" aria-selected="false" href="">Plot (Maths vs English)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-6" role="tab" aria-controls="tabset-7-6" aria-selected="false" href="">Code (Maths vs English)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="cell">
@@ -858,8 +862,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="creating-a-composute-figure-by-using-patchwork-and-ggtheme" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-composute-figure-by-using-patchwork-and-ggtheme"><span style="color:  #366092; font-size: 24px;">2.5.6 Creating a Composute Figure by Using Patchwork and ggtheme</span></h2>
+<section id="creating-a-composite-figure-by-using-patchwork-and-ggtheme" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-composite-figure-by-using-patchwork-and-ggtheme"><span style="color:  #366092; font-size: 24px;">2.5.6 Creating a Composite Figure by Using Patchwork and ggtheme</span></h2>
 <p>Figure below is created by combining patchwork and theme_economist() of ggthemes package discussed earlier.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false" href="">Code</a></li></ul>
@@ -893,7 +897,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Critical &amp; vs + distinction:</p>
+<p>Critical <strong>&amp;</strong> vs <strong>+</strong> distinction:</p>
 <ul>
 <li><code>+</code>adds to the last plot only</li>
 <li>&amp; adds to every plot in the composite”</li>

@@ -1,31 +1,6 @@
-/* css styles */
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Exo+2:wght@400;500&display=swap');
 
-#TOC a span {
-  color: #2C5282 !important;
-  font-size: 14px !important;
-}
-
-/* Active TOC link */
-#TOC a.active span {
-  color: #1B4F72 !important;
-  font-weight: bold !important;
-}
-
-/* Hover state */
-#TOC a:hover span {
-  color: #6495ED !important;
-}
-
-/* TOC title */
-#toc-title {
-  color: #2C5282 !important;
-  font-weight: bold !important;
-  font-size: 16px !important;
-}
-
-/*navbar*/
+/* ===== FONTS ===== */
 
 body {
   font-family: 'Exo 2', -apple-system, 'Segoe UI', sans-serif;
@@ -33,7 +8,10 @@ body {
   line-height: 1.65;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Headings — exclude TOC by using :not() */
+h1:not(#toc-title),
+h2:not(#toc-title),
+h3, h4, h5, h6 {
   font-family: 'Orbitron', 'Courier New', monospace !important;
   letter-spacing: 1px;
 }
@@ -45,17 +23,63 @@ h1.title {
   line-height: 1.5 !important;
 }
 
+/* ===== TABLE OF CONTENTS ===== */
+
+/* TOC title */
+#toc-title {
+  font-family: 'Exo 2', -apple-system, sans-serif !important;
+  color: #2C5282 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  letter-spacing: normal !important;
+}
+
+/* TOC links — target multiple possible structures */
+#TOC a,
+#TOC a span,
+nav#TOC a,
+.sidebar a {
+  font-family: 'Exo 2', -apple-system, sans-serif !important;
+  color: #2C5282 !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  letter-spacing: normal !important;
+}
+
+/* Active TOC link */
+#TOC a.active,
+#TOC a.active span,
+nav#TOC a.active,
+.sidebar a.active {
+  color: #1B4F72 !important;
+  font-weight: bold !important;
+}
+
+/* Hover state */
+#TOC a:hover,
+#TOC a:hover span,
+nav#TOC a:hover,
+.sidebar a:hover {
+  color: #6495ED !important;
+}
+
+/* ===== NAVBAR ===== */
 
 .navbar {
   background: #0a0e27 !important;
   border-bottom: 2px solid #00d4ff !important;
 }
 
-.navbar-brand,
+.navbar-logo,
+.navbar-brand img {
+  max-height: 80px !important;
+  width: auto !important;
+  padding: 2px 0;
+}
+
+.navbar-brand .navbar-title,
 .navbar-title {
-  font-family: 'Press Start 2P', monospace !important;
-  color: #00d4ff !important;
-  font-size: 0.7em !important;
+  display: none !important;
 }
 
 .navbar-nav .nav-link,
@@ -74,12 +98,14 @@ h1.title {
   color: #00d4ff !important;
 }
 
+/* ===== DROPDOWN MENU ===== */
+
 .dropdown-menu {
-  background: #0a0e27 !important;  /* keep dark */
+  background: #0a0e27 !important;
 }
 
 .dropdown-item {
-  color: #00d4ff !important;  /* bright cyan text */
+  color: #00d4ff !important;
 }
 
 .dropdown-item:hover {

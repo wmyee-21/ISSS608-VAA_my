@@ -18,7 +18,7 @@
     "href": "index.html#latest-updates",
     "title": "My Visual Analytics Journey",
     "section": "Latest Updates",
-    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundementals\nExplored several ggplot2 extensions for creaing more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 1 — coming soon\nIn-class exercises completed during lessons to reinforce key concepts introduced in lecture.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 1 — coming soon\nIndependent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.\nRead more →"
+    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundementals\nExplored several ggplot2 extensions for creaing more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 1 — Tableau Desktop\nInstalled and explored Tableau Desktop.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 1 — coming soon\nIndependent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.\nRead more →"
   },
   {
     "objectID": "index.html#all-work",
@@ -270,21 +270,21 @@
     "href": "IC_EX01.html",
     "title": "In-Class Exercise 1",
     "section": "",
-    "text": "In-Class Exercise 1"
+    "text": "Tableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
   },
   {
     "objectID": "HO_EX02.html",
     "href": "HO_EX02.html",
     "title": "Hands-on Exercise 2",
     "section": "",
-    "text": "Hands-On Exercise 2"
+    "text": ":::"
   },
   {
     "objectID": "HO_EX02.html#overview",
     "href": "HO_EX02.html#overview",
     "title": "Hands-on Exercise 2",
     "section": "2.1 Overview",
-    "text": "2.1 Overview\nThis chapter goes beyond basic ggplot2 and introduces four extension packages that that together can transform the exploratory plots into publication ready figures. The three main skills are:\n\nControlling label placement - ggrepel solves the common problem of overlapping text labels by repelling annotations away from each other and their data points — a simple swap from geom_text() to geom_text_repel()\nProfessional publication themes - ggthemes and hrbrthemes elevate plot aesthetics beyond the eight built-in themes, offering publication-style looks (Economist, FiveThirtyEight, WSJ) and typography-focused designs respectively, with fine-grained control over font sizes, gridlines, and label placement.\nCombining multiple plots into one figure - patchwork addresses figure composition, using operator syntax (+ for side-by-side, / for stacked, () for grouping, & to apply themes uniformly) to combine multiple plots into a single coherent figure, complete with auto-tagging for academic referencing and inset capabilities for layered visualisations.\n\nThese skills operate at three distinct layers (1) readability (annotations), (2) aesthetics (themes), and (3) composition (layout) and applying them together lets you move a plot from “looks fine in RStudio” to “professional look ready for a report or paper”."
+    "text": "2.1 Overview\nThis chapter goes beyond basic ggplot2 and introduces four extension packages that together can transform the exploratory plots into publication ready figures. The three main skills are:\n\nControlling label placement - ggrepel solves the common problem of overlapping text labels by repelling annotations away from each other and their data points using a simple swap from geom_text() to geom_text_repel()\nProfessional publication themes - ggthemes and hrbrthemes elevate plot aesthetics beyond the eight built-in themes, offering publication-style looks (Economist, FiveThirtyEight, WSJ) and typography-focused designs respectively, with fine-grained control over font sizes, grid-lines, and label placement.\nCombining multiple plots into one figure - patchwork addresses figure composition, using operator syntax (+ for side-by-side, / for stacked, () for grouping, & to apply themes uniformly) to combine multiple plots into a single coherent figure, complete with auto-tagging for academic referencing and inset capabilities for layered visualisations.\n\nThese skills operate at three distinct layers (1) readability (annotations), (2) aesthetics (themes), and (3) composition (layout) and applying them together lets you move a plot from “looks fine in RStudio” to “professional look ready for a report or paper”."
   },
   {
     "objectID": "HO_EX02.html#getting-started",
@@ -298,7 +298,7 @@
     "href": "HO_EX02.html#installing-and-loading-the-required-libraries",
     "title": "Hands-on Exercise 2",
     "section": "2.2.1 Installing and Loading the Required Libraries",
-    "text": "2.2.1 Installing and Loading the Required Libraries\nFour extensions from tidyverseare used :\n\n\n\nPackage\nWhat it does\n\n\n\n\nggrepel\nStops text labels from overlapping\n\n\nggthemes\nThemes\n\n\nhrbrthemes\nTypography-centric themes\n\n\npatchwork\nCombine multiple plots into one figure\n\n\n\nCode chunk below will be used to check if these packages have been installed and also will load them onto your working R environment.\n\npacman::p_load(ggrepel, patchwork, \n               ggthemes, hrbrthemes,\n               tidyverse) \n\nThe package ‘hrbrthemes’ is not available for this version of R, therefore hrbrthemes have to be installed from Github using the following:\nremotes::install_github(\"hrbrmstr/hrbrthemes\")"
+    "text": "2.2.1 Installing and Loading the Required Libraries\nFour ggplot2 extension packages are used alongside tidyverse:\n\n\n\nPackage\nWhat it does\n\n\n\n\nggrepel\nStops text labels from overlapping\n\n\nggthemes\nThemes\n\n\nhrbrthemes\nTypography-centric themes\n\n\npatchwork\nCombine multiple plots into one figure\n\n\n\nCode chunk below will be used to check if these packages have been installed and also will load them onto your working R environment.\n\npacman::p_load(ggrepel, patchwork, \n               ggthemes, hrbrthemes,\n               tidyverse) \n\nThe package ‘hrbrthemes’ is not available for this version of R, therefore hrbrthemes have to be installed from Github using the following:\nremotes::install_github(\"hrbrmstr/hrbrthemes\")"
   },
   {
     "objectID": "HO_EX02.html#importing-data",
@@ -361,7 +361,7 @@
     "href": "HO_EX02.html#beyond-single-graph",
     "title": "Hands-on Exercise 2",
     "section": "2.5 Beyond Single Graph",
-    "text": "2.5 Beyond Single Graph\nMultiple plots together often tell a better story than one. This section builds three plots (histograms of MATHS, ENGLISH, then a MATHS-vs-ENGLISH scatterplot) then combines them.\n\nThe plot (Maths)The code (Maths)The plot (English)The code (English)The plot (Maths vs English)The code (Maths vs English)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np1 &lt;- ggplot(data = exam_data, aes(x = MATHS)) +\n  geom_histogram(bins = 20, boundary = 100,\n                 color = \"grey25\", fill = \"grey90\") + \n  coord_cartesian(xlim = c(0, 100)) +\n  ggtitle(\"Distribution of Maths scores\")\np1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np2 &lt;- ggplot(data = exam_data, aes(x = ENGLISH)) +\n  geom_histogram(bins = 20, boundary = 100,\n                 color = \"grey25\", fill = \"grey90\") +\n  coord_cartesian(xlim = c(0, 100)) +\n  ggtitle(\"Distribution of English scores\")\np2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np3 &lt;- ggplot(data = exam_data, aes(x = MATHS, y = ENGLISH)) +\n  geom_point() +\n  geom_smooth(method = lm, linewidth = 0.5) +  \n  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +\n  ggtitle(\"English scores versus Maths scores for Primary 3\")\np3"
+    "text": "2.5 Beyond Single Graph\nMultiple plots together often tell a better story than one. This section builds three plots (histograms of MATHS, ENGLISH, then a MATHS-vs-ENGLISH scatterplot) then combines them.\n\nPlot (Maths)Code (Maths)Plot (English)Code (English)Plot (Maths vs English)Code (Maths vs English)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np1 &lt;- ggplot(data = exam_data, aes(x = MATHS)) +\n  geom_histogram(bins = 20, boundary = 100,\n                 color = \"grey25\", fill = \"grey90\") + \n  coord_cartesian(xlim = c(0, 100)) +\n  ggtitle(\"Distribution of Maths scores\")\np1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np2 &lt;- ggplot(data = exam_data, aes(x = ENGLISH)) +\n  geom_histogram(bins = 20, boundary = 100,\n                 color = \"grey25\", fill = \"grey90\") +\n  coord_cartesian(xlim = c(0, 100)) +\n  ggtitle(\"Distribution of English scores\")\np2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np3 &lt;- ggplot(data = exam_data, aes(x = MATHS, y = ENGLISH)) +\n  geom_point() +\n  geom_smooth(method = lm, linewidth = 0.5) +  \n  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +\n  ggtitle(\"English scores versus Maths scores for Primary 3\")\np3"
   },
   {
     "objectID": "HO_EX02.html#working-with-hrbthems-package-1",
@@ -460,5 +460,26 @@
     "title": "Hands-on Exercise 1",
     "section": "★ ★ ★ ★ ★",
     "text": "★ ★ ★ ★ ★\n\nHANDS-ON EXERCISE 1 CLEARED!\n+500 XP · ACHIEVEMENT UNLOCKED: Grammar of Graphics Apprentice 📊\nPress any key to continue…"
+  },
+  {
+    "objectID": "HO_EX02.html#working-with-hrbthemes-package",
+    "href": "HO_EX02.html#working-with-hrbthemes-package",
+    "title": "Hands-on Exercise 2",
+    "section": "2.4.2 Working with hrbthemes Package",
+    "text": "2.4.2 Working with hrbthemes Package\nhrbrthemes package provides a base theme that focuses on typographic elements, including where various labels are placed as well as the fonts that are used.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  ggtitle(\"Distribution of Maths scores\") +\n  theme_ipsum()\n\n\n\n\nThe second goal centers around productivity for a production workflow in terms of font choice, label spacing and readability. Consult this vignette to learn more.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  ggtitle(\"Distribution of Maths scores\") +\n  theme_ipsum(axis_title_size = 18,\n              base_size = 15,\n              grid = \"Y\")\n\n\n\n\n\n\n\n\n\n\nTipWhat can we learn from the code chunk above?\n\n\n\n\naxis_title_size argument is used to increase the font size of the axis title to 18\nbase_size argument is used to increase the default axis label to 15\ngrid argument is used to remove the x-axis grid lines"
+  },
+  {
+    "objectID": "HO_EX02.html#creating-a-composite-figure-by-using-patchwork-and-ggtheme",
+    "href": "HO_EX02.html#creating-a-composite-figure-by-using-patchwork-and-ggtheme",
+    "title": "Hands-on Exercise 2",
+    "section": "2.5.6 Creating a Composite Figure by Using Patchwork and ggtheme",
+    "text": "2.5.6 Creating a Composite Figure by Using Patchwork and ggtheme\nFigure below is created by combining patchwork and theme_economist() of ggthemes package discussed earlier.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npatchwork &lt;- (p1 / p2) | p3\npatchwork & theme_economist()\n\n\n\n\n\n\n\n\n\n\nTipApplying Theme to Partial Plots.\n\n\n\nCritical & vs + distinction:\n\n+adds to the last plot only\n& adds to every plot in the composite”\n\n(p1 + p2 + p3) & theme_economist() # ✅ all three themed\n(p1 + p2 + p3) + theme_economist() # ❌ only p3 themed"
+  },
+  {
+    "objectID": "IC_EX01.html#tableau-desktop",
+    "href": "IC_EX01.html#tableau-desktop",
+    "title": "In-Class Exercise 1",
+    "section": "",
+    "text": "Tableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
   }
 ]
