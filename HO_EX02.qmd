@@ -54,7 +54,7 @@ The package ‘hrbrthemes’ is not available for this version of R, therefore h
 
 ## [2.2.2 Importing Data]{style="color:  #366092; font-size: 24px;"}
 
-The file *Exam_data* is used for this exercise. The file can be imported using the using [*read_csv()*](https://readr.tidyverse.org/reference/read_delim.html) function of [**readr**](https://readr.tidyverse.org/) package.
+The file *Exam_data* is used for this exercise. The file can be imported using the [*read_csv()*](https://readr.tidyverse.org/reference/read_delim.html) function of [**readr**](https://readr.tidyverse.org/) package.
 
 `exam_data <- read_csv("chap02/data/Exam_data.csv")`
 

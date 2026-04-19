@@ -305,7 +305,7 @@
     "href": "HO_EX02.html#importing-data",
     "title": "Hands-on Exercise 2",
     "section": "2.2.2 Importing Data",
-    "text": "2.2.2 Importing Data\nThe file Exam_data is used for this exercise. The file can be imported using the using read_csv() function of readr package.\nexam_data &lt;- read_csv(\"chap02/data/Exam_data.csv\")\n\n\n\n\n\n\nWarning\n\n\n\nThis is a relative path. It only works if your working directory is the parent of chap02/. Otherwise you will get Error: 'chap02/data/Exam_data.csv' does not exist.\nYou can check your working directory using getwd().\n\n\nFor my case, I will leave it in the parent folder and my file will be imported using the following:\n\nexam_data &lt;- read_csv(\"data/Exam_data.csv\")"
+    "text": "2.2.2 Importing Data\nThe file Exam_data is used for this exercise. The file can be imported using the read_csv() function of readr package.\nexam_data &lt;- read_csv(\"chap02/data/Exam_data.csv\")\n\n\n\n\n\n\nWarning\n\n\n\nThis is a relative path. It only works if your working directory is the parent of chap02/. Otherwise you will get Error: 'chap02/data/Exam_data.csv' does not exist.\nYou can check your working directory using getwd().\n\n\nFor my case, I will leave it in the parent folder and my file will be imported using the following:\n\nexam_data &lt;- read_csv(\"data/Exam_data.csv\")"
   },
   {
     "objectID": "HO_EX02.html#beyond-ggplot2-annotationggrepel",
