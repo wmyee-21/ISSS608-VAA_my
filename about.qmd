@@ -2,7 +2,7 @@
 title: " "
 format:
   html:
-    toc: true
+    toc: false
     css: styles.css
 ---
 

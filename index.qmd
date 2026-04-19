@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "My Visual Analytics Journey "
 format:
   html:
     toc: false
@@ -20,21 +20,47 @@ This site consists of my journey through the course, updated regularly as I prog
 
 ## [Latest Updates]{style="color: #2C5282; font-size: 28px;"}
 
-::::: {style="display: flex; align-items: center; gap: 20px; border-left: 4px solid #2C5282; padding: 15px; margin-bottom: 20px; background-color: #f8f9fa; border-radius: 5px;"}
-::: {style="flex: 0 0 200px;"}
-![](images/clipboard-618185879.png){width="244"}
-:::
+### [📘 Hands-on Exercises]{style="color: #366092; font-size: 20px;"}
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](https://r4va.netlify.app/chap02/img/image2.jpg){width="226"}
 
 ::: {style="flex: 1;"}
-### [Hands-on Exercise 1]{style="color: #366092;"}
+**Hands-on Exercise 2 — Beyond ggplot Fundementals**
 
-**A Layered Grammar of Graphics: ggplot2 methods**
+Explored several ggplot2 extensions for creaing more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.
 
-Explored the essential components of ggplot2 through the layered grammar of graphics framework — covering data, aesthetics, geometries, facets, statistics, coordinates, and themes.
-
-[Read more →](HO_EX01.html)
+[Read more →](HO_EX02.html)
 :::
-:::::
+::::
+
+### [🖥️ In-class Exercises]{style="color: #366092; font-size: 20px;"}
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-4035837502.png){width="220"}
+
+::: {style="flex: 1;"}
+**In-Class Exercise 1 — coming soon**
+
+In-class exercises completed during lessons to reinforce key concepts introduced in lecture.
+
+[Read more →](IC_EX01.html)
+:::
+::::
+
+### [📝 Take-Home Assignments]{style="color: #366092; font-size: 20px;"}
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-4035837502.png){width="218"}
+
+::: {style="flex: 1;"}
+**Take-home Assignment 1 — coming soon**
+
+Independent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.
+
+[Read more →](TH_EX01.html)
+:::
+::::
 
 ## [All Work]{style="color: #2C5282; font-size: 28px;"}
 

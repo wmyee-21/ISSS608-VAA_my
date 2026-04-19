@@ -1,0 +1,13 @@
+---
+title: "In-Class Exercise 1"
+author: "Yee Weicong Mark"
+date: "April 18, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+In-Class Exercise 1
