@@ -26,9 +26,9 @@ This site consists of my journey through the course, updated regularly as I prog
 ![](https://r4va.netlify.app/chap02/img/image2.jpg){width="226"}
 
 ::: {style="flex: 1;"}
-**Hands-on Exercise 2 — Beyond ggplot Fundementals**
+**Hands-on Exercise 2 — Beyond ggplot Fundamentals**
 
-Explored several ggplot2 extensions for creaing more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.
+Explored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.
 
 [Read more →](HO_EX02.html)
 :::
