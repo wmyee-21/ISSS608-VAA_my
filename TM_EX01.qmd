@@ -1,0 +1,16 @@
+---
+title: "Take-Home Exercise 1"
+author: "Yee Weicong Mark"
+date: "April 20, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+format:
+  html:
+    css: styles.css
+---
+
+![](images/clipboard-2901820319.png){width="526"}

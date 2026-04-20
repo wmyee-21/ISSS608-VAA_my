@@ -15,6 +15,14 @@ format:
 
 ## [Tableau Desktop]{style="color:  #4682B4; font-size: 38px;"}
 
+:::: {style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;"}
+![](images/clipboard-667902076.png){width="243"}
+
+::: {style="flex: 1;"}
+Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.
+:::
+::::
+
 Tableau Desktop connects to Excel files directly through its **Connect** pane. *Superstore* excel file was imported.
 
 ![](images/clipboard-1402989831.png)

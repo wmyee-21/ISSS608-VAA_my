@@ -270,7 +270,7 @@
     "href": "IC_EX01.html",
     "title": "In-Class Exercise 1",
     "section": "",
-    "text": "Tableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
   },
   {
     "objectID": "HO_EX02.html",
@@ -480,6 +480,6 @@
     "href": "IC_EX01.html#tableau-desktop",
     "title": "In-Class Exercise 1",
     "section": "",
-    "text": "Tableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
   }
 ]
