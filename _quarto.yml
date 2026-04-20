@@ -23,9 +23,9 @@ website:
         href: "TM_EX01.html"
     right:
       - href: index.qmd
-        text: "![](/images/home-icon.png){width=88px height=78px}"
+        text: "<img src='/images/home-icon.png' width='88' height='78' alt='Home'>"
       - href: about.qmd
-        text: "![](/images/about-icon.png){width=88px height=78px}"
+        text: "<img src='/images/about-icon.png' width='88' height='78' alt='About'>"
 
 format:
   html:
