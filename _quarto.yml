@@ -13,10 +13,14 @@ website:
         href: "HO_EX01.html"
       - text: "Hands-on Exercise_2"
         href: "HO_EX02.html"
+      - text: "Hands-on Exercise_3"
+        href: "HO_EX03.html"
     - text: "In-Class Exercises"
       menu:
       - text: "In-Class Exercise_1"
         href: "IC_EX01.html"
+      - text: "In-Class Exercise_2"
+        href: "IC_EX02.html"
     - text: "Take-Home Exercises"
       menu:
       - text: "Take-Home Exercise_1"

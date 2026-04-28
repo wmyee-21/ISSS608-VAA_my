@@ -23,28 +23,30 @@ This site consists of my journey through the course, updated regularly as I prog
 ### [📘 Hands-on Exercises]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](https://r4va.netlify.app/chap02/img/image2.jpg){width="226"}
+![](images/clipboard-2406777485.gif){width="230"}
 
 ::: {style="flex: 1;"}
-**Hands-on Exercise 2 — Beyond ggplot Fundamentals**
+**Hands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R**
 
-Explored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.
+Explored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.
 
-[Read more →](HO_EX02.html)
+Explored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.
+
+[Read more →](HO_EX03.html)
 :::
 ::::
 
 ### [🖥️ In-class Exercises]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-667902076.png){width="225"}
+![](images/clipboard-1033113871.png){width="232"}
 
 ::: {style="flex: 1;"}
-**In-Class Exercise 1 — Tableau Desktop**
+**In-Class Exercise 2 — Tableau Public**
 
-Installed and explored Tableau Desktop.
+Published first dashboard to Tableau Public.
 
-[Read more →](IC_EX01.html)
+[Read more →](IC_EX02.html)
 :::
 ::::
 
@@ -80,18 +82,18 @@ Independent projects applying visual analytics techniques to real-world datasets
 ::: {.g-col-4 style="margin-top: -1.5rem;"}
 Weekly practical exercises applying visual analytics techniques in R.
 
-[View all →](hands-on/index.html)
+[View all →](HO_EX_index.html)
 :::
 
 ::: {.g-col-4 style="margin-top: -1.5rem;"}
 Short exercises completed during lessons to reinforce key concepts.
 
-[View all →](in-class/index.html)
+[View all →](IC_EX_index.html)
 :::
 
 ::: {.g-col-4 style="margin-top: -1.5rem;"}
 Independent projects applying visual analytics to real-world datasets.
 
-[View all →](take-home/index.html)
+[View all →](TH_EX_index.html)
 :::
 :::::::::

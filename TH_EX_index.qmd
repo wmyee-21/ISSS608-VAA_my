@@ -1,0 +1,18 @@
+---
+title: "Take-Home Exercise Index"
+author: "Yee Weicong Mark"
+date: "April 25, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+format:
+  html:
+    css: styles.css
+---
+
+## [Take-Home Exercises Index]{style="color:  #4682B4; font-size: 38px;"}
+
+![](images/clipboard-2901820319.png)

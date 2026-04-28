@@ -8,6 +8,11 @@ body {
   line-height: 1.65;
 }
 
+
+div[style*="border-left: 4px solid #2C5282"] {
+  margin-bottom: 20px;
+}
+
 /* Headings — exclude TOC by using :not() */
 h1:not(#toc-title),
 h2:not(#toc-title),

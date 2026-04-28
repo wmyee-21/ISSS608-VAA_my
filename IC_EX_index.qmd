@@ -1,0 +1,40 @@
+---
+title: "In-Class Exercise Index"
+author: "Yee Weicong Mark"
+date: "April 25, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+format:
+  html:
+    css: styles.css
+---
+
+## [In-Class Exercises Index]{style="color:  #4682B4; font-size: 38px;"}
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-667902076.png){width="230"}
+
+::: {style="flex: 1;"}
+**In-Class Exercise 1 — Tableau Desktop**
+
+Explored and setup Tableau Desktop.
+
+[Read more →](IC_EX01.html)
+:::
+::::
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-1286654171.png){width="230"}
+
+::: {style="flex: 1;"}
+**In-Class Exercise 2 — Tableau Public**
+
+Published first dashboard to Tableau Public.
+
+[Read more →](IC_EX02.html)
+:::
+::::
