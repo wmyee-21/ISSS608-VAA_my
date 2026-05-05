@@ -13,7 +13,7 @@ format:
     css: styles.css
 ---
 
-## [Programming Interactive Data Visualisation with R]{style="color:  #4682B4; font-size: 38px;"}
+## [3 Programming Interactive Data Visualisation with R]{style="color:  #4682B4; font-size: 38px;"}
 
 ## [3.1 Learning Outcome]{style="color:  #2C5282; font-size: 28px;"}
 
@@ -1131,7 +1131,7 @@ p_plotly
 
 This scatter uses plotly's native interactivity toolbox. Dragging on the chart zooms into that region; double-clicking resets the view. The lasso and box-select tools (in the toolbar at the top right) let the user grab a cluster of students for closer inspection. Clicking any race in the legend hides those points; double-clicking isolates them. The hover tooltip is custom-built — instead of plotly's default x: 76, y: 82 format, it shows the student's ID, class, demographics, and all three subject scores in one styled HTML block. The colors = "Set2" override replaces plotly's default categorical palette, which fails for common forms of red-green colourblindness. The displaylogo = FALSE and removed mode-bar buttons declutter the toolbar to keep it focused on the interactions that actually matter for this chart.
 
-## [Programming Animated Statistical Graphics with R]{style="color:  #4682B4; font-size: 38px;"}
+## [4 Programming Animated Statistical Graphics with R]{style="color:  #4682B4; font-size: 38px;"}
 
 ## [4.1 Overview]{style="color:  #2C5282; font-size: 28px;"}
 

@@ -52,3 +52,15 @@ Explored several R packages for adding motion to static ggplots covering frame t
 [Read more →](HO_EX03.html)
 :::
 ::::
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-3948243326.gif){width="232"}
+
+::: {style="flex: 1;"}
+**Hands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty**
+
+Explored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).
+
+[Read more →](HO_EX04.html)
+:::
+::::
