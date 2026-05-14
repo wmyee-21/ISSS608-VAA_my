@@ -24,9 +24,9 @@ A treemap displays hierarchical data as nested rectangles, where each rectangle'
 
 Three packages are required:
 
-1. **treemap** for the foundational treemap implementation
-2. **treemapify** for `ggplot2`-style treemap geoms
-3. **tidyverse** for data wrangling
+1.  **treemap** for the foundational treemap implementation
+2.  **treemapify** for `ggplot2`-style treemap geoms
+3.  **tidyverse** for data wrangling
 
 **knitr** is loaded so `kable()` can produce clean previews.
 
@@ -556,7 +556,7 @@ d3tree(tm, rootname = "Singapore")
 `d3tree()` consumes a `treemap` object, so building the static version first means the same code supports both export formats. `rootname = "Singapore"` labels the top-level node, which is visible when the user has drilled all the way up.
 :::
 
-::::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
+::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
 # 🕹️ LEVEL COMPLETE 🕹️
 
 ## ★ ★ ★ ★ ★
@@ -566,7 +566,7 @@ d3tree(tm, rootname = "Singapore")
 **+1000 XP** · **ACHIEVEMENT UNLOCKED: Treemap Tactician** 🗺️
 
 *Press any key to continue...*
-:::::
+:::
 
 ```{=html}
 <style>

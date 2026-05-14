@@ -24,9 +24,9 @@ A parallel coordinates plot (PCP) draws each variable as a parallel vertical axi
 
 Three packages are required:
 
-1. **GGally** for `ggparcoord()`, the static parallel coordinates plot
-2. **parallelPlot** for interactive parallel coordinates plots via D3
-3. **tidyverse** for data manipulation
+1.  **GGally** for `ggparcoord()`, the static parallel coordinates plot
+2.  **parallelPlot** for interactive parallel coordinates plots via D3
+3.  **tidyverse** for data manipulation
 
 ```{r}
 pacman::p_load(GGally, parallelPlot, tidyverse)
@@ -336,11 +336,11 @@ parallelPlot(wh_pcp,
 *Press any key to continue...*
 :::
 
-````{=html}
+```{=html}
 <style>
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
   50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
 }
 </style>
-````
+```

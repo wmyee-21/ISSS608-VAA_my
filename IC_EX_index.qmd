@@ -45,8 +45,7 @@ Published first dashboard to Tableau Public.
 ::: {style="flex: 1;"}
 **In-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau**
 
-Built an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit.
-Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.
+Built an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.
 
 [Read more →](IC_EX03.html)
 :::
