@@ -24,10 +24,10 @@ A heatmap encodes a tabular dataset as a coloured grid, with rows for observatio
 
 Four packages are required:
 
-1. **seriation** for optimal leaf ordering of dendrograms
-2. **heatmaply** for interactive heatmaps with full ggplot styling
-3. **dendextend** for choosing clustering method and number of clusters statistically
-4. **tidyverse** for data manipulation
+1.  **seriation** for optimal leaf ordering of dendrograms
+2.  **heatmaply** for interactive heatmaps with full ggplot styling
+3.  **dendextend** for choosing clustering method and number of clusters statistically
+4.  **tidyverse** for data manipulation
 
 **knitr** is loaded so `kable()` can show clean previews of the data.
 
@@ -337,11 +337,11 @@ The five-cluster solution separates the high-happiness Western European and Nord
 *Press any key to continue...*
 :::
 
-``````{=html}
+```{=html}
 <style>
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
   50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
 }
 </style>
-``````
+```

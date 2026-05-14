@@ -51,10 +51,10 @@ website:
           contents:
             - text: "6. Visual Correlation Analysis"
               href: HO_EX05_chap06.qmd
-            - text: "14. Heatmap"
-              href: HO_EX05_chap14.qmd
             - text: "13. Ternary Plot"
               href: HO_EX05_chap13.qmd
+            - text: "14. Heatmap"
+              href: HO_EX05_chap14.qmd
             - text: "15. Parallel Coordinates"
               href: HO_EX05_chap15.qmd
             - text: "16. Treemap"

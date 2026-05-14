@@ -2,7 +2,7 @@
 title: "Hands-on Exercise 5"
 subtitle: "Visualising and Analysing Multivariate Data"
 author: "Yee Weicong Mark"
-date: "May 16, 2026"
+date: "May 14, 2026"
 date-modified: "last-modified"
 execute: 
   eval: true
@@ -24,73 +24,81 @@ The chapters move from simple to complex. Chapter 6 asks questions like "does GD
 
 Four datasets carry across the five chapters:
 
-1. `wine_quality.csv` from the UCI Machine Learning Repository, combining red and white wine samples with 13 variables and 6,497 observations
-2. `WHData-2018.csv` from the World Happiness Report 2018, with country-level happiness scores and explanatory variables
-3. `respopagsex2000to2018_tidy.csv` from the Singapore Department of Statistics, recording resident population by planning area, subzone, age group, sex, and year from 2000 to 2018
-4. `realis2018.csv` from the URA REALIS portal, recording private property transactions in Singapore in 2018
+1.  `wine_quality.csv` from the UCI Machine Learning Repository, combining red and white wine samples with 13 variables and 6,497 observations
+2.  `WHData-2018.csv` from the World Happiness Report 2018, with country-level happiness scores and explanatory variables
+3.  `respopagsex2000to2018_tidy.csv` from the Singapore Department of Statistics, recording resident population by planning area, subzone, age group, sex, and year from 2000 to 2018
+4.  `realis2018.csv` from the URA REALIS portal, recording private property transactions in Singapore in 2018
 
 ## [Chapters]{style="color:  #2C5282; font-size: 28px;"}
 
-::: {.grid}
-
-::: {.g-col-12 .g-col-md-6}
-::: {.card .h-100}
-::: {.card-body}
+:::::::::::::::::: grid
+::::: {.g-col-12 .g-col-md-6}
+:::: {.card .h-100}
+::: card-body
 ### [Chapter 6]{style="color:  #4682B4;"}
+
 #### Visual Correlation Analysis
+
 Covers `pairs()`, `ggcorrmat()`, and `corrplot()` for visualising how pairs of variables move together.
 
 [Open chapter →](HO_EX05_chap06.qmd){.btn .btn-outline-primary}
 :::
-:::
-:::
+::::
+:::::
 
-::: {.g-col-12 .g-col-md-6}
-::: {.card .h-100}
-::: {.card-body}
+::::: {.g-col-12 .g-col-md-6}
+:::: {.card .h-100}
+::: card-body
 ### [Chapter 14]{style="color:  #4682B4;"}
+
 #### Heatmap for Visualising and Analysing Multivariate Data
+
 Covers `heatmap()` and `heatmaply()` for showing the whole dataset as a coloured grid, with optional clustering and seriation.
 
 [Open chapter →](HO_EX05_chap14.qmd){.btn .btn-outline-primary}
 :::
-:::
-:::
+::::
+:::::
 
-::: {.g-col-12 .g-col-md-6}
-::: {.card .h-100}
-::: {.card-body}
+::::: {.g-col-12 .g-col-md-6}
+:::: {.card .h-100}
+::: card-body
 ### [Chapter 13]{style="color:  #4682B4;"}
+
 #### Creating Ternary Plot with R
+
 Covers `ggtern()` for static ternary plots and `plot_ly()` for interactive ones, for three-part compositional data.
 
 [Open chapter →](HO_EX05_chap13.qmd){.btn .btn-outline-primary}
 :::
-:::
-:::
+::::
+:::::
 
-::: {.g-col-12 .g-col-md-6}
-::: {.card .h-100}
-::: {.card-body}
+::::: {.g-col-12 .g-col-md-6}
+:::: {.card .h-100}
+::: card-body
 ### [Chapter 15]{style="color:  #4682B4;"}
+
 #### Visual Multivariate Analysis with Parallel Coordinates Plot
+
 Covers `ggparcoord()` for static parallel coordinates plots and `parallelPlot()` for interactive D3-based plots.
 
 [Open chapter →](HO_EX05_chap15.qmd){.btn .btn-outline-primary}
 :::
-:::
-:::
+::::
+:::::
 
-::: {.g-col-12 .g-col-md-6}
-::: {.card .h-100}
-::: {.card-body}
+::::: {.g-col-12 .g-col-md-6}
+:::: {.card .h-100}
+::: card-body
 ### [Chapter 16]{style="color:  #4682B4;"}
+
 #### Treemap Visualisation with R
+
 Covers `treemap()`, `treemapify` for ggplot2 integration, and `d3treeR` for drill-down interactivity.
 
 [Open chapter →](HO_EX05_chap16.qmd){.btn .btn-outline-primary}
 :::
-:::
-:::
-
-:::
+::::
+:::::
+::::::::::::::::::
