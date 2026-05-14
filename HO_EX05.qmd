@@ -1,0 +1,96 @@
+---
+title: "Hands-on Exercise 5"
+subtitle: "Visualising and Analysing Multivariate Data"
+author: "Yee Weicong Mark"
+date: "May 16, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: false
+format:
+  html:
+    css: styles.css
+---
+
+## [Overview]{style="color:  #2C5282; font-size: 28px;"}
+
+This hands-on exercise covers five chapters of the multivariate visualisation toolkit, working from simpler chart types to more complex ones.
+
+The chapters move from simple to complex. Chapter 6 asks questions like "does GDP move up when life expectancy moves up?" by looking at two measurements at a time. Chapter 14 shows the full data as a coloured grid, with one row per country and one column per measurement, so a single glance reveals which countries are high or low across many things at once. Chapter 13 plots each country as a dot inside a triangle, which works when each country has three numbers that add up to a whole (such as young, working-age, and old as shares of the population). Chapter 15 extends this idea to many measurements at once, drawing each country as a zigzag line that crosses parallel vertical axes. Chapter 16 introduces hierarchy by nesting smaller rectangles inside bigger ones, so a property project sits inside a planning area, which sits inside a planning region. Reading the chapters in this order means each one builds on the previous, instead of feeling like five disconnected chart types.
+
+## [Datasets Used]{style="color:  #2C5282; font-size: 28px;"}
+
+Four datasets carry across the five chapters:
+
+1. `wine_quality.csv` from the UCI Machine Learning Repository, combining red and white wine samples with 13 variables and 6,497 observations
+2. `WHData-2018.csv` from the World Happiness Report 2018, with country-level happiness scores and explanatory variables
+3. `respopagsex2000to2018_tidy.csv` from the Singapore Department of Statistics, recording resident population by planning area, subzone, age group, sex, and year from 2000 to 2018
+4. `realis2018.csv` from the URA REALIS portal, recording private property transactions in Singapore in 2018
+
+## [Chapters]{style="color:  #2C5282; font-size: 28px;"}
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100}
+::: {.card-body}
+### [Chapter 6]{style="color:  #4682B4;"}
+#### Visual Correlation Analysis
+Covers `pairs()`, `ggcorrmat()`, and `corrplot()` for visualising how pairs of variables move together.
+
+[Open chapter →](HO_EX05_chap06.qmd){.btn .btn-outline-primary}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100}
+::: {.card-body}
+### [Chapter 14]{style="color:  #4682B4;"}
+#### Heatmap for Visualising and Analysing Multivariate Data
+Covers `heatmap()` and `heatmaply()` for showing the whole dataset as a coloured grid, with optional clustering and seriation.
+
+[Open chapter →](HO_EX05_chap14.qmd){.btn .btn-outline-primary}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100}
+::: {.card-body}
+### [Chapter 13]{style="color:  #4682B4;"}
+#### Creating Ternary Plot with R
+Covers `ggtern()` for static ternary plots and `plot_ly()` for interactive ones, for three-part compositional data.
+
+[Open chapter →](HO_EX05_chap13.qmd){.btn .btn-outline-primary}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100}
+::: {.card-body}
+### [Chapter 15]{style="color:  #4682B4;"}
+#### Visual Multivariate Analysis with Parallel Coordinates Plot
+Covers `ggparcoord()` for static parallel coordinates plots and `parallelPlot()` for interactive D3-based plots.
+
+[Open chapter →](HO_EX05_chap15.qmd){.btn .btn-outline-primary}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100}
+::: {.card-body}
+### [Chapter 16]{style="color:  #4682B4;"}
+#### Treemap Visualisation with R
+Covers `treemap()`, `treemapify` for ggplot2 integration, and `d3treeR` for drill-down interactivity.
+
+[Open chapter →](HO_EX05_chap16.qmd){.btn .btn-outline-primary}
+:::
+:::
+:::
+
+:::

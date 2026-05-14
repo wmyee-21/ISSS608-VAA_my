@@ -1,0 +1,562 @@
+---
+title: "Chapter 6: Visual Correlation Analysis"
+subtitle: "Hands-on Exercise 5"
+author: "Yee Weicong Mark"
+date: "May 14, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: false
+format:
+  html:
+    css: styles.css
+---
+
+## [6 Visual Correlation Analysis]{style="color:  #4682B4; font-size: 38px;"}
+
+## [6.1 Overview]{style="color:  #2C5282; font-size: 28px;"}
+
+This chapter covers how to visualise pairwise correlations across many variables at once, using three approaches: a scatterplot matrix with `pairs()`, a corrgram with `ggcorrmat()` from the `ggstatsplot` package, and a corrgram with `corrplot()` that supports the widest range of glyphs and reordering algorithms.
+
+## [6.2 Installing and Launching R Packages]{style="color:  #2C5282; font-size: 28px;"}
+
+Three packages drive this chapter:
+
+1.  **corrplot** for purpose-built corrgrams
+2.  **ggstatsplot** for statistically annotated correlation matrices in `ggplot2` style
+3.  **tidyverse** for data import and manipulation
+
+**knitr** is also loaded so `kable()` can produce clean previews of the data.
+
+```{r}
+pacman::p_load(corrplot, ggstatsplot, tidyverse, knitr)
+```
+
+## [6.3 Importing and Preparing the Data Set]{style="color:  #2C5282; font-size: 28px;"}
+
+## [6.3.1 Importing Data]{style="color:  #366092; font-size: 24px;"}
+
+The Wine Quality Data Set comes from the UCI Machine Learning Repository. It combines red and white wine samples, has 13 variables, and 6,497 observations.
+
+```{r}
+wine <- read_csv("data/wine_quality.csv")
+
+kable(head(wine))
+```
+
+## [6.4 Building Correlation Matrix: pairs() Method]{style="color:  #2C5282; font-size: 28px;"}
+
+## [6.4.1 Building a Basic Correlation Matrix]{style="color:  #366092; font-size: 24px;"}
+
+`pairs()` produces a scatterplot matrix where each off-diagonal cell shows the bivariate scatter for one pair of variables. With 11 numeric variables the result is an 11 by 11 grid.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+pairs(wine[, 2:12])
+```
+
+## Code
+
+```{r}
+#| eval: false
+pairs(wine[, 2:12])
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`pairs()` accepts any matrix or data frame of numeric columns. Passing columns 2 to 12 of `wine` excludes the row index and target variables. The diagonal carries the variable names and the off-diagonal cells show all pairwise scatters. The matrix is symmetric, so the upper and lower triangles are mirrors of each other.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The dense black clouds are the headline result. With 6,497 observations the individual points become impossible to discern, and most cells collapse into solid blobs. This is the overplotting failure mode, meaning so many points stack on top of each other that no shape is visible. A scatterplot matrix would work better on a much smaller subset, since at this sample size summarising correlations as colour-encoded glyphs becomes essential. That is what the corrgram approach in the later sections does.
+:::
+
+## [6.4.2 Drawing the Lower Corner]{style="color:  #366092; font-size: 24px;"}
+
+Because the correlation matrix is symmetric, showing both halves wastes space. Setting `upper.panel = NULL` removes the upper triangle.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+pairs(wine[, 2:12], upper.panel = NULL)
+```
+
+## Code
+
+```{r}
+#| eval: false
+pairs(wine[, 2:12], upper.panel = NULL)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`upper.panel = NULL` strips the upper triangle. Lower-triangle scatterplots are read along the row, with the diagonal label naming the y-variable.
+:::
+
+## [6.4.3 Including Correlation Coefficients]{style="color:  #366092; font-size: 24px;"}
+
+A more useful variant places the numeric correlation in one triangle and the scatters in the other. The custom `panel.cor` function below sizes the text proportionally to the correlation magnitude.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...) {
+  usr <- par("usr")
+  on.exit(par(usr))
+  par(usr = c(0, 1, 0, 1))
+  r <- abs(cor(x, y, use = "complete.obs"))
+  txt <- format(c(r, 0.123456789), digits = digits)[1]
+  txt <- paste(prefix, txt, sep = "")
+  if (missing(cex.cor)) cex.cor <- 0.8 / strwidth(txt)
+  text(0.5, 0.5, txt, cex = cex.cor * (1 + r) / 2)
+}
+
+pairs(wine[, 2:12], upper.panel = panel.cor)
+```
+
+## Code
+
+```{r}
+#| eval: false
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...) {
+  usr <- par("usr")
+  on.exit(par(usr))
+  par(usr = c(0, 1, 0, 1))
+  r <- abs(cor(x, y, use = "complete.obs"))
+  txt <- format(c(r, 0.123456789), digits = digits)[1]
+  txt <- paste(prefix, txt, sep = "")
+  if (missing(cex.cor)) cex.cor <- 0.8 / strwidth(txt)
+  text(0.5, 0.5, txt, cex = cex.cor * (1 + r) / 2)
+}
+
+pairs(wine[, 2:12], upper.panel = panel.cor)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`panel.cor` is a custom function passed as the upper-panel renderer. It computes the absolute correlation, writes it as text, and scales the size by the magnitude so stronger correlations appear in bigger text. The `use = "complete.obs"` argument tells `cor()` to drop rows with missing values pairwise, which is a useful default to keep even though the wine data has no missing values.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The combined view is more useful than either panel alone. The lower triangle preserves the data shape, including curvature and outliers, which a single number cannot convey. The upper triangle gives the precise summary statistic. The largest text reveals the strongest relationships, drawing the eye directly to the analytically interesting pairs without forcing any number-reading first.
+:::
+
+## [6.5 Visualising Correlation Matrix: ggcorrmat()]{style="color:  #2C5282; font-size: 28px;"}
+
+`pairs()` struggles at this sample size because of overplotting. A corrgram replaces each cell with a colour glyph encoding the correlation, which scales well to thousands of observations.
+
+## [6.5.1 The Basic Plot]{style="color:  #366092; font-size: 24px;"}
+
+`ggcorrmat()` from `ggstatsplot` produces a corrgram with an integrated statistical report covering sample size, hypothesis test, and confidence intervals.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+ggstatsplot::ggcorrmat(
+  data = wine,
+  cor.vars = 1:11
+)
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggstatsplot::ggcorrmat(
+  data = wine,
+  cor.vars = 1:11
+)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`cor.vars = 1:11` selects the columns over which pairwise correlations are computed. The default output annotates non-significant pairs with a cross. Blue means positive correlation, red means negative, and saturation encodes magnitude.
+:::
+
+The next variant adds hierarchical clustering reordering and a custom title.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+ggstatsplot::ggcorrmat(
+  data = wine,
+  cor.vars = 1:11,
+  ggcorrplot.args = list(outline.color = "black",
+                         hc.order = TRUE,
+                         tl.cex = 10),
+  title = "Correlogram for wine dataset",
+  subtitle = "Four pairs are not significant at p < 0.05"
+)
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggstatsplot::ggcorrmat(
+  data = wine,
+  cor.vars = 1:11,
+  ggcorrplot.args = list(outline.color = "black",
+                         hc.order = TRUE,
+                         tl.cex = 10),
+  title = "Correlogram for wine dataset",
+  subtitle = "Four pairs are not significant at p < 0.05"
+)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`hc.order = TRUE` reorders rows and columns by hierarchical clustering, so similar variables end up adjacent. `outline.color = "black"` adds a thin border around each cell. `tl.cex = 10` controls the text label size.
+:::
+
+::: callout-tip
+## Reading the plot
+
+After clustering, three variable groups emerge. The acidity-related measures (fixed acidity, volatile acidity, citric acid, pH) cluster together. Sugar and alcohol-related measures form another group. The sulphur dioxide measures form the third. This structure is invisible in the unordered version.
+:::
+
+## [6.6 Building Multiple Plots]{style="color:  #2C5282; font-size: 28px;"}
+
+`grouped_ggcorrmat()` produces faceted corrgrams, useful when the correlation structure may differ across groups.
+
+```{r}
+#| fig-width: 14
+#| fig-height: 7
+grouped_ggcorrmat(
+  data = wine,
+  cor.vars = 1:11,
+  grouping.var = type,
+  type = "robust",
+  p.adjust.method = "holm",
+  plotgrid.args = list(ncol = 2),
+  ggcorrplot.args = list(outline.color = "black", 
+                         hc.order = TRUE,
+                         tl.cex = 10),
+  annotation.args = list(
+    tag_levels = "a",
+    title = "Correlogram for wine dataset",
+    subtitle = "The measures are: alcohol, sulphates, fixed acidity, citric acid, chlorides, residual sugar, density, free sulfur dioxide and volatile acidity",
+    caption = "Dataset: UCI Machine Learning Repository"
+  )
+)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`grouping.var = type` splits the data into red and white wines and produces one corrgram per group. `type = "robust"` uses a percentage bend correlation, which is less sensitive to outliers than Pearson's coefficient. `p.adjust.method = "holm"` corrects p-values for multiple testing across the matrix.
+:::
+
+::: callout-tip
+## Reading the plot
+
+Comparing the two panels shows whether red and white wines share the same correlation structure or differ chemically. Differences in cell colour or saturation between the two panels indicate type-specific relationships, which the pooled corrgram from earlier would have hidden.
+:::
+
+## [6.7 Visualising Correlation Matrix using corrplot]{style="color:  #2C5282; font-size: 28px;"}
+
+The `corrplot` package offers extensive customisation, with seven glyph types, three layouts, and four reordering algorithms.
+
+## [6.7.1 Getting Started with corrplot]{style="color:  #366092; font-size: 24px;"}
+
+The first step is to compute the correlation matrix explicitly using `cor()`.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+wine.cor <- cor(wine[, 1:11])
+corrplot(wine.cor)
+```
+
+## Code
+
+```{r}
+#| eval: false
+wine.cor <- cor(wine[, 1:11])
+corrplot(wine.cor)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+The default glyph is a circle, with size and colour saturation encoding correlation magnitude. The default colour scheme is diverging blue-red, with blue for positive and red for negative correlations.
+:::
+
+## [6.7.2 Working with Visual Geometrics]{style="color:  #366092; font-size: 24px;"}
+
+`corrplot` supports seven glyph types via the `method` argument: circle, square, ellipse, number, shade, color, and pie.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+corrplot(wine.cor, method = "ellipse")
+```
+
+## Code
+
+```{r}
+#| eval: false
+corrplot(wine.cor, method = "ellipse")
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`method = "ellipse"` replaces circles with ellipses. A thin elongated ellipse pointing up-right means a strong positive correlation, a thin elongated ellipse pointing up-left means a strong negative correlation, and a circle means zero correlation.
+:::
+
+## [6.7.3 Working with Layout]{style="color:  #366092; font-size: 24px;"}
+
+The `type` argument controls whether the full matrix, only the upper triangle, or only the lower triangle is shown.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+corrplot(wine.cor,
+         method = "ellipse",
+         type = "lower",
+         diag = FALSE,
+         tl.col = "black")
+```
+
+## Code
+
+```{r}
+#| eval: false
+corrplot(wine.cor,
+         method = "ellipse",
+         type = "lower",
+         diag = FALSE,
+         tl.col = "black")
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`type = "lower"` shows only the lower triangle. `diag = FALSE` removes the diagonal cells, which would always be 1 by construction. `tl.col = "black"` sets the text-label colour.
+:::
+
+## [6.7.4 Working with Mixed Layout]{style="color:  #366092; font-size: 24px;"}
+
+`corrplot.mixed()` allows different glyph types in the upper and lower triangles. A common pattern is ellipses below for shape and numbers above for precise readout.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+corrplot.mixed(wine.cor,
+               lower = "ellipse",
+               upper = "number",
+               tl.pos = "lt",
+               diag = "l",
+               tl.col = "black")
+```
+
+## Code
+
+```{r}
+#| eval: false
+corrplot.mixed(wine.cor,
+               lower = "ellipse",
+               upper = "number",
+               tl.pos = "lt",
+               diag = "l",
+               tl.col = "black")
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`lower = "ellipse"` and `upper = "number"` is a useful combination because the ellipse conveys shape and the number gives precision. `tl.pos = "lt"` places labels on the left and top edges. `diag = "l"` shows labels on the diagonal in lowercase.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The number-and-ellipse pairing means the reader does not have to choose between seeing the structure and reading the values. Strong positives and strong negatives jump out as elongated ellipses, and the numeric value is one glance away in the mirror cell.
+:::
+
+## [6.7.5 Combining Corrgram with Significance Test]{style="color:  #366092; font-size: 24px;"}
+
+Statistical significance can be overlaid by computing p-values with `cor.mtest()` and passing them via `p.mat`.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+wine.sig <- cor.mtest(wine.cor, conf.level = .95)
+
+corrplot(wine.cor,
+         method = "number",
+         type = "lower",
+         diag = FALSE,
+         tl.col = "black",
+         tl.srt = 45,
+         p.mat = wine.sig$p,
+         sig.level = .05)
+```
+
+## Code
+
+```{r}
+#| eval: false
+wine.sig <- cor.mtest(wine.cor, conf.level = .95)
+
+corrplot(wine.cor,
+         method = "number",
+         type = "lower",
+         diag = FALSE,
+         tl.col = "black",
+         tl.srt = 45,
+         p.mat = wine.sig$p,
+         sig.level = .05)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`cor.mtest()` returns a list including the p-value matrix. Passing `p.mat = wine.sig$p` and setting `sig.level = .05` crosses out cells whose p-value exceeds 0.05. With 6,497 observations almost every correlation is statistically significant, so the crossed-out cells become the more interesting signal.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The crosses act as flags for "do not bet on this pair" rather than the absence of a cross being confirmation of strength. A correlation of 0.05 is statistically significant in 6,500 wines but is too small to be practically interesting.
+:::
+
+## [6.7.6 Reorder a Corrgram]{style="color:  #366092; font-size: 24px;"}
+
+Reordering reveals cluster structure. `corrplot` supports four algorithms: AOE (angular order of eigenvectors), FPC (first principal component), hclust (hierarchical clustering), and alphabet.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+corrplot.mixed(wine.cor,
+               lower = "ellipse",
+               upper = "number",
+               tl.pos = "lt",
+               diag = "l",
+               order = "AOE",
+               tl.col = "black")
+```
+
+## Code
+
+```{r}
+#| eval: false
+corrplot.mixed(wine.cor,
+               lower = "ellipse",
+               upper = "number",
+               tl.pos = "lt",
+               diag = "l",
+               order = "AOE",
+               tl.col = "black")
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`order = "AOE"` reorders variables by the angle of their first two eigenvectors, so variables with similar correlation structure end up adjacent.
+:::
+
+## [6.7.7 Reordering with hclust]{style="color:  #366092; font-size: 24px;"}
+
+`hclust` reordering can also draw rectangles around inferred clusters, making the structure more explicit.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+corrplot(wine.cor,
+         method = "ellipse",
+         tl.pos = "lt",
+         tl.col = "black",
+         order = "hclust",
+         hclust.method = "ward.D",
+         addrect = 3)
+```
+
+## Code
+
+```{r}
+#| eval: false
+corrplot(wine.cor,
+         method = "ellipse",
+         tl.pos = "lt",
+         tl.col = "black",
+         order = "hclust",
+         hclust.method = "ward.D",
+         addrect = 3)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`order = "hclust"` and `hclust.method = "ward.D"` apply Ward's hierarchical clustering. `addrect = 3` draws three black rectangles around the top-level clusters.
+:::
+
+::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
+# 🕹️ LEVEL COMPLETE 🕹️
+
+## ★ ★ ★ ★ ★
+
+### CHAPTER 6 CLEARED!
+
+**+1000 XP** · **ACHIEVEMENT UNLOCKED: Correlation Cartographer** 🔍
+
+*Press any key to continue...*
+:::
+
+```{=html}
+<style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
+}
+</style>
+```

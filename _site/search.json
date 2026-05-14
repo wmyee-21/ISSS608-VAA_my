@@ -18,7 +18,7 @@
     "href": "index.html#latest-updates",
     "title": "My Visual Analytics Journey",
     "section": "Latest Updates",
-    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 1 — coming soon\nIndependent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.\nRead more →"
+    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 4, Programming Visual Analytics with Tableau\nBuilt three Tableau views, namely a histogram of English scores, a boxplot of English scores by class, and a diverging stacked bar chart of hospital meal satisfaction.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 1 — coming soon\nIndependent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.\nRead more →"
   },
   {
     "objectID": "index.html#all-work",
@@ -515,14 +515,14 @@
     "href": "HO_EX_index.html",
     "title": "Hands-On Exercise Index",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →"
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →"
   },
   {
     "objectID": "HO_EX_index.html#hands-on-exercises-index",
     "href": "HO_EX_index.html#hands-on-exercises-index",
     "title": "Hands-On Exercise Index",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →"
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →"
   },
   {
     "objectID": "HO_EX03.html#learning-outcome",
@@ -1713,5 +1713,1352 @@
     "title": "Hands-on Exercise 4",
     "section": "8.5.2 Calculate Lower and Upper Limits for 95% and 99.8% CI",
     "text": "8.5.2 Calculate Lower and Upper Limits for 95% and 99.8% CI\nThe code chunk below is used to compute the lower and upper limits for 95% and 99.8% confidence interval.\n\nnumber.seq &lt;- seq(1, max(df$Positive), 1)\nnumber.ll95 &lt;- fit.mean - 1.96 * sqrt((fit.mean*(1-fit.mean)) / (number.seq)) \nnumber.ul95 &lt;- fit.mean + 1.96 * sqrt((fit.mean*(1-fit.mean)) / (number.seq)) \nnumber.ll998 &lt;- fit.mean - 3.09 * sqrt((fit.mean*(1-fit.mean)) / (number.seq)) \nnumber.ul998 &lt;- fit.mean + 3.09 * sqrt((fit.mean*(1-fit.mean)) / (number.seq)) \ndfCI &lt;- data.frame(number.ll95, number.ul95, number.ll998, \n                   number.ul998, number.seq, fit.mean)"
+  },
+  {
+    "objectID": "HO_EX05.html",
+    "href": "HO_EX05.html",
+    "title": "Hands-on Exercise 5",
+    "section": "",
+    "text": "This hands-on exercise covers five chapters of the multivariate visualisation toolkit, working from simpler chart types to more complex ones.\nThe chapters move from simple to complex. Chapter 6 asks questions like “does GDP move up when life expectancy moves up?” by looking at two measurements at a time. Chapter 14 shows the full data as a coloured grid, with one row per country and one column per measurement, so a single glance reveals which countries are high or low across many things at once. Chapter 13 plots each country as a dot inside a triangle, which works when each country has three numbers that add up to a whole (such as young, working-age, and old as shares of the population). Chapter 15 extends this idea to many measurements at once, drawing each country as a zigzag line that crosses parallel vertical axes. Chapter 16 introduces hierarchy by nesting smaller rectangles inside bigger ones, so a property project sits inside a planning area, which sits inside a planning region. Reading the chapters in this order means each one builds on the previous, instead of feeling like five disconnected chart types.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "HO_EX05.html#creating-ternary-plot-with-r",
+    "href": "HO_EX05.html#creating-ternary-plot-with-r",
+    "title": "Hands-on Exercise 5",
+    "section": "13 Creating Ternary Plot with R",
+    "text": "13 Creating Ternary Plot with R"
+  },
+  {
+    "objectID": "HO_EX05.html#overview",
+    "href": "HO_EX05.html#overview",
+    "title": "Hands-on Exercise 5",
+    "section": "",
+    "text": "This hands-on exercise covers five chapters of the multivariate visualisation toolkit, working from simpler chart types to more complex ones.\nThe chapters move from simple to complex. Chapter 6 asks questions like “does GDP move up when life expectancy moves up?” by looking at two measurements at a time. Chapter 14 shows the full data as a coloured grid, with one row per country and one column per measurement, so a single glance reveals which countries are high or low across many things at once. Chapter 13 plots each country as a dot inside a triangle, which works when each country has three numbers that add up to a whole (such as young, working-age, and old as shares of the population). Chapter 15 extends this idea to many measurements at once, drawing each country as a zigzag line that crosses parallel vertical axes. Chapter 16 introduces hierarchy by nesting smaller rectangles inside bigger ones, so a property project sits inside a planning area, which sits inside a planning region. Reading the chapters in this order means each one builds on the previous, instead of feeling like five disconnected chart types.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "HO_EX05.html#installing-and-launching-r-packages",
+    "href": "HO_EX05.html#installing-and-launching-r-packages",
+    "title": "Hands-on Exercise 5",
+    "section": "13.2 Installing and Launching R Packages",
+    "text": "13.2 Installing and Launching R Packages\nIn this exercise, three R packages will be used:\n\nggtern, a ggplot2 extension specially designed to plot ternary diagrams. It will be used for static ternary plots.\nplotly, an R package for creating interactive web-based graphs. The plot_ly() function supports a native scatterternary trace type, which is preferred over ggplotly() conversion for ternary plots because ggplotly() does not fully translate ggtern geometries.\ntidyverse, specifically readr, dplyr, and tidyr for data import and shape transformation.\n\n\npacman::p_load(plotly, ggtern, tidyverse, knitr)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nggtern masks several ggplot2 functions when loaded. This is expected behaviour because it overrides standard ggplot internals to support the triangular coordinate system. If you encounter conflicts elsewhere in your project, explicitly namespace calls with ggplot2:: or ggtern::.\npacman::p_load() installs missing packages and loads them in one call, which keeps the environment reproducible."
+  },
+  {
+    "objectID": "HO_EX05.html#data-preparation",
+    "href": "HO_EX05.html#data-preparation",
+    "title": "Hands-on Exercise 5",
+    "section": "13.3 Data Preparation",
+    "text": "13.3 Data Preparation"
+  },
+  {
+    "objectID": "HO_EX05.html#the-data",
+    "href": "HO_EX05.html#the-data",
+    "title": "Hands-on Exercise 5",
+    "section": "13.3.1 The Data",
+    "text": "13.3.1 The Data\nThe dataset respopagsex2000to2018_tidy.csv is sourced from the Singapore Department of Statistics. It records resident population by planning area, subzone, age group, sex, and year from 2000 to 2018. The file is already in tidy long format with one row per (planning area, subzone, age group, sex, year, dwelling type) combination."
+  },
+  {
+    "objectID": "HO_EX05.html#importing-data",
+    "href": "HO_EX05.html#importing-data",
+    "title": "Hands-on Exercise 5",
+    "section": "13.3.2 Importing Data",
+    "text": "13.3.2 Importing Data\nThe code chunk below imports the CSV into R using read_csv() from the readr package.\n\npop_data &lt;- read_csv(\"data/respopagsex2000to2018_tidy.csv\")\n\nkable(head(pop_data))\n\n\n\n\nPA\nSZ\nAG\nYear\nPopulation\n\n\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2011\n290\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2012\n270\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2013\n260\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2014\n250\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2015\n260\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2016\n250"
+  },
+  {
+    "objectID": "HO_EX05.html#preparing-the-data",
+    "href": "HO_EX05.html#preparing-the-data",
+    "title": "Hands-on Exercise 5",
+    "section": "13.3.3 Preparing the Data",
+    "text": "13.3.3 Preparing the Data\nTo plot a ternary diagram, the data must be reshaped from long to wide format and three compositional measures derived: YOUNG (under 25), ACTIVE (25 to 64), and OLD (65 and above).\n\nagpop_mutated &lt;- pop_data %&gt;%\n  mutate(Year = as.character(Year)) %&gt;%\n  pivot_wider(names_from = AG, values_from = Population) %&gt;%\n  mutate(YOUNG = rowSums(.[4:8])) %&gt;%\n  mutate(ACTIVE = rowSums(.[9:16])) %&gt;%\n  mutate(OLD = rowSums(.[17:21])) %&gt;%\n  mutate(TOTAL = rowSums(.[22:24])) %&gt;%\n  filter(Year == 2018) %&gt;%\n  filter(TOTAL &gt; 0)\n\nkable(head(agpop_mutated))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA\nSZ\nYear\nAGE0-4\nAGE10-14\nAGE15-19\nAGE20-24\nAGE25-29\nAGE30-34\nAGE35-39\nAGE40-44\nAGE45-49\nAGE05-9\nAGE50-54\nAGE55-59\nAGE60-64\nAGE65-69\nAGE70-74\nAGE75-79\nAGE80-84\nAGE85over\nYOUNG\nACTIVE\nOLD\nTOTAL\n\n\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\n2018\n180\n320\n300\n260\n300\n270\n330\n430\n470\n270\n360\n310\n300\n270\n190\n150\n60\n60\n1360\n2740\n730\n4830\n\n\nAng Mo Kio\nCheng San\n2018\n1060\n1080\n1260\n1400\n1880\n1940\n2300\n2090\n2180\n1080\n2160\n2150\n2270\n2130\n1370\n980\n560\n440\n6680\n16170\n5480\n28330\n\n\nAng Mo Kio\nChong Boon\n2018\n900\n1030\n1220\n1380\n1760\n1830\n1920\n1900\n1910\n900\n2070\n2140\n2170\n2050\n1570\n1170\n640\n530\n6290\n14840\n5960\n27090\n\n\nAng Mo Kio\nKebun Bahru\n2018\n720\n1010\n1120\n1230\n1460\n1330\n1540\n1700\n1830\n850\n1880\n1810\n1750\n1700\n1240\n870\n540\n430\n5540\n12690\n4780\n23010\n\n\nAng Mo Kio\nSembawang Hills\n2018\n220\n380\n500\n550\n500\n300\n290\n420\n550\n310\n550\n560\n450\n410\n290\n220\n140\n140\n2150\n3430\n1200\n6780\n\n\nAng Mo Kio\nShangri-La\n2018\n550\n670\n780\n950\n1080\n990\n1100\n1140\n1230\n630\n1350\n1420\n1290\n1150\n830\n680\n360\n340\n4030\n9150\n3360\n16540\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\npivot_wider() replaces the deprecated spread() function. It widens the dataset so each age group becomes its own column, which is required before summing across age bands.\nrowSums(.[4:8]) sums columns 4 through 8 by position, which corresponds to the five youngest age bands (0 to 24). This is concise but brittle. If the column order changes upstream, the sums silently break. A safer alternative is rowSums(across(c(\"0_to_4\", \"5_to_9\", ...))) using named columns.\nfilter(Year == 2018) restricts the analysis to a single cross-section so that each subzone appears as one point on the ternary plot.\nfilter(TOTAL &gt; 0) removes subzones with zero population, which would otherwise create undefined proportions.\n\n\n\n\n\n\n\n\n\nTipWhy these three age bands?\n\n\n\nThe choice of cut points (0 to 24, 25 to 64, 65+) reflects the standard demographic framing of dependency ratios. The “young” and “old” groups are economically dependent, while the “active” group represents the working-age population. A ternary plot of these three measures directly visualises the age dependency structure of each subzone in a single point."
+  },
+  {
+    "objectID": "HO_EX05.html#plotting-ternary-diagram-with-r",
+    "href": "HO_EX05.html#plotting-ternary-diagram-with-r",
+    "title": "Hands-on Exercise 5",
+    "section": "13.4 Plotting Ternary Diagram with R",
+    "text": "13.4 Plotting Ternary Diagram with R"
+  },
+  {
+    "objectID": "HO_EX05.html#plotting-a-static-ternary-diagram",
+    "href": "HO_EX05.html#plotting-a-static-ternary-diagram",
+    "title": "Hands-on Exercise 5",
+    "section": "13.4.1 Plotting a Static Ternary Diagram",
+    "text": "13.4.1 Plotting a Static Ternary Diagram\nThe ggtern() function works like ggplot() but expects three positional aesthetics: x, y, and z, mapping to the three vertices of the triangle.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nggtern() automatically constructs the triangular coordinate system. The three aesthetics x, y, and z map to the three vertices, and the package internally normalises each row so the three values sum to 1.\ngeom_point() works inside ggtern() just as it does in ggplot2. Most standard geoms have ternary equivalents.\nThe default theme leaves the triangle unlabelled. The next iteration adds a title and a cleaner theme.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nEach point is one Singapore subzone in 2018. The cluster sits closer to the ACTIVE vertex (right side) than to YOUNG or OLD, which means most subzones are dominated by working-age residents. A small group of points drifts towards the OLD vertex, indicating subzones with disproportionately ageing populations. Subzones near the YOUNG vertex are rarer in 2018, consistent with Singapore’s overall demographic transition.\nThis is the analytical payoff of a ternary plot. A scatterplot of YOUNG against OLD would lose the ACTIVE dimension, and a parallel coordinates plot would lose the immediate visual sense of which subzones lean towards which extreme."
+  },
+  {
+    "objectID": "HO_EX05.html#adding-title-and-theme",
+    "href": "HO_EX05.html#adding-title-and-theme",
+    "title": "Hands-on Exercise 5",
+    "section": "13.4.2 Adding Title and Theme",
+    "text": "13.4.2 Adding Title and Theme\nThe default theme can be replaced with theme_rgbw() for cleaner gridlines and a title added via labs().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point() +\n  labs(title = \"Singapore population structure by subzone, 2018\",\n       subtitle = \"Each point is one subzone; vertices represent 100% of the named age group\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\ntheme_rgbw() is one of several ggtern themes (others include theme_bw(), theme_classic(), theme_dark()). It uses a clean white background with subtle gridlines, which improves the signal-to-ink ratio.\nThe subtitle explicitly explains how to read the chart. This matters because ternary plots are unfamiliar to most readers, so an in-chart legend reduces cognitive load.\nTitles and subtitles are part of the visualisation grammar, not decoration. Cairo’s principle is that every chart should carry enough text to be readable in isolation."
+  },
+  {
+    "objectID": "HO_EX05.html#plotting-an-interactive-ternary-diagram",
+    "href": "HO_EX05.html#plotting-an-interactive-ternary-diagram",
+    "title": "Hands-on Exercise 5",
+    "section": "13.4.3 Plotting an Interactive Ternary Diagram",
+    "text": "13.4.3 Plotting an Interactive Ternary Diagram\nFor interactive exploration, plot_ly() supports a native scatterternary trace type. This is preferred over ggplotly(ggtern_plot) because the latter does not faithfully translate ggtern geometry.\n\n# Reusable function for annotation\nlabel &lt;- function(txt) {\n  list(\n    text = txt,\n    x = 0.1, y = 1,\n    ax = 0, ay = 0,\n    xref = \"paper\", yref = \"paper\",\n    align = \"center\",\n    font = list(family = \"serif\", size = 15, color = \"white\"),\n    bgcolor = \"#b3b3b3\", bordercolor = \"black\", borderwidth = 2\n  )\n}\n\n# Reusable function for axis formatting\naxis &lt;- function(txt) {\n  list(\n    title = txt,\n    tickformat = \".0%\",\n    tickfont = list(size = 10)\n  )\n}\n\nternaryAxes &lt;- list(\n  aaxis = axis(\"Young\"),\n  baxis = axis(\"Active\"),\n  caxis = axis(\"Old\")\n)\n\nplot_ly(\n  agpop_mutated,\n  a = ~YOUNG,\n  b = ~ACTIVE,\n  c = ~OLD,\n  color = I(\"black\"),\n  type = \"scatterternary\"\n) %&gt;%\n  layout(\n    annotations = label(\"Singapore subzones, 2018\"),\n    ternary = ternaryAxes\n  )\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nplot_ly() uses a, b, c (not x, y, z) for ternary aesthetics. This is a quirk of the underlying plotly.js API.\ntickformat = \".0%\" formats the axis ticks as percentages with no decimals, which suits demographic share data.\nThe label() and axis() helpers are reusable. Defining them once keeps the layout call concise and avoids repetition if multiple ternary plots are produced.\nInteractivity adds details on demand in line with Shneiderman’s mantra. Hovering over a point reveals its three component values without requiring the reader to estimate from the gridlines.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe interactive version supports zoom, pan, and hover-to-identify. For a dataset with hundreds of subzones, this turns a dense static cluster into an explorable map. A reader investigating outlier subzones (those nearest the OLD vertex, for instance) can hover to retrieve the subzone name directly, rather than guessing from position alone.\nThis is the case for interactivity: it does not replace the static chart, however it answers questions the static chart provokes."
+  },
+  {
+    "objectID": "HO_EX05.html#exploring-alternatives",
+    "href": "HO_EX05.html#exploring-alternatives",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5 Exploring Alternatives",
+    "text": "13.5 Exploring Alternatives\nThe base ternary plot answers the question “what is the distribution of age structures across subzones?”. The variations below answer richer questions and apply additional design principles."
+  },
+  {
+    "objectID": "HO_EX05.html#alternative-1-colouring-by-planning-area",
+    "href": "HO_EX05.html#alternative-1-colouring-by-planning-area",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5.1 Alternative 1: Colouring by Planning Area",
+    "text": "13.5.1 Alternative 1: Colouring by Planning Area\nAdding colour reveals whether subzones cluster geographically. Subzones in the same planning area should sit close together if local demographics are spatially correlated.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_top &lt;- agpop_mutated %&gt;%\n  group_by(PA) %&gt;%\n  filter(n() &gt;= 3) %&gt;%\n  ungroup() %&gt;%\n  filter(PA %in% c(\"Bedok\", \"Tampines\", \"Jurong West\", \"Woodlands\", \"Sengkang\", \"Punggol\"))\n\nggtern(data = agpop_top,\n       aes(x = YOUNG, y = ACTIVE, z = OLD, colour = PA)) +\n  geom_point(size = 2, alpha = 0.7) +\n  labs(title = \"Population structure across selected planning areas, 2018\",\n       subtitle = \"Newer towns (Punggol, Sengkang) skew young; older towns (Bedok) skew old\",\n       colour = \"Planning Area\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nSubsetting to six planning areas is intentional. Colour-coding more than seven to eight categories exceeds the eye’s discriminating capacity, which violates a Stephen Few principle on categorical colour use.\nalpha = 0.7 mitigates overplotting where points cluster densely.\nThe chosen planning areas span the development timeline of Singapore public housing, from mature estates (Bedok, Tampines) to recent towns (Sengkang, Punggol). This is a deliberate analytical framing, not random selection.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nPunggol and Sengkang sit visibly closer to the YOUNG vertex than Bedok. This matches the policy intuition that newer Built-To-Order towns attract young families, while mature estates ageing in place skew towards the OLD vertex. The ternary plot makes this demographic gradient visible in one chart, where a conventional bar chart would require three separate panels."
+  },
+  {
+    "objectID": "HO_EX05.html#alternative-2-density-contours",
+    "href": "HO_EX05.html#alternative-2-density-contours",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5.2 Alternative 2: Density Contours",
+    "text": "13.5.2 Alternative 2: Density Contours\nWhen point density is high, individual points become hard to read. stat_density_tern() adds 2D density contours over the triangle, similar to a geom_density_2d() overlay on a Cartesian scatter.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  stat_density_tern(geom = \"polygon\",\n                    aes(fill = after_stat(level)),\n                    alpha = 0.6) +\n  geom_point(size = 0.8, alpha = 0.5) +\n  scale_fill_viridis_c(option = \"C\") +\n  labs(title = \"Density of subzone population structures, 2018\",\n       subtitle = \"Contours reveal the modal age structure across all subzones\",\n       fill = \"Density\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nstat_density_tern() is the ternary analogue of stat_density_2d(). It estimates a 2D density on the triangular surface.\nLayering geom_point() underneath the contours preserves the raw data, which is good practice. Cairo argues that smoothing without showing the underlying points hides where the model is over-extrapolating.\nscale_fill_viridis_c(option = \"C\") (plasma) is perceptually uniform and colour-blind safe, in contrast to the rainbow palettes that older ternary diagrams often use.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe contour highlight a single dense mode somewhere around 25% YOUNG, 65% ACTIVE, 10% OLD. This is the “typical” Singapore subzone in 2018. Outliers, visible as points outside the densest contours, are the analytically interesting cases that deserve follow-up."
+  },
+  {
+    "objectID": "HO_EX05.html#alternative-3-faceting-by-year-for-temporal-comparison",
+    "href": "HO_EX05.html#alternative-3-faceting-by-year-for-temporal-comparison",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5.3 Alternative 3: Faceting by Year for Temporal Comparison",
+    "text": "13.5.3 Alternative 3: Faceting by Year for Temporal Comparison\nThe earlier filter restricted the analysis to 2018. Removing that filter and faceting by year reveals demographic transition over time, which is the question the dataset most naturally invites.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_years &lt;- pop_data %&gt;%\n  mutate(Year = as.character(Year)) %&gt;%\n  pivot_wider(names_from = AG, values_from = Population) %&gt;%\n  mutate(YOUNG = rowSums(.[4:8])) %&gt;%\n  mutate(ACTIVE = rowSums(.[9:16])) %&gt;%\n  mutate(OLD = rowSums(.[17:21])) %&gt;%\n  mutate(TOTAL = rowSums(.[22:24])) %&gt;%\n  filter(Year %in% c(\"2000\", \"2006\", \"2012\", \"2018\")) %&gt;%\n  filter(TOTAL &gt; 0)\n\nggtern(data = agpop_years,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point(size = 0.8, alpha = 0.5, colour = \"#2C5282\") +\n  facet_wrap(~ Year) +\n  labs(title = \"Singapore subzone population structure, 2000 to 2018\",\n       subtitle = \"The cloud drifts from YOUNG towards OLD over the 18-year window\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nfacet_wrap() works inside ggtern() just as it does in ggplot2. The triangular coordinate system is preserved across facets.\nSelecting four evenly spaced years (2000, 2006, 2012, 2018) instead of all 19 years balances detail against readability. Tufte’s principle of small multiples applies: each panel must be readable on its own, and the eye must be able to sweep across them.\nHolding axis scales constant across facets is automatic for ternary plots because the triangle always spans 0 to 100% on each axis. This is one of the chart type’s strengths for temporal comparison.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe 2000 panel shows the cloud sitting closer to the YOUNG-ACTIVE edge. By 2018, the cloud has visibly drifted towards the ACTIVE-OLD edge. This is the demographic transition narrative for Singapore in a single composite image. A line chart of the proportion of elderly residents over time would convey the same trend, however the ternary facet shows that the transition is happening across all subzones simultaneously, not just in a few ageing pockets."
+  },
+  {
+    "objectID": "HO_EX05.html#alternative-4-comparison-with-a-stacked-bar",
+    "href": "HO_EX05.html#alternative-4-comparison-with-a-stacked-bar",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5.4 Alternative 4: Comparison with a Stacked Bar",
+    "text": "13.5.4 Alternative 4: Comparison with a Stacked Bar\nIt is worth asking when a ternary plot is genuinely better than the simpler stacked bar. The chart below shows the same data as a stacked bar of the top 15 subzones by total population.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntop_subzones &lt;- agpop_mutated %&gt;%\n  arrange(desc(TOTAL)) %&gt;%\n  slice_head(n = 15) %&gt;%\n  mutate(YOUNG_pct = YOUNG / TOTAL,\n         ACTIVE_pct = ACTIVE / TOTAL,\n         OLD_pct = OLD / TOTAL) %&gt;%\n  select(SZ, YOUNG_pct, ACTIVE_pct, OLD_pct) %&gt;%\n  pivot_longer(cols = c(YOUNG_pct, ACTIVE_pct, OLD_pct),\n               names_to = \"AgeGroup\",\n               values_to = \"Share\") %&gt;%\n  mutate(AgeGroup = factor(AgeGroup,\n                           levels = c(\"OLD_pct\", \"ACTIVE_pct\", \"YOUNG_pct\"),\n                           labels = c(\"Old (65+)\", \"Active (25-64)\", \"Young (0-24)\")))\n\nggplot(top_subzones,\n       aes(x = reorder(SZ, Share * (AgeGroup == \"Old (65+)\"), sum),\n           y = Share,\n           fill = AgeGroup)) +\n  geom_col() +\n  coord_flip() +\n  scale_y_continuous(labels = scales::percent) +\n  scale_fill_manual(values = c(\"Young (0-24)\" = \"#4682B4\",\n                               \"Active (25-64)\" = \"#A9A9A9\",\n                               \"Old (65+)\" = \"#D55E00\")) +\n  labs(title = \"Age composition of top 15 subzones by total population, 2018\",\n       subtitle = \"Ordered by share of elderly residents\",\n       x = NULL, y = \"Share of population\", fill = NULL) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nThe Wong colour-blind-safe palette is used (#4682B4, #A9A9A9, #D55E00). The neutral grey for ACTIVE keeps attention on the analytical contrast between YOUNG and OLD.\nreorder() ranks subzones by their share of elderly residents, applying the principle that categorical axes should be ordered by the metric of interest.\ncoord_flip() makes long subzone names readable.\n\n\n\n\n\n\n\n\n\nTipComparing the two chart types\n\n\n\nThe stacked bar chart wins when the analyst needs to identify specific named entities and rank them. The ternary plot wins when the analyst needs to see the shape of the joint distribution across hundreds of entities and detect clusters or outliers. Neither is universally better. The choice depends on whether the analytical question is about individual subzones (use the bar) or about the overall population structure (use the ternary).\nThis is Munzner’s what-why-how framework in action. The same data supports two chart types because the why (the analytical task) differs."
+  },
+  {
+    "objectID": "HO_EX05.html#alternative-5-highlighting-outliers",
+    "href": "HO_EX05.html#alternative-5-highlighting-outliers",
+    "title": "Hands-on Exercise 5",
+    "section": "13.5.5 Alternative 5: Highlighting Outliers",
+    "text": "13.5.5 Alternative 5: Highlighting Outliers\nThe final variation marks the five subzones with the highest share of elderly residents. This applies the design principle that annotations should direct attention to the analytical takeaway, rather than leaving the reader to find it.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_flagged &lt;- agpop_mutated %&gt;%\n  mutate(OLD_share = OLD / TOTAL) %&gt;%\n  mutate(is_old = OLD_share &gt;= quantile(OLD_share, 0.95, na.rm = TRUE))\n\nggtern(data = agpop_flagged,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point(aes(colour = is_old, size = is_old, alpha = is_old)) +\n  scale_colour_manual(values = c(\"FALSE\" = \"grey70\", \"TRUE\" = \"#D55E00\"),\n                      labels = c(\"Other subzones\", \"Top 5% oldest\")) +\n  scale_size_manual(values = c(\"FALSE\" = 1, \"TRUE\" = 2.5), guide = \"none\") +\n  scale_alpha_manual(values = c(\"FALSE\" = 0.4, \"TRUE\" = 1), guide = \"none\") +\n  labs(title = \"Subzones with disproportionately old populations, 2018\",\n       subtitle = \"Highlighted points are in the top 5% by share of residents aged 65+\",\n       colour = NULL) +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\n\nThree aesthetics (colour, size, alpha) are mapped to the same flag. This is intentional layering: each redundant encoding reinforces the analytical signal, applying Wilke’s principle that important features deserve multiple visual cues.\nGreying out non-highlighted points reduces visual noise without removing them. The reader still sees the full distribution as context for the highlighted outliers.\nThe 95th percentile threshold is a defensible analytical choice. A reader can question the threshold but cannot question the transparency of the rule.\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe five highlighted points sit visibly displaced towards the OLD vertex, well outside the main cloud. These are the subzones where ageing is most pronounced and where policy intervention (eldercare facilities, accessible infrastructure) would have the highest marginal impact. This is the chart that would belong in a policy brief, where the base ternary plot would belong in an exploratory report."
+  },
+  {
+    "objectID": "HO_EX05.html#summary",
+    "href": "HO_EX05.html#summary",
+    "title": "Hands-on Exercise 5",
+    "section": "13.6 Summary",
+    "text": "13.6 Summary\nThis exercise covered the construction of ternary plots for three-part compositional data, using Singapore demographic data as the running example. The key takeaways are:\n\nTernary plots are appropriate only for three-part compositional data that sums to a constant. Misuse is the most common failure mode.\nggtern extends ggplot2 syntax cleanly and supports faceting, custom themes, and density contours.\nInteractivity via plot_ly() adds details on demand. This is most valuable when the dataset has hundreds of points and the reader needs to drill into specifics.\nThe same compositional data can be visualised as a stacked bar, a parallel coordinates plot, or a ternary plot. The choice depends on whether the analytical question is about individual entities (bar), full multivariate structure (parallel coordinates), or distributional shape (ternary).\nDesign principles applied throughout this exercise include: Wong’s colour-blind-safe palette, Stephen Few’s signal-to-ink discipline, Tufte’s small-multiples for temporal comparison, Cairo’s principle of self-documenting titles, and Munzner’s what-why-how task analysis."
+  },
+  {
+    "objectID": "HO_EX05.html#section",
+    "href": "HO_EX05.html#section",
+    "title": "Hands-on Exercise 5",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 13 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Compositional Cartographer 🔺\nPress any key to continue…"
+  },
+  {
+    "objectID": "IC_EX04.html",
+    "href": "IC_EX04.html",
+    "title": "In-Class Exercise 4",
+    "section": "",
+    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "IC_EX04.html#programming-visual-analytics-with-tableau",
+    "href": "IC_EX04.html#programming-visual-analytics-with-tableau",
+    "title": "In-Class Exercise 4",
+    "section": "",
+    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "HO_EX05.html#datasets-used",
+    "href": "HO_EX05.html#datasets-used",
+    "title": "Hands-on Exercise 5",
+    "section": "Datasets Used",
+    "text": "Datasets Used\nFour datasets carry across the five chapters:\n\nwine_quality.csv from the UCI Machine Learning Repository, combining red and white wine samples with 13 variables and 6,497 observations\nWHData-2018.csv from the World Happiness Report 2018, with country-level happiness scores and explanatory variables\nrespopagsex2000to2018_tidy.csv from the Singapore Department of Statistics, recording resident population by planning area, subzone, age group, sex, and year from 2000 to 2018\nrealis2018.csv from the URA REALIS portal, recording private property transactions in Singapore in 2018",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "HO_EX05.html#chapters",
+    "href": "HO_EX05.html#chapters",
+    "title": "Hands-on Exercise 5",
+    "section": "Chapters",
+    "text": "Chapters\n\n\n\n\nChapter 6\n\nVisual Correlation Analysis\nCovers pairs(), ggcorrmat(), and corrplot() for visualising how pairs of variables move together.\nOpen chapter →\n\n\n\n\n\n\n\nChapter 14\n\nHeatmap for Visualising and Analysing Multivariate Data\nCovers heatmap() and heatmaply() for showing the whole dataset as a coloured grid, with optional clustering and seriation.\nOpen chapter →\n\n\n\n\n\n\n\nChapter 13\n\nCreating Ternary Plot with R\nCovers ggtern() for static ternary plots and plot_ly() for interactive ones, for three-part compositional data.\nOpen chapter →\n\n\n\n\n\n\n\nChapter 15\n\nVisual Multivariate Analysis with Parallel Coordinates Plot\nCovers ggparcoord() for static parallel coordinates plots and parallelPlot() for interactive D3-based plots.\nOpen chapter →\n\n\n\n\n\n\n\nChapter 16\n\nTreemap Visualisation with R\nCovers treemap(), treemapify for ggplot2 integration, and d3treeR for drill-down interactivity.\nOpen chapter →",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "HO_EX05.html#design-principles-applied-throughout",
+    "href": "HO_EX05.html#design-principles-applied-throughout",
+    "title": "Hands-on Exercise 5",
+    "section": "Design Principles Applied Throughout",
+    "text": "Design Principles Applied Throughout\nA few principles thread through every chapter:\n\nMatch palette type to data type. Sequential palettes go from light to dark and suit unipolar data. Diverging palettes have a meaningful midpoint and suit data with a natural zero or average.\nTreat clustering and reordering as analytical operations, not cosmetic ones. The order of variables on a chart is itself a finding.\nPrefer perceptually uniform colour scales such as viridis and plasma over rainbow, where equal jumps in the data produce equal jumps in colour.\nUse small multiples and faceting for cross-group comparison. Repeating the same chart with one variable changing is among the most efficient analytical layouts.\nReserve interactivity for cases where the data exceeds what a static chart can show, rather than treating it as a default expectation.",
+    "crumbs": [
+      "<img src='/images/home-icon.png' width='88' height='78' alt='Home'>",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "HO_EX05.html#references",
+    "href": "HO_EX05.html#references",
+    "title": "Hands-on Exercise 5",
+    "section": "References",
+    "text": "References\n\nCairo, A. (2013). The Functional Art: An Introduction to Information Graphics and Visualization. New Riders.\nFew, S. (2006). Multivariate Analysis Using Parallel Coordinates. Perceptual Edge.\nFriendly, M. (2002). Corrgrams: Exploratory displays for correlation matrices. The American Statistician, 56, 316 to 324.\nKam, T. S. (2025). R for Visual Analytics, Chapters 6, 13, 14, 15, and 16.\nWilke, C. O. (2019). Fundamentals of Data Visualization. O’Reilly."
+  },
+  {
+    "objectID": "HO_EX05_chap16.html",
+    "href": "HO_EX05_chap16.html",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "",
+    "text": "Chapter navigation: ← Back to HO_EX05 home | Chap 6 · Chap 14 · Chap 13 · Chap 15 · Chap 16"
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#treemap-visualisation-with-r",
+    "href": "HO_EX05_chap16.html#treemap-visualisation-with-r",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16 Treemap Visualisation with R",
+    "text": "16 Treemap Visualisation with R"
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#overview",
+    "href": "HO_EX05_chap16.html#overview",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.1 Overview",
+    "text": "16.1 Overview\nA treemap displays hierarchical data as nested rectangles, where each rectangle’s area is proportional to a numeric measure and its colour can encode a second measure. This chapter covers static treemaps with the treemap package and treemapify, plus interactive treemaps with d3treeR.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#installing-and-launching-r-packages",
+    "href": "HO_EX05_chap16.html#installing-and-launching-r-packages",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.2 Installing and Launching R Packages",
+    "text": "16.2 Installing and Launching R Packages\nThree packages are required:\n\ntreemap for the foundational treemap implementation\ntreemapify for ggplot2-style treemap geoms\ntidyverse for data wrangling\n\nknitr is loaded so kable() can produce clean previews.\n\npacman::p_load(treemap, treemapify, tidyverse, knitr)",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#data-wrangling",
+    "href": "HO_EX05_chap16.html#data-wrangling",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.3 Data Wrangling",
+    "text": "16.3 Data Wrangling",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#importing-the-data-set",
+    "href": "HO_EX05_chap16.html#importing-the-data-set",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.3.1 Importing the Data Set",
+    "text": "16.3.1 Importing the Data Set\nThe REALIS2018 dataset records private property transactions in Singapore, sourced from the URA REALIS portal. Each row is one transaction, which is too granular for a treemap, so aggregation is required.\n\nrealis2018 &lt;- read_csv(\"data/realis2018.csv\")",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#data-wrangling-and-manipulation",
+    "href": "HO_EX05_chap16.html#data-wrangling-and-manipulation",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.3.2 Data Wrangling and Manipulation",
+    "text": "16.3.2 Data Wrangling and Manipulation\nThe treemap requires aggregated values per leaf node in the hierarchy. The grouping is by Project Name, Planning Region, Planning Area, Property Type, and Type of Sale. The summary statistics are total units sold, total area, median unit price, and median transacted price.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#grouped-summaries-without-the-pipe",
+    "href": "HO_EX05_chap16.html#grouped-summaries-without-the-pipe",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.3.3 Grouped Summaries Without the Pipe",
+    "text": "16.3.3 Grouped Summaries Without the Pipe\nThe verbose two-step approach.\n\nrealis2018_grouped &lt;- group_by(realis2018, `Project Name`,\n                               `Planning Region`, `Planning Area`,\n                               `Property Type`, `Type of Sale`)\n\nrealis2018_summarised &lt;- summarise(realis2018_grouped,\n                          `Total Unit Sold` = sum(`No. of Units`, na.rm = TRUE),\n                          `Total Area` = sum(`Area (sqm)`, na.rm = TRUE),\n                          `Median Unit Price ($ psm)` = median(`Unit Price ($ psm)`, na.rm = TRUE),\n                          `Median Transacted Price` = median(`Transacted Price ($)`, na.rm = TRUE))\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nna.rm = TRUE is essential, because without it any missing value in any group would propagate to the summary and the corresponding rectangle would not render.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#grouped-summaries-with-the-pipe",
+    "href": "HO_EX05_chap16.html#grouped-summaries-with-the-pipe",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.3.4 Grouped Summaries with the Pipe",
+    "text": "16.3.4 Grouped Summaries with the Pipe\nThe same logic, expressed more concisely.\n\nrealis2018_summarised &lt;- realis2018 %&gt;%\n  group_by(`Project Name`, `Planning Region`,\n           `Planning Area`, `Property Type`,\n           `Type of Sale`) %&gt;%\n  summarise(`Total Unit Sold` = sum(`No. of Units`, na.rm = TRUE),\n            `Total Area` = sum(`Area (sqm)`, na.rm = TRUE),\n            `Median Unit Price ($ psm)` = median(`Unit Price ($ psm)`, na.rm = TRUE),\n            `Median Transacted Price` = median(`Transacted Price ($)`, na.rm = TRUE))\n\nkable(head(realis2018_summarised))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject Name\nPlanning Region\nPlanning Area\nProperty Type\nType of Sale\nTotal Unit Sold\nTotal Area\nMedian Unit Price ($ psm)\nMedian Transacted Price\n\n\n\n\n# 1 LOFT\nCentral Region\nGeylang\nApartment\nResale\n1\n51\n13098.0\n668000\n\n\n# 1 SUITES\nCentral Region\nGeylang\nApartment\nResale\n1\n52\n12212.0\n635000\n\n\n1 CANBERRA\nNorth Region\nYishun\nExecutive Condominium\nResale\n2\n198\n9056.5\n896944\n\n\n1 KING ALBERT PARK\nCentral Region\nBukit Timah\nCondominium\nResale\n5\n565\n13986.0\n1700000\n\n\n10 EVELYN\nCentral Region\nNovena\nApartment\nNew Sale\n2\n96\n26669.5\n1280090\n\n\n10 SHELFORD\nCentral Region\nBukit Timah\nApartment\nResale\n3\n175\n19714.0\n833000",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-treemap-with-treemap-package",
+    "href": "HO_EX05_chap16.html#designing-treemap-with-treemap-package",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4 Designing Treemap with treemap Package",
+    "text": "16.4 Designing Treemap with treemap Package",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-a-static-treemap",
+    "href": "HO_EX05_chap16.html#designing-a-static-treemap",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.1 Designing a Static Treemap",
+    "text": "16.4.1 Designing a Static Treemap\nFirst, filter to one segment to keep the visualisation readable. The example uses resale condominiums.\n\nrealis2018_selected &lt;- realis2018_summarised %&gt;%\n  filter(`Property Type` == \"Condominium\",\n         `Type of Sale` == \"Resale\")",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#using-the-basic-arguments",
+    "href": "HO_EX05_chap16.html#using-the-basic-arguments",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.2 Using the Basic Arguments",
+    "text": "16.4.2 Using the Basic Arguments\nThe minimal treemap requires three arguments: index (hierarchy), vSize (rectangle area), and vColor (rectangle colour).\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\n\n\n\n\n\n\nImportantCommon pitfall\n\n\n\nThe plot above is wrongly coloured. By default treemap() sets type = \"index\", which colours rectangles by the hierarchy level rather than by the vColor variable. The next section fixes this by setting type explicitly.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#working-with-vcolor-and-type-arguments",
+    "href": "HO_EX05_chap16.html#working-with-vcolor-and-type-arguments",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.3 Working with vColor and type Arguments",
+    "text": "16.4.3 Working with vColor and type Arguments\nSetting type = \"value\" activates the diverging palette mapped from vColor.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"value\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ntype = \"value\" interprets vColor as a continuous numeric variable and applies a divergent palette anchored at zero. The default binning is in equal intervals of 5,000 SGD per sq. m, visible in the legend.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#colours-in-treemap-package",
+    "href": "HO_EX05_chap16.html#colours-in-treemap-package",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.4 Colours in treemap Package",
+    "text": "16.4.4 Colours in treemap Package\nTwo arguments control the palette: mapping and palette. The value type centres the palette at zero with the maximum absolute value at the extremes. The manual type maps min, mean of range, and max linearly to the palette.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#the-value-type-treemap",
+    "href": "HO_EX05_chap16.html#the-value-type-treemap",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.5 The “value” Type Treemap",
+    "text": "16.4.5 The “value” Type Treemap\nUsing the RdYlBu palette with type = \"value\".\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"value\",\n        palette = \"RdYlBu\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nNo red rectangles appear because all median unit prices are positive. The value type interprets the absence of negative values as the absence of one half of the palette.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#the-manual-type-treemap",
+    "href": "HO_EX05_chap16.html#the-manual-type-treemap",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.6 The “manual” Type Treemap",
+    "text": "16.4.6 The “manual” Type Treemap\ntype = \"manual\" maps the actual min, mean, and max linearly to the palette.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"manual\",\n        palette = \"RdYlBu\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\nA sequential palette such as Blues is more appropriate for unipolar data.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"manual\",\n        palette = \"Blues\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\n\n\n\n\n\n\nTipDiverging vs sequential palettes\n\n\n\nThe diverging palette implies that some prices are above some natural midpoint and some are below, which is misleading here because all prices are positive. The sequential palette conveys “more is darker” without implying a midpoint that does not exist.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#treemap-layout",
+    "href": "HO_EX05_chap16.html#treemap-layout",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.7 Treemap Layout",
+    "text": "16.4.7 Treemap Layout\ntreemap() supports two layout algorithms: \"squarified\", which optimises aspect ratios, and \"pivotSize\", the default, which respects sort order.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#working-with-algorithm-argument",
+    "href": "HO_EX05_chap16.html#working-with-algorithm-argument",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.8 Working with algorithm Argument",
+    "text": "16.4.8 Working with algorithm Argument\nThe squarified layout produces nearly square rectangles.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"manual\",\n        palette = \"Blues\",\n        algorithm = \"squarified\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#using-sortid",
+    "href": "HO_EX05_chap16.html#using-sortid",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.4.9 Using sortID",
+    "text": "16.4.9 Using sortID\nWhen algorithm = \"pivotSize\" is used, sortID controls the placement order from top-left to bottom-right.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntreemap(realis2018_selected,\n        index = c(\"Planning Region\", \"Planning Area\", \"Project Name\"),\n        vSize = \"Total Unit Sold\",\n        vColor = \"Median Unit Price ($ psm)\",\n        type = \"manual\",\n        palette = \"Blues\",\n        algorithm = \"pivotSize\",\n        sortID = \"Median Transacted Price\",\n        title = \"Resale Condominium by Planning Region and Area, 2018\",\n        title.legend = \"Median Unit Price (S$ per sq. m)\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nsortID = \"Median Transacted Price\" orders rectangles within each parent by transacted price, so the most expensive projects appear first.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-treemap-using-treemapify-package",
+    "href": "HO_EX05_chap16.html#designing-treemap-using-treemapify-package",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.5 Designing Treemap using treemapify Package",
+    "text": "16.5 Designing Treemap using treemapify Package\ntreemapify provides treemap geoms inside the ggplot2 grammar, which is convenient when the rest of the workflow uses ggplot2.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-a-basic-treemap",
+    "href": "HO_EX05_chap16.html#designing-a-basic-treemap",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.5.1 Designing a Basic Treemap",
+    "text": "16.5.1 Designing a Basic Treemap\nThe minimal geom_treemap() call.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = realis2018_selected,\n       aes(area = `Total Unit Sold`,\n           fill = `Median Unit Price ($ psm)`),\n       layout = \"scol\",\n       start = \"bottomleft\") +\n  geom_treemap() +\n  scale_fill_gradient(low = \"light blue\", high = \"blue\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe area aesthetic replaces vSize and the fill aesthetic replaces vColor. scale_fill_gradient(low = \"light blue\", high = \"blue\") creates a sequential palette. layout = \"scol\" and start = \"bottomleft\" control the rectangle placement order.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#defining-hierarchy",
+    "href": "HO_EX05_chap16.html#defining-hierarchy",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.5.2 Defining Hierarchy",
+    "text": "16.5.2 Defining Hierarchy\nThe hierarchy is added with subgroup and subgroup2. Group by Planning Region.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = realis2018_selected,\n       aes(area = `Total Unit Sold`,\n           fill = `Median Unit Price ($ psm)`,\n           subgroup = `Planning Region`),\n       start = \"topleft\") +\n  geom_treemap()\n\n\n\n\nGroup by Planning Region and Planning Area.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = realis2018_selected,\n       aes(area = `Total Unit Sold`,\n           fill = `Median Unit Price ($ psm)`,\n           subgroup = `Planning Region`,\n           subgroup2 = `Planning Area`)) +\n  geom_treemap()\n\n\n\n\nAdding boundary lines makes the hierarchy explicit.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = realis2018_selected,\n       aes(area = `Total Unit Sold`,\n           fill = `Median Unit Price ($ psm)`,\n           subgroup = `Planning Region`,\n           subgroup2 = `Planning Area`)) +\n  geom_treemap() +\n  geom_treemap_subgroup2_border(colour = \"gray40\", size = 2) +\n  geom_treemap_subgroup_border(colour = \"gray20\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngeom_treemap_subgroup_border() and geom_treemap_subgroup2_border() draw boundaries at the two hierarchy levels. The thicker outer border separates planning regions and the thinner inner border separates planning areas within each region.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe hierarchy is now visually accessible in three layers: region (outer borders), area (inner borders), and project (individual rectangles). A reader can scan from large to small to identify which region accounts for most resale volume, which area within that region dominates, and which project within that area is the largest.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-interactive-treemap-using-d3treer",
+    "href": "HO_EX05_chap16.html#designing-interactive-treemap-using-d3treer",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.6 Designing Interactive Treemap using d3treeR",
+    "text": "16.6 Designing Interactive Treemap using d3treeR\nd3treeR adds drill-down interactivity, allowing the reader to click into a region and see only its sub-areas. This is useful when deep hierarchies become unreadable at the leaf level.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#installing-d3treer-package",
+    "href": "HO_EX05_chap16.html#installing-d3treer-package",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.6.1 Installing d3treeR Package",
+    "text": "16.6.1 Installing d3treeR Package\nd3treeR is hosted on GitHub rather than CRAN, so installation requires devtools.\n\ninstall.packages(\"devtools\")\nlibrary(devtools)\ninstall_github(\"timelyportfolio/d3treeR\")\nlibrary(d3treeR)",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#designing-an-interactive-treemap",
+    "href": "HO_EX05_chap16.html#designing-an-interactive-treemap",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "16.6.2 Designing An Interactive Treemap",
+    "text": "16.6.2 Designing An Interactive Treemap\nThe interactive treemap is built in two steps: first, build a static treemap object; second, pass it to d3tree().\n\ntm &lt;- treemap(realis2018_summarised,\n              index = c(\"Planning Region\", \"Planning Area\"),\n              vSize = \"Total Unit Sold\",\n              vColor = \"Median Unit Price ($ psm)\",\n              type = \"value\",\n              title = \"Private Residential Property Sold, 2018\",\n              title.legend = \"Median Unit Price (S$ per sq. m)\")\n\nd3tree(tm, rootname = \"Singapore\")\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nd3tree() consumes a treemap object, so building the static version first means the same code supports both export formats. rootname = \"Singapore\" labels the top-level node, which is visible when the user has drilled all the way up.",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html",
+    "href": "HO_EX05_chap14.html",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "",
+    "text": "Chapter navigation: ← Back to HO_EX05 home | Chap 6 · Chap 14 · Chap 13 · Chap 15 · Chap 16"
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#heatmap-for-visualising-and-analysing-multivariate-data",
+    "href": "HO_EX05_chap14.html#heatmap-for-visualising-and-analysing-multivariate-data",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14 Heatmap for Visualising and Analysing Multivariate Data",
+    "text": "14 Heatmap for Visualising and Analysing Multivariate Data"
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#overview",
+    "href": "HO_EX05_chap14.html#overview",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.1 Overview",
+    "text": "14.1 Overview\nA heatmap encodes a tabular dataset as a coloured grid, with rows for observations, columns for variables, and cell colour for value. This chapter covers static heatmaps with base R’s heatmap() and interactive heatmaps with heatmaply, plus the three operations that make a heatmap useful: data transformation, clustering, and seriation.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#installing-and-launching-r-packages",
+    "href": "HO_EX05_chap14.html#installing-and-launching-r-packages",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.2 Installing and Launching R Packages",
+    "text": "14.2 Installing and Launching R Packages\nFour packages are required:\n\nseriation for optimal leaf ordering of dendrograms\nheatmaply for interactive heatmaps with full ggplot styling\ndendextend for choosing clustering method and number of clusters statistically\ntidyverse for data manipulation\n\nknitr is loaded so kable() can show clean previews of the data.\n\npacman::p_load(seriation, dendextend, heatmaply, tidyverse, knitr)",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#importing-and-preparing-the-data-set",
+    "href": "HO_EX05_chap14.html#importing-and-preparing-the-data-set",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.3 Importing and Preparing the Data Set",
+    "text": "14.3 Importing and Preparing the Data Set",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#importing-the-data-set",
+    "href": "HO_EX05_chap14.html#importing-the-data-set",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.3.1 Importing the Data Set",
+    "text": "14.3.1 Importing the Data Set\nThe World Happiness Report 2018 dataset has been extracted from the original Excel source and saved as WHData-2018.csv.\n\nwh &lt;- read_csv(\"data/WHData-2018.csv\")\n\nkable(head(wh))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCountry\nRegion\nHappiness score\nWhisker-high\nWhisker-low\nDystopia\nGDP per capita\nSocial support\nHealthy life expectancy\nFreedom to make life choices\nGenerosity\nPerceptions of corruption\n\n\n\n\nAlbania\nCentral and Eastern Europe\n4.586\n4.695\n4.477\n1.462\n0.916\n0.817\n0.790\n0.419\n0.149\n0.032\n\n\nBosnia and Herzegovina\nCentral and Eastern Europe\n5.129\n5.224\n5.035\n1.883\n0.915\n1.078\n0.758\n0.280\n0.216\n0.000\n\n\nBulgaria\nCentral and Eastern Europe\n4.933\n5.022\n4.844\n1.219\n1.054\n1.515\n0.712\n0.359\n0.064\n0.009\n\n\nCroatia\nCentral and Eastern Europe\n5.321\n5.398\n5.244\n1.769\n1.115\n1.161\n0.737\n0.380\n0.120\n0.039\n\n\nCzech Republic\nCentral and Eastern Europe\n6.711\n6.783\n6.639\n2.494\n1.233\n1.489\n0.854\n0.543\n0.064\n0.034\n\n\nEstonia\nCentral and Eastern Europe\n5.739\n5.815\n5.663\n1.457\n1.200\n1.532\n0.737\n0.553\n0.086\n0.174",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#preparing-the-data",
+    "href": "HO_EX05_chap14.html#preparing-the-data",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.3.2 Preparing the Data",
+    "text": "14.3.2 Preparing the Data\nThe heatmap should label rows by country, not by row number.\n\nrow.names(wh) &lt;- wh$Country\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nrow.names() assigns a character vector as row identifiers. After this, the heatmap can label each row with the country name rather than a numeric index. heatmap() reads row names from the matrix metadata, not from a column.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#transforming-the-data-frame-into-a-matrix",
+    "href": "HO_EX05_chap14.html#transforming-the-data-frame-into-a-matrix",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.3.3 Transforming the Data Frame into a Matrix",
+    "text": "14.3.3 Transforming the Data Frame into a Matrix\nheatmap() requires a numeric matrix, not a data frame.\n\nwh1 &lt;- dplyr::select(wh, c(3, 7:12))\nwh_matrix &lt;- data.matrix(wh)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndata.matrix() converts a data frame into a numeric matrix, with non-numeric columns converted via their underlying integer codes. The matrix is the natural data structure for heatmaps because every cell must be numeric to be coloured.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#static-heatmap",
+    "href": "HO_EX05_chap14.html#static-heatmap",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.4 Static Heatmap",
+    "text": "14.4 Static Heatmap",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#heatmap-of-r-stats",
+    "href": "HO_EX05_chap14.html#heatmap-of-r-stats",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.4.1 heatmap() of R Stats",
+    "text": "14.4.1 heatmap() of R Stats\nThe simplest call uses default arguments, which include row and column dendrogram clustering. Setting Rowv = NA, Colv = NA suppresses the dendrograms.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwh_heatmap &lt;- heatmap(wh_matrix,\n                      Rowv = NA, Colv = NA)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nRowv = NA, Colv = NA switches off both dendrograms, preserving the original row and column order. Without dendrograms, the heatmap behaves like a coloured table.\n\n\nThe default version with clustering reorders the rows and columns to bring similar entities together.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwh_heatmap &lt;- heatmap(wh_matrix)\n\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe chart is uninformative because one variable, the Happiness Score, has values on the order of hundreds while others sit on a 0 to 1 scale. The colour gradient is dominated by the largest variable, so most cells appear identical. This is the scale dominance problem. Without normalisation, the visualisation collapses to a single column’s worth of information.\n\n\nThe fix is to scale each column to comparable units. Setting scale = \"column\" standardises each variable to mean zero and unit variance.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwh_heatmap &lt;- heatmap(wh_matrix,\n                      scale = \"column\",\n                      cexRow = 0.6,\n                      cexCol = 0.8,\n                      margins = c(10, 4))\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nscale = \"column\" z-score-standardises each column. cexRow = 0.6 and cexCol = 0.8 shrink the row and column label fonts so all country names fit. margins = c(10, 4) enlarges the bottom and left margins to accommodate long labels.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nAfter scaling, the heatmap becomes interpretable. Countries with similar happiness profiles cluster together, and the column dendrogram groups variables that move together.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#creating-interactive-heatmap",
+    "href": "HO_EX05_chap14.html#creating-interactive-heatmap",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5 Creating Interactive Heatmap",
+    "text": "14.5 Creating Interactive Heatmap\nheatmaply extends the heatmap concept with interactivity (hover, zoom), better default styling, and integrated control over data transformation, clustering, and seriation.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#working-with-heatmaply",
+    "href": "HO_EX05_chap14.html#working-with-heatmaply",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.1 Working with heatmaply",
+    "text": "14.5.1 Working with heatmaply\n\nheatmaply(mtcars)\n\n\n\n\n\nThe basic call uses default settings.\n\nheatmaply(wh_matrix[, -c(1, 2, 4, 5)])\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe horizontal dendrogram appears on the left in heatmaply, and row labels on the right, which is the inverse of base R’s heatmap(). Excluding columns 1, 2, 4, and 5 removes non-numeric or rank-style columns that are not meaningful to colour. The default colour palette is viridis.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#data-transformation",
+    "href": "HO_EX05_chap14.html#data-transformation",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.2 Data Transformation",
+    "text": "14.5.2 Data Transformation\nheatmaply supports three transformation methods.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#scaling-method",
+    "href": "HO_EX05_chap14.html#scaling-method",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.2.1 Scaling Method",
+    "text": "14.5.2.1 Scaling Method\nScaling subtracts the mean and divides by the standard deviation.\n\nheatmaply(wh_matrix[, -c(1, 2, 4, 5)],\n          scale = \"column\")",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#normalising-method",
+    "href": "HO_EX05_chap14.html#normalising-method",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.2.2 Normalising Method",
+    "text": "14.5.2.2 Normalising Method\nNormalising rescales each variable to the 0 to 1 range by subtracting the minimum and dividing by the range.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]))",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#percentising-method",
+    "href": "HO_EX05_chap14.html#percentising-method",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.2.3 Percentising Method",
+    "text": "14.5.2.3 Percentising Method\nPercentising replaces each value with its empirical cumulative percentile (the fraction of observations at or below that value).\n\nheatmaply(percentize(wh_matrix[, -c(1, 2, 4, 5)]))",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#clustering-algorithm",
+    "href": "HO_EX05_chap14.html#clustering-algorithm",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.3 Clustering Algorithm",
+    "text": "14.5.3 Clustering Algorithm\nheatmaply supports several clustering algorithms via dist_method (distance metric) and hclust_method (linkage method).",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#manual-approach",
+    "href": "HO_EX05_chap14.html#manual-approach",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.4 Manual Approach",
+    "text": "14.5.4 Manual Approach\nThe code chunk below specifies Euclidean distance and Ward’s linkage method explicitly.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),\n          dist_method = \"euclidean\",\n          hclust_method = \"ward.D\")\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndist_method = \"euclidean\" is the standard distance for normally distributed data. hclust_method = \"ward.D\" minimises within-cluster variance.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#statistical-approach",
+    "href": "HO_EX05_chap14.html#statistical-approach",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.5 Statistical Approach",
+    "text": "14.5.5 Statistical Approach\ndend_expend() evaluates linkage methods by an objective criterion, and find_k() selects the optimal number of clusters.\n\nwh_d &lt;- dist(normalize(wh_matrix[, -c(1, 2, 4, 5)]), method = \"euclidean\")\ndend_expend(wh_d)[[3]]\n\n  dist_methods hclust_methods     optim\n1      unknown         ward.D 0.6137851\n2      unknown        ward.D2 0.6289186\n3      unknown         single 0.4774362\n4      unknown       complete 0.6434009\n5      unknown        average 0.6701688\n6      unknown       mcquitty 0.5020102\n7      unknown         median 0.5901833\n8      unknown       centroid 0.6338734\n\n\n\nwh_clust &lt;- hclust(wh_d, method = \"average\")\nnum_k &lt;- find_k(wh_clust)\nplot(num_k)\n\n\n\n\n\n\n\n\nThe output recommends average linkage and three clusters.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),\n          dist_method = \"euclidean\",\n          hclust_method = \"average\",\n          k_row = 3)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndend_expend() returns optimum scores for each linkage method. find_k() evaluates cluster counts by silhouette width and selects the optimum. k_row = 3 colours rows by the three identified clusters.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#seriation",
+    "href": "HO_EX05_chap14.html#seriation",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.6 Seriation",
+    "text": "14.5.6 Seriation\nHierarchical clustering produces a dendrogram, but the dendrogram does not uniquely determine the row order. The branches can be flipped without changing the tree structure. Seriation picks the flips that minimise the visual distance between adjacent rows.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),\n          seriate = \"OLO\")\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nseriate = \"OLO\" applies Optimal Leaf Ordering, which tries every valid row order and picks the one where the sum of dissimilarities between adjacent rows is smallest. Other options are \"GW\" (a faster heuristic), \"mean\" (the default of base heatmap()), and \"none\" (no rotation).",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#working-with-colour-palettes",
+    "href": "HO_EX05_chap14.html#working-with-colour-palettes",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.7 Working with Colour Palettes",
+    "text": "14.5.7 Working with Colour Palettes\nThe default viridis palette can be replaced via the colors argument.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),\n          seriate = \"none\",\n          colors = Blues)",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#the-finishing-touch",
+    "href": "HO_EX05_chap14.html#the-finishing-touch",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "14.5.8 The Finishing Touch",
+    "text": "14.5.8 The Finishing Touch\nThe complete code below combines clustering, no seriation, custom colour, custom labels, and a title.\n\nheatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),\n          Colv = NA,\n          seriate = \"none\",\n          colors = Blues,\n          k_row = 5,\n          margins = c(NA, 200, 60, NA),\n          fontsize_row = 4,\n          fontsize_col = 5,\n          main = \"World Happiness Score and Variables by Country, 2018\\nData transformation: normalise method\",\n          xlab = \"World Happiness Indicators\",\n          ylab = \"World Countries\")\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nk_row = 5 produces five row clusters. margins = c(NA, 200, 60, NA) enlarges the right and top margins to fit long country labels and the title. The main, xlab, and ylab arguments give the chart self-documenting text. Adding #| fig-height: 12 will increase the height of the heatmap for better visual clarity.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe five-cluster solution separates the high-happiness Western European and Nordic countries from the lower-scoring sub-Saharan African cluster, with three intermediate clusters covering Latin America, Eastern Europe, and parts of Asia. The variables sort themselves with the wealthier-correlated measures on the same end of the column dendrogram.",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html",
+    "href": "HO_EX05_chap06.html",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "",
+    "text": "Chapter navigation: ← Back to HO_EX05 home | Chap 6 · Chap 14 · Chap 13 · Chap 15 · Chap 16"
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#visual-correlation-analysis",
+    "href": "HO_EX05_chap06.html#visual-correlation-analysis",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6 Visual Correlation Analysis",
+    "text": "6 Visual Correlation Analysis"
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#overview",
+    "href": "HO_EX05_chap06.html#overview",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.1 Overview",
+    "text": "6.1 Overview\nThis chapter covers how to visualise pairwise correlations across many variables at once, using three approaches: a scatterplot matrix with pairs(), a corrgram with ggcorrmat() from the ggstatsplot package, and a corrgram with corrplot() that supports the widest range of glyphs and reordering algorithms.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#installing-and-launching-r-packages",
+    "href": "HO_EX05_chap06.html#installing-and-launching-r-packages",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.2 Installing and Launching R Packages",
+    "text": "6.2 Installing and Launching R Packages\nThree packages drive this chapter:\n\ncorrplot for purpose-built corrgrams\nggstatsplot for statistically annotated correlation matrices in ggplot2 style\ntidyverse for data import and manipulation\n\nknitr is also loaded so kable() can produce clean previews of the data.\n\npacman::p_load(corrplot, ggstatsplot, tidyverse, knitr)",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#importing-and-preparing-the-data-set",
+    "href": "HO_EX05_chap06.html#importing-and-preparing-the-data-set",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.3 Importing and Preparing the Data Set",
+    "text": "6.3 Importing and Preparing the Data Set",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#importing-data",
+    "href": "HO_EX05_chap06.html#importing-data",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.3.1 Importing Data",
+    "text": "6.3.1 Importing Data\nThe Wine Quality Data Set comes from the UCI Machine Learning Repository. It combines red and white wine samples, has 13 variables, and 6,497 observations.\n\nwine &lt;- read_csv(\"data/wine_quality.csv\")\n\nkable(head(wine))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfixed acidity\nvolatile acidity\ncitric acid\nresidual sugar\nchlorides\nfree sulfur dioxide\ntotal sulfur dioxide\ndensity\npH\nsulphates\nalcohol\nquality\ntype\n\n\n\n\n7.4\n0.70\n0.00\n1.9\n0.076\n11\n34\n0.9978\n3.51\n0.56\n9.4\n5\nred\n\n\n7.8\n0.88\n0.00\n2.6\n0.098\n25\n67\n0.9968\n3.20\n0.68\n9.8\n5\nred\n\n\n7.8\n0.76\n0.04\n2.3\n0.092\n15\n54\n0.9970\n3.26\n0.65\n9.8\n5\nred\n\n\n11.2\n0.28\n0.56\n1.9\n0.075\n17\n60\n0.9980\n3.16\n0.58\n9.8\n6\nred\n\n\n7.4\n0.70\n0.00\n1.9\n0.076\n11\n34\n0.9978\n3.51\n0.56\n9.4\n5\nred\n\n\n7.4\n0.66\n0.00\n1.8\n0.075\n13\n40\n0.9978\n3.51\n0.56\n9.4\n5\nred",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#building-correlation-matrix-pairs-method",
+    "href": "HO_EX05_chap06.html#building-correlation-matrix-pairs-method",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.4 Building Correlation Matrix: pairs() Method",
+    "text": "6.4 Building Correlation Matrix: pairs() Method",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#building-a-basic-correlation-matrix",
+    "href": "HO_EX05_chap06.html#building-a-basic-correlation-matrix",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.4.1 Building a Basic Correlation Matrix",
+    "text": "6.4.1 Building a Basic Correlation Matrix\npairs() produces a scatterplot matrix where each off-diagonal cell shows the bivariate scatter for one pair of variables. With 11 numeric variables the result is an 11 by 11 grid.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npairs(wine[, 2:12])\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\npairs() accepts any matrix or data frame of numeric columns. Passing columns 2 to 12 of wine excludes the row index and target variables. The diagonal carries the variable names and the off-diagonal cells show all pairwise scatters. The matrix is symmetric, so the upper and lower triangles are mirrors of each other.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe dense black clouds are the headline result. With 6,497 observations the individual points become impossible to discern, and most cells collapse into solid blobs. This is the overplotting failure mode, meaning so many points stack on top of each other that no shape is visible. A scatterplot matrix would work better on a much smaller subset, since at this sample size summarising correlations as colour-encoded glyphs becomes essential. That is what the corrgram approach in the later sections does.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#drawing-the-lower-corner",
+    "href": "HO_EX05_chap06.html#drawing-the-lower-corner",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.4.2 Drawing the Lower Corner",
+    "text": "6.4.2 Drawing the Lower Corner\nBecause the correlation matrix is symmetric, showing both halves wastes space. Setting upper.panel = NULL removes the upper triangle.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npairs(wine[, 2:12], upper.panel = NULL)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nupper.panel = NULL strips the upper triangle. Lower-triangle scatterplots are read along the row, with the diagonal label naming the y-variable.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#including-correlation-coefficients",
+    "href": "HO_EX05_chap06.html#including-correlation-coefficients",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.4.3 Including Correlation Coefficients",
+    "text": "6.4.3 Including Correlation Coefficients\nA more useful variant places the numeric correlation in one triangle and the scatters in the other. The custom panel.cor function below sizes the text proportionally to the correlation magnitude.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npanel.cor &lt;- function(x, y, digits = 2, prefix = \"\", cex.cor, ...) {\n  usr &lt;- par(\"usr\")\n  on.exit(par(usr))\n  par(usr = c(0, 1, 0, 1))\n  r &lt;- abs(cor(x, y, use = \"complete.obs\"))\n  txt &lt;- format(c(r, 0.123456789), digits = digits)[1]\n  txt &lt;- paste(prefix, txt, sep = \"\")\n  if (missing(cex.cor)) cex.cor &lt;- 0.8 / strwidth(txt)\n  text(0.5, 0.5, txt, cex = cex.cor * (1 + r) / 2)\n}\n\npairs(wine[, 2:12], upper.panel = panel.cor)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\npanel.cor is a custom function passed as the upper-panel renderer. It computes the absolute correlation, writes it as text, and scales the size by the magnitude so stronger correlations appear in bigger text. The use = \"complete.obs\" argument tells cor() to drop rows with missing values pairwise, which is a useful default to keep even though the wine data has no missing values.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe combined view is more useful than either panel alone. The lower triangle preserves the data shape, including curvature and outliers, which a single number cannot convey. The upper triangle gives the precise summary statistic. The largest text reveals the strongest relationships, drawing the eye directly to the analytically interesting pairs without forcing any number-reading first.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#visualising-correlation-matrix-ggcorrmat",
+    "href": "HO_EX05_chap06.html#visualising-correlation-matrix-ggcorrmat",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.5 Visualising Correlation Matrix: ggcorrmat()",
+    "text": "6.5 Visualising Correlation Matrix: ggcorrmat()\npairs() struggles at this sample size because of overplotting. A corrgram replaces each cell with a colour glyph encoding the correlation, which scales well to thousands of observations.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#the-basic-plot",
+    "href": "HO_EX05_chap06.html#the-basic-plot",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.5.1 The Basic Plot",
+    "text": "6.5.1 The Basic Plot\nggcorrmat() from ggstatsplot produces a corrgram with an integrated statistical report covering sample size, hypothesis test, and confidence intervals.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggstatsplot::ggcorrmat(\n  data = wine,\n  cor.vars = 1:11\n)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ncor.vars = 1:11 selects the columns over which pairwise correlations are computed. The default output annotates non-significant pairs with a cross. Blue means positive correlation, red means negative, and saturation encodes magnitude.\n\n\nThe next variant adds hierarchical clustering reordering and a custom title.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggstatsplot::ggcorrmat(\n  data = wine,\n  cor.vars = 1:11,\n  ggcorrplot.args = list(outline.color = \"black\",\n                         hc.order = TRUE,\n                         tl.cex = 10),\n  title = \"Correlogram for wine dataset\",\n  subtitle = \"Four pairs are not significant at p &lt; 0.05\"\n)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nhc.order = TRUE reorders rows and columns by hierarchical clustering, so similar variables end up adjacent. outline.color = \"black\" adds a thin border around each cell. tl.cex = 10 controls the text label size.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nAfter clustering, three variable groups emerge. The acidity-related measures (fixed acidity, volatile acidity, citric acid, pH) cluster together. Sugar and alcohol-related measures form another group. The sulphur dioxide measures form the third. This structure is invisible in the unordered version.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#building-multiple-plots",
+    "href": "HO_EX05_chap06.html#building-multiple-plots",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.6 Building Multiple Plots",
+    "text": "6.6 Building Multiple Plots\ngrouped_ggcorrmat() produces faceted corrgrams, useful when the correlation structure may differ across groups.\n\ngrouped_ggcorrmat(\n  data = wine,\n  cor.vars = 1:11,\n  grouping.var = type,\n  type = \"robust\",\n  p.adjust.method = \"holm\",\n  plotgrid.args = list(ncol = 2),\n  ggcorrplot.args = list(outline.color = \"black\", \n                         hc.order = TRUE,\n                         tl.cex = 10),\n  annotation.args = list(\n    tag_levels = \"a\",\n    title = \"Correlogram for wine dataset\",\n    subtitle = \"The measures are: alcohol, sulphates, fixed acidity, citric acid, chlorides, residual sugar, density, free sulfur dioxide and volatile acidity\",\n    caption = \"Dataset: UCI Machine Learning Repository\"\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngrouping.var = type splits the data into red and white wines and produces one corrgram per group. type = \"robust\" uses a percentage bend correlation, which is less sensitive to outliers than Pearson’s coefficient. p.adjust.method = \"holm\" corrects p-values for multiple testing across the matrix.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nComparing the two panels shows whether red and white wines share the same correlation structure or differ chemically. Differences in cell colour or saturation between the two panels indicate type-specific relationships, which the pooled corrgram from earlier would have hidden.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#visualising-correlation-matrix-using-corrplot",
+    "href": "HO_EX05_chap06.html#visualising-correlation-matrix-using-corrplot",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7 Visualising Correlation Matrix using corrplot",
+    "text": "6.7 Visualising Correlation Matrix using corrplot\nThe corrplot package offers extensive customisation, with seven glyph types, three layouts, and four reordering algorithms.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#getting-started-with-corrplot",
+    "href": "HO_EX05_chap06.html#getting-started-with-corrplot",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.1 Getting Started with corrplot",
+    "text": "6.7.1 Getting Started with corrplot\nThe first step is to compute the correlation matrix explicitly using cor().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwine.cor &lt;- cor(wine[, 1:11])\ncorrplot(wine.cor)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe default glyph is a circle, with size and colour saturation encoding correlation magnitude. The default colour scheme is diverging blue-red, with blue for positive and red for negative correlations.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#working-with-visual-geometrics",
+    "href": "HO_EX05_chap06.html#working-with-visual-geometrics",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.2 Working with Visual Geometrics",
+    "text": "6.7.2 Working with Visual Geometrics\ncorrplot supports seven glyph types via the method argument: circle, square, ellipse, number, shade, color, and pie.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrplot(wine.cor, method = \"ellipse\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nmethod = \"ellipse\" replaces circles with ellipses. A thin elongated ellipse pointing up-right means a strong positive correlation, a thin elongated ellipse pointing up-left means a strong negative correlation, and a circle means zero correlation.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#working-with-layout",
+    "href": "HO_EX05_chap06.html#working-with-layout",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.3 Working with Layout",
+    "text": "6.7.3 Working with Layout\nThe type argument controls whether the full matrix, only the upper triangle, or only the lower triangle is shown.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrplot(wine.cor,\n         method = \"ellipse\",\n         type = \"lower\",\n         diag = FALSE,\n         tl.col = \"black\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ntype = \"lower\" shows only the lower triangle. diag = FALSE removes the diagonal cells, which would always be 1 by construction. tl.col = \"black\" sets the text-label colour.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#working-with-mixed-layout",
+    "href": "HO_EX05_chap06.html#working-with-mixed-layout",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.4 Working with Mixed Layout",
+    "text": "6.7.4 Working with Mixed Layout\ncorrplot.mixed() allows different glyph types in the upper and lower triangles. A common pattern is ellipses below for shape and numbers above for precise readout.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrplot.mixed(wine.cor,\n               lower = \"ellipse\",\n               upper = \"number\",\n               tl.pos = \"lt\",\n               diag = \"l\",\n               tl.col = \"black\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nlower = \"ellipse\" and upper = \"number\" is a useful combination because the ellipse conveys shape and the number gives precision. tl.pos = \"lt\" places labels on the left and top edges. diag = \"l\" shows labels on the diagonal in lowercase.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe number-and-ellipse pairing means the reader does not have to choose between seeing the structure and reading the values. Strong positives and strong negatives jump out as elongated ellipses, and the numeric value is one glance away in the mirror cell.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#combining-corrgram-with-significance-test",
+    "href": "HO_EX05_chap06.html#combining-corrgram-with-significance-test",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.5 Combining Corrgram with Significance Test",
+    "text": "6.7.5 Combining Corrgram with Significance Test\nStatistical significance can be overlaid by computing p-values with cor.mtest() and passing them via p.mat.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwine.sig &lt;- cor.mtest(wine.cor, conf.level = .95)\n\ncorrplot(wine.cor,\n         method = \"number\",\n         type = \"lower\",\n         diag = FALSE,\n         tl.col = \"black\",\n         tl.srt = 45,\n         p.mat = wine.sig$p,\n         sig.level = .05)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ncor.mtest() returns a list including the p-value matrix. Passing p.mat = wine.sig$p and setting sig.level = .05 crosses out cells whose p-value exceeds 0.05. With 6,497 observations almost every correlation is statistically significant, so the crossed-out cells become the more interesting signal.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe crosses act as flags for “do not bet on this pair” rather than the absence of a cross being confirmation of strength. A correlation of 0.05 is statistically significant in 6,500 wines but is too small to be practically interesting.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#reorder-a-corrgram",
+    "href": "HO_EX05_chap06.html#reorder-a-corrgram",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.6 Reorder a Corrgram",
+    "text": "6.7.6 Reorder a Corrgram\nReordering reveals cluster structure. corrplot supports four algorithms: AOE (angular order of eigenvectors), FPC (first principal component), hclust (hierarchical clustering), and alphabet.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrplot.mixed(wine.cor,\n               lower = \"ellipse\",\n               upper = \"number\",\n               tl.pos = \"lt\",\n               diag = \"l\",\n               order = \"AOE\",\n               tl.col = \"black\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\norder = \"AOE\" reorders variables by the angle of their first two eigenvectors, so variables with similar correlation structure end up adjacent.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#reordering-with-hclust",
+    "href": "HO_EX05_chap06.html#reordering-with-hclust",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "6.7.7 Reordering with hclust",
+    "text": "6.7.7 Reordering with hclust\nhclust reordering can also draw rectangles around inferred clusters, making the structure more explicit.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorrplot(wine.cor,\n         method = \"ellipse\",\n         tl.pos = \"lt\",\n         tl.col = \"black\",\n         order = \"hclust\",\n         hclust.method = \"ward.D\",\n         addrect = 3)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\norder = \"hclust\" and hclust.method = \"ward.D\" apply Ward’s hierarchical clustering. addrect = 3 draws three black rectangles around the top-level clusters.",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html",
+    "href": "HO_EX05_chap13.html",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "",
+    "text": "Chapter navigation: ← Back to HO_EX05 home | Chap 6 · Chap 14 · Chap 13 · Chap 15 · Chap 16"
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#creating-ternary-plot-with-r",
+    "href": "HO_EX05_chap13.html#creating-ternary-plot-with-r",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13 Creating Ternary Plot with R",
+    "text": "13 Creating Ternary Plot with R"
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#overview",
+    "href": "HO_EX05_chap13.html#overview",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.1 Overview",
+    "text": "13.1 Overview\nTernary plots display three-part compositional data, meaning data where the parts must sum to a fixed total such as 1 or 100%. The display is an equilateral triangle with each side scaled from 0 to 1 and each vertex representing 100% of one component. This chapter covers static ternary plots with ggtern and interactive ones with plotly, then explores five design alternatives.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#installing-and-launching-r-packages",
+    "href": "HO_EX05_chap13.html#installing-and-launching-r-packages",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.2 Installing and Launching R Packages",
+    "text": "13.2 Installing and Launching R Packages\nThree R packages are required:\n\nggtern, a ggplot2 extension specially designed for ternary diagrams\nplotly, used here for its native scatterternary trace type which is preferred over ggplotly() conversion because the latter does not fully translate ggtern geometries\ntidyverse for data import and shape transformation\n\nknitr is also loaded so kable() can produce clean previews.\n\npacman::p_load(plotly, ggtern, tidyverse, knitr)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nggtern masks several ggplot2 functions when loaded, because the package overrides standard ggplot internals to support the triangular coordinate system. If conflicts arise, explicit namespacing with ggplot2:: or ggtern:: resolves them.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#data-preparation",
+    "href": "HO_EX05_chap13.html#data-preparation",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.3 Data Preparation",
+    "text": "13.3 Data Preparation",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#the-data",
+    "href": "HO_EX05_chap13.html#the-data",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.3.1 The Data",
+    "text": "13.3.1 The Data\nThe dataset respopagsex2000to2018_tidy.csv is from the Singapore Department of Statistics. It records resident population by planning area, subzone, age group, sex, and year from 2000 to 2018.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#importing-data",
+    "href": "HO_EX05_chap13.html#importing-data",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.3.2 Importing Data",
+    "text": "13.3.2 Importing Data\n\npop_data &lt;- read_csv(\"data/respopagsex2000to2018_tidy.csv\")\n\nkable(head(pop_data))\n\n\n\n\nPA\nSZ\nAG\nYear\nPopulation\n\n\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2011\n290\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2012\n270\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2013\n260\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2014\n250\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2015\n260\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\nAGE0-4\n2016\n250",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#preparing-the-data",
+    "href": "HO_EX05_chap13.html#preparing-the-data",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.3.3 Preparing the Data",
+    "text": "13.3.3 Preparing the Data\nTo plot a ternary diagram, the data must be reshaped from long to wide format and three compositional measures derived: YOUNG (under 25), ACTIVE (25 to 64), and OLD (65 and above).\n\n\n\n\n\n\nWarningA bug in the R4VA recipe worth fixing\n\n\n\nThe R4VA tutorial derives the three measures using positional column indexing:\nmutate(YOUNG = rowSums(.[4:8])) %&gt;%\nmutate(ACTIVE = rowSums(.[9:16])) %&gt;%\nmutate(OLD = rowSums(.[17:21]))\nThis assumes the columns from pivot_wider() come out in natural age order, but they do not. The age bands in the source data are named AGE0-4, AGE05-9, AGE10-14, and so on. After pivot_wider(), the columns appear in first-appearance order rather than alphabetical or natural age order. Because AGE05-9 first appears far down the source file, it ends up at column 13 instead of column 5.\nApplied to the columns as they actually come out, the positional recipe produces:\n\nYOUNG (cols 4 to 8) sums AGE0-4 + AGE10-14 + AGE15-19 + AGE20-24 + AGE25-29. Children aged 5 to 9 are missing, and 25-to-29-year-olds are mistakenly included.\nACTIVE (cols 9 to 16) sums AGE30-34 through AGE45-49, then AGE05-9 (column 13), then AGE50-54 through AGE60-64. Children aged 5 to 9 are mixed into the working-age group, and 25-to-29-year-olds are missing.\nOLD (cols 17 to 21) sums AGE65-69 through AGE85over. This one is correct.\n\nA quick verification: for Ang Mo Kio Town Centre in 2018, the tutorial recipe reports YOUNG = 1,360. Adding the actual under-25 bands gives 180 + 270 + 320 + 300 + 260 = 1,330, not 1,360. The 30-person discrepancy is AGE25-29 (300) being wrongly included while AGE05-9 (270) is excluded.\nThe fix is to select columns by name using rowSums(across(c(...))). The backticks handle hyphens in the column names.\n\n\n\nagpop_mutated &lt;- pop_data %&gt;%\n  mutate(Year = as.character(Year)) %&gt;%\n  pivot_wider(names_from = AG, values_from = Population) %&gt;%\n  mutate(\n    YOUNG = rowSums(across(c(`AGE0-4`, `AGE05-9`, `AGE10-14`, `AGE15-19`, `AGE20-24`))),\n    ACTIVE = rowSums(across(c(`AGE25-29`, `AGE30-34`, `AGE35-39`, `AGE40-44`, `AGE45-49`,\n                              `AGE50-54`, `AGE55-59`, `AGE60-64`))),\n    OLD = rowSums(across(c(`AGE65-69`, `AGE70-74`, `AGE75-79`, `AGE80-84`, `AGE85over`))),\n    TOTAL = YOUNG + ACTIVE + OLD\n  ) %&gt;%\n  filter(Year == 2018) %&gt;%\n  filter(TOTAL &gt; 0)\n\nkable(head(agpop_mutated))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPA\nSZ\nYear\nAGE0-4\nAGE10-14\nAGE15-19\nAGE20-24\nAGE25-29\nAGE30-34\nAGE35-39\nAGE40-44\nAGE45-49\nAGE05-9\nAGE50-54\nAGE55-59\nAGE60-64\nAGE65-69\nAGE70-74\nAGE75-79\nAGE80-84\nAGE85over\nYOUNG\nACTIVE\nOLD\nTOTAL\n\n\n\n\nAng Mo Kio\nAng Mo Kio Town Centre\n2018\n180\n320\n300\n260\n300\n270\n330\n430\n470\n270\n360\n310\n300\n270\n190\n150\n60\n60\n1330\n2770\n730\n4830\n\n\nAng Mo Kio\nCheng San\n2018\n1060\n1080\n1260\n1400\n1880\n1940\n2300\n2090\n2180\n1080\n2160\n2150\n2270\n2130\n1370\n980\n560\n440\n5880\n16970\n5480\n28330\n\n\nAng Mo Kio\nChong Boon\n2018\n900\n1030\n1220\n1380\n1760\n1830\n1920\n1900\n1910\n900\n2070\n2140\n2170\n2050\n1570\n1170\n640\n530\n5430\n15700\n5960\n27090\n\n\nAng Mo Kio\nKebun Bahru\n2018\n720\n1010\n1120\n1230\n1460\n1330\n1540\n1700\n1830\n850\n1880\n1810\n1750\n1700\n1240\n870\n540\n430\n4930\n13300\n4780\n23010\n\n\nAng Mo Kio\nSembawang Hills\n2018\n220\n380\n500\n550\n500\n300\n290\n420\n550\n310\n550\n560\n450\n410\n290\n220\n140\n140\n1960\n3620\n1200\n6780\n\n\nAng Mo Kio\nShangri-La\n2018\n550\n670\n780\n950\n1080\n990\n1100\n1140\n1230\n630\n1350\n1420\n1290\n1150\n830\n680\n360\n340\n3580\n9600\n3360\n16540\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\npivot_wider() replaces the deprecated spread() function. It widens the dataset so each age band becomes its own column.\nrowSums(across(c(...))) selects columns by name rather than by position. Backticks around the names handle the hyphens. TOTAL = YOUNG + ACTIVE + OLD is more transparent than the original rowSums(.[22:24]) and cannot break if upstream columns are reordered.\nfilter(Year == 2018) restricts the analysis to a single cross-section, and filter(TOTAL &gt; 0) removes subzones with zero population.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#plotting-ternary-diagram-with-r",
+    "href": "HO_EX05_chap13.html#plotting-ternary-diagram-with-r",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.4 Plotting Ternary Diagram with R",
+    "text": "13.4 Plotting Ternary Diagram with R",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#plotting-a-static-ternary-diagram",
+    "href": "HO_EX05_chap13.html#plotting-a-static-ternary-diagram",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.4.1 Plotting a Static Ternary Diagram",
+    "text": "13.4.1 Plotting a Static Ternary Diagram\nThe ggtern() function works like ggplot() but expects three positional aesthetics: x, y, and z, mapping to the three vertices of the triangle.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nggtern() automatically constructs the triangular coordinate system. The three aesthetics x, y, and z map to the three vertices, and the package internally normalises each row so the three values sum to 1. Most standard ggplot2 geoms have ternary equivalents.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nEach point is one Singapore subzone in 2018. The cluster sits closer to the ACTIVE vertex (right side) than to YOUNG or OLD, which means most subzones are dominated by working-age residents. A small group of points drifts towards the OLD vertex, indicating subzones with disproportionately ageing populations. Subzones near the YOUNG vertex are rarer in 2018, consistent with the overall demographic transition.\nThis is the analytical payoff of a ternary plot. A scatterplot of YOUNG against OLD would lose the ACTIVE dimension, and a parallel coordinates plot would lose the immediate visual sense of which subzones lean towards which extreme.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#adding-title-and-theme",
+    "href": "HO_EX05_chap13.html#adding-title-and-theme",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.4.2 Adding Title and Theme",
+    "text": "13.4.2 Adding Title and Theme\nThe default theme can be replaced with theme_rgbw() for cleaner gridlines and a title added via labs().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point() +\n  labs(title = \"Singapore population structure by subzone, 2018\",\n       subtitle = \"Each point is one subzone; vertices represent 100% of the named age group\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ntheme_rgbw() is one of several ggtern themes (others include theme_bw(), theme_classic(), theme_dark()).",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#plotting-an-interactive-ternary-diagram",
+    "href": "HO_EX05_chap13.html#plotting-an-interactive-ternary-diagram",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.4.3 Plotting an Interactive Ternary Diagram",
+    "text": "13.4.3 Plotting an Interactive Ternary Diagram\nplot_ly() supports a native scatterternary trace type, which is preferred over ggplotly(ggtern_plot) because the latter does not faithfully translate ggtern geometry.\n\n# Reusable function for annotation\nlabel &lt;- function(txt) {\n  list(\n    text = txt,\n    x = 0.1, y = 1,\n    ax = 0, ay = 0,\n    xref = \"paper\", yref = \"paper\",\n    align = \"center\",\n    font = list(family = \"serif\", size = 15, color = \"white\"),\n    bgcolor = \"#b3b3b3\", bordercolor = \"black\", borderwidth = 2\n  )\n}\n\n# Reusable function for axis formatting\naxis &lt;- function(txt) {\n  list(\n    title = txt,\n    tickformat = \".0%\",\n    tickfont = list(size = 10)\n  )\n}\n\nternaryAxes &lt;- list(\n  aaxis = axis(\"Young\"),\n  baxis = axis(\"Active\"),\n  caxis = axis(\"Old\")\n)\n\nplot_ly(\n  agpop_mutated,\n  a = ~YOUNG,\n  b = ~ACTIVE,\n  c = ~OLD,\n  color = I(\"black\"),\n  type = \"scatterternary\"\n) %&gt;%\n  layout(\n    annotations = label(\"Singapore subzones, 2018\"),\n    ternary = ternaryAxes\n  )\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nplot_ly() uses a, b, c (not x, y, z) for ternary aesthetics, which is a quirk of the underlying plotly.js API. tickformat = \".0%\" formats the axis ticks as percentages with no decimals. The label() and axis() helpers are reusable, so defining them once avoids repetition if multiple ternary plots are produced.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe interactive version supports zoom, pan, and hover-to-identify. For a dataset with hundreds of subzones, this turns a dense static cluster into an explorable map. Hovering over an outlier subzone (one nearest the OLD vertex, for instance) reveals the subzone name directly, rather than guessing from position alone.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#exploring-alternatives",
+    "href": "HO_EX05_chap13.html#exploring-alternatives",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5 Exploring Alternatives",
+    "text": "13.5 Exploring Alternatives\nSome variations below to enhance the plot.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#alternative-1-colouring-by-planning-area",
+    "href": "HO_EX05_chap13.html#alternative-1-colouring-by-planning-area",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5.1 Alternative 1: Colouring by Planning Area",
+    "text": "13.5.1 Alternative 1: Colouring by Planning Area\nAdding colour reveals whether subzones cluster geographically.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_top &lt;- agpop_mutated %&gt;%\n  group_by(PA) %&gt;%\n  filter(n() &gt;= 3) %&gt;%\n  ungroup() %&gt;%\n  filter(PA %in% c(\"Bedok\", \"Tampines\", \"Jurong West\", \"Woodlands\", \"Sengkang\", \"Punggol\"))\n\nggtern(data = agpop_top,\n       aes(x = YOUNG, y = ACTIVE, z = OLD, colour = PA)) +\n  geom_point(size = 2, alpha = 0.7) +\n  labs(title = \"Population structure across selected planning areas, 2018\",\n       subtitle = \"Newer towns (Punggol, Sengkang) skew young; older towns (Bedok) skew old\",\n       colour = \"Planning Area\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nSubsetting to six planning areas keeps the colour count manageable. The chosen planning areas span the development timeline of Singapore public housing, from mature estates (Bedok, Tampines) to recent towns (Sengkang, Punggol). alpha = 0.7 mitigates overplotting where points cluster densely.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nPunggol and Sengkang sit visibly closer to the YOUNG vertex than Bedok. This matches the policy intuition that newer Built-To-Order towns attract young families, while mature estates ageing in place skew towards the OLD vertex.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#alternative-2-density-contours",
+    "href": "HO_EX05_chap13.html#alternative-2-density-contours",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5.2 Alternative 2: Density Contours",
+    "text": "13.5.2 Alternative 2: Density Contours\nstat_density_tern() adds 2D density contours over the triangle, similar to a geom_density_2d() overlay on a Cartesian scatter.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggtern(data = agpop_mutated,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  stat_density_tern(geom = \"polygon\",\n                    aes(fill = after_stat(level)),\n                    alpha = 0.6) +\n  geom_point(size = 0.8, alpha = 0.5) +\n  scale_fill_viridis_c(option = \"C\") +\n  labs(title = \"Density of subzone population structures, 2018\",\n       subtitle = \"Contours reveal the modal age structure across all subzones\",\n       fill = \"Density\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nstat_density_tern() is the ternary analogue of stat_density_2d(). It estimates a 2D density on the triangular surface. Layering geom_point() underneath the contours preserves the raw data. scale_fill_viridis_c(option = \"C\") applies the plasma palette.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe contours highlight a single dense mode somewhere in the ACTIVE-dominant zone, which is the typical Singapore subzone in 2018. Outliers, visible as points outside the densest contours, are the cases worth following up on.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#alternative-3-faceting-by-year-for-temporal-comparison",
+    "href": "HO_EX05_chap13.html#alternative-3-faceting-by-year-for-temporal-comparison",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5.3 Alternative 3: Faceting by Year for Temporal Comparison",
+    "text": "13.5.3 Alternative 3: Faceting by Year for Temporal Comparison\nRemoving the 2018-only filter and faceting by year reveals demographic transition over time.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_years &lt;- pop_data %&gt;%\n  mutate(Year = as.character(Year)) %&gt;%\n  pivot_wider(names_from = AG, values_from = Population) %&gt;%\n  mutate(\n    YOUNG = rowSums(across(c(`AGE0-4`, `AGE05-9`, `AGE10-14`, `AGE15-19`, `AGE20-24`))),\n    ACTIVE = rowSums(across(c(`AGE25-29`, `AGE30-34`, `AGE35-39`, `AGE40-44`, `AGE45-49`,\n                              `AGE50-54`, `AGE55-59`, `AGE60-64`))),\n    OLD = rowSums(across(c(`AGE65-69`, `AGE70-74`, `AGE75-79`, `AGE80-84`, `AGE85over`))),\n    TOTAL = YOUNG + ACTIVE + OLD\n  ) %&gt;%\n  filter(Year %in% c(\"2000\", \"2006\", \"2012\", \"2018\")) %&gt;%\n  filter(TOTAL &gt; 0)\n\nggtern(data = agpop_years,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point(size = 0.8, alpha = 0.5, colour = \"#2C5282\") +\n  facet_wrap(~ Year) +\n  labs(title = \"Singapore subzone population structure, 2000 to 2018\",\n       subtitle = \"The cloud drifts from YOUNG towards OLD over the 18-year window\") +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfacet_wrap() works inside ggtern() just as it does in ggplot2. Selecting four evenly spaced years (2000, 2006, 2012, 2018) instead of all 19 years balances detail against readability. The triangle always spans 0 to 100% on each axis, so axis scales are constant across facets.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe 2000 panel shows the cloud sitting closer to the YOUNG-ACTIVE edge. By 2018, the cloud has visibly drifted towards the ACTIVE-OLD edge. This is the demographic transition narrative for Singapore in a single composite image, and it shows the transition happening across all subzones simultaneously rather than concentrated in a few ageing pockets.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#alternative-4-comparison-with-a-stacked-bar",
+    "href": "HO_EX05_chap13.html#alternative-4-comparison-with-a-stacked-bar",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5.4 Alternative 4: Comparison with a Stacked Bar",
+    "text": "13.5.4 Alternative 4: Comparison with a Stacked Bar\nThe chart below shows the same data as a stacked bar of the top 15 subzones by total population.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntop_subzones &lt;- agpop_mutated %&gt;%\n  arrange(desc(TOTAL)) %&gt;%\n  slice_head(n = 15) %&gt;%\n  mutate(YOUNG_pct = YOUNG / TOTAL,\n         ACTIVE_pct = ACTIVE / TOTAL,\n         OLD_pct = OLD / TOTAL) %&gt;%\n  select(SZ, YOUNG_pct, ACTIVE_pct, OLD_pct) %&gt;%\n  pivot_longer(cols = c(YOUNG_pct, ACTIVE_pct, OLD_pct),\n               names_to = \"AgeGroup\",\n               values_to = \"Share\") %&gt;%\n  mutate(AgeGroup = factor(AgeGroup,\n                           levels = c(\"OLD_pct\", \"ACTIVE_pct\", \"YOUNG_pct\"),\n                           labels = c(\"Old (65+)\", \"Active (25-64)\", \"Young (0-24)\")))\n\nggplot(top_subzones,\n       aes(x = reorder(SZ, Share * (AgeGroup == \"Old (65+)\"), sum),\n           y = Share,\n           fill = AgeGroup)) +\n  geom_col() +\n  coord_flip() +\n  scale_y_continuous(labels = scales::percent) +\n  scale_fill_manual(values = c(\"Young (0-24)\" = \"#4682B4\",\n                               \"Active (25-64)\" = \"#A9A9A9\",\n                               \"Old (65+)\" = \"#D55E00\")) +\n  labs(title = \"Age composition of top 15 subzones by total population, 2018\",\n       subtitle = \"Ordered by share of elderly residents\",\n       x = NULL, y = \"Share of population\", fill = NULL) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nreorder() ranks subzones by their share of elderly residents. coord_flip() makes long subzone names readable. The neutral grey for ACTIVE keeps attention on the contrast between YOUNG and OLD.\n\n\n\n\n\n\n\n\nTipComparing the two chart types\n\n\n\nThe stacked bar wins when the goal is to identify specific named entities and rank them. The ternary plot wins when the goal is to see the shape of the joint distribution across many entities at once. The choice depends on whether the question is about individual subzones or about the overall structure.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#alternative-5-highlighting-outliers",
+    "href": "HO_EX05_chap13.html#alternative-5-highlighting-outliers",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.5.5 Alternative 5: Highlighting Outliers",
+    "text": "13.5.5 Alternative 5: Highlighting Outliers\nThe final variation marks the five subzones with the highest share of elderly residents.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nagpop_flagged &lt;- agpop_mutated %&gt;%\n  mutate(OLD_share = OLD / TOTAL) %&gt;%\n  mutate(is_old = OLD_share &gt;= quantile(OLD_share, 0.95, na.rm = TRUE))\n\nggtern(data = agpop_flagged,\n       aes(x = YOUNG, y = ACTIVE, z = OLD)) +\n  geom_point(aes(colour = is_old, size = is_old, alpha = is_old)) +\n  scale_colour_manual(values = c(\"FALSE\" = \"grey70\", \"TRUE\" = \"#D55E00\"),\n                      labels = c(\"Other subzones\", \"Top 5% oldest\")) +\n  scale_size_manual(values = c(\"FALSE\" = 1, \"TRUE\" = 2.5), guide = \"none\") +\n  scale_alpha_manual(values = c(\"FALSE\" = 0.4, \"TRUE\" = 1), guide = \"none\") +\n  labs(title = \"Subzones with disproportionately old populations, 2018\",\n       subtitle = \"Highlighted points are in the top 5% by share of residents aged 65+\",\n       colour = NULL) +\n  theme_rgbw()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThree aesthetics (colour, size, alpha) all map to the same flag, reinforcing the signal three ways. Greying out non-highlighted points keeps the full distribution as context. The 95th percentile threshold is a transparent rule that can be raised or lowered.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe five highlighted points sit visibly displaced towards the OLD vertex, well outside the main cloud. These are the subzones where ageing is most pronounced and where policy intervention (eldercare facilities, accessible infrastructure) would have the highest marginal impact.",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#summary",
+    "href": "HO_EX05_chap13.html#summary",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "13.6 Summary",
+    "text": "13.6 Summary\nThis chapter covered the construction of ternary plots for three-part compositional data. The key takeaways are:\n\nTernary plots are appropriate only for three-part compositional data that sums to a constant. Misuse is the most common failure mode.\nggtern extends ggplot2 syntax cleanly and supports faceting, custom themes, and density contours.\nInteractivity via plot_ly() adds details on demand. This is most valuable when the dataset has hundreds of points and the reader needs to drill into specifics.\nThe same compositional data can be visualised as a stacked bar, a parallel coordinates plot, or a ternary plot. The choice depends on whether the analytical question is about individual entities (bar), full multivariate structure (parallel coordinates), or distributional shape (ternary).",
+    "crumbs": [
+      "<img src='/images/home-icon.png' width='88' height='78' alt='Home'>",
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html",
+    "href": "HO_EX05_chap15.html",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "",
+    "text": "Chapter navigation: ← Back to HO_EX05 home | Chap 6 · Chap 14 · Chap 13 · Chap 15 · Chap 16"
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#visual-multivariate-analysis-with-parallel-coordinates-plot",
+    "href": "HO_EX05_chap15.html#visual-multivariate-analysis-with-parallel-coordinates-plot",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15 Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "text": "15 Visual Multivariate Analysis with Parallel Coordinates Plot"
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#overview",
+    "href": "HO_EX05_chap15.html#overview",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.1 Overview",
+    "text": "15.1 Overview\nA parallel coordinates plot (PCP) draws each variable as a parallel vertical axis and each observation as a polyline crossing all axes. PCPs are common in academic and scientific work but less common in business communication, and are more useful for exploratory work than for explanatory communication. This chapter covers static PCPs with ggparcoord() from GGally and interactive ones with parallelPlot.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#installing-and-launching-r-packages",
+    "href": "HO_EX05_chap15.html#installing-and-launching-r-packages",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.2 Installing and Launching R Packages",
+    "text": "15.2 Installing and Launching R Packages\nThree packages are required:\n\nGGally for ggparcoord(), the static parallel coordinates plot\nparallelPlot for interactive parallel coordinates plots via D3\ntidyverse for data manipulation\n\n\npacman::p_load(GGally, parallelPlot, tidyverse)",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#data-preparation",
+    "href": "HO_EX05_chap15.html#data-preparation",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.3 Data Preparation",
+    "text": "15.3 Data Preparation\nThe same World Happiness Report 2018 dataset used in Chapter 14 is reused here.\n\nwh &lt;- read_csv(\"data/WHData-2018.csv\")",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#plotting-static-parallel-coordinates-plot",
+    "href": "HO_EX05_chap15.html#plotting-static-parallel-coordinates-plot",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4 Plotting Static Parallel Coordinates Plot",
+    "text": "15.4 Plotting Static Parallel Coordinates Plot",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#plotting-a-simple-parallel-coordinates",
+    "href": "HO_EX05_chap15.html#plotting-a-simple-parallel-coordinates",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4.1 Plotting a Simple Parallel Coordinates",
+    "text": "15.4.1 Plotting a Simple Parallel Coordinates\nThe minimal call passes a data frame and a column index range.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggparcoord(data = wh,\n           columns = c(7:12))\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ncolumns = c(7:12) selects the six explanatory variables that contribute to the happiness index. Each line is one country, and each axis is one variable scaled to the 0 to 1 range by default.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe basic plot reveals only that the variables span their expected ranges. Without colour or transparency, individual countries are indistinguishable. This is the typical first iteration: a plot that confirms the data loaded correctly but provides no analytical insight.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#plotting-parallel-coordinates-with-boxplot",
+    "href": "HO_EX05_chap15.html#plotting-parallel-coordinates-with-boxplot",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4.2 Plotting Parallel Coordinates with Boxplot",
+    "text": "15.4.2 Plotting Parallel Coordinates with Boxplot\nA more informative variant adds region grouping (via colour), uniform scaling, alpha blending, and an overlaid boxplot.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggparcoord(data = wh,\n           columns = c(7:12),\n           groupColumn = 2,\n           scale = \"uniminmax\",\n           alphaLines = 0.2,\n           boxplot = TRUE,\n           title = \"Parallel Coordinates Plot of World Happiness Variables\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngroupColumn = 2 colours each line by region (column 2 of wh). scale = \"uniminmax\" rescales each variable to the 0 to 1 range so variables with large values do not dominate. alphaLines = 0.2 makes lines partially transparent, which is essential for PCPs to reveal where lines stack densely. boxplot = TRUE overlays a boxplot at each axis, giving the marginal distribution as a reference.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nWith colour, regional patterns start to emerge. Sub-Saharan African lines tend toward low values across most variables. Western European lines tend toward high values. The boxplots provide a reference for typical so individual lines can be judged as ordinary or unusual.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#parallel-coordinates-with-facet",
+    "href": "HO_EX05_chap15.html#parallel-coordinates-with-facet",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4.3 Parallel Coordinates with Facet",
+    "text": "15.4.3 Parallel Coordinates with Facet\nFaceting separates the regions into small multiples, removing the overplotting at the cost of losing the cross-regional comparison in a single panel.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggparcoord(data = wh,\n           columns = c(7:12),\n           groupColumn = 2,\n           scale = \"uniminmax\",\n           alphaLines = 0.2,\n           boxplot = TRUE,\n           title = \"Multiple Parallel Coordinates Plots of World Happiness Variables by Region\") +\n  facet_wrap(~ Region)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfacet_wrap(~ Region) produces one PCP panel per region. Some axis labels overlap, which the next iterations rotate to fix.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#rotating-x-axis-text-label",
+    "href": "HO_EX05_chap15.html#rotating-x-axis-text-label",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4.4 Rotating x-axis Text Label",
+    "text": "15.4.4 Rotating x-axis Text Label\nRotating the labels by 30 degrees reduces overlap.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggparcoord(data = wh,\n           columns = c(7:12),\n           groupColumn = 2,\n           scale = \"uniminmax\",\n           alphaLines = 0.2,\n           boxplot = TRUE,\n           title = \"Multiple Parallel Coordinates Plots of World Happiness Variables by Region\") +\n  facet_wrap(~ Region) +\n  theme(axis.text.x = element_text(angle = 30))",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#adjusting-the-rotated-x-axis-text-label",
+    "href": "HO_EX05_chap15.html#adjusting-the-rotated-x-axis-text-label",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.4.5 Adjusting the Rotated x-axis Text Label",
+    "text": "15.4.5 Adjusting the Rotated x-axis Text Label\nRotation alone causes labels to drift into the plot area. Setting hjust = 1 right-aligns the labels at the axis tick.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggparcoord(data = wh,\n           columns = c(7:12),\n           groupColumn = 2,\n           scale = \"uniminmax\",\n           alphaLines = 0.2,\n           boxplot = TRUE,\n           title = \"Multiple Parallel Coordinates Plots of World Happiness Variables by Region\") +\n  facet_wrap(~ Region) +\n  theme(axis.text.x = element_text(angle = 30, hjust = 1))\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\naxis.text.x = element_text(angle = 30, hjust = 1) rotates labels by 30 degrees and right-aligns them, preventing both label overlap and intrusion into the plot area.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#plotting-interactive-parallel-coordinates-plot-parallelplot-methods",
+    "href": "HO_EX05_chap15.html#plotting-interactive-parallel-coordinates-plot-parallelplot-methods",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.5 Plotting Interactive Parallel Coordinates Plot: parallelPlot Methods",
+    "text": "15.5 Plotting Interactive Parallel Coordinates Plot: parallelPlot Methods\nparallelPlot builds D3-based interactive PCPs that support brushing axes and dynamically reordering them.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#the-basic-plot",
+    "href": "HO_EX05_chap15.html#the-basic-plot",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.5.1 The Basic Plot",
+    "text": "15.5.1 The Basic Plot\nThe basic call requires a data frame with the variables of interest.\n\nwh_pcp &lt;- wh %&gt;%\n  select(\"Happiness score\", c(7:12))\n\nparallelPlot(wh_pcp,\n             width = 320,\n             height = 250)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nparallelPlot() produces an HTML widget. Hovering, brushing, and axis reordering are supported interactively. Brushing on one axis filters the data displayed on all other axes. Some axis labels are too long to fit, motivating the rotateTitle argument in the next section.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#rotate-axis-label",
+    "href": "HO_EX05_chap15.html#rotate-axis-label",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.5.2 Rotate Axis Label",
+    "text": "15.5.2 Rotate Axis Label\nrotateTitle = TRUE rotates the axis labels to prevent overlap.\n\nparallelPlot(wh_pcp,\n             rotateTitle = TRUE)\n\n\n\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nClicking any axis recolours the lines by that variable’s value. Clicking on Happiness Score, for example, shows lines coloured from low (red) to high (blue), making the relationship between happiness and each other variable visible at a glance.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#changing-the-colour-scheme",
+    "href": "HO_EX05_chap15.html#changing-the-colour-scheme",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.5.3 Changing the Colour Scheme",
+    "text": "15.5.3 Changing the Colour Scheme\nThe default blue scheme can be replaced via continuousCS.\n\nparallelPlot(wh_pcp,\n             continuousCS = \"YlOrRd\",\n             rotateTitle = TRUE)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ncontinuousCS = \"YlOrRd\" applies a yellow-orange-red sequential palette. Other options include \"Viridis\", \"Blues\", and \"Reds\".",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#parallel-coordinates-plot-with-histogram",
+    "href": "HO_EX05_chap15.html#parallel-coordinates-plot-with-histogram",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "15.5.4 Parallel Coordinates Plot with Histogram",
+    "text": "15.5.4 Parallel Coordinates Plot with Histogram\nhistoVisibility overlays a histogram on each axis showing the marginal distribution.\n\nhistoVisibility &lt;- rep(TRUE, ncol(wh_pcp))\n\nparallelPlot(wh_pcp,\n             rotateTitle = TRUE,\n             histoVisibility = histoVisibility)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nhistoVisibility takes a logical vector with one entry per column, where TRUE shows the histogram and FALSE hides it. The histogram on each axis provides the same marginal-distribution context that the boxplot provided in the static version.",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap06.html#section",
+    "href": "HO_EX05_chap06.html#section",
+    "title": "Chapter 6: Visual Correlation Analysis",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 6 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Correlation Cartographer 🔍\nPress any key to continue…",
+    "crumbs": [
+      "Chapters",
+      "6. Visual Correlation Analysis"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap13.html#section",
+    "href": "HO_EX05_chap13.html#section",
+    "title": "Chapter 13: Creating Ternary Plot with R",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 13 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Compositional Cartographer 🔺\nPress any key to continue…",
+    "crumbs": [
+      "Chapters",
+      "13. Ternary Plot"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap15.html#section",
+    "href": "HO_EX05_chap15.html#section",
+    "title": "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 15 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Parallel Pathfinder 📊\nPress any key to continue…",
+    "crumbs": [
+      "Chapters",
+      "15. Parallel Coordinates"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap14.html#section",
+    "href": "HO_EX05_chap14.html#section",
+    "title": "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 14 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Heatmap Hero 🔥\nPress any key to continue…",
+    "crumbs": [
+      "Chapters",
+      "14. Heatmap"
+    ]
+  },
+  {
+    "objectID": "HO_EX05_chap16.html#section",
+    "href": "HO_EX05_chap16.html#section",
+    "title": "Chapter 16: Treemap Visualisation with R",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 16 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Treemap Tactician 🗺️\nPress any key to continue…",
+    "crumbs": [
+      "Chapters",
+      "16. Treemap"
+    ]
   }
 ]

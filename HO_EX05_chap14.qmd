@@ -1,0 +1,347 @@
+---
+title: "Chapter 14: Heatmap for Visualising and Analysing Multivariate Data"
+subtitle: "Hands-on Exercise 5"
+author: "Yee Weicong Mark"
+date: "May 14, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: false
+format:
+  html:
+    css: styles.css
+---
+
+## [14 Heatmap for Visualising and Analysing Multivariate Data]{style="color:  #4682B4; font-size: 38px;"}
+
+## [14.1 Overview]{style="color:  #2C5282; font-size: 28px;"}
+
+A heatmap encodes a tabular dataset as a coloured grid, with rows for observations, columns for variables, and cell colour for value. This chapter covers static heatmaps with base R's `heatmap()` and interactive heatmaps with `heatmaply`, plus the three operations that make a heatmap useful: data transformation, clustering, and seriation.
+
+## [14.2 Installing and Launching R Packages]{style="color:  #2C5282; font-size: 28px;"}
+
+Four packages are required:
+
+1. **seriation** for optimal leaf ordering of dendrograms
+2. **heatmaply** for interactive heatmaps with full ggplot styling
+3. **dendextend** for choosing clustering method and number of clusters statistically
+4. **tidyverse** for data manipulation
+
+**knitr** is loaded so `kable()` can show clean previews of the data.
+
+```{r}
+pacman::p_load(seriation, dendextend, heatmaply, tidyverse, knitr)
+```
+
+## [14.3 Importing and Preparing the Data Set]{style="color:  #2C5282; font-size: 28px;"}
+
+## [14.3.1 Importing the Data Set]{style="color:  #366092; font-size: 24px;"}
+
+The World Happiness Report 2018 dataset has been extracted from the original Excel source and saved as `WHData-2018.csv`.
+
+```{r}
+wh <- read_csv("data/WHData-2018.csv")
+
+kable(head(wh))
+```
+
+## [14.3.2 Preparing the Data]{style="color:  #366092; font-size: 24px;"}
+
+The heatmap should label rows by country, not by row number.
+
+```{r}
+row.names(wh) <- wh$Country
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`row.names()` assigns a character vector as row identifiers. After this, the heatmap can label each row with the country name rather than a numeric index. `heatmap()` reads row names from the matrix metadata, not from a column.
+:::
+
+## [14.3.3 Transforming the Data Frame into a Matrix]{style="color:  #366092; font-size: 24px;"}
+
+`heatmap()` requires a numeric matrix, not a data frame.
+
+```{r}
+wh1 <- dplyr::select(wh, c(3, 7:12))
+wh_matrix <- data.matrix(wh)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`data.matrix()` converts a data frame into a numeric matrix, with non-numeric columns converted via their underlying integer codes. The matrix is the natural data structure for heatmaps because every cell must be numeric to be coloured.
+:::
+
+## [14.4 Static Heatmap]{style="color:  #2C5282; font-size: 28px;"}
+
+## [14.4.1 heatmap() of R Stats]{style="color:  #366092; font-size: 24px;"}
+
+The simplest call uses default arguments, which include row and column dendrogram clustering. Setting `Rowv = NA, Colv = NA` suppresses the dendrograms.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+wh_heatmap <- heatmap(wh_matrix,
+                      Rowv = NA, Colv = NA)
+```
+
+## Code
+
+```{r}
+#| eval: false
+wh_heatmap <- heatmap(wh_matrix,
+                      Rowv = NA, Colv = NA)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`Rowv = NA, Colv = NA` switches off both dendrograms, preserving the original row and column order. Without dendrograms, the heatmap behaves like a coloured table.
+:::
+
+The default version with clustering reorders the rows and columns to bring similar entities together.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+wh_heatmap <- heatmap(wh_matrix)
+```
+
+## Code
+
+```{r}
+#| eval: false
+wh_heatmap <- heatmap(wh_matrix)
+```
+:::
+
+::: callout-tip
+## Reading the plot
+
+The chart is uninformative because one variable, the Happiness Score, has values on the order of hundreds while others sit on a 0 to 1 scale. The colour gradient is dominated by the largest variable, so most cells appear identical. This is the scale dominance problem. Without normalisation, the visualisation collapses to a single column's worth of information.
+:::
+
+The fix is to scale each column to comparable units. Setting `scale = "column"` standardises each variable to mean zero and unit variance.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+wh_heatmap <- heatmap(wh_matrix,
+                      scale = "column",
+                      cexRow = 0.6,
+                      cexCol = 0.8,
+                      margins = c(10, 4))
+```
+
+## Code
+
+```{r}
+#| eval: false
+wh_heatmap <- heatmap(wh_matrix,
+                      scale = "column",
+                      cexRow = 0.6,
+                      cexCol = 0.8,
+                      margins = c(10, 4))
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`scale = "column"` z-score-standardises each column. `cexRow = 0.6` and `cexCol = 0.8` shrink the row and column label fonts so all country names fit. `margins = c(10, 4)` enlarges the bottom and left margins to accommodate long labels.
+:::
+
+::: callout-tip
+## Reading the plot
+
+After scaling, the heatmap becomes interpretable. Countries with similar happiness profiles cluster together, and the column dendrogram groups variables that move together.
+:::
+
+## [14.5 Creating Interactive Heatmap]{style="color:  #2C5282; font-size: 28px;"}
+
+`heatmaply` extends the heatmap concept with interactivity (hover, zoom), better default styling, and integrated control over data transformation, clustering, and seriation.
+
+## [14.5.1 Working with heatmaply]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+heatmaply(mtcars)
+```
+
+The basic call uses default settings.
+
+```{r}
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)])
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+The horizontal dendrogram appears on the left in `heatmaply`, and row labels on the right, which is the inverse of base R's `heatmap()`. Excluding columns 1, 2, 4, and 5 removes non-numeric or rank-style columns that are not meaningful to colour. The default colour palette is viridis.
+:::
+
+## [14.5.2 Data Transformation]{style="color:  #366092; font-size: 24px;"}
+
+`heatmaply` supports three transformation methods.
+
+## [14.5.2.1 Scaling Method]{style="color:  #366092; font-size: 22px;"}
+
+Scaling subtracts the mean and divides by the standard deviation.
+
+```{r}
+heatmaply(wh_matrix[, -c(1, 2, 4, 5)],
+          scale = "column")
+```
+
+## [14.5.2.2 Normalising Method]{style="color:  #366092; font-size: 22px;"}
+
+Normalising rescales each variable to the 0 to 1 range by subtracting the minimum and dividing by the range.
+
+```{r}
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]))
+```
+
+## [14.5.2.3 Percentising Method]{style="color:  #366092; font-size: 22px;"}
+
+Percentising replaces each value with its empirical cumulative percentile (the fraction of observations at or below that value).
+
+```{r}
+heatmaply(percentize(wh_matrix[, -c(1, 2, 4, 5)]))
+```
+
+## [14.5.3 Clustering Algorithm]{style="color:  #366092; font-size: 24px;"}
+
+`heatmaply` supports several clustering algorithms via `dist_method` (distance metric) and `hclust_method` (linkage method).
+
+## [14.5.4 Manual Approach]{style="color:  #366092; font-size: 24px;"}
+
+The code chunk below specifies Euclidean distance and Ward's linkage method explicitly.
+
+```{r}
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+          dist_method = "euclidean",
+          hclust_method = "ward.D")
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`dist_method = "euclidean"` is the standard distance for normally distributed data. `hclust_method = "ward.D"` minimises within-cluster variance.
+:::
+
+## [14.5.5 Statistical Approach]{style="color:  #366092; font-size: 24px;"}
+
+`dend_expend()` evaluates linkage methods by an objective criterion, and `find_k()` selects the optimal number of clusters.
+
+```{r}
+wh_d <- dist(normalize(wh_matrix[, -c(1, 2, 4, 5)]), method = "euclidean")
+dend_expend(wh_d)[[3]]
+```
+
+```{r}
+wh_clust <- hclust(wh_d, method = "average")
+num_k <- find_k(wh_clust)
+plot(num_k)
+```
+
+The output recommends average linkage and three clusters.
+
+```{r}
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+          dist_method = "euclidean",
+          hclust_method = "average",
+          k_row = 3)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`dend_expend()` returns optimum scores for each linkage method. `find_k()` evaluates cluster counts by silhouette width and selects the optimum. `k_row = 3` colours rows by the three identified clusters.
+:::
+
+## [14.5.6 Seriation]{style="color:  #366092; font-size: 24px;"}
+
+Hierarchical clustering produces a dendrogram, but the dendrogram does not uniquely determine the row order. The branches can be flipped without changing the tree structure. Seriation picks the flips that minimise the visual distance between adjacent rows.
+
+```{r}
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+          seriate = "OLO")
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`seriate = "OLO"` applies Optimal Leaf Ordering, which tries every valid row order and picks the one where the sum of dissimilarities between adjacent rows is smallest. Other options are `"GW"` (a faster heuristic), `"mean"` (the default of base `heatmap()`), and `"none"` (no rotation).
+:::
+
+## [14.5.7 Working with Colour Palettes]{style="color:  #366092; font-size: 24px;"}
+
+The default viridis palette can be replaced via the `colors` argument.
+
+```{r}
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+          seriate = "none",
+          colors = Blues)
+```
+
+## [14.5.8 The Finishing Touch]{style="color:  #366092; font-size: 24px;"}
+
+The complete code below combines clustering, no seriation, custom colour, custom labels, and a title.
+
+```{r}
+#| fig-height: 12
+heatmaply(normalize(wh_matrix[, -c(1, 2, 4, 5)]),
+          Colv = NA,
+          seriate = "none",
+          colors = Blues,
+          k_row = 5,
+          margins = c(NA, 200, 60, NA),
+          fontsize_row = 4,
+          fontsize_col = 5,
+          main = "World Happiness Score and Variables by Country, 2018\nData transformation: normalise method",
+          xlab = "World Happiness Indicators",
+          ylab = "World Countries")
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`k_row = 5` produces five row clusters. `margins = c(NA, 200, 60, NA)` enlarges the right and top margins to fit long country labels and the title. The `main`, `xlab`, and `ylab` arguments give the chart self-documenting text. Adding `#| fig-height: 12` will increase the height of the heatmap for better visual clarity.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The five-cluster solution separates the high-happiness Western European and Nordic countries from the lower-scoring sub-Saharan African cluster, with three intermediate clusters covering Latin America, Eastern Europe, and parts of Asia. The variables sort themselves with the wealthier-correlated measures on the same end of the column dendrogram.
+:::
+
+::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
+# 🕹️ LEVEL COMPLETE 🕹️
+
+## ★ ★ ★ ★ ★
+
+### CHAPTER 14 CLEARED!
+
+**+1000 XP** · **ACHIEVEMENT UNLOCKED: Heatmap Hero** 🔥
+
+*Press any key to continue...*
+:::
+
+``````{=html}
+<style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
+}
+</style>
+``````

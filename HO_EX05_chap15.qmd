@@ -1,0 +1,346 @@
+---
+title: "Chapter 15: Visual Multivariate Analysis with Parallel Coordinates Plot"
+subtitle: "Hands-on Exercise 5"
+author: "Yee Weicong Mark"
+date: "May 14, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: false
+format:
+  html:
+    css: styles.css
+---
+
+## [15 Visual Multivariate Analysis with Parallel Coordinates Plot]{style="color:  #4682B4; font-size: 38px;"}
+
+## [15.1 Overview]{style="color:  #2C5282; font-size: 28px;"}
+
+A parallel coordinates plot (PCP) draws each variable as a parallel vertical axis and each observation as a polyline crossing all axes. PCPs are common in academic and scientific work but less common in business communication, and are more useful for exploratory work than for explanatory communication. This chapter covers static PCPs with `ggparcoord()` from `GGally` and interactive ones with `parallelPlot`.
+
+## [15.2 Installing and Launching R Packages]{style="color:  #2C5282; font-size: 28px;"}
+
+Three packages are required:
+
+1. **GGally** for `ggparcoord()`, the static parallel coordinates plot
+2. **parallelPlot** for interactive parallel coordinates plots via D3
+3. **tidyverse** for data manipulation
+
+```{r}
+pacman::p_load(GGally, parallelPlot, tidyverse)
+```
+
+## [15.3 Data Preparation]{style="color:  #2C5282; font-size: 28px;"}
+
+The same World Happiness Report 2018 dataset used in Chapter 14 is reused here.
+
+```{r}
+wh <- read_csv("data/WHData-2018.csv")
+```
+
+## [15.4 Plotting Static Parallel Coordinates Plot]{style="color:  #2C5282; font-size: 28px;"}
+
+## [15.4.1 Plotting a Simple Parallel Coordinates]{style="color:  #366092; font-size: 24px;"}
+
+The minimal call passes a data frame and a column index range.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+ggparcoord(data = wh,
+           columns = c(7:12)) +
+  theme(
+    axis.text.x = element_text(size = 5))
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggparcoord(data = wh,
+           columns = c(7:12))
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`columns = c(7:12)` selects the six explanatory variables that contribute to the happiness index. Each line is one country, and each axis is one variable scaled to the 0 to 1 range by default.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The basic plot reveals only that the variables span their expected ranges. Without colour or transparency, individual countries are indistinguishable. This is the typical first iteration: a plot that confirms the data loaded correctly but provides no analytical insight.
+:::
+
+## [15.4.2 Plotting Parallel Coordinates with Boxplot]{style="color:  #366092; font-size: 24px;"}
+
+A more informative variant adds region grouping (via colour), uniform scaling, alpha blending, and an overlaid boxplot.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Parallel Coordinates Plot of World Happiness Variables") +
+  theme(
+    axis.text.x = element_text(size = 4),
+    legend.key.size = unit(0.1, "cm"))
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Parallel Coordinates Plot of World Happiness Variables")
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`groupColumn = 2` colours each line by region (column 2 of `wh`). `scale = "uniminmax"` rescales each variable to the 0 to 1 range so variables with large values do not dominate. `alphaLines = 0.2` makes lines partially transparent, which is essential for PCPs to reveal where lines stack densely. `boxplot = TRUE` overlays a boxplot at each axis, giving the marginal distribution as a reference.
+:::
+
+::: callout-tip
+## Reading the plot
+
+With colour, regional patterns start to emerge. Sub-Saharan African lines tend toward low values across most variables. Western European lines tend toward high values. The boxplots provide a reference for typical so individual lines can be judged as ordinary or unusual.
+:::
+
+## [15.4.3 Parallel Coordinates with Facet]{style="color:  #366092; font-size: 24px;"}
+
+Faceting separates the regions into small multiples, removing the overplotting at the cost of losing the cross-regional comparison in a single panel.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region) +
+  theme(axis.text.x = element_text(angle = 30, size = 3),
+        legend.key.size = unit(0.2, "cm"))
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`facet_wrap(~ Region)` produces one PCP panel per region. Some axis labels overlap, which the next iterations rotate to fix.
+:::
+
+## [15.4.4 Rotating x-axis Text Label]{style="color:  #366092; font-size: 24px;"}
+
+Rotating the labels by 30 degrees reduces overlap.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region) +
+  theme(axis.text.x = element_text(angle = 30, size = 3),
+        legend.key.size = unit(0.2, "cm"))
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region) +
+  theme(axis.text.x = element_text(angle = 30))
+```
+:::
+
+## [15.4.5 Adjusting the Rotated x-axis Text Label]{style="color:  #366092; font-size: 24px;"}
+
+Rotation alone causes labels to drift into the plot area. Setting `hjust = 1` right-aligns the labels at the axis tick.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, size = 3),
+        legend.key.size = unit(0.2, "cm"))
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggparcoord(data = wh,
+           columns = c(7:12),
+           groupColumn = 2,
+           scale = "uniminmax",
+           alphaLines = 0.2,
+           boxplot = TRUE,
+           title = "Multiple Parallel Coordinates Plots of World Happiness Variables by Region") +
+  facet_wrap(~ Region) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`axis.text.x = element_text(angle = 30, hjust = 1)` rotates labels by 30 degrees and right-aligns them, preventing both label overlap and intrusion into the plot area.
+:::
+
+## [15.5 Plotting Interactive Parallel Coordinates Plot: parallelPlot Methods]{style="color:  #2C5282; font-size: 28px;"}
+
+`parallelPlot` builds D3-based interactive PCPs that support brushing axes and dynamically reordering them.
+
+## [15.5.1 The Basic Plot]{style="color:  #366092; font-size: 24px;"}
+
+The basic call requires a data frame with the variables of interest.
+
+```{r}
+wh_pcp <- wh %>%
+  select("Happiness score", c(7:12))
+
+parallelPlot(wh_pcp,
+             width = 320,
+             height = 250)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`parallelPlot()` produces an HTML widget. Hovering, brushing, and axis reordering are supported interactively. Brushing on one axis filters the data displayed on all other axes. Some axis labels are too long to fit, motivating the `rotateTitle` argument in the next section.
+:::
+
+## [15.5.2 Rotate Axis Label]{style="color:  #366092; font-size: 24px;"}
+
+`rotateTitle = TRUE` rotates the axis labels to prevent overlap.
+
+```{r}
+parallelPlot(wh_pcp,
+             rotateTitle = TRUE)
+```
+
+::: callout-tip
+## Reading the plot
+
+Clicking any axis recolours the lines by that variable's value. Clicking on Happiness Score, for example, shows lines coloured from low (red) to high (blue), making the relationship between happiness and each other variable visible at a glance.
+:::
+
+## [15.5.3 Changing the Colour Scheme]{style="color:  #366092; font-size: 24px;"}
+
+The default blue scheme can be replaced via `continuousCS`.
+
+```{r}
+parallelPlot(wh_pcp,
+             continuousCS = "YlOrRd",
+             rotateTitle = TRUE)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`continuousCS = "YlOrRd"` applies a yellow-orange-red sequential palette. Other options include `"Viridis"`, `"Blues"`, and `"Reds"`.
+:::
+
+## [15.5.4 Parallel Coordinates Plot with Histogram]{style="color:  #366092; font-size: 24px;"}
+
+`histoVisibility` overlays a histogram on each axis showing the marginal distribution.
+
+```{r}
+histoVisibility <- rep(TRUE, ncol(wh_pcp))
+
+parallelPlot(wh_pcp,
+             rotateTitle = TRUE,
+             histoVisibility = histoVisibility)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`histoVisibility` takes a logical vector with one entry per column, where `TRUE` shows the histogram and `FALSE` hides it. The histogram on each axis provides the same marginal-distribution context that the boxplot provided in the static version.
+:::
+
+::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
+# 🕹️ LEVEL COMPLETE 🕹️
+
+## ★ ★ ★ ★ ★
+
+### CHAPTER 15 CLEARED!
+
+**+1000 XP** · **ACHIEVEMENT UNLOCKED: Parallel Pathfinder** 📊
+
+*Press any key to continue...*
+:::
+
+````{=html}
+<style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
+}
+</style>
+````
