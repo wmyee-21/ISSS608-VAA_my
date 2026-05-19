@@ -27,7 +27,6 @@ The second view is a boxplot of English scores by class, with individual student
 
 ![](images/clipboard-2404500961.png)
 
-
 The third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.
 
 ![](images/clipboard-2719437361.png)

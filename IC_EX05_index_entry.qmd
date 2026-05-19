@@ -1,0 +1,11 @@
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-678915307.png){width="232"}
+
+::: {style="flex: 1;"}
+**In-Class Exercise 5 — Visual Multivariate Analysis with Tableau**
+
+Built two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.
+
+[Read more →](IC_EX05.html)
+:::
+::::

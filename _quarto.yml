@@ -29,6 +29,8 @@ website:
         href: "IC_EX03.html"
       - text: "In-Class Exercise_4"
         href: "IC_EX04.html"
+      - text: "In-Class Exercise_5"
+        href: "IC_EX05.html"
     - text: "Take-Home Exercises"
       menu:
       - text: "Take-Home Exercise_1"
@@ -59,6 +61,14 @@ website:
               href: HO_EX05_chap15.qmd
             - text: "16. Treemap"
               href: HO_EX05_chap16.qmd
+    - id: th-ex01
+      title: "Take-home Exercise 1"
+      style: "docked"
+      contents:
+        - href: TH_EX01_Draft.qmd
+          text: "Technical Report"
+        - href: TH_EX01_Slides_draft.qmd
+          text: "Executive Summary Slides"
 
 format:
   html:

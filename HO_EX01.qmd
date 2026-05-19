@@ -29,9 +29,9 @@ pacman::p_load(tidyverse)
 
 ## [2. Importing Data]{style="color:  #2C5282; font-size: 28px;"}
 
--   The code chunk below imports exam_data.csv into R environment by using read_csv() function of readr package.
+- The code chunk below imports exam_data.csv into R environment by using read_csv() function of readr package.
 
--   readr is one of the tidyverse package.
+- readr is one of the tidyverse package.
 
 ```{r}
 exam_data <- read_csv("data/Exam_data.csv")
@@ -68,13 +68,13 @@ The code chunk is relatively simple if R Graphics is used. Then, the question is
 ggplot(data=exam_data)
 ```
 
--   A blank canvas appears.
+- A blank canvas appears.
 
--   `ggplot()` initializes a ggplot object.
+- `ggplot()` initializes a ggplot object.
 
--   The *data* argument defines the dataset to be used for plotting.
+- The *data* argument defines the dataset to be used for plotting.
 
--   If the dataset is not already a data.frame, it will be converted to one by `fortify()`.
+- If the dataset is not already a data.frame, it will be converted to one by `fortify()`.
 
 ## [5. Essential Grammatical Elements in ggplot2: Aesthetic mappings]{style="color:  #2C5282; font-size: 28px;"}
 
@@ -93,25 +93,25 @@ ggplot(data=exam_data,
 
 Geometric objects are the actual marks we put on a plot. Examples include:
 
--   *geom_point* for drawing individual points (e.g., a scatter plot)
+- *geom_point* for drawing individual points (e.g., a scatter plot)
 
--   *geom_line* for drawing lines (e.g., for a line charts)
+- *geom_line* for drawing lines (e.g., for a line charts)
 
--   *geom_smooth* for drawing smoothed lines (e.g., for simple trends or approximations)
+- *geom_smooth* for drawing smoothed lines (e.g., for simple trends or approximations)
 
--   *geom_bar* for drawing bars (e.g., for bar charts)
+- *geom_bar* for drawing bars (e.g., for bar charts)
 
--   *geom_histogram* for drawing binned values (e.g. a histogram)
+- *geom_histogram* for drawing binned values (e.g. a histogram)
 
--   *geom_polygon* for drawing arbitrary shapes
+- *geom_polygon* for drawing arbitrary shapes
 
--   *geom_map* for drawing polygons in the shape of a map! (You can access the data to use for these maps by using the map_data() function).
+- *geom_map* for drawing polygons in the shape of a map! (You can access the data to use for these maps by using the map_data() function).
 
 ![](images/clipboard-3829529658.png){width="601"}
 
--   A plot must have at least one geom; there is no upper limit. You can add a geom to a plot using the **+** operator.
+- A plot must have at least one geom; there is no upper limit. You can add a geom to a plot using the **+** operator.
 
--   For complete list, please refer to [here](https://ggplot2.tidyverse.org/reference/#section-layer-geoms).
+- For complete list, please refer to [here](https://ggplot2.tidyverse.org/reference/#section-layer-geoms).
 
 ## [6.1 Geometric Objects: geom_bar()]{style="color:  #366092; font-size: 24px;"}
 
@@ -152,11 +152,11 @@ ggplot(data=exam_data,
 
 In the code chunk below,
 
--   *bins* argument is used to change the number of bins to 20,
+- *bins* argument is used to change the number of bins to 20,
 
--   *fill* argument is used to shade the histogram with light blue color, and
+- *fill* argument is used to shade the histogram with light blue color, and
 
--   *color* argument is used to change the outline colour of the bars in black
+- *color* argument is used to change the outline colour of the bars in black
 
 ```{r}
 ggplot(data=exam_data, 
@@ -270,17 +270,17 @@ ggplot(data=exam_data,
 
 The [Statistics functions](https://ggplot2.tidyverse.org/reference/index.html#stats) statistically transform data, usually as some form of summary. For example:
 
--   frequency of values of a variable (bar graph)
+- frequency of values of a variable (bar graph)
 
-    -   a mean
+  - a mean
 
-    -   a confidence limit
+  - a confidence limit
 
--   There are two ways to use these functions:
+- There are two ways to use these functions:
 
-    -   add a `stat_()` function and override the default geom, or
+  - add a `stat_()` function and override the default geom, or
 
-    -   add a `geom_()` function and override the default stat.
+  - add a `geom_()` function and override the default stat.
 
 ## [7.1 Working with stat()]{style="color:  #366092; font-size: 24px;"}
 
@@ -379,10 +379,10 @@ ggplot(data=exam_data,
 The *Coordinates* functions map the position of objects onto the plane of the plot. There are a number of different possible coordinate systems to use, they are:
 
 ::: {style="overflow-x: auto; white-space: nowrap; border: 1px solid #2C5282; border-radius: 5px; padding: 12px; background-color: #f8f9fa;"}
--   [`coord_cartesian()`](https://ggplot2.tidyverse.org/reference/coord_cartesian.html): the default cartesian coordinate systems, where you specify x and y values (e.g. allows you to zoom in or out).
--   [`coord_flip()`](https://ggplot2.tidyverse.org/reference/coord_flip.html): a cartesian system with the x and y flipped.
--   [`coord_fixed()`](https://ggplot2.tidyverse.org/reference/coord_fixed.html): a cartesian system with a "fixed" aspect ratio (e.g. 1.78 for a "widescreen" plot).
--   [`coord_quickmap()`](https://ggplot2.tidyverse.org/reference/coord_map.html): a coordinate system that approximates a good aspect ratio for maps.
+- [`coord_cartesian()`](https://ggplot2.tidyverse.org/reference/coord_cartesian.html): the default cartesian coordinate systems, where you specify x and y values (e.g. allows you to zoom in or out).
+- [`coord_flip()`](https://ggplot2.tidyverse.org/reference/coord_flip.html): a cartesian system with the x and y flipped.
+- [`coord_fixed()`](https://ggplot2.tidyverse.org/reference/coord_fixed.html): a cartesian system with a "fixed" aspect ratio (e.g. 1.78 for a "widescreen" plot).
+- [`coord_quickmap()`](https://ggplot2.tidyverse.org/reference/coord_map.html): a coordinate system that approximates a good aspect ratio for maps.
 :::
 
 ## [9.1 Working with Coordinate]{style="color:  #366092; font-size: 24px;"}
@@ -431,13 +431,13 @@ ggplot(data=exam_data,
 
 Themes control elements of the graph not related to the data. For example:
 
--   background colour
+- background colour
 
--   size of fonts
+- size of fonts
 
--   gridlines
+- gridlines
 
--   colour of labels
+- colour of labels
 
 Built-in themes include: - `theme_gray()` (default) - `theme_bw()` - `theme_classic()`
 
@@ -477,10 +477,9 @@ ggplot(data=exam_data,
 
 :::
 
----
+------------------------------------------------------------------------
 
 ::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);"}
-
 # 🕹️ LEVEL COMPLETE 🕹️
 
 ## ★ ★ ★ ★ ★
@@ -490,5 +489,4 @@ ggplot(data=exam_data,
 **+500 XP** · **ACHIEVEMENT UNLOCKED: Grammar of Graphics Apprentice** 📊
 
 *Press any key to continue...*
-
 :::
