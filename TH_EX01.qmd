@@ -161,7 +161,7 @@ Run the following once from the project root before rendering this document:
 source("prepare_data.R")
 ```
 
-`prepare_data.R` reads `data/Motor_insurance.csv`, applies all steps below, runs five validation checks, and writes `data/motor_clean.csv` (352,338 rows × 50 columns).
+`prepare_data.R` reads `data/Motor_insurance.csv.gz`, applies all steps below, runs five validation checks, and writes `data/motor_clean.csv.gz` (352,338 rows × 50 columns).
 :::
 
 ## [4.1 Dropping rows with missing values]{style="color:  #2C5282; font-size: 28px;"}
@@ -228,7 +228,7 @@ The three preparation steps above are implemented in `prepare_data.R` and their 
 
 ```{r}
 ins <- readr::read_csv(
-  "data/motor_clean.csv",
+  "data/motor_clean.csv.gz",
   col_types = readr::cols(
     policy_type       = readr::col_factor(levels = c("TP", "TPG", "CC", "COMP_E", "COMP_N")),
     policy_status     = readr::col_factor(levels = c("Active", "Cancelled")),

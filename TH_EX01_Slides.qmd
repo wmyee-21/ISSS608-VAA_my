@@ -44,7 +44,7 @@ pacman::p_load(
 
 # Read motor_clean.csv
 ins <- readr::read_csv(
-  "data/motor_clean.csv",
+  "data/motor_clean.csv.gz",
   col_types = readr::cols(
     policy_type       = readr::col_factor(levels = c("TP", "TPG", "CC", "COMP_E", "COMP_N")),
     policy_status     = readr::col_factor(levels = c("Active", "Cancelled")),

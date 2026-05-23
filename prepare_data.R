@@ -127,7 +127,7 @@ stopifnot(
 cat("All validation checks passed.\n")
 
 # 7. Write clean CSV
-write_csv(ins, "data/motor_clean.csv")
+write_csv(ins, "data/motor_clean.csv.gz")
 
-cat("Written: data/motor_clean.csv\n")
+cat("Written: data/motor_clean.csv.gz\n")
 cat("Final dimensions:", nrow(ins), "rows x", ncol(ins), "columns\n")
