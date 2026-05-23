@@ -1,0 +1,841 @@
+---
+title: "Spanish Motor Insurance Portfolio"
+subtitle: "Executive Summary: Profitability and Volatility, 2022 to 2024"
+author: "ISSS608 Visual Analytics and Applications"
+date: "May 23, 2026"
+date-modified: "last-modified"
+format:
+  revealjs:
+    theme: [default, exec.scss]
+    slide-number: c/t
+    show-slide-number: all
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    margin: 0.08
+    smaller: true
+    code-fold: true
+    code-overflow: wrap
+    fig-align: center
+execute:
+  echo: false
+  eval: true
+  warning: false
+  message: false
+  freeze: false
+  dev: ragg_png
+editor: visual
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# packages
+pacman::p_load(
+  tidyverse, lubridate, patchwork,
+  ggdist, ggridges, ggstatsplot, corrplot,
+  GGally, treemapify, ggiraph, heatmaply,
+  plotly, DT,
+  scales, ggrepel, knitr, colorspace,
+  gganimate, gifski, ragg, ungeviz
+)
+
+# Read motor_clean.csv
+ins <- readr::read_csv(
+  "data/motor_clean.csv",
+  col_types = readr::cols(
+    policy_type       = readr::col_factor(levels = c("TP", "TPG", "CC", "COMP_E", "COMP_N")),
+    policy_status     = readr::col_factor(levels = c("Active", "Cancelled")),
+    business_type     = readr::col_factor(levels = c("New business", "Portfolio renewal")),
+    payment_frequency = readr::col_factor(levels = c("Annual", "Semiannual", "Quarterly")),
+    bonus_score       = readr::col_factor(levels = c("Good history", "Neutral", "Bad history")),
+    fuel_type         = readr::col_factor(levels = c("Diesel", "Gasoline")),
+    municipality_type = readr::col_factor(levels = c("Inland", "Coastal", "Islands")),
+    circulation_area  = readr::col_factor(levels = c("Urban", "Rural")),
+    year              = readr::col_factor(levels = c("2022", "2023", "2024"), ordered = TRUE),
+    age_band          = readr::col_factor(
+                          levels = c("18 to 25","26 to 35","36 to 45",
+                                     "46 to 55","56 to 65","66 to 75","76+"),
+                          ordered = TRUE),
+    value_quintile    = readr::col_factor(
+                          levels = c("Q1 Lowest","Q2","Q3","Q4","Q5 Highest"),
+                          ordered = TRUE)
+  ),
+  show_col_types = FALSE
+)
+
+# helper function
+portfolio_metrics <- function(df, ...) {
+  df |>
+    group_by(...) |>
+    summarise(
+      policies = n(),
+      exposure = sum(total_exposure, na.rm = TRUE),
+      premium  = sum(total_premium,  na.rm = TRUE),
+      incurred = sum(total_incurred, na.rm = TRUE),
+      claims   = sum(total_claims,   na.rm = TRUE),
+      .groups  = "drop"
+    ) |>
+    mutate(
+      loss_ratio  = incurred / premium,
+      claim_freq  = claims / exposure,
+      avg_premium = premium / exposure,
+      severity    = incurred / pmax(claims, 1)
+    )
+}
+```
+
+#  {.title-slide background-color="#2C5282"}
+
+::: title-block
+[Spanish Motor Insurance Portfolio]{.title-main}
+
+[Executive Summary]{.title-sub}
+
+[Profitability and volatility, 2022 to 2024]{.title-tag}
+
+[ISSS608 Visual Analytics and Applications]{.title-meta}
+
+[← Technical Report](TH_EX01.html){.title-back-link}
+:::
+
+::: notes
+The analysis covers a Spanish motor insurance portfolio of 352,338 policy years from 2022 to 2024. Two questions drive the investigation. The first is where profitability is falling, measured through the loss ratio, which is incurred claims divided by earned premium. The second is where volatility sits, measured through the coefficient of variation and the Gini coefficient on incurred losses. The deck moves through three sections: portfolio shape, profitability deterioration, and volatility. Each analytical slide pairs one chart with one conclusion.
+:::
+
+## Contents
+
+**Section 1. Setting the scene**
+
+1.  Dataset and the questions
+2.  Portfolio composition
+
+**Section 2. A profitability problem**
+
+3.  Aggregate loss ratio is rising
+4.  Deterioration by product line
+5.  Diagnosing COMP_N
+6.  Mispriced segments by bonus and age
+7.  Coverage lines and bodily injury
+
+**Section 3. A different kind of risk**
+
+8.  Loss concentration in the tail
+9.  The volatility paradox
+10. Where capital and pricing converge
+
+**Conclusion**
+
+11. Five actions
+
+::: notes
+Section one establishes portfolio scale and composition. Section two traces the profitability story across aggregate, product, driver, and coverage dimensions. Section three examines volatility and capital risk, where the most counter intuitive findings sit. Orange marks concern throughout. Green marks acceptable territory. The dashed 70 percent line is the underwriting break even reference used consistently across all slides.
+:::
+
+## 1 · Dataset and the questions
+
+::::: columns
+::: {.column width="48%"}
+**The data**
+
+1.  Spanish non life motor insurer, [Mendeley Data](https://data.mendeley.com/datasets/sw4jmdb2sm/1)
+2.  352,338 policy years after cleaning, which is 99.5 percent of raw
+3.  2022 to 2024, growing from 67K to 168K records
+4.  50 columns. 47 original plus `licence_tenure`, `age_band`, `value_quintile`
+
+**Two questions**
+
+1.  Where is **profitability** falling?\
+    Loss ratio equals incurred divided by premium.
+2.  Where does **volatility** sit?\
+    Tail percentiles, CV, and Gini.
+:::
+
+::: {.column width="52%"}
+```{r}
+#| label: fig-overview
+#| fig-height: 4.0
+#| fig-width: 6.0
+
+# portfolio_metrics() helper
+ov <- ins |> portfolio_metrics(year)
+
+ggplot(ov, aes(x = year, y = policies)) +
+  geom_col(fill = "#2C5282", width = 0.65) +
+  geom_text(aes(label = paste0(round(policies / 1000), "K policies")),
+            vjust = -0.5, size = 4, fontface = "bold") +
+  geom_text(aes(label = paste0("\u20ac", round(premium / 1e6), "M premium"),
+                y = policies * 0.5),
+            colour = "white", size = 3.2) +
+  scale_y_continuous(labels = label_number(scale = 1e-3, suffix = "k"),
+                     expand = expansion(mult = c(0, 0.20))) +
+  labs(title = "Policy years and premium by year",
+       subtitle = "Volume more than doubled from 2022 to 2024",
+       x = NULL, y = NULL) +
+  theme_minimal(base_size = 13) +
+  theme(plot.title = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"))
+```
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+The book is large and growing fast, doubling in volume from 2022 to 2024. The two analytical questions that follow are where profitability is falling and where volatility sits.
+:::
+
+::: notes
+Policy volume more than doubled from 67K in 2022 to 168K in 2024. Four variables carried missing values, each affecting under one percent of rows. Dropping those rows retains 99.5 percent of the dataset without distorting any key distribution. The loss ratio measures average profitability. The coefficient of variation and Gini coefficient measure the spread and concentration of losses beyond the average.
+:::
+
+## 2 · Portfolio composition
+
+::::: columns
+::: {.column width="58%"}
+```{r}
+#| label: fig-composition
+#| fig-height: 4.3
+#| fig-width: 7.0
+
+# Share of policy-years by policy_type — single bar chart, ordered by share.
+policy_mix <- ins |>
+  group_by(policy_type) |>
+  summarise(n = n(), .groups = "drop") |>
+  mutate(share = n / sum(n))
+
+ggplot(policy_mix,
+       aes(x = share, y = fct_reorder(policy_type, share))) +
+  geom_col(fill = "#2C5282", width = 0.7) +
+  geom_text(aes(label = percent(share, accuracy = 1)),
+            hjust = -0.15, size = 4, fontface = "bold") +
+  scale_x_continuous(labels = percent_format(),
+                     expand = expansion(mult = c(0, 0.15)),
+                     limits = c(0, 0.7)) +
+  labs(title = "Share of policy years by policy type",
+       subtitle = "CC dominates the book. COMP_N is small but loss making",
+       x = NULL, y = NULL) +
+  theme_minimal(base_size = 13) +
+  theme(plot.title = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"))
+```
+:::
+
+::: {.column width="42%"}
+**What dominates the book**
+
+1.  CC is the workhorse product at 58 percent. COMP_E sits second at 26 percent.
+2.  Good history drivers make up the bulk of the book.
+3.  Almost everyone pays annually.
+4.  The book is mostly renewals rather than new business.
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+Composition is broadly stable year on year. This means the loss ratio movement examined next is a behavioural and pricing story inside the existing book, not a mix shift story.
+:::
+
+::: notes
+The bar chart shows policy type share across the full three year portfolio. CC dominates at 58 percent, with COMP_E second at 26 percent. TP and COMP_N are both small. The chart shows three year aggregate shares, not a year by year breakdown. Good drivers make up the bulk of the book and almost everyone pays annually. The reason for deterioration will be further analysed in the following slides.
+:::
+
+## 3 · Loss ratio is rising because pricing softened
+
+::::: columns
+::: {.column width="62%"}
+```{r}
+#| label: fig-aggregate-lr
+#| fig-height: 4.3
+#| fig-width: 7.2
+
+# three-panel pattern Section 6.1
+yearly <- ins |> portfolio_metrics(year)
+
+p_lr <- ggplot(yearly, aes(x = year, y = loss_ratio)) +
+  geom_col(fill = "#D55E00") +
+  geom_text(aes(label = percent(loss_ratio, accuracy = 0.1)),
+            vjust = -0.4, size = 3.6, fontface = "bold") +
+  geom_hline(yintercept = 1, linetype = "dashed", colour = "grey50") +
+  scale_y_continuous(labels = percent_format(),
+                     expand = expansion(mult = c(0, 0.20))) +
+  labs(title = "Loss ratio", x = NULL, y = NULL) +
+  theme_minimal(base_size = 11)
+
+p_freq <- ggplot(yearly, aes(x = year, y = claim_freq)) +
+  geom_col(fill = "#2C5282") +
+  geom_text(aes(label = number(claim_freq, accuracy = 0.001)),
+            vjust = -0.4, size = 3.6, fontface = "bold") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.20))) +
+  labs(title = "Claim frequency", x = NULL, y = NULL) +
+  theme_minimal(base_size = 11)
+
+p_prem <- ggplot(yearly, aes(x = year, y = avg_premium)) +
+  geom_col(fill = "#009E73") +
+  geom_text(aes(label = dollar(avg_premium, prefix = "\u20ac", accuracy = 1)),
+            vjust = -0.4, size = 3.6, fontface = "bold") +
+  scale_y_continuous(labels = label_dollar(prefix = "\u20ac"),
+                     expand = expansion(mult = c(0, 0.20))) +
+  labs(title = "Avg premium per exposure", x = NULL, y = NULL) +
+  theme_minimal(base_size = 11)
+
+p_lr + p_freq + p_prem +
+  plot_annotation(
+    title    = "Loss ratio, Claim frequency and Premium Comparison",
+    theme = theme(plot.title    = element_text(face = "bold",
+                                               colour = "#2C5282", size = 14),
+                  plot.subtitle = element_text(colour = "grey30"))
+  )
+```
+:::
+
+::: {.column width="38%"}
+**Why loss ratio increased**
+
+1.  Loss ratio rose from **66 percent to 75 percent** in two years. This is a 9 ppt absolute lift, or 14 percent relative.
+2.  Claim frequency barely moves at 0.302 to 0.311.
+3.  Premium per exposure falls 9 percent at €446 to €404.
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+Claim cost held steady while pricing softened, naturally causing the loss ratio to increase.
+:::
+
+::: notes
+The loss ratio rose from 66 percent in 2022 to 75 percent in 2024, a 9 percentage point lift. The middle panel shows claim frequency moved from 0.302 to 0.311, which is negligible. The right panel is where we understand why the loss ratio increases. Average premium per exposure fell from €446 to €404, a 9 percent decline. The loss ratio rose because the premium denominator shrank, not because claims worsened. This diagnosis directs attention toward pricing calibration rather than claims management.
+:::
+
+## 4 · Only COMP_N has crossed break even
+
+::::: columns
+::: {.column width="62%"}
+```{r}
+#| label: fig-policytype-trajectory
+#| fig-height: 4.4
+#| fig-width: 7.2
+
+# ggiraph hover-to-highlight pattern Section 6.4.
+by_type_year <- ins |> portfolio_metrics(policy_type, year) |>
+  mutate(tooltip = paste0(policy_type, "\n",
+                          "Year: ", year, "\n",
+                          "Loss ratio: ", percent(loss_ratio, accuracy = 0.1)))
+
+p_trajectories <- ggplot(by_type_year,
+                         aes(x = year, y = loss_ratio,
+                             group = policy_type, colour = policy_type)) +
+  geom_line_interactive(aes(data_id = policy_type, tooltip = policy_type),
+                        linewidth = 1) +
+  geom_point_interactive(aes(data_id = policy_type, tooltip = tooltip),
+                         size = 3) +
+  geom_hline(yintercept = 1, linetype = "dashed", colour = "grey60") +
+  geom_hline(yintercept = 0.7, linetype = "dotted", colour = "grey70") +
+  scale_colour_brewer(palette = "Set1", name = "Policy type") +
+  scale_y_continuous(labels = percent_format(),
+                     limits = c(0.25, 1.15)) +
+  labs(title = "Loss ratio by policy type and year",
+       subtitle = "Dashed line is break even at 100 percent. Dotted line is the 70 percent reference. Hover to highlight.",
+       x = NULL, y = "Loss ratio") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title    = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"))
+
+girafe(ggobj = p_trajectories, width_svg = 7.5, height_svg = 4.3,
+       options = list(opts_hover(css = "stroke-width:2.5px;opacity:1;"),
+                      opts_hover_inv(css = "opacity:0.2;")))
+```
+:::
+
+::: {.column width="38%"}
+**Which policy to take note of**
+
+1.  COMP_N rose from 73 percent to **102 percent**. This is the only product to cross break even.
+2.  TP doubled from 30 percent to 65 percent. It is still safe.
+3.  TPG rose from 60 percent to 80 percent.
+4.  COMP_E rose from approximately 60 percent to 80 percent.
+5.  CC held around 65 percent. It is the only product genuinely stable.
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+Deterioration is broad based, however COMP_N is the only product paying out more in claims than it collects in premium. The next slide diagnoses why.
+:::
+
+::: notes
+All five products deteriorated, however the scale differs sharply. COMP_N crossed the 100 percent break even line in 2024, meaning it now pays out more in claims than it collects in premium. TPG and COMP_E climbed from around 60 percent into the high seventies. TP doubled from 30 to 65 percent but remains profitable due to its low starting point. CC held around 65 percent throughout and is the only product maintaining stability. COMP_N is the immediate priority because it is the only product currently running at a loss.
+:::
+
+## 5 · COMP_N claims volume drives the loss, not severity
+
+::::: columns
+::: {.column width="62%"}
+```{r}
+#| label: fig-comp-n-decomp
+#| fig-height: 4.2
+#| fig-width: 7.2
+
+# facet_wrap pattern Section 6.3.
+by_type <- ins |> portfolio_metrics(policy_type)
+
+by_type_long <- by_type |>
+  select(policy_type, claim_freq, severity) |>
+  pivot_longer(c(claim_freq, severity),
+               names_to = "metric", values_to = "value") |>
+  mutate(metric = recode(metric,
+                         claim_freq = "Claim frequency (per exposure)",
+                         severity   = "Severity (\u20ac per claim)"),
+         metric = factor(metric, levels = c("Claim frequency (per exposure)",
+                                            "Severity (\u20ac per claim)")))
+
+ggplot(by_type_long, aes(x = policy_type, y = value,
+                         fill = policy_type == "COMP_N")) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = ifelse(metric == "Claim frequency (per exposure)",
+                               number(value, accuracy = 0.01),
+                               dollar(value, prefix = "\u20ac", accuracy = 1))),
+            vjust = -0.4, size = 3.4, fontface = "bold") +
+  scale_fill_manual(values = c("FALSE" = "#2C5282", "TRUE" = "#D55E00")) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.20))) +
+  facet_wrap(~ metric, scales = "free_y") +
+  labs(title    = "COMP_N: 8 times the claim frequency, not heavier claims",
+       subtitle = "Three year aggregate, by policy type",
+       x = NULL, y = NULL) +
+  theme_minimal(base_size = 13) +
+  theme(plot.title    = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"),
+        strip.text    = element_text(face = "bold", colour = "#2C5282", size = 11),
+        axis.text.x   = element_text(angle = 30, hjust = 1, size = 9))
+```
+:::
+
+::: {.column width="38%"}
+**Decomposing the loss ratio**
+
+Loss ratio roughly equals frequency times severity divided by premium.
+
+1.  Severity sits in a narrow €750 to €1,100 band across products.
+2.  Frequency varies almost 8 times. This ranges from 0.13 for TP up to **1.04 for COMP_N**.
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+The COMP_N product structure itself drives the loss. The ECDF analysis in the full report confirms the problem is a broad upward shift in mid sized claims, not catastrophic tail events.
+:::
+
+::: notes
+Decomposing the loss ratio isolates whether COMP_N's problem is larger claims or more claims. The severity panel shows all five products sit in a tight band of €750 to €1,100 per claim, with COMP_N at the lower end. The frequency panel shows the divergence. COMP_N records 1.04 claims per exposure against 0.13 for TP, an eight fold difference. The mechanism is the absence of a customer excess. With no out of pocket cost for small claims, policyholders file every minor incident. The ECDF analysis in the full report confirms the distribution shift is concentrated in mid sized claims, not catastrophic events.
+:::
+
+## 6 · Bonus tier and senior loadings are under calibrated
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| label: fig-bonus-trend
+#| fig-height: 3.8
+#| fig-width: 5.5
+
+# ggiraph hover line chart, Section 6.5
+by_bonus_year <- ins |> portfolio_metrics(bonus_score, year) |>
+  mutate(tooltip = paste0(bonus_score, "\n",
+                          "Year: ", year, "\n",
+                          "Loss ratio: ", percent(loss_ratio, accuracy = 0.1)))
+
+p_bonus_line <- ggplot(by_bonus_year,
+                       aes(x = year, y = loss_ratio,
+                           group = bonus_score, colour = bonus_score)) +
+  geom_line_interactive(aes(data_id = bonus_score, tooltip = bonus_score),
+                        linewidth = 1) +
+  geom_point_interactive(aes(data_id = bonus_score, tooltip = tooltip),
+                         size = 3) +
+  geom_hline(yintercept = 1, linetype = "dashed", colour = "grey60") +
+  scale_colour_manual(values = c("Good history" = "#009E73",
+                                 "Neutral"      = "grey50",
+                                 "Bad history"  = "#D55E00")) +
+  scale_y_continuous(labels = percent_format()) +
+  labs(title    = "Bonus tier by year",
+       subtitle = "Hover to highlight a tier",
+       x = NULL, y = "Loss ratio", colour = "Bonus") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title    = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"),
+        legend.position = "bottom",
+        legend.text   = element_text(size = 8))
+
+girafe(ggobj = p_bonus_line, width_svg = 5.5, height_svg = 3.8,
+       options = list(opts_hover(css = "stroke-width:2.5px;opacity:1;"),
+                      opts_hover_inv(css = "opacity:0.2;")))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: fig-age-lr
+#| fig-height: 3.8
+#| fig-width: 5.5
+
+# Two-panel patchwork matching Section 6.6 of the technical report:
+# left panel = loss ratio by age band (colour split at 70%)
+# right panel = average premium per exposure by age band
+by_age <- ins |>
+  mutate(age_band = fct_na_value_to_level(age_band,
+                                           level = "Average of others")) |>
+  portfolio_metrics(age_band) |>
+  filter(age_band %in% c("76+", "Average of others")) |>
+  mutate(age_band = factor(age_band,
+                           levels = c("Average of others", "76+")))
+
+p_age_lr <- ggplot(by_age,
+                   aes(x = age_band, y = loss_ratio,
+                       fill = loss_ratio > 0.7)) +
+  geom_col(show.legend = FALSE, width = 0.7) +
+  geom_text(aes(label = percent(loss_ratio, accuracy = 0.1)),
+            vjust = -0.3, size = 2.6, fontface = "bold") +
+  geom_hline(yintercept = 0.7, linetype = "dashed", colour = "grey50") +
+  scale_fill_manual(values = c("FALSE" = "#009E73", "TRUE" = "#D55E00")) +
+  scale_y_continuous(labels = percent_format(),
+                     expand = expansion(mult = c(0, 0.22)),
+                     limits = c(0, 1.25)) +
+  labs(title = "Loss ratio", x = NULL, y = NULL) +
+  theme_minimal(base_size = 9) +
+  theme(plot.title  = element_text(face = "bold", colour = "#2C5282"),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = 7))
+
+p_age_prem <- ggplot(by_age,
+                     aes(x = age_band, y = avg_premium)) +
+  geom_col(fill = "#2C5282", width = 0.7) +
+  geom_text(aes(label = dollar(avg_premium, prefix = "\u20ac", accuracy = 1)),
+            vjust = -0.3, size = 2.6, fontface = "bold") +
+  scale_y_continuous(labels = label_dollar(prefix = "\u20ac"),
+                     expand = expansion(mult = c(0, 0.22))) +
+  labs(title = "Avg premium per exposure", x = NULL, y = NULL) +
+  theme_minimal(base_size = 9) +
+  theme(plot.title  = element_text(face = "bold", colour = "#2C5282"),
+        axis.text.x = element_text(angle = 30, hjust = 1, size = 7))
+
+p_age_lr + p_age_prem +
+  plot_annotation(
+    title = "Driver age band: loss ratio and premium",
+    theme = theme(plot.title = element_text(face = "bold",
+                                            colour = "#2C5282", size = 11))
+  )
+```
+:::
+:::::
+
+The pricing model treats both risky history tiers and senior drivers as cheaper than what the data suggests. Bad history climbed from 53 percent to 93 percent in two years. The neutral tier overshot bad history in 2024 at 102 percent. Drivers aged 76 plus run at 102 percent while paying below average premium.
+
+::: {.callout-warning icon="false" appearance="minimal"}
+The loading structure across all three bonus tiers and the 76 plus age band needs review against recent claims data.
+:::
+
+::: notes
+The left chart shows bad history climbed from 53 percent in 2022 to 93 percent in 2024. The neutral tier briefly overshot bad history in 2024 at 102 percent. In a well calibrated book, bad history should run a low loss ratio because its higher premium offsets elevated risk. The data shows loading have not kept pace with actual claims experience. The right charts reveals a second mis-calibration. The 76 plus age band runs a 102 percent loss ratio while paying below average premium. The segment is small at under one percent of the book, however the gap between price and risk is structural and requires correcting at the tariff level.
+:::
+
+## 7 · Bodily injury anchors the liability loss
+
+```{r}
+#| label: fig-bodily-injury
+#| fig-height: 4.0
+#| fig-width: 11
+
+# severity decomposition Section 8.4
+sev_decomp <- tribble(
+  ~coverage,            ~claims_col,                 ~incurred_col,
+  "Liability injury",   "liability_injury_claims",   "liability_injury_incurred",
+  "Liability property", "liability_property_claims", "liability_property_incurred",
+  "Property damage",    "property_claims",           "property_incurred",
+  "Theft",              "theft_claims",              "theft_incurred",
+  "Glass",              "glass_claims",              "glass_incurred",
+  "Fire",               "fire_claims",               "fire_incurred",
+  "Occupants",          "occupants_claims",          "occupants_incurred",
+  "Legal protection",   "legal_protection_claims",   "legal_protection_incurred"
+) |>
+  rowwise() |>
+  mutate(total_claims   = sum(ins[[claims_col]],   na.rm = TRUE),
+         total_incurred = sum(ins[[incurred_col]], na.rm = TRUE),
+         severity       = total_incurred / total_claims) |>
+  ungroup() |>
+  mutate(coverage   = fct_reorder(coverage, severity),
+         claims_pct = total_claims / sum(ins$total_claims, na.rm = TRUE),
+         # Highlight the bodily-injury bar in orange, everything else blue.
+         highlight  = coverage == "Liability injury")
+
+ggplot(sev_decomp, aes(x = severity, y = coverage, fill = highlight)) +
+  geom_col(width = 0.7, show.legend = FALSE) +
+  geom_text(aes(label = paste0(dollar(severity, prefix = "\u20ac", accuracy = 1),
+                               "    ", comma(total_claims), " claims (",
+                               percent(claims_pct, accuracy = 0.1), ")")),
+            hjust = -0.05, size = 3.4, colour = "grey20") +
+  scale_fill_manual(values = c("FALSE" = "#2C5282", "TRUE" = "#D55E00")) +
+  scale_x_continuous(labels = label_dollar(prefix = "\u20ac"),
+                     expand = expansion(mult = c(0, 0.32))) +
+  labs(title    = "Mean severity per claim by coverage line",
+       x = NULL, y = NULL) +
+  theme_minimal(base_size = 13) +
+  theme(plot.title    = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30"))
+```
+
+Bodily injury averages approximately €4,940 per claim, which is roughly 4 times the next largest category. Although bodily injury represents only 9 percent of claims by count, its severity drives a disproportionate share of the liability loss.
+
+::: {.callout-warning icon="false" appearance="minimal"}
+The bodily injury sub tariff must track medical and legal inflation indicators independently.
+:::
+
+::: notes
+Liability at €64M is the largest coverage line and runs a 74 percent loss ratio. Property damage at €26M runs 72 percent. These two lines together carry two thirds of total premium and both sit above the profitability threshold. The four smaller lines run between 40 and 52 percent and remain profitable. Within liability, a bodily injury claim averages €4,940, more than four times the next largest category. Bodily injury accounts for only 9 percent of claims by count, however its high individual cost drives a disproportionate share of the overall liability loss ratio. The sub tariff must be tracked against medical and legal cost inflation independently of the rest of liability.
+:::
+
+## 8 · The top 1 percent of policies drive half of losses
+
+::::: columns
+::: {.column width="56%"}
+```{r}
+#| label: fig-lorenz
+#| fig-height: 4.5
+#| fig-width: 5.2
+
+# Lorenz construction Section 8.1
+lorenz_data <- ins |>
+  arrange(total_incurred) |>
+  mutate(cum_share_policies = row_number() / n(),
+         cum_share_incurred = cumsum(total_incurred) / sum(total_incurred))
+
+n_pol <- nrow(lorenz_data)
+gini  <- 1 - 2 * sum(lorenz_data$cum_share_incurred) / n_pol + 1 / n_pol
+
+# Reference points at the 80th, 90th, 95th percentiles of policy count.
+ref_points <- tibble(
+  cum_share_policies = c(0.80, 0.90, 0.95),
+  cum_share_incurred = approx(lorenz_data$cum_share_policies,
+                              lorenz_data$cum_share_incurred,
+                              xout = c(0.80, 0.90, 0.95))$y
+)
+
+ggplot(lorenz_data, aes(x = cum_share_policies, y = cum_share_incurred)) +
+  geom_ribbon(aes(ymin = cum_share_incurred, ymax = cum_share_policies),
+              fill = "#D55E00", alpha = 0.15) +
+  geom_abline(slope = 1, intercept = 0,
+              colour = "grey50", linetype = "dashed") +
+  geom_line(colour = "#0072B2", linewidth = 0.9) +
+  geom_point(data = ref_points,
+             aes(x = cum_share_policies, y = cum_share_incurred),
+             colour = "#D55E00", size = 2.5) +
+  annotate("text", x = 0.05, y = 0.92,
+           label = paste0("Gini = ", round(gini, 3)),
+           hjust = 0, size = 5, fontface = "bold", colour = "#0072B2") +
+  scale_x_continuous(labels = percent) +
+  scale_y_continuous(labels = percent) +
+  labs(title = "Lorenz curve of incurred amount",
+       subtitle = "Closer to the corner means more concentrated losses",
+       x = "Cumulative share of policies",
+       y = "Cumulative share of incurred") +
+  theme_minimal(base_size = 12) +
+  theme(plot.title    = element_text(face = "bold", colour = "#2C5282"),
+        plot.subtitle = element_text(colour = "grey30")) +
+  coord_equal()
+```
+:::
+
+::: {.column width="44%"}
+**Gini = 0.96**
+
+A handful of policies drive virtually all of the loss.
+
+| Slice                  | Share of total loss |
+|------------------------|---------------------|
+| Bottom 80% of policies | **\< 5%**           |
+| Top 5% of policies     | **\> 80%**          |
+| Top 1% of policies     | **\~ 50%**          |
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+Reinsurance must be calibrated against the tail of the distribution, not the mean. A uniform rate increase would penalise the 80 percent of policies that contribute under 5 percent of losses while under loading the 1 percent driving half of them. Targeting is key.
+:::
+
+::: notes
+The Gini coefficient of 0.96 is high even by motor insurance standards. The Lorenz curve hugs the floor for most of its length before climbing almost vertically at the right end. The bottom 80 percent of policies contribute under 5 percent of total incurred. The top 5 percent carry over 80 percent, and the top 1 percent alone carry roughly half. Reinsurance must be benchmarked against the top of the distribution, not the mean, because the tail generates the capital risk. Uniform rate increases are a poor response. They penalise the 80 percent of policyholders who contribute almost nothing to losses while leaving the loss driving tail under priced relative to actual cost.
+:::
+
+## 9 · The worst loss ratio is not the most volatile
+
+::::: columns
+::: {.column width="60%"}
+```{r}
+#| label: fig-hop
+#| fig-height: 4.5
+#| fig-width: 6.5
+
+# HOP report Section 8.5
+library(ungeviz)
+set.seed(99)
+
+hop_base <- ins |>
+  filter(total_incurred > 0,
+         policy_type %in% c("COMP_N", "CC")) |>
+  mutate(segment = paste0(policy_type, " / ", bonus_score)) |>
+  filter(segment %in% c("COMP_N / Good history",
+                        "CC / Good history",
+                        "CC / Neutral")) |>
+  mutate(segment      = factor(segment,
+                               levels = c("COMP_N / Good history",
+                                          "CC / Good history",
+                                          "CC / Neutral")),
+         log_incurred = log10(total_incurred))
+
+ggplot(hop_base, aes(x = segment, y = log_incurred)) +
+  geom_point(position = position_jitter(height = 0.3, width = 0.05),
+             size = 0.4, colour = "#0072B2", alpha = 0.5) +
+  geom_hpline(data = sampler(25, group = segment),
+              height = 0.6, colour = "#D55E00") +
+  scale_x_discrete(name = NULL,
+                   labels = function(x) str_wrap(x, width = 12)) +
+  scale_y_continuous(name = "Incurred per claim (log10 \u20ac)",
+                     breaks = c(1, 1.699, 2, 3, 4, 5),
+                     labels = c("\u20ac10", "\u20ac50", "\u20ac100",
+                                "\u20ac1k", "\u20ac10k", "\u20ac100k")) +
+  labs(title    = "Hypothetical Outcome Plot: incurred per claim by segment",
+       subtitle = "Each frame draws 25 policies. Orange line = sample mean for that draw.") +
+  theme_bw() +
+  transition_states(.draw, 1, 3)
+```
+:::
+
+::: {.column width="40%"}
+**The volatility paradox**
+
+Three segments are compared on incurred per claim (log scale).
+
+1.  **COMP_N / Good history** — low CV at approximately 3.6. High claim volume averages out. The orange line barely moves.
+2.  **CC / Good history** — moderate spread. The orange line shifts noticeably between frames.
+3.  **CC / Neutral** — CV 18.6. The orange line swings widely. This is where reserve risk sits.
+:::
+:::::
+
+::: {.callout-warning icon="false" appearance="minimal"}
+Profitability and volatility are different problems demanding different tools. Pricing and excess design address profitability. Reinsurance and capital reserves address volatility. The CC and TPG segments warrant a reinsurance review against actual tail risk, separate from any pricing action on COMP_N.
+:::
+
+::: notes
+Three segments are plotted: COMP_N good history, CC good history, and CC neutral. Blue points are individual policy incurred values on a log scale. The orange line is the sample mean for 25 randomly drawn policies per frame. COMP_N good history shows a tight point cloud and a nearly stationary orange line, confirming low CV. CC good history shows more spread. CC neutral shows the widest point cloud and the most erratic orange line, confirming CV of 18.6. The volatility is visible in how far the orange line moves between frames. COMP_N is a profitability problem. CC neutral is a capital reserve problem. They require different responses.
+:::
+
+## 10 · COMP_N and CC neutral together hold most loss making premium
+
+```{r}
+#| label: fig-treemap
+#| fig-height: 4.8
+#| out-width: "100%"
+
+# plotly treemap Section 8.3
+tree_data <- ins |>
+  group_by(policy_type, bonus_score) |>
+  summarise(premium  = sum(total_premium,  na.rm = TRUE),
+            incurred = sum(total_incurred, na.rm = TRUE),
+            .groups  = "drop") |>
+  mutate(loss_ratio = incurred / premium)
+
+parents <- tree_data |>
+  group_by(policy_type) |>
+  summarise(label    = first(policy_type),
+            parent   = "",
+            value    = sum(premium),
+            incurred = sum(incurred),
+            .groups  = "drop") |>
+  mutate(loss_ratio = incurred / value,
+         id         = label)
+
+leaves <- tree_data |>
+  mutate(label  = bonus_score,
+         parent = policy_type,
+         value  = premium,
+         id     = paste(policy_type, bonus_score, sep = " / ")) |>
+  select(id, label, parent, value, loss_ratio, incurred)
+
+treemap_df <- bind_rows(
+  parents |> select(id, label, parent, value, loss_ratio, incurred),
+  leaves
+) |>
+  mutate(hover = paste0("<b>", id, "</b><br>",
+                        "Premium: \u20ac", scales::comma(round(value)), "<br>",
+                        "Incurred: \u20ac", scales::comma(round(incurred)), "<br>",
+                        "Loss ratio: ", scales::percent(loss_ratio, accuracy = 0.1)),
+         text  = paste0(label, "<br>", scales::percent(loss_ratio, accuracy = 1)))
+
+plot_ly(
+  data         = treemap_df,
+  type         = "treemap",
+  ids          = ~id,
+  labels       = ~text,
+  parents      = ~parent,
+  values       = ~value,
+  branchvalues = "total",
+  hovertext    = ~hover,
+  hoverinfo    = "text",
+  marker = list(
+    colors     = ~loss_ratio,
+    colorscale = list(list(0,   "#4393C3"),
+                      list(0.5, "#FFFFBF"),
+                      list(1,   "#D6604D")),
+    cmin = 0.4, cmid = 0.7, cmax = 1.1,
+    colorbar = list(title = "Loss ratio", tickformat = ".0%"),
+    line = list(color = "white", width = 2)
+  ),
+  textfont = list(color = "grey10", size = 12)
+) |>
+  layout(margin = list(t = 25, l = 5, r = 5, b = 5))
+```
+
+::: {.callout-warning icon="false" appearance="minimal"}
+The largest red tiles are CC neutral at 87 percent and the entire COMP_N block. Good history CC, which is the workhorse of the book, is the only large tile in blue. A rate correction touching only the bad history loading would miss most of the premium actually at risk. The neutral tier and COMP_N product structure both warrant equal attention.
+:::
+
+::: notes
+The treemap encodes premium volume through tile area and loss ratio through colour. Blue sits below 70 percent. Red sits above. Two patterns stand out. The COMP_N block is uniformly red across all three bonus tiers, confirming the product structure drives the loss ratio regardless of customer segment. Within CC, the neutral bonus tile is the most prominent red region at 87 percent, while the good history tile is blue and is the largest single profitable region in the book. CC with bad history at 61 percent is actually one of the more profitable segments. A rate review touching only the bad history loading would miss the neutral tier and COMP_N, which together hold most of the loss making premium.
+:::
+
+## 11 · Five actions
+
+:::::: columns
+::: {.column width="60%"}
+**1. Liability and property damage first.** These two coverage lines together hold two thirds of premium and both run above the 70 percent threshold. Any pricing review starts here.
+
+**2. Bodily injury sub tariff.** Roughly 9 percent of claims by count but structurally 4 times the cost. Index against medical and legal inflation independently.
+
+**3. Restructure COMP_N.** Reintroduce a customer excess or load the product by approximately 30 percent. This is the only product breaching break even.
+
+**4. Recalibrate bonus loading at the cell level.** The neutral tier overshot bad history in 2024. Review by product crossed with tier, not by tier alone.
+
+**5. Reinsurance against tail concentration.** Gini 0.96, top 1 percent of policies drive half of losses, CC neutral CV 18.6. Calibrate cover against the tail, not the mean.
+:::
+
+:::: {.column width="40%"}
+::: {.callout-tip icon="false" title="What this avoids"}
+A uniform rate increase would do three things:
+
+1.  Penalise the 80 percent of policies that contribute under 5 percent of losses.
+2.  Under load the 1 percent that drives half of total incurred.
+3.  Miss the COMP_N structural issue entirely.
+
+Targeting is key.
+:::
+::::
+::::::
+
+::: notes
+The five actions follow from the evidence in priority order, matching Section 10.3 of the main report. Liability and property damage hold two thirds of premium and both exceed the threshold, so any pricing review starts there. The bodily injury sub tariff must track external inflation indicators independently. COMP_N is the only product breaching break even and the frequency decomposition points clearly to the missing excess as the mechanism. Bonus tier loadings need recalibration at the product by tier cell level, not by tier alone. Reinsurance cover should be reset against the tail concentration shown by the Gini coefficient and the HOP, not against the mean.
+:::
+
+# Thank you {.thank-you-slide background-color="#2C5282"}
+
+::: thank-you-block
+[Questions?]{.thank-you-title}
+
+[Full report and code at ISSS608 Take home Exercise 1]{.thank-you-sub} [← Technical Report](TH_EX01.html){.title-back-link}
+:::
+
+::: notes
+The full report carries the underlying statistical tests, the ECDF and violin diagnostics confirming where the COMP_N distribution shift sits, the parallel coordinates view of product profiles, and the claim cost drift chart by year and bonus tier. Three statistical checks anchor the recommendations. A Kruskal Wallis test confirms cost differences across policy types are real and not due to chance variation. A chi square test confirms quarterly payers claim significantly more often than annual payers. The Gini computation quantifies the tail concentration driving the reinsurance recommendation. Thanks you.
+:::

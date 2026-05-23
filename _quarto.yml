@@ -34,7 +34,7 @@ website:
     - text: "Take-Home Exercises"
       menu:
       - text: "Take-Home Exercise_1"
-        href: "TM_EX01.html"
+        href: "TH_EX01.html"
     right:
       - href: index.qmd
         text: "<img src='/images/home-icon.png' width='88' height='78' alt='Home'>"
@@ -65,9 +65,9 @@ website:
       title: "Take-home Exercise 1"
       style: "docked"
       contents:
-        - href: TH_EX01_Draft.qmd
+        - href: TH_EX01.qmd
           text: "Technical Report"
-        - href: TH_EX01_Slides_draft.qmd
+        - href: TH_EX01_Slides.html
           text: "Executive Summary Slides"
 
 format:
