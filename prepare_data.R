@@ -1,4 +1,5 @@
 # prepare_data.R
+# Cleans the raw Spanish motor insurance dataset and writes motor_clean.csv
 
 library(tidyverse)
 
@@ -11,35 +12,19 @@ raw <- read_delim(
 
 cat("Raw dimensions:", nrow(raw), "rows x", ncol(raw), "columns\n")
 
-# 2. Drop rows with missing values
+# 2. Drop rows with NAs in key variables
 ins <- raw |>
   drop_na(fuel_type, vehicle_value, vehicle_age, age_driving_licence)
 
 cat("After dropping NAs:", nrow(ins), "rows retained (",
     round(nrow(ins) / nrow(raw) * 100, 1), "% of original)\n")
 
-# 3. Recode categorical variables into labelled factors
-# policy_type: ordered from minimal cover to fully comprehensive
-policy_type_levels  <- c("TP", "TPG", "CC", "COMP_E", "COMP_N")
-policy_type_labels  <- c(
-  "TP",      # stored as short code — the stacked bar chart uses these
-  "TPG",
-  "CC",
-  "COMP_E",
-  "COMP_N"
-)
-
+# 3. Recode categorical variables to readable factor labels
 ins <- ins |>
   mutate(
-    # --- Policy descriptors ---
     policy_type = factor(
       policy_type,
-      levels = c("TP", "TPG", "CC", "COMP_E", "COMP_N"),
-      labels = c("TP", "TPG", "CC", "COMP_E", "COMP_N")
-      # Short codes retained in the CSV so both the stacked bar chart
-      # (which needs them) and the severity decomposition chart work without
-      # further recoding.  The Quarto file applies readable labels via
-      # scale overrides where needed.
+      levels = c("TP", "TPG", "CC", "COMP_E", "COMP_N")
     ),
     policy_status = factor(
       policy_status,
@@ -56,7 +41,6 @@ ins <- ins |>
       levels = c("A", "S", "Q"),
       labels = c("Annual", "Semiannual", "Quarterly")
     ),
-    # bonus_score: ordered from best to worst driving history
     bonus_score = factor(
       bonus_score,
       levels = c("G", "N", "B"),
@@ -77,36 +61,25 @@ ins <- ins |>
       levels = c("U", "R"),
       labels = c("Urban", "Rural")
     ),
-    # year stored as ordered factor so charts read 2022 -> 2023 -> 2024
     year = factor(year, levels = c(2022, 2023, 2024), ordered = TRUE)
   )
 
 # 4. Derived variables
 ins <- ins |>
   mutate(
-    # 4a. Licence tenure (years held)
-    #     age_driving_licence is the AGE AT WHICH the driver obtained their
-    #     licence (mean ~23, range 0-80) — NOT a calendar year.
-    #     Tenure = driver_age - age_driving_licence gives years of experience.
-    #     pmax(..., 0) floors at zero — a small number of records produce a
-    #     negative value due to data entry errors; treating those as 0 is
-    #     the most conservative interpretation.
+    # Years of driving experience (floored at 0 to handle data entry errors)
     licence_tenure = pmax(driver_age - age_driving_licence, 0),
 
-    # 4b. Driver age band (10-year bins, 18-25 isolated as high-risk cohort)
-    #     ordered = TRUE preserves the left-to-right reading order in charts.
+    # 10-year age bins; 18-25 isolated as high risk, 76+ isolated as senior
     age_band = cut(
       driver_age,
       breaks = c(17, 25, 35, 45, 55, 65, 75, 99),
-      labels = c("18 to 25", "26 to 35", "36 to 45",
-                 "46 to 55", "56 to 65", "66 to 75", "76+"),
+      labels = c("18-25", "26-35", "36-45",
+                 "46-55", "56-65", "66-75", "76+"),
       ordered_result = TRUE
     ),
 
-    # 4c. Vehicle value quintile
-    #     Raw vehicle values span ~200 EUR to ~374,000 EUR (strong right skew).
-    #     Quintiles give each value band equal weight; ntile assigns ranks
-    #     1 (cheapest 20%) through 5 (most expensive 20%).
+    # Vehicle value quintiles, equal-weight bands
     value_quintile = factor(
       ntile(vehicle_value, 5),
       levels = 1:5,
@@ -116,9 +89,32 @@ ins <- ins |>
 
 cat("Derived columns added: licence_tenure, age_band, value_quintile\n")
 
-# 5. Validation checks before writing
+# 5. Round numeric columns to reduce file size
+# Premium and incurred to cents. Exposure to 6 dp. Vehicle age to integer.
+# Keeps all reported figures intact while shrinking the CSV from ~120MB to ~80MB.
+money_cols <- c(
+  "total_premium", "liability_premium", "property_damage_premium",
+  "theft_premium", "fire_premium", "glass_premium",
+  "legal_protection_premium", "occupants_premium",
+  "total_incurred", "liability_incurred", "liability_property_incurred",
+  "liability_injury_incurred", "property_incurred", "theft_incurred",
+  "fire_incurred", "glass_incurred", "legal_protection_incurred",
+  "occupants_incurred", "vehicle_value"
+)
+exposure_cols <- c("total_exposure", "liability_exposure")
+int_cols      <- c("vehicle_age", "age_driving_licence")
+
+ins <- ins |>
+  mutate(
+    across(all_of(money_cols),    \(x) round(x, 2)),
+    across(all_of(exposure_cols), \(x) round(x, 6)),
+    across(all_of(int_cols),      as.integer),
+    power_to_weight_ratio = round(power_to_weight_ratio, 2)
+  )
+
+# 6. Validation checks
 stopifnot(
-  "licence_tenure contains negatives after flooring" =
+  "licence_tenure contains negatives" =
     min(ins$licence_tenure) >= 0,
   "age_band has unexpected NAs" =
     sum(is.na(ins$age_band)) == 0,
@@ -130,7 +126,7 @@ stopifnot(
 
 cat("All validation checks passed.\n")
 
-# 6. Write clean CSV
+# 7. Write clean CSV
 write_csv(ins, "data/motor_clean.csv")
 
 cat("Written: data/motor_clean.csv\n")

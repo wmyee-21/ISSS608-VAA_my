@@ -23,7 +23,7 @@ execute:
   eval: true
   warning: false
   message: false
-  freeze: auto
+  freeze: false
   dev: ragg_png
 editor: visual
 ---
@@ -414,7 +414,6 @@ Loss ratio roughly equals frequency times severity divided by premium.
 
 1.  Severity sits in a narrow €750 to €1,100 band across products.
 2.  Frequency varies almost 8 times. This ranges from 0.13 for TP up to **1.04 for COMP_N**.
-
 :::
 :::::
 
@@ -472,31 +471,43 @@ girafe(ggobj = p_bonus_line, width_svg = 5.5, height_svg = 3.8,
 ```{r}
 #| label: fig-age-lr
 #| fig-height: 3.8
-#| fig-width: 7.0
+#| fig-width: 5.5
 
-# Section 6.6
-by_age <- ins |> portfolio_metrics(age_band)
+# Two-panel patchwork matching Section 6.6 of the technical report:
+# left panel = loss ratio by age band (colour split at 70%)
+# right panel = average premium per exposure by age band
+by_age <- ins |>
+  mutate(age_band = fct_na_value_to_level(age_band,
+                                           level = "Average of others")) |>
+  portfolio_metrics(age_band) |>
+  filter(age_band %in% c("76+", "Average of others")) |>
+  mutate(age_band = factor(age_band,
+                           levels = c("Average of others", "76+")))
 
-p_age_lr <- ggplot(by_age, aes(x = age_band, y = loss_ratio)) +
-  geom_col(aes(fill = loss_ratio > 0.7), show.legend = FALSE, width = 0.7) +
+p_age_lr <- ggplot(by_age,
+                   aes(x = age_band, y = loss_ratio,
+                       fill = loss_ratio > 0.7)) +
+  geom_col(show.legend = FALSE, width = 0.7) +
   geom_text(aes(label = percent(loss_ratio, accuracy = 0.1)),
-            vjust = -0.4, size = 2.8) +
+            vjust = -0.3, size = 2.6, fontface = "bold") +
   geom_hline(yintercept = 0.7, linetype = "dashed", colour = "grey50") +
   scale_fill_manual(values = c("FALSE" = "#009E73", "TRUE" = "#D55E00")) +
   scale_y_continuous(labels = percent_format(),
-                     expand = expansion(mult = c(0, 0.18))) +
-  labs(title = "Loss ratio by driver age band", x = NULL, y = "Loss ratio") +
+                     expand = expansion(mult = c(0, 0.22)),
+                     limits = c(0, 1.25)) +
+  labs(title = "Loss ratio", x = NULL, y = NULL) +
   theme_minimal(base_size = 9) +
   theme(plot.title  = element_text(face = "bold", colour = "#2C5282"),
         axis.text.x = element_text(angle = 30, hjust = 1, size = 7))
 
-p_age_prem <- ggplot(by_age, aes(x = age_band, y = avg_premium)) +
+p_age_prem <- ggplot(by_age,
+                     aes(x = age_band, y = avg_premium)) +
   geom_col(fill = "#2C5282", width = 0.7) +
   geom_text(aes(label = dollar(avg_premium, prefix = "\u20ac", accuracy = 1)),
-            vjust = -0.4, size = 2.8) +
+            vjust = -0.3, size = 2.6, fontface = "bold") +
   scale_y_continuous(labels = label_dollar(prefix = "\u20ac"),
-                     expand = expansion(mult = c(0, 0.18))) +
-  labs(title = "Average premium per exposure", x = NULL, y = "EUR") +
+                     expand = expansion(mult = c(0, 0.22))) +
+  labs(title = "Avg premium per exposure", x = NULL, y = NULL) +
   theme_minimal(base_size = 9) +
   theme(plot.title  = element_text(face = "bold", colour = "#2C5282"),
         axis.text.x = element_text(angle = 30, hjust = 1, size = 7))
@@ -511,7 +522,7 @@ p_age_lr + p_age_prem +
 :::
 :::::
 
-The pricing model treats both risky history tiers and senior drivers as cheaper than what the data suggests. Bad history climbed from 53 percent to 93 percent in two years. The neutral tier overshot bad history in 2024 at 102 percent. Drivers aged 76 plus run at 102 percent while paying below average premium. 
+The pricing model treats both risky history tiers and senior drivers as cheaper than what the data suggests. Bad history climbed from 53 percent to 93 percent in two years. The neutral tier overshot bad history in 2024 at 102 percent. Drivers aged 76 plus run at 102 percent while paying below average premium.
 
 ::: {.callout-warning icon="false" appearance="minimal"}
 The loading structure across all three bonus tiers and the 76 plus age band needs review against recent claims data.
@@ -566,7 +577,7 @@ ggplot(sev_decomp, aes(x = severity, y = coverage, fill = highlight)) +
         plot.subtitle = element_text(colour = "grey30"))
 ```
 
-Bodily injury averages approximately €4,940 per claim, which is roughly 4 times the next largest category. Although bodily injury represents only 9 percent of claims by count, its severity drives a disproportionate share of the liability loss. 
+Bodily injury averages approximately €4,940 per claim, which is roughly 4 times the next largest category. Although bodily injury represents only 9 percent of claims by count, its severity drives a disproportionate share of the liability loss.
 
 ::: {.callout-warning icon="false" appearance="minimal"}
 The bodily injury sub tariff must track medical and legal inflation indicators independently.
@@ -700,7 +711,6 @@ Three segments are compared on incurred per claim (log scale).
 1.  **COMP_N / Good history** — low CV at approximately 3.6. High claim volume averages out. The orange line barely moves.
 2.  **CC / Good history** — moderate spread. The orange line shifts noticeably between frames.
 3.  **CC / Neutral** — CV 18.6. The orange line swings widely. This is where reserve risk sits.
-
 :::
 :::::
 
@@ -823,8 +833,7 @@ The five actions follow from the evidence in priority order, matching Section 10
 ::: thank-you-block
 [Questions?]{.thank-you-title}
 
-[Full report and code at ISSS608 Take home Exercise 1]{.thank-you-sub}
-[← Technical Report](TH_EX01.html){.title-back-link}
+[Full report and code at ISSS608 Take home Exercise 1]{.thank-you-sub} [← Technical Report](TH_EX01.html){.title-back-link}
 :::
 
 ::: notes
