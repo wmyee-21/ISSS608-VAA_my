@@ -51,12 +51,12 @@ Built two treemap views to practise multivariate visual analysis. The first tree
 ### [📝 Take-Home Assignments]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-4035837502.png){width="218"}
+![](images/clipboard-151564721.png){width="232"}
 
 ::: {style="flex: 1;"}
-**Take-home Assignment 1 — coming soon**
+**Take-home Assignment 1 — Exploring profitability and volatility in a Spanish motor insurance portfolio**
 
-Independent projects applying visual analytics techniques to real-world datasets, culminating in a polished analytical deliverable.
+The analysis covers a Spanish motor insurance portfolio of 352,338 policy years from 2022 to 2024.
 
 [Read more →](TH_EX01.html)
 :::

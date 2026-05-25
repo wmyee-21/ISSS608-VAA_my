@@ -15,4 +15,14 @@ format:
 
 ## [Take-Home Exercises Index]{style="color:  #4682B4; font-size: 38px;"}
 
-![](images/clipboard-2901820319.png)
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-151564721.png){width="232"}
+
+::: {style="flex: 1;"}
+**Take-home Assignment 1 — Exploring profitability and volatility in a Spanish motor insurance portfolio**
+
+The analysis covers a Spanish motor insurance portfolio of 352,338 policy years from 2022 to 2024.
+
+[Read more →](TH_EX01.html)
+:::
+::::
