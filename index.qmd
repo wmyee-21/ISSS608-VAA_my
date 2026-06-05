@@ -30,7 +30,7 @@ This site consists of my journey through the course, updated regularly as I prog
 
 Explored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.
 
-[Read more →](HO_EX07.html)
+[Read more →](HO_EX07a.html)
 :::
 ::::
 
