@@ -51,14 +51,14 @@ Built two treemap views to practise multivariate visual analysis. The first tree
 ### [📝 Take-Home Assignments]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-151564721.png){width="232"}
+![](images/clipboard-1200086353.png){width="232"}
 
 ::: {style="flex: 1;"}
-**Take-home Assignment 1 — Exploring profitability and volatility in a Spanish motor insurance portfolio**
+**Take-home Assignment 2 — Tracing an embargo leak across an autonomous multi-agent communications system**
 
-The analysis covers a Spanish motor insurance portfolio of 352,338 policy years from 2022 to 2024.
+The analysis covers 912 messages across 23 rounds among seven AI agents communicating over six channels, reconstructing how the merger embargo was broken one hour early.
 
-[Read more →](TH_EX01.html)
+[Read more →](TH_EX02.html)
 :::
 ::::
 

@@ -35,6 +35,8 @@ website:
       menu:
       - text: "Take-Home Exercise_1"
         href: "TH_EX01.html"
+      - text: "Take-Home Exercise_2"
+        href: "TH_EX02.html"
     right:
       - href: index.qmd
         text: "<img src='/images/home-icon.png' width='88' height='78' alt='Home'>"
