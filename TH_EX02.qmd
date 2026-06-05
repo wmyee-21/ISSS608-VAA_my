@@ -2,7 +2,7 @@
 title: "Take-home Exercise 2: TenantThread Embargo Leak"
 subtitle: "Reconstructing a multi-agent communications breach in the two weeks before the CivicLoom merger announcement"
 author: "Yee Weicong Mark"
-date: "May 23, 2026"
+date: "Jun 5, 2026"
 date-modified: "last-modified"
 format:
   html:
@@ -1178,7 +1178,7 @@ ggplot(resp_round,
         strip.text = element_text(face = "bold"))
 ```
 
-The Legal Agent and Social Media Agent reply at steady rates in both periods, so the publishing agents stayed reachable. The PR Agent and the Judge have no leak-window dots because they produced no messages, not because no agent addressed them. Platform Trust was @-mentioned 49 times in the leak window and the Judge was directly addressed by Legal in nearly every comms_huddle message during the breach. PR went silent at round 15, Platform Trust at round 19 and the Judge at round 20 immediately after issuing its warning. They had each transitioned to a passive monitoring stance. This is what the Judge could not fix on its own. Even when addressed and present, the compliance design allowed it to stay in monitoring mode rather than block.
+The Legal Agent and Social Media Agent reply at steady rates in both periods, so the publishing agents stayed reachable. The PR Agent and the Judge have no leak-window dots because they produced no messages, not because no agent addressed them. Platform Trust was \@-mentioned 49 times in the leak window and the Judge was directly addressed by Legal in nearly every comms_huddle message during the breach. PR went silent at round 15, Platform Trust at round 19 and the Judge at round 20 immediately after issuing its warning. They had each transitioned to a passive monitoring stance. This is what the Judge could not fix on its own. Even when addressed and present, the compliance design allowed it to stay in monitoring mode rather than block.
 
 ### When did the abnormality start?
 

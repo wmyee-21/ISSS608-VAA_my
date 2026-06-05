@@ -1,7 +1,7 @@
 ---
 title: "Take-home Exercise 1: Visual Analytics for Data Discovery"
 subtitle: "Exploring profitability and volatility in a Spanish motor insurance portfolio"
-author: "ISSS608 Visual Analytics and Applications"
+author: "Yee Weicong Mark"
 date: "May 23, 2026"
 date-modified: "last-modified"
 format:
@@ -48,7 +48,7 @@ Two definitions shape the analysis, **profitability** and **volatility**. Profit
 The packages below cover wrangling, statistical visualisation, layout composition, and statistical testing. The pacman package is used to load and install in a single call.
 
 | Package | Role in this exercise |
-|----|----|
+|------------------------------------|------------------------------------|
 | `tidyverse` | Data wrangling, `ggplot2` for the grammar of graphics |
 | `lubridate` | Calendar arithmetic on the licence year |
 | `patchwork` | Composing multiple panels into one figure |
