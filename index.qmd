@@ -23,14 +23,14 @@ This site consists of my journey through the course, updated regularly as I prog
 ### [📘 Hands-on Exercises]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-2786145943.png){width="232"}
+![](images/clipboard-738692211.png){width="232"}
 
 ::: {style="flex: 1;"}
-**Hands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps**
+**Hands-on Exercise 7 — Network Visualisation and Text Mining**
 
-Explored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.
+Explored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.
 
-[Read more →](HO_EX05.html)
+[Read more →](HO_EX07.html)
 :::
 ::::
 

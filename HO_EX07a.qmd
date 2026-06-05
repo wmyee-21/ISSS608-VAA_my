@@ -1,0 +1,1004 @@
+---
+title: "Hands-on Exercise 7a"
+subtitle: "Modelling, Visualising and Analysing Network Data with R"
+author: "Yee Weicong Mark"
+date: "June 5, 2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: false
+format:
+  html:
+    css: styles.css
+---
+
+## [27 Chapter 27: Modelling, Visualising and Analysing Network Data with R]{style="color:  #4682B4; font-size: 38px;"}
+
+## [27.1 Overview]{style="color:  #2C5282; font-size: 28px;"}
+
+Network data describes entities and the connections between them. This chapter walks through the full workflow. A graph object is built from separate node and edge tables with `tidygraph`, drawn with `ggraph`, augmented with centrality and community metrics, then rendered interactively with `visNetwork`.
+
+The dataset is the GAStech email corpus, containing two weeks of internal email between 55 employees of an oil exploration company. Each email is one edge from sender to recipient, each employee is one node with a department and title.
+
+## [27.2 Getting Started]{style="color:  #2C5282; font-size: 28px;"}
+
+## [27.2.1 Installing and launching R packages]{style="color:  #366092; font-size: 24px;"}
+
+Nine packages drive this chapter.
+
+1.  **igraph** for the underlying graph data structure
+2.  **tidygraph** for tidy-style manipulation of graph objects
+3.  **ggraph** for `ggplot2`-style static network plots
+4.  **visNetwork** for interactive networks based on `vis.js`
+5.  **lubridate** and **clock** for time wrangling
+6.  **graphlayouts** for additional layout algorithms
+7.  **concaveman** and **ggforce** for drawing community hulls
+8.  **tidyverse** for data import and manipulation
+
+```{r}
+pacman::p_load(igraph, tidygraph, ggraph,
+               visNetwork, lubridate, clock,
+               tidyverse, graphlayouts,
+               concaveman, ggforce)
+```
+
+## [27.3 The Data]{style="color:  #2C5282; font-size: 28px;"}
+
+The data sets come from an oil exploration and extraction company. There are two data sets, one for the nodes and one for the edges.
+
+## [27.3.1 The edges data]{style="color:  #366092; font-size: 24px;"}
+
+`GAStech_email_edge-v2.csv` consists of two weeks of 9,063 email correspondences between 55 employees. Each row carries `source`, `target`, `SentDate`, `SentTime`, `Subject` and `MainSubject`.
+
+## [27.3.2 The nodes data]{style="color:  #366092; font-size: 24px;"}
+
+`GAStech_email_node.csv` consists of the 55 employees with `id`, `label`, `Department` and `Title`.
+
+## [27.3.3 Importing network data from files]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_nodes <- read_csv("data/GAStech_email_node.csv")
+GAStech_edges <- read_csv("data/GAStech_email_edge-v2.csv")
+```
+
+## [27.3.4 Reviewing the imported data]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+glimpse(GAStech_edges)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`glimpse()` from `dplyr` shows column types and the first few values per column. The output reveals that `SentDate` was read as character rather than date, which would block any date-based filtering or sorting until corrected.
+:::
+
+## [27.3.5 Wrangling time]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_edges <- GAStech_edges %>%
+  mutate(SendDate = dmy(SentDate)) %>%
+  mutate(Weekday = wday(SentDate,
+                        label = TRUE,
+                        abbr = FALSE))
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`dmy()` parses a day-month-year character string into a true `Date`. `wday()` returns the weekday and `label = TRUE` returns it as an ordered factor with names rather than numbers. `abbr = FALSE` keeps full names ("Monday" rather than "Mon"). The ordering is meaningful because the factor levels follow calendar order rather than alphabetical.
+:::
+
+## [27.3.6 Reviewing the revised date fields]{style="color:  #366092; font-size: 24px;"}
+
+The reformatted `GAStech_edges` data frame now has two additional columns. `SendDate` is a proper `Date` and `Weekday` is an ordered factor.
+
+```{r}
+glimpse(GAStech_edges)
+```
+
+## [27.3.7 Wrangling attributes]{style="color:  #366092; font-size: 24px;"}
+
+Individual email records are too granular to visualise directly. Aggregating by sender, receiver and weekday produces an edge weight per pair per day.
+
+```{r}
+GAStech_edges_aggregated <- GAStech_edges %>%
+  filter(MainSubject == "Work related") %>%
+  group_by(source, target, Weekday) %>%
+    summarise(Weight = n()) %>%
+  filter(source != target) %>%
+  filter(Weight > 1) %>%
+  ungroup()
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`filter(MainSubject == "Work related")` removes personal emails. `group_by()` and `summarise(Weight = n())` count the emails per sender-receiver-weekday combination. `filter(source != target)` drops self-loops, and `filter(Weight > 1)` removes singleton pairs that would clutter the plot without revealing structure.
+:::
+
+## [27.3.8 Reviewing the revised edges file]{style="color:  #366092; font-size: 24px;"}
+
+The aggregated edges file is the input to the graph object. Each row carries `source`, `target`, `Weekday` and `Weight`.
+
+```{r}
+glimpse(GAStech_edges_aggregated)
+```
+
+## [27.4 Creating network objects using tidygraph]{style="color:  #2C5282; font-size: 28px;"}
+
+`tidygraph` treats a network as two tidy tibbles, one for nodes and one for edges, joined into a single `tbl_graph` object.
+
+## [27.4.1 The tbl_graph object]{style="color:  #366092; font-size: 24px;"}
+
+Two functions of `tidygraph` create network objects. `tbl_graph()` builds one from scratch, and `as_tbl_graph()` converts existing `igraph`, `network`, `dendrogram`, `hclust` and `data.tree` objects.
+
+## [27.4.2 The dplyr verbs in tidygraph]{style="color:  #366092; font-size: 24px;"}
+
+`activate()` switches between the node tibble and the edge tibble. All `dplyr` verbs applied to a `tbl_graph` operate on the currently active tibble. Inside one context, `.N()` reaches across to the node tibble, `.E()` to the edge tibble and `.G()` to the whole graph.
+
+## [27.4.3 Using tbl_graph() to build tidygraph data model]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_graph <- tbl_graph(nodes = GAStech_nodes,
+                           edges = GAStech_edges_aggregated,
+                           directed = TRUE)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`directed = TRUE` preserves the asymmetry of email (sender to recipient is not the same as recipient to sender).
+:::
+
+## [27.4.4 Reviewing the tidygraph graph object]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_graph
+```
+
+## [27.4.5 Interpreting the tidygraph graph object]{style="color:  #366092; font-size: 24px;"}
+
+The output is a `tbl_graph` with 54 nodes and 1,372 edges. The first six rows of the node tibble and the first three of the edge tibble are shown. The node tibble is active by default, which means subsequent `dplyr` verbs operate on it.
+
+## [27.4.6 Changing the active object]{style="color:  #366092; font-size: 24px;"}
+
+The active tibble can be switched with `activate()`. Sorting the edge tibble by descending weight is a two-step pipeline.
+
+```{r}
+GAStech_graph %>%
+  activate(edges) %>%
+  arrange(desc(Weight))
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`activate(edges)` switches the active tibble to edges so the subsequent `arrange(desc(Weight))` reorders the edges from heaviest to lightest.
+:::
+
+## [27.5 Plotting Static Network Graphs with ggraph package]{style="color:  #2C5282; font-size: 28px;"}
+
+`ggraph` extends `ggplot2` for networks. Every graph is made up of nodes, edges and a layout that places nodes in 2-D space.
+
+## [27.5.1 Plotting a basic network graph]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+ggraph(GAStech_graph) +
+  geom_edge_link() +
+  geom_node_point()
+```
+
+## Code
+
+```{r}
+#| eval: false
+ggraph(GAStech_graph) +
+  geom_edge_link() +
+  geom_node_point()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`ggraph()` takes a `tbl_graph` or `igraph` object and sets the layout. `geom_edge_link()` draws straight-line edges between connected nodes, and `geom_node_point()` draws nodes as points. With no layout argument, the default is `nicely`, which picks a reasonable algorithm based on the graph type.
+:::
+
+## [27.5.2 Changing the default network graph theme]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- ggraph(GAStech_graph) +
+  geom_edge_link(aes()) +
+  geom_node_point(aes())
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- ggraph(GAStech_graph) +
+  geom_edge_link(aes()) +
+  geom_node_point(aes())
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`theme_graph()` strips axes, grid lines and panel borders that carry no meaning in a network plot. It also switches the default font to Arial Narrow. `set_graph_style()` applies the same theme globally for a sequence of plots.
+:::
+
+## [27.5.3 Changing the colouring of the plot]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- ggraph(GAStech_graph) +
+  geom_edge_link(aes(colour = 'grey50')) +
+  geom_node_point(aes(colour = 'grey40'))
+
+g + theme_graph(background = 'grey10',
+                text_colour = 'white')
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- ggraph(GAStech_graph) +
+  geom_edge_link(aes(colour = 'grey50')) +
+  geom_node_point(aes(colour = 'grey40'))
+
+g + theme_graph(background = 'grey10',
+                text_colour = 'white')
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`background` and `text_colour` in `theme_graph()` set the panel background and label colour together. A dark background can lift muted node colours, but it also reduces print friendliness.
+:::
+
+## [27.5.4 Working with ggraph's layouts]{style="color:  #366092; font-size: 24px;"}
+
+The layouts supported by `ggraph` are `star`, `circle`, `nicely`, `dh`, `gem`, `graphopt`, `grid`, `mds`, `sphere`, `randomly`, `fr`, `kk`, `drl` and `lgl`. Each chooses a different algorithm for placing nodes in 2-D space.
+
+The grids below render the same `GAStech_graph` under every layout for visual comparison. Node colour encodes department and node size encodes degree.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+V(GAStech_graph)$color <- as.numeric(as.factor(V(GAStech_graph)$Department))
+V(GAStech_graph)$size  <- degree(GAStech_graph) / 3 + 3
+
+par(mfrow = c(2, 3), mar = c(1, 1, 3, 1))
+plot(GAStech_graph, layout = layout_as_star,    main = "layout_as_star",    vertex.label = NA)
+plot(GAStech_graph, layout = layout_components, main = "layout_components", vertex.label = NA)
+plot(GAStech_graph, layout = layout_in_circle,  main = "layout_in_circle",  vertex.label = NA)
+plot(GAStech_graph, layout = layout_nicely,     main = "layout_nicely",     vertex.label = NA)
+plot(GAStech_graph, layout = layout_on_grid,    main = "layout_on_grid",    vertex.label = NA)
+plot(GAStech_graph, layout = layout_on_sphere,  main = "layout_on_sphere",  vertex.label = NA)
+```
+
+```{r}
+#| fig-width: 10
+#| fig-height: 10
+par(mfrow = c(3, 3), mar = c(1, 1, 3, 1))
+plot(GAStech_graph, layout = layout_randomly,      main = "layout_randomly",      vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_dh,       main = "layout_with_dh",       vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_drl,      main = "layout_with_drl",      vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_fr,       main = "layout_with_fr",       vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_gem,      main = "layout_with_gem",      vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_graphopt, main = "layout_with_graphopt", vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_kk,       main = "layout_with_kk",       vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_lgl,      main = "layout_with_lgl",      vertex.label = NA)
+plot(GAStech_graph, layout = layout_with_mds,      main = "layout_with_mds",      vertex.label = NA)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`V(GAStech_graph)$color` and `V(GAStech_graph)$size` set node attributes that base R `plot.igraph()` reads. `par(mfrow = c(2, 3))` arranges the panels in a 2 by 3 grid, and the same trick with `c(3, 3)` produces the 3 by 3 grid. The `main` argument labels each panel with the layout function name.
+:::
+
+::: callout-tip
+## Reading the plot
+
+Force-directed layouts like `fr`, `kk`, `gem` and `graphopt` produce visually similar results that emphasise cluster structure. Geometric layouts like `star`, `circle`, `grid` and `sphere` impose a fixed shape that ignores network structure. `randomly` is a useful baseline that shows how much the meaningful layouts contribute.
+:::
+
+## [27.5.5 Fruchterman and Reingold layout]{style="color:  #366092; font-size: 24px;"}
+
+The Fruchterman-Reingold layout treats edges as springs and nodes as repelling particles, settling into a configuration where tightly connected groups cluster together.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- ggraph(GAStech_graph,
+            layout = "fr") +
+  geom_edge_link(aes()) +
+  geom_node_point(aes())
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- ggraph(GAStech_graph,
+            layout = "fr") +
+  geom_edge_link(aes()) +
+  geom_node_point(aes())
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`layout = "fr"` requests Fruchterman-Reingold. The result is non-deterministic, so two runs produce slightly different positions. Setting a random seed before plotting fixes the layout for reproducibility.
+:::
+
+## [27.5.6 Modifying network nodes]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes()) +
+  geom_node_point(aes(colour = Department,
+                      size = 3))
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes()) +
+  geom_node_point(aes(colour = Department,
+                      size = 3))
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`geom_node_point()` behaves like `geom_point()` in `ggplot2`. The `colour = Department` aesthetic encodes the department of each employee, and the constant `size = 3` enlarges every node for readability.
+:::
+
+::: callout-tip
+## Reading the plot
+
+Departments cluster together because employees email their own department more than other departments. The visual grouping is an emergent property of the layout algorithm rather than something hard-coded by the colour mapping.
+:::
+
+## [27.5.7 Modifying edges]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 3)
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 3)
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`width = Weight` maps the edge thickness to the number of emails in that pair-weekday. `scale_edge_width(range = c(0.1, 5))` clamps the actual rendered widths so the thinnest are still visible and the thickest do not dominate. `alpha = 0.2` partially fixes the overplotting that arises when many edges cross.
+:::
+
+## [27.6 Creating facet graphs]{style="color:  #2C5282; font-size: 28px;"}
+
+Faceting splits one graph into a panel grid, which reduces edge overplotting when the network has too many edges to read at once. Three functions support this. `facet_nodes()` splits by a node attribute, `facet_edges()` splits by an edge attribute and `facet_graph()` splits on two variables at once.
+
+## [27.6.1 Working with facet_edges()]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_edges(~Weekday)
+```
+
+## Code
+
+```{r}
+#| eval: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_edges(~Weekday)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`facet_edges(~Weekday)` keeps the node positions fixed across all panels and shows only the edges that occurred on each weekday. The unchanged node positions make the panels directly comparable across days.
+:::
+
+::: callout-tip
+## Reading the plot
+
+Weekday volume varies substantially. The differences between weekdays would be invisible in a single graph because all edges would superimpose into one tangle.
+:::
+
+## [27.6.2 Adjusting the legend position]{style="color:  #366092; font-size: 24px;"}
+
+The legend is moved below the panels with `theme(legend.position = 'bottom')`.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2) +
+  theme(legend.position = 'bottom')
+
+g + facet_edges(~Weekday)
+```
+
+## Code
+
+```{r}
+#| eval: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2) +
+  theme(legend.position = 'bottom')
+
+g + facet_edges(~Weekday)
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`legend.position = 'bottom'` moves the legend below the panels to recover horizontal space.
+:::
+
+## [27.6.3 A framed facet graph]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_edges(~Weekday) +
+  th_foreground(foreground = "grey80",  
+                border = TRUE) +
+  theme(legend.position = 'bottom')
+```
+
+## Code
+
+```{r}
+#| eval: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_edges(~Weekday) +
+  th_foreground(foreground = "grey80",  
+                border = TRUE) +
+  theme(legend.position = 'bottom')
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`th_foreground()` adds a grey panel background with `border = TRUE` drawing a thin frame around each facet. The borders help separate the panels visually when the layout pushes edges close to the panel edges.
+:::
+
+## [27.6.4 Working with facet_nodes()]{style="color:  #366092; font-size: 24px;"}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_nodes(~Department) +
+  th_foreground(foreground = "grey80",  
+                border = TRUE) +
+  theme(legend.position = 'bottom')
+```
+
+## Code
+
+```{r}
+#| eval: false
+set_graph_style()
+
+g <- ggraph(GAStech_graph,
+            layout = "nicely") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department),
+                  size = 2)
+
+g + facet_nodes(~Department) +
+  th_foreground(foreground = "grey80",  
+                border = TRUE) +
+  theme(legend.position = 'bottom')
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`facet_nodes(~Department)` shows the subgraph induced by each department, including only edges where both endpoints are in that department. Cross-department edges are dropped from every panel.
+:::
+
+## [27.7 Network Metrics Analysis]{style="color:  #2C5282; font-size: 28px;"}
+
+## [27.7.1 Computing centrality indices]{style="color:  #366092; font-size: 24px;"}
+
+Centrality measures rank nodes by their structural importance in the network. The four canonical measures are degree (count of neighbours), betweenness (how often a node sits on shortest paths), closeness (inverse average distance to all other nodes) and eigenvector (importance weighted by neighbour importance).
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- GAStech_graph %>%
+  mutate(betweenness_centrality = centrality_betweenness()) %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department,
+            size = betweenness_centrality))
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- GAStech_graph %>%
+  mutate(betweenness_centrality = centrality_betweenness()) %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department,
+            size = betweenness_centrality))
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`mutate(betweenness_centrality = centrality_betweenness())` computes betweenness for each node and stores it as a new column on the active node tibble. Mapping it to `size` makes the most "bridge-like" employees appear as the largest points.
+:::
+
+::: callout-tip
+## Reading the plot
+
+The largest nodes are not the busiest emailers but the ones who connect otherwise distant parts of the network. They are typically managers or assistants whose role is to broker communication between departments.
+:::
+
+## [27.7.2 Visualising network metrics]{style="color:  #366092; font-size: 24px;"}
+
+From `ggraph` 2.0 onwards, centrality measures can be computed inline inside an `aes()` call without a preceding `mutate()`.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- GAStech_graph %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department,
+                      size = centrality_betweenness()))
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- GAStech_graph %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(colour = Department,
+                      size = centrality_betweenness()))
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+Calling `centrality_betweenness()` directly inside `aes()` removes the need to materialise the score on the graph object. The trade-off is that the score is recomputed on every plot, which matters for large graphs but not for this 54-node example.
+:::
+
+## [27.7.3 Visualising Community]{style="color:  #366092; font-size: 24px;"}
+
+Community detection partitions nodes into clusters where within-cluster ties are denser than between-cluster ties. `tidygraph` inherits multiple algorithms from `igraph`, including edge-betweenness, leading eigenvector, fast-greedy, Louvain, walktrap, label propagation, InfoMap, spinglass and optimal.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- GAStech_graph %>%
+  mutate(community = as.factor(
+    group_edge_betweenness(
+      weights = Weight,
+      directed = TRUE))) %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(
+    aes(width = Weight),
+    alpha = 0.2) +
+  scale_edge_width(
+    range = c(0.1, 5)) +
+  geom_node_point(
+    aes(colour = community))
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- GAStech_graph %>%
+  mutate(community = as.factor(
+    group_edge_betweenness(
+      weights = Weight,
+      directed = TRUE))) %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(
+    aes(width = Weight),
+    alpha = 0.2) +
+  scale_edge_width(
+    range = c(0.1, 5)) +
+  geom_node_point(
+    aes(colour = community))
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`group_edge_betweenness()` returns a community ID per node, which is cast to factor so `ggraph` treats it as a categorical aesthetic. The algorithm progressively removes the edges with the highest betweenness until the graph fragments into communities.
+:::
+
+The community network is further refined by drawing concave hulls around each detected community with `geom_mark_hull()` from `ggforce`.
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+g <- GAStech_graph %>%
+  activate(nodes) %>%
+  mutate(community = as.factor(
+    group_optimal(weights = Weight)),
+         betweenness_measure = centrality_betweenness()) %>%
+  ggraph(layout = "fr") +
+  geom_mark_hull(
+    aes(x, y,
+        group = community,
+        fill = community),  
+    alpha = 0.2,  
+    expand = unit(0.3, "cm"),
+    radius = unit(0.3, "cm")
+  ) +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(fill = Department,
+                      size = betweenness_measure),
+                      color = "black",
+                      shape = 21)
+
+g + theme_graph()
+```
+
+## Code
+
+```{r}
+#| eval: false
+g <- GAStech_graph %>%
+  activate(nodes) %>%
+  mutate(community = as.factor(
+    group_optimal(weights = Weight)),
+         betweenness_measure = centrality_betweenness()) %>%
+  ggraph(layout = "fr") +
+  geom_mark_hull(
+    aes(x, y,
+        group = community,
+        fill = community),  
+    alpha = 0.2,  
+    expand = unit(0.3, "cm"),
+    radius = unit(0.3, "cm")
+  ) +
+  geom_edge_link(aes(width = Weight),
+                 alpha = 0.2) +
+  scale_edge_width(range = c(0.1, 5)) +
+  geom_node_point(aes(fill = Department,
+                      size = betweenness_measure),
+                      color = "black",
+                      shape = 21)
+
+g + theme_graph()
+```
+:::
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`geom_mark_hull()` from `ggforce` draws a smoothed concave hull around each community. `expand` controls how much padding sits between the outermost nodes and the hull edge, and `radius` controls the corner smoothness. Combining community membership (hull fill) with department (node fill) reveals whether the structural communities match the formal organisation chart.
+:::
+
+::: callout-tip
+## Reading the plot
+
+When hull membership matches department colour, the formal structure drives communication. Hulls that span multiple departments flag informal collaboration that the org chart misses.
+:::
+
+## [27.8 Building Interactive Network Graph with visNetwork]{style="color:  #2C5282; font-size: 28px;"}
+
+`visNetwork` wraps the `vis.js` JavaScript library. It accepts a nodes data frame with an `id` column and an edges data frame with `from` and `to` columns.
+
+## [27.8.1 Data preparation]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_edges_aggregated <- GAStech_edges %>%
+  left_join(GAStech_nodes, by = c("sourceLabel" = "label")) %>%
+  rename(from = id) %>%
+  left_join(GAStech_nodes, by = c("targetLabel" = "label")) %>%
+  rename(to = id) %>%
+  filter(MainSubject == "Work related") %>%
+  group_by(from, to) %>%
+    summarise(weight = n()) %>%
+  filter(from != to) %>%
+  filter(weight > 1) %>%
+  ungroup()
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+The two `left_join()` calls translate sender and recipient labels into the numeric IDs that `visNetwork` expects. The renames to `from` and `to` are mandatory because those are the column names the function looks for.
+:::
+
+## [27.8.2 Plotting the first interactive network graph]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+visNetwork(GAStech_nodes,
+           GAStech_edges_aggregated)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`visNetwork()` accepts the nodes and edges directly. The default layout is a physics simulation that runs in the browser, so the graph drifts into place after the page loads.
+:::
+
+## [27.8.3 Working with layout]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+visNetwork(GAStech_nodes,
+           GAStech_edges_aggregated) %>%
+  visIgraphLayout(layout = "layout_with_fr")
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`visIgraphLayout()` pre-computes the layout using an `igraph` algorithm (`layout_with_fr` for Fruchterman-Reingold) and disables the browser-side physics. The visible benefit is a static, reproducible layout that loads instantly.
+:::
+
+## [27.8.4 Working with visual attributes - Nodes]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+GAStech_nodes <- GAStech_nodes %>%
+  rename(group = Department)
+
+visNetwork(GAStech_nodes,
+           GAStech_edges_aggregated) %>%
+  visIgraphLayout(layout = "layout_with_fr") %>%
+  visLegend() %>%
+  visLayout(randomSeed = 123)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`visNetwork` colours nodes automatically when there is a column named `group`, so renaming `Department` to `group` is enough to trigger colour-by-department. `visLegend()` adds a clickable legend, and `visLayout(randomSeed = 123)` makes the layout deterministic across reloads.
+:::
+
+## [27.8.5 Working with visual attributes - Edges]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+visNetwork(GAStech_nodes,
+           GAStech_edges_aggregated) %>%
+  visIgraphLayout(layout = "layout_with_fr") %>%
+  visEdges(arrows = "to",
+           smooth = list(enabled = TRUE,
+                         type = "curvedCW")) %>%
+  visLegend() %>%
+  visLayout(randomSeed = 123)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`arrows = "to"` adds arrowheads at the destination end, restoring the directional information that the static `ggraph` examples did not encode. `smooth = list(enabled = TRUE, type = "curvedCW")` bends edges into clockwise curves so reciprocal pairs no longer superimpose.
+:::
+
+## [27.8.6 Interactivity]{style="color:  #366092; font-size: 24px;"}
+
+```{r}
+visNetwork(GAStech_nodes,
+           GAStech_edges_aggregated) %>%
+  visIgraphLayout(layout = "layout_with_fr") %>%
+  visOptions(highlightNearest = TRUE,
+             nodesIdSelection = TRUE) %>%
+  visLegend() %>%
+  visLayout(randomSeed = 123)
+```
+
+::: callout-note
+## Things to learn from the code chunk above
+
+`highlightNearest = TRUE` dims everything except the clicked node and its direct neighbours, isolating one ego network at a time. `nodesIdSelection = TRUE` adds a dropdown for selecting a node by ID, which scales better than clicking when the network has many nodes.
+:::
+
+::: callout-tip
+## Reading the plot
+
+Click-to-highlight turns the static map into a single-node investigation tool. The viewer can pick any employee and immediately see who they communicate with, which is the same question a static facet plot answers at the cost of an entire panel.
+:::
+
+## [27.9 Reference]{style="color:  #2C5282; font-size: 28px;"}
+
+Kam, Tin Seong. *R for Visual Analytics*. Singapore Management University, 2024.
+
+::: {style="text-align: center; padding: 10px 30px; background: #0a0e27; color: #00d4ff; border: 4px solid #00d4ff; border-radius: 10px; margin-top: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00d4ff; animation: pulse 2s infinite;"}
+# 🕹️ LEVEL COMPLETE 🕹️
+
+## ★ ★ ★ ★ ★
+
+### CHAPTER 27 CLEARED!
+
+**+1000 XP** · **ACHIEVEMENT UNLOCKED: Network Navigator** 🕸️
+
+*Press any key to continue...*
+:::
+
+```{=html}
+<style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.9); }
+}
+</style>
+```

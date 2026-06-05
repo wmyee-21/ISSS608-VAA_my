@@ -19,6 +19,8 @@ website:
         href: "HO_EX04.html"
       - text: "Hands-on Exercise_5"
         href: "HO_EX05.html"
+      - text: "Hands-on Exercise_7"
+        href: "HO_EX07a.html"
     - text: "In-Class Exercises"
       menu:
       - text: "In-Class Exercise_1"
@@ -71,6 +73,14 @@ website:
           text: "Technical Report"
         - href: TH_EX01_Slides.html
           text: "Executive Summary Slides"
+    - id: ho_ex07
+      title: "Hands-on Exercise 7"
+      style: "docked"
+      contents:
+        - href: HO_EX07a.qmd
+          text: "Hands-on Exercise 7a"
+        - href: HO_EX07b.qmd
+          text: "Hands-on Exercise 7b"
 
 format:
   html:

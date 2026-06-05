@@ -2889,7 +2889,7 @@
     "href": "index.html#latest-updates",
     "title": "My Visual Analytics Journey",
     "section": "Latest Updates",
-    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 2 — Tracing an embargo leak across an autonomous multi-agent communications system\nThe analysis covers 912 messages across 23 rounds among seven AI agents communicating over six channels, reconstructing how the merger embargo was broken one hour early.\nRead more →"
+    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 2 — Tracing an embargo leak across an autonomous multi-agent communications system\nThe analysis covers 912 messages across 23 rounds among seven AI agents communicating over six channels, reconstructing how the merger embargo was broken one hour early.\nRead more →"
   },
   {
     "objectID": "index.html#all-work",
@@ -3429,5 +3429,535 @@
     "title": "Take-home Exercise 2: TenantThread Embargo Leak",
     "section": "4.3 Building a traceable timeline source",
     "text": "4.3 Building a traceable timeline source\nThe breach timeline in Sections 6.3 and 8.2 quotes specific messages and deliberations. Rather than transcribe these by hand, which risks drift from the source, every message is flattened from the raw JSON into timeline_messages, keyed by message_id. The two tables then pull their content directly from this table by key, so each quoted message traces back to the original data. The agents’ private reasoning is held in three internal-state fields, reacting, deliberating and rationalizing, which are parsed into columns here so deliberation rows can be sourced the same way.\n\n\nShow the code\ntimeline_messages &lt;- map_dfr(seq_along(mc1_raw$rounds), function(i) {\n  rd &lt;- mc1_raw$rounds[[i]]\n  map_dfr(rd$communications, function(c) {\n    st &lt;- c$internal_state\n    tibble(\n      message_id   = c$message_id %||% NA_character_,\n      round_idx    = i,\n      timestamp    = c$timestamp %||% NA_character_,\n      agent_id     = c$agent_id %||% NA_character_,\n      channel      = c$channel %||% NA_character_,\n      recipients   = paste(unlist(c$recipients), collapse = \", \"),\n      content      = c$content %||% NA_character_,\n      reacting     = if (is.list(st)) st$reacting %||% NA_character_ else NA_character_,\n      deliberating = if (is.list(st)) st$deliberating %||% NA_character_ else NA_character_,\n      rationalizing= if (is.list(st)) st$rationalizing %||% NA_character_ else NA_character_\n    )\n  })\n})\n\n# Per-round external context, the event_narrative field from the raw JSON\ntimeline_context &lt;- map_dfr(seq_along(mc1_raw$rounds), function(i) {\n  ec &lt;- mc1_raw$rounds[[i]]$environment_context\n  tibble(\n    round_idx       = i,\n    event_narrative = if (is.list(ec)) ec$event_narrative %||% NA_character_ else NA_character_\n  )\n})\n\n# Helper: pull one message's content by id, truncated for table display\nmsg_content &lt;- function(id, n = 150) {\n  hit &lt;- timeline_messages$content[timeline_messages$message_id == id]\n  if (length(hit) == 0 || is.na(hit[1])) return(NA_character_)\n  str_trunc(str_squish(hit[1]), n)\n}\n\ncat(\"timeline_messages:\", nrow(timeline_messages), \"messages with\",\n    sum(!is.na(timeline_messages$reacting) |\n        !is.na(timeline_messages$deliberating) |\n        !is.na(timeline_messages$rationalizing)), \"carrying internal state\\n\")\n\n\ntimeline_messages: 912 messages with 86 carrying internal state"
+  },
+  {
+    "objectID": "HO_EX07a.html#overview",
+    "href": "HO_EX07a.html#overview",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.1 Overview",
+    "text": "27.1 Overview\nNetwork data describes entities and the connections between them. This chapter walks through the full workflow. A graph object is built from separate node and edge tables with tidygraph, drawn with ggraph, augmented with centrality and community metrics, then rendered interactively with visNetwork.\nThe dataset is the GAStech email corpus, containing two weeks of internal email between 55 employees of an oil exploration company. Each email is one edge from sender to recipient, each employee is one node with a department and title.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#installing-and-launching-r-packages",
+    "href": "HO_EX07a.html#installing-and-launching-r-packages",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.2.1 Installing and launching R packages",
+    "text": "27.2.1 Installing and launching R packages\nNine packages drive this chapter.\n\nigraph for the underlying graph data structure\ntidygraph for tidy-style manipulation of graph objects\nggraph for ggplot2-style static network plots\nvisNetwork for interactive networks based on vis.js\nlubridate and clock for time wrangling\ngraphlayouts for additional layout algorithms\nconcaveman and ggforce for drawing community hulls\ntidyverse for data import and manipulation\n\n\npacman::p_load(igraph, tidygraph, ggraph,\n               visNetwork, lubridate, clock,\n               tidyverse, graphlayouts,\n               concaveman, ggforce)",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#the-data",
+    "href": "HO_EX07a.html#the-data",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3 The Data",
+    "text": "27.3 The Data\nThe data sets come from an oil exploration and extraction company. There are two data sets, one for the nodes and one for the edges.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#importing-network-data-from-files",
+    "href": "HO_EX07a.html#importing-network-data-from-files",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.3 Importing network data from files",
+    "text": "27.3.3 Importing network data from files\n\nGAStech_nodes &lt;- read_csv(\"data/GAStech_email_node.csv\")\nGAStech_edges &lt;- read_csv(\"data/GAStech_email_edge-v2.csv\")",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#reviewing-the-imported-data",
+    "href": "HO_EX07a.html#reviewing-the-imported-data",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.4 Reviewing the imported data",
+    "text": "27.3.4 Reviewing the imported data\n\nglimpse(GAStech_edges)\n\nRows: 9,063\nColumns: 8\n$ source      &lt;dbl&gt; 43, 43, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 26, 26, 26…\n$ target      &lt;dbl&gt; 41, 40, 51, 52, 53, 45, 44, 46, 48, 49, 47, 54, 27, 28, 29…\n$ SentDate    &lt;chr&gt; \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\"…\n$ SentTime    &lt;time&gt; 08:39:00, 08:39:00, 08:58:00, 08:58:00, 08:58:00, 08:58:0…\n$ Subject     &lt;chr&gt; \"GT-SeismicProcessorPro Bug Report\", \"GT-SeismicProcessorP…\n$ MainSubject &lt;chr&gt; \"Work related\", \"Work related\", \"Work related\", \"Work rela…\n$ sourceLabel &lt;chr&gt; \"Sven.Flecha\", \"Sven.Flecha\", \"Kanon.Herrero\", \"Kanon.Herr…\n$ targetLabel &lt;chr&gt; \"Isak.Baza\", \"Lucas.Alcazar\", \"Felix.Resumir\", \"Hideki.Coc…\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nglimpse() from dplyr shows column types and the first few values per column. The output reveals that SentDate was read as character rather than date, which would block any date-based filtering or sorting until corrected.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#wrangling-time",
+    "href": "HO_EX07a.html#wrangling-time",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.5 Wrangling time",
+    "text": "27.3.5 Wrangling time\n\nGAStech_edges &lt;- GAStech_edges %&gt;%\n  mutate(SendDate = dmy(SentDate)) %&gt;%\n  mutate(Weekday = wday(SentDate,\n                        label = TRUE,\n                        abbr = FALSE))\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndmy() parses a day-month-year character string into a true Date. wday() returns the weekday and label = TRUE returns it as an ordered factor with names rather than numbers. abbr = FALSE keeps full names (“Monday” rather than “Mon”). The ordering is meaningful because the factor levels follow calendar order rather than alphabetical.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#wrangling-attributes",
+    "href": "HO_EX07a.html#wrangling-attributes",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.7 Wrangling attributes",
+    "text": "27.3.7 Wrangling attributes\nIndividual email records are too granular to visualise directly. Aggregating by sender, receiver and weekday produces an edge weight per pair per day.\n\nGAStech_edges_aggregated &lt;- GAStech_edges %&gt;%\n  filter(MainSubject == \"Work related\") %&gt;%\n  group_by(source, target, Weekday) %&gt;%\n    summarise(Weight = n()) %&gt;%\n  filter(source != target) %&gt;%\n  filter(Weight &gt; 1) %&gt;%\n  ungroup()\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter(MainSubject == \"Work related\") removes personal emails. group_by() and summarise(Weight = n()) count the emails per sender-receiver-weekday combination. filter(source != target) drops self-loops, and filter(Weight &gt; 1) removes singleton pairs that would clutter the plot without revealing structure.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#creating-network-objects-using-tidygraph",
+    "href": "HO_EX07a.html#creating-network-objects-using-tidygraph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4 Creating network objects using tidygraph",
+    "text": "27.4 Creating network objects using tidygraph\ntidygraph treats a network as two tidy tibbles, one for nodes and one for edges, joined into a single tbl_graph object.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#the-tbl_graph-object",
+    "href": "HO_EX07a.html#the-tbl_graph-object",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.1 The tbl_graph object",
+    "text": "27.4.1 The tbl_graph object\nTwo functions of tidygraph create network objects. tbl_graph() builds one from scratch, and as_tbl_graph() converts existing igraph, network, dendrogram, hclust and data.tree objects.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#building-the-tbl_graph",
+    "href": "HO_EX07a.html#building-the-tbl_graph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.2 Building the tbl_graph",
+    "text": "27.4.2 Building the tbl_graph\n\nGAStech_graph &lt;- tbl_graph(nodes = GAStech_nodes,\n                           edges = GAStech_edges_aggregated,\n                           directed = TRUE)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndirected = TRUE preserves the asymmetry of email (sender to recipient is not the same as recipient to sender). The result is a tbl_graph with 54 nodes and 1,372 edges, one less than the 55 employees because one node has no qualifying edges after the weight filter.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#changing-the-active-object",
+    "href": "HO_EX07a.html#changing-the-active-object",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.6 Changing the active object",
+    "text": "27.4.6 Changing the active object\nThe active tibble can be switched with activate(). Sorting the edge tibble by descending weight is a two-step pipeline.\n\nGAStech_graph %&gt;%\n  activate(edges) %&gt;%\n  arrange(desc(Weight))\n\n# A tbl_graph: 54 nodes and 1372 edges\n#\n# A directed multigraph with 1 component\n#\n# Edge Data: 1,372 × 4 (active)\n    from    to Weekday   Weight\n   &lt;int&gt; &lt;int&gt; &lt;ord&gt;      &lt;int&gt;\n 1    40    41 Saturday      13\n 2    41    43 Monday        11\n 3    35    31 Tuesday       10\n 4    40    41 Monday        10\n 5    40    43 Monday        10\n 6    36    32 Sunday         9\n 7    40    43 Saturday       9\n 8    41    40 Monday         9\n 9    19    15 Wednesday      8\n10    35    38 Tuesday        8\n# ℹ 1,362 more rows\n#\n# Node Data: 54 × 4\n     id label           Department     Title           \n  &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;          &lt;chr&gt;           \n1     1 Mat.Bramar      Administration Assistant to CEO\n2     2 Anda.Ribera     Administration Assistant to CFO\n3     3 Rachel.Pantanal Administration Assistant to CIO\n# ℹ 51 more rows\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nactivate(edges) switches the active tibble to edges so the subsequent arrange(desc(Weight)) reorders the edges from heaviest to lightest.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#plotting-static-network-graphs-with-ggraph",
+    "href": "HO_EX07a.html#plotting-static-network-graphs-with-ggraph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5 Plotting Static Network Graphs with ggraph",
+    "text": "27.5 Plotting Static Network Graphs with ggraph\nggraph extends ggplot2 for networks. Every graph is made up of nodes, edges and a layout that places nodes in 2-D space.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#plotting-a-basic-network-graph",
+    "href": "HO_EX07a.html#plotting-a-basic-network-graph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.1 Plotting a basic network graph",
+    "text": "27.5.1 Plotting a basic network graph\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggraph(GAStech_graph) +\n  geom_edge_link() +\n  geom_node_point()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nggraph() takes a tbl_graph or igraph object and sets the layout. geom_edge_link() draws straight-line edges between connected nodes, and geom_node_point() draws nodes as points. With no layout argument, the default is nicely, which picks a reasonable algorithm based on the graph type.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#changing-the-default-network-graph-theme",
+    "href": "HO_EX07a.html#changing-the-default-network-graph-theme",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.2 Changing the default network graph theme",
+    "text": "27.5.2 Changing the default network graph theme\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- ggraph(GAStech_graph) +\n  geom_edge_link(aes()) +\n  geom_node_point(aes())\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ntheme_graph() strips axes, grid lines and panel borders that carry no meaning in a network plot. It also switches the default font to Arial Narrow. set_graph_style() applies the same theme globally for a sequence of plots.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#changing-the-colouring-of-the-plot",
+    "href": "HO_EX07a.html#changing-the-colouring-of-the-plot",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.3 Changing the colouring of the plot",
+    "text": "27.5.3 Changing the colouring of the plot\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- ggraph(GAStech_graph) +\n  geom_edge_link(aes(colour = 'grey50')) +\n  geom_node_point(aes(colour = 'grey40'))\n\ng + theme_graph(background = 'grey10',\n                text_colour = 'white')\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nbackground and text_colour in theme_graph() set the panel background and label colour together. A dark background can lift muted node colours, but it also reduces print friendliness.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#fruchterman-and-reingold-layout",
+    "href": "HO_EX07a.html#fruchterman-and-reingold-layout",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.5 Fruchterman and Reingold layout",
+    "text": "27.5.5 Fruchterman and Reingold layout\nThe Fruchterman-Reingold layout treats edges as springs and nodes as repelling particles, settling into a configuration where tightly connected groups cluster together.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"fr\") +\n  geom_edge_link(aes()) +\n  geom_node_point(aes())\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nlayout = \"fr\" requests Fruchterman-Reingold. The result is non-deterministic, so two runs produce slightly different positions. Setting a random seed before plotting fixes the layout for reproducibility.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#modifying-network-nodes",
+    "href": "HO_EX07a.html#modifying-network-nodes",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.6 Modifying network nodes",
+    "text": "27.5.6 Modifying network nodes\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes()) +\n  geom_node_point(aes(colour = Department,\n                      size = 3))\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngeom_node_point() behaves like geom_point() in ggplot2. The colour = Department aesthetic encodes the department of each employee, and the constant size = 3 enlarges every node for readability.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nDepartments cluster together because employees email their own department more than other departments. The visual grouping is an emergent property of the layout algorithm rather than something hard-coded by the colour mapping.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#modifying-edges",
+    "href": "HO_EX07a.html#modifying-edges",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.7 Modifying edges",
+    "text": "27.5.7 Modifying edges\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 3)\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nwidth = Weight maps the edge thickness to the number of emails in that pair-weekday. scale_edge_width(range = c(0.1, 5)) clamps the actual rendered widths so the thinnest are still visible and the thickest do not dominate. alpha = 0.2 partially fixes the overplotting that arises when many edges cross.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#creating-facet-graphs",
+    "href": "HO_EX07a.html#creating-facet-graphs",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6 Creating facet graphs",
+    "text": "27.6 Creating facet graphs\nFaceting splits one graph into a panel grid, which reduces edge overplotting when the network has too many edges to read at once. Three functions support this. facet_nodes() splits by a node attribute, facet_edges() splits by an edge attribute and facet_graph() splits on two variables at once.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-facet_edges",
+    "href": "HO_EX07a.html#working-with-facet_edges",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6.1 Working with facet_edges()",
+    "text": "27.6.1 Working with facet_edges()\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 2)\n\ng + facet_edges(~Weekday)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfacet_edges(~Weekday) keeps the node positions fixed across all panels and shows only the edges that occurred on each weekday. The unchanged node positions make the panels directly comparable across days.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nWeekday volume varies substantially. The differences between weekdays would be invisible in a single graph because all edges would superimpose into one tangle.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#a-framed-facet-graph-with-legend",
+    "href": "HO_EX07a.html#a-framed-facet-graph-with-legend",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6.2 A Framed Facet Graph with Legend",
+    "text": "27.6.2 A Framed Facet Graph with Legend\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 2)\n\ng + facet_edges(~Weekday) +\n  th_foreground(foreground = \"grey80\",  \n                border = TRUE) +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nth_foreground() adds a grey panel background with border = TRUE drawing a thin frame around each facet. The borders help separate the panels visually when the layout pushes edges close to the panel edges. legend.position = 'bottom' moves the legend below the panels to recover horizontal space.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-facet_nodes",
+    "href": "HO_EX07a.html#working-with-facet_nodes",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6.4 Working with facet_nodes()",
+    "text": "27.6.4 Working with facet_nodes()\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 2)\n\ng + facet_nodes(~Department) +\n  th_foreground(foreground = \"grey80\",  \n                border = TRUE) +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfacet_nodes(~Department) shows the subgraph induced by each department, including only edges where both endpoints are in that department. Cross-department edges are dropped from every panel.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#network-metrics-analysis",
+    "href": "HO_EX07a.html#network-metrics-analysis",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7 Network Metrics Analysis",
+    "text": "27.7 Network Metrics Analysis",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#computing-centrality-indices",
+    "href": "HO_EX07a.html#computing-centrality-indices",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7.1 Computing centrality indices",
+    "text": "27.7.1 Computing centrality indices\nCentrality measures rank nodes by their structural importance in the network. The four canonical measures are degree (count of neighbours), betweenness (how often a node sits on shortest paths), closeness (inverse average distance to all other nodes) and eigenvector (importance weighted by neighbour importance).\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  mutate(betweenness_centrality = centrality_betweenness()) %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department,\n            size = betweenness_centrality))\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nmutate(betweenness_centrality = centrality_betweenness()) computes betweenness for each node and stores it as a new column on the active node tibble. Mapping it to size makes the most “bridge-like” employees appear as the largest points.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe largest nodes are not the busiest emailers but the ones who connect otherwise distant parts of the network. They are typically managers or assistants whose role is to broker communication between departments.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#visualising-network-metrics-inline",
+    "href": "HO_EX07a.html#visualising-network-metrics-inline",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7.2 Visualising Network Metrics Inline",
+    "text": "27.7.2 Visualising Network Metrics Inline\nFrom ggraph 2.0 onwards, centrality measures can be computed inline inside an aes() call without a preceding mutate().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department,\n                      size = centrality_betweenness()))\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nCalling centrality_betweenness() directly inside aes() removes the need to materialise the score on the graph object. The trade-off is that the score is recomputed on every plot, which matters for large graphs but not for this 54-node example.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#visualising-community",
+    "href": "HO_EX07a.html#visualising-community",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7.3 Visualising Community",
+    "text": "27.7.3 Visualising Community\nCommunity detection partitions nodes into clusters where within-cluster ties are denser than between-cluster ties. tidygraph inherits multiple algorithms from igraph, including edge-betweenness, leading eigenvector, fast-greedy, Louvain, walktrap, label propagation, InfoMap, spinglass and optimal.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  mutate(community = as.factor(\n    group_edge_betweenness(\n      weights = Weight,\n      directed = TRUE))) %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_edge_link(\n    aes(width = Weight),\n    alpha = 0.2) +\n  scale_edge_width(\n    range = c(0.1, 5)) +\n  geom_node_point(\n    aes(colour = community))\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngroup_edge_betweenness() returns a community ID per node, which is cast to factor so ggraph treats it as a categorical aesthetic. The algorithm progressively removes the edges with the highest betweenness until the graph fragments into communities.\n\n\nThe community network is further refined by drawing concave hulls around each detected community with geom_mark_hull() from ggforce.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  activate(nodes) %&gt;%\n  mutate(community = as.factor(\n    group_optimal(weights = Weight)),\n         betweenness_measure = centrality_betweenness()) %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_mark_hull(\n    aes(x, y,\n        group = community,\n        fill = community),  \n    alpha = 0.2,  \n    expand = unit(0.3, \"cm\"),\n    radius = unit(0.3, \"cm\")\n  ) +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(fill = Department,\n                      size = betweenness_measure),\n                      color = \"black\",\n                      shape = 21)\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngeom_mark_hull() from ggforce draws a smoothed concave hull around each community. expand controls how much padding sits between the outermost nodes and the hull edge, and radius controls the corner smoothness. Combining community membership (hull fill) with department (node fill) reveals whether the structural communities match the formal organisation chart.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nWhen hull membership matches department colour, the formal structure drives communication. Hulls that span multiple departments flag informal collaboration that the org chart misses.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#highlighting-communities-with-hulls",
+    "href": "HO_EX07a.html#highlighting-communities-with-hulls",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7.4 Highlighting Communities with Hulls",
+    "text": "27.7.4 Highlighting Communities with Hulls\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  activate(nodes) %&gt;%\n  mutate(community = as.factor(\n    group_optimal(weights = Weight)),\n         betweenness_measure = centrality_betweenness()) %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_mark_hull(\n    aes(x, y,\n        group = community,\n        fill = community),  \n    alpha = 0.2,  \n    expand = unit(0.3, \"cm\"),\n    radius = unit(0.3, \"cm\")\n  ) +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(fill = Department,\n                      size = betweenness_measure),\n                      color = \"black\",\n                      shape = 21)\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngeom_mark_hull() from ggforce draws a smoothed concave hull around each community. expand controls how much padding sits between the outermost nodes and the hull edge, and radius controls the corner smoothness. Combining community membership (hull fill) with department (node fill) reveals whether the structural communities match the formal organisation chart.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nWhen hull membership matches department colour, the formal structure drives communication. Hulls that span multiple departments flag informal collaboration that the org chart misses.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#building-interactive-network-graph-with-visnetwork",
+    "href": "HO_EX07a.html#building-interactive-network-graph-with-visnetwork",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8 Building Interactive Network Graph with visNetwork",
+    "text": "27.8 Building Interactive Network Graph with visNetwork\nvisNetwork wraps the vis.js JavaScript library. It accepts a nodes data frame with an id column and an edges data frame with from and to columns.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#data-preparation",
+    "href": "HO_EX07a.html#data-preparation",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.1 Data preparation",
+    "text": "27.8.1 Data preparation\n\nGAStech_edges_aggregated &lt;- GAStech_edges %&gt;%\n  left_join(GAStech_nodes, by = c(\"sourceLabel\" = \"label\")) %&gt;%\n  rename(from = id) %&gt;%\n  left_join(GAStech_nodes, by = c(\"targetLabel\" = \"label\")) %&gt;%\n  rename(to = id) %&gt;%\n  filter(MainSubject == \"Work related\") %&gt;%\n  group_by(from, to) %&gt;%\n    summarise(weight = n()) %&gt;%\n  filter(from != to) %&gt;%\n  filter(weight &gt; 1) %&gt;%\n  ungroup()\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe two left_join() calls translate sender and recipient labels into the numeric IDs that visNetwork expects. The renames to from and to are mandatory because those are the column names the function looks for.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#plotting-the-first-interactive-network",
+    "href": "HO_EX07a.html#plotting-the-first-interactive-network",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.2 Plotting the First Interactive Network",
+    "text": "27.8.2 Plotting the First Interactive Network\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nvisNetwork() accepts the nodes and edges directly. The default layout is a physics simulation that runs in the browser, so the graph drifts into place after the page loads.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-layout",
+    "href": "HO_EX07a.html#working-with-layout",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.3 Working with layout",
+    "text": "27.8.3 Working with layout\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\")\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nvisIgraphLayout() pre-computes the layout using an igraph algorithm (layout_with_fr for Fruchterman-Reingold) and disables the browser-side physics. The visible benefit is a static, reproducible layout that loads instantly.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-visual-attributes-nodes",
+    "href": "HO_EX07a.html#working-with-visual-attributes-nodes",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.4 Working with Visual Attributes: Nodes",
+    "text": "27.8.4 Working with Visual Attributes: Nodes\n\nGAStech_nodes &lt;- GAStech_nodes %&gt;%\n  rename(group = Department)\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nvisNetwork colours nodes automatically when there is a column named group, so renaming Department to group is enough to trigger colour-by-department. visLegend() adds a clickable legend, and visLayout(randomSeed = 123) makes the layout deterministic across reloads.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-visual-attributes-edges",
+    "href": "HO_EX07a.html#working-with-visual-attributes-edges",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.5 Working with Visual Attributes: Edges",
+    "text": "27.8.5 Working with Visual Attributes: Edges\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visEdges(arrows = \"to\",\n           smooth = list(enabled = TRUE,\n                         type = \"curvedCW\")) %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\narrows = \"to\" adds arrowheads at the destination end, restoring the directional information that the static ggraph examples did not encode. smooth = list(enabled = TRUE, type = \"curvedCW\") bends edges into clockwise curves so reciprocal pairs no longer superimpose.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#interactivity",
+    "href": "HO_EX07a.html#interactivity",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.6 Interactivity",
+    "text": "27.8.6 Interactivity\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visOptions(highlightNearest = TRUE,\n             nodesIdSelection = TRUE) %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nhighlightNearest = TRUE dims everything except the clicked node and its direct neighbours, isolating one ego network at a time. nodesIdSelection = TRUE adds a dropdown for selecting a node by ID, which scales better than clicking when the network has many nodes.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nClick-to-highlight turns the static map into a single-node investigation tool. The viewer can pick any employee and immediately see who they communicate with, which is the same question a static facet plot answers at the cost of an entire panel.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#section",
+    "href": "HO_EX07a.html#section",
+    "title": "Hands-on Exercise 7a",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 27 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Network Navigator 🕸️\nPress any key to continue…",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#getting-started",
+    "href": "HO_EX07a.html#getting-started",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.2 Getting Started",
+    "text": "27.2 Getting Started",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#the-edges-data",
+    "href": "HO_EX07a.html#the-edges-data",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.1 The edges data",
+    "text": "27.3.1 The edges data\nGAStech_email_edge-v2.csv consists of two weeks of 9,063 email correspondences between 55 employees. Each row carries source, target, SentDate, SentTime, Subject and MainSubject.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#the-nodes-data",
+    "href": "HO_EX07a.html#the-nodes-data",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.2 The nodes data",
+    "text": "27.3.2 The nodes data\nGAStech_email_node.csv consists of the 55 employees with id, label, Department and Title.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#reviewing-the-revised-date-fields",
+    "href": "HO_EX07a.html#reviewing-the-revised-date-fields",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.6 Reviewing the revised date fields",
+    "text": "27.3.6 Reviewing the revised date fields\nThe reformatted GAStech_edges data frame now has two additional columns. SendDate is a proper Date and Weekday is an ordered factor.\n\nglimpse(GAStech_edges)\n\nRows: 9,063\nColumns: 10\n$ source      &lt;dbl&gt; 43, 43, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 26, 26, 26…\n$ target      &lt;dbl&gt; 41, 40, 51, 52, 53, 45, 44, 46, 48, 49, 47, 54, 27, 28, 29…\n$ SentDate    &lt;chr&gt; \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\"…\n$ SentTime    &lt;time&gt; 08:39:00, 08:39:00, 08:58:00, 08:58:00, 08:58:00, 08:58:0…\n$ Subject     &lt;chr&gt; \"GT-SeismicProcessorPro Bug Report\", \"GT-SeismicProcessorP…\n$ MainSubject &lt;chr&gt; \"Work related\", \"Work related\", \"Work related\", \"Work rela…\n$ sourceLabel &lt;chr&gt; \"Sven.Flecha\", \"Sven.Flecha\", \"Kanon.Herrero\", \"Kanon.Herr…\n$ targetLabel &lt;chr&gt; \"Isak.Baza\", \"Lucas.Alcazar\", \"Felix.Resumir\", \"Hideki.Coc…\n$ SendDate    &lt;date&gt; 2014-01-06, 2014-01-06, 2014-01-06, 2014-01-06, 2014-01-0…\n$ Weekday     &lt;ord&gt; Friday, Friday, Friday, Friday, Friday, Friday, Friday, Fr…",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#reviewing-the-revised-edges-file",
+    "href": "HO_EX07a.html#reviewing-the-revised-edges-file",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.3.8 Reviewing the revised edges file",
+    "text": "27.3.8 Reviewing the revised edges file\nThe aggregated edges file is the input to the graph object. Each row carries source, target, Weekday and Weight.\n\nglimpse(GAStech_edges_aggregated)\n\nRows: 1,372\nColumns: 4\n$ source  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ target  &lt;dbl&gt; 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6,…\n$ Weekday &lt;ord&gt; Sunday, Monday, Tuesday, Wednesday, Friday, Sunday, Monday, Tu…\n$ Weight  &lt;int&gt; 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5,…",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#the-dplyr-verbs-in-tidygraph",
+    "href": "HO_EX07a.html#the-dplyr-verbs-in-tidygraph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.2 The dplyr verbs in tidygraph",
+    "text": "27.4.2 The dplyr verbs in tidygraph\nactivate() switches between the node tibble and the edge tibble. All dplyr verbs applied to a tbl_graph operate on the currently active tibble. Inside one context, .N() reaches across to the node tibble, .E() to the edge tibble and .G() to the whole graph.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#using-tbl_graph-to-build-tidygraph-data-model",
+    "href": "HO_EX07a.html#using-tbl_graph-to-build-tidygraph-data-model",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.3 Using tbl_graph() to build tidygraph data model",
+    "text": "27.4.3 Using tbl_graph() to build tidygraph data model\n\nGAStech_graph &lt;- tbl_graph(nodes = GAStech_nodes,\n                           edges = GAStech_edges_aggregated,\n                           directed = TRUE)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndirected = TRUE preserves the asymmetry of email (sender to recipient is not the same as recipient to sender).",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#reviewing-the-tidygraph-graph-object",
+    "href": "HO_EX07a.html#reviewing-the-tidygraph-graph-object",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.4 Reviewing the tidygraph graph object",
+    "text": "27.4.4 Reviewing the tidygraph graph object\n\nGAStech_graph\n\n# A tbl_graph: 54 nodes and 1372 edges\n#\n# A directed multigraph with 1 component\n#\n# Node Data: 54 × 4 (active)\n      id label               Department     Title                               \n   &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt;          &lt;chr&gt;                               \n 1     1 Mat.Bramar          Administration Assistant to CEO                    \n 2     2 Anda.Ribera         Administration Assistant to CFO                    \n 3     3 Rachel.Pantanal     Administration Assistant to CIO                    \n 4     4 Linda.Lagos         Administration Assistant to COO                    \n 5     5 Ruscella.Mies.Haber Administration Assistant to Engineering Group Mana…\n 6     6 Carla.Forluniau     Administration Assistant to IT Group Manager       \n 7     7 Cornelia.Lais       Administration Assistant to Security Group Manager \n 8    44 Kanon.Herrero       Security       Badging Office                      \n 9    45 Varja.Lagos         Security       Badging Office                      \n10    46 Stenig.Fusil        Security       Building Control                    \n# ℹ 44 more rows\n#\n# Edge Data: 1,372 × 4\n   from    to Weekday Weight\n  &lt;int&gt; &lt;int&gt; &lt;ord&gt;    &lt;int&gt;\n1     1     2 Sunday       5\n2     1     2 Monday       2\n3     1     2 Tuesday      3\n# ℹ 1,369 more rows",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#interpreting-the-tidygraph-graph-object",
+    "href": "HO_EX07a.html#interpreting-the-tidygraph-graph-object",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.4.5 Interpreting the tidygraph graph object",
+    "text": "27.4.5 Interpreting the tidygraph graph object\nThe output is a tbl_graph with 54 nodes and 1,372 edges. The first six rows of the node tibble and the first three of the edge tibble are shown. The node tibble is active by default, which means subsequent dplyr verbs operate on it.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#plotting-static-network-graphs-with-ggraph-package",
+    "href": "HO_EX07a.html#plotting-static-network-graphs-with-ggraph-package",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5 Plotting Static Network Graphs with ggraph package",
+    "text": "27.5 Plotting Static Network Graphs with ggraph package\nggraph extends ggplot2 for networks. Every graph is made up of nodes, edges and a layout that places nodes in 2-D space.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-ggraphs-layouts",
+    "href": "HO_EX07a.html#working-with-ggraphs-layouts",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.5.4 Working with ggraph’s layouts",
+    "text": "27.5.4 Working with ggraph’s layouts\nThe layouts supported by ggraph are star, circle, nicely, dh, gem, graphopt, grid, mds, sphere, randomly, fr, kk, drl and lgl. Each chooses a different algorithm for placing nodes in 2-D space.\nThe grids below render the same GAStech_graph under every layout for visual comparison. Node colour encodes department and node size encodes degree.\n\nV(GAStech_graph)$color &lt;- as.numeric(as.factor(V(GAStech_graph)$Department))\nV(GAStech_graph)$size  &lt;- degree(GAStech_graph) / 3 + 3\n\npar(mfrow = c(2, 3), mar = c(1, 1, 3, 1))\nplot(GAStech_graph, layout = layout_as_star,    main = \"layout_as_star\",    vertex.label = NA)\nplot(GAStech_graph, layout = layout_components, main = \"layout_components\", vertex.label = NA)\nplot(GAStech_graph, layout = layout_in_circle,  main = \"layout_in_circle\",  vertex.label = NA)\nplot(GAStech_graph, layout = layout_nicely,     main = \"layout_nicely\",     vertex.label = NA)\nplot(GAStech_graph, layout = layout_on_grid,    main = \"layout_on_grid\",    vertex.label = NA)\nplot(GAStech_graph, layout = layout_on_sphere,  main = \"layout_on_sphere\",  vertex.label = NA)\n\n\n\n\n\n\n\n\n\npar(mfrow = c(3, 3), mar = c(1, 1, 3, 1))\nplot(GAStech_graph, layout = layout_randomly,      main = \"layout_randomly\",      vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_dh,       main = \"layout_with_dh\",       vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_drl,      main = \"layout_with_drl\",      vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_fr,       main = \"layout_with_fr\",       vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_gem,      main = \"layout_with_gem\",      vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_graphopt, main = \"layout_with_graphopt\", vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_kk,       main = \"layout_with_kk\",       vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_lgl,      main = \"layout_with_lgl\",      vertex.label = NA)\nplot(GAStech_graph, layout = layout_with_mds,      main = \"layout_with_mds\",      vertex.label = NA)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nV(GAStech_graph)$color and V(GAStech_graph)$size set node attributes that base R plot.igraph() reads. par(mfrow = c(2, 3)) arranges the panels in a 2 by 3 grid, and the same trick with c(3, 3) produces the 3 by 3 grid. The main argument labels each panel with the layout function name.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nForce-directed layouts like fr, kk, gem and graphopt produce visually similar results that emphasise cluster structure. Geometric layouts like star, circle, grid and sphere impose a fixed shape that ignores network structure. randomly is a useful baseline that shows how much the meaningful layouts contribute.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#adjusting-the-legend-position",
+    "href": "HO_EX07a.html#adjusting-the-legend-position",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6.2 Adjusting the legend position",
+    "text": "27.6.2 Adjusting the legend position\nThe legend is moved below the panels with theme(legend.position = 'bottom').\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 2) +\n  theme(legend.position = 'bottom')\n\ng + facet_edges(~Weekday)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nlegend.position = 'bottom' moves the legend below the panels to recover horizontal space.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#a-framed-facet-graph",
+    "href": "HO_EX07a.html#a-framed-facet-graph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.6.3 A framed facet graph",
+    "text": "27.6.3 A framed facet graph\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph,\n            layout = \"nicely\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department),\n                  size = 2)\n\ng + facet_edges(~Weekday) +\n  th_foreground(foreground = \"grey80\",  \n                border = TRUE) +\n  theme(legend.position = 'bottom')\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nth_foreground() adds a grey panel background with border = TRUE drawing a thin frame around each facet. The borders help separate the panels visually when the layout pushes edges close to the panel edges.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#visualising-network-metrics",
+    "href": "HO_EX07a.html#visualising-network-metrics",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.7.2 Visualising network metrics",
+    "text": "27.7.2 Visualising network metrics\nFrom ggraph 2.0 onwards, centrality measures can be computed inline inside an aes() call without a preceding mutate().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng &lt;- GAStech_graph %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_edge_link(aes(width = Weight),\n                 alpha = 0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department,\n                      size = centrality_betweenness()))\ng + theme_graph()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nCalling centrality_betweenness() directly inside aes() removes the need to materialise the score on the graph object. The trade-off is that the score is recomputed on every plot, which matters for large graphs but not for this 54-node example.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#plotting-the-first-interactive-network-graph",
+    "href": "HO_EX07a.html#plotting-the-first-interactive-network-graph",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.2 Plotting the first interactive network graph",
+    "text": "27.8.2 Plotting the first interactive network graph\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nvisNetwork() accepts the nodes and edges directly. The default layout is a physics simulation that runs in the browser, so the graph drifts into place after the page loads.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-visual-attributes---nodes",
+    "href": "HO_EX07a.html#working-with-visual-attributes---nodes",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.4 Working with visual attributes - Nodes",
+    "text": "27.8.4 Working with visual attributes - Nodes\n\nGAStech_nodes &lt;- GAStech_nodes %&gt;%\n  rename(group = Department)\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nvisNetwork colours nodes automatically when there is a column named group, so renaming Department to group is enough to trigger colour-by-department. visLegend() adds a clickable legend, and visLayout(randomSeed = 123) makes the layout deterministic across reloads.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#working-with-visual-attributes---edges",
+    "href": "HO_EX07a.html#working-with-visual-attributes---edges",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.8.5 Working with visual attributes - Edges",
+    "text": "27.8.5 Working with visual attributes - Edges\n\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visEdges(arrows = \"to\",\n           smooth = list(enabled = TRUE,\n                         type = \"curvedCW\")) %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\narrows = \"to\" adds arrowheads at the destination end, restoring the directional information that the static ggraph examples did not encode. smooth = list(enabled = TRUE, type = \"curvedCW\") bends edges into clockwise curves so reciprocal pairs no longer superimpose.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07a.html#reference",
+    "href": "HO_EX07a.html#reference",
+    "title": "Hands-on Exercise 7a",
+    "section": "27.9 Reference",
+    "text": "27.9 Reference\nKam, Tin Seong. R for Visual Analytics. Singapore Management University, 2024.",
+    "crumbs": [
+      "Hands-on Exercise 7a"
+    ]
   }
 ]
