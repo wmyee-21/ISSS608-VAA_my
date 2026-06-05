@@ -2735,14 +2735,14 @@
     "href": "HO_EX_index.html",
     "title": "Hands-On Exercise Index",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →"
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →"
   },
   {
     "objectID": "HO_EX_index.html#hands-on-exercises-index",
     "href": "HO_EX_index.html#hands-on-exercises-index",
     "title": "Hands-On Exercise Index",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →"
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →"
   },
   {
     "objectID": "IC_EX02.html",
@@ -3958,6 +3958,316 @@
     "text": "27.9 Reference\nKam, Tin Seong. R for Visual Analytics. Singapore Management University, 2024.",
     "crumbs": [
       "Hands-on Exercise 7a"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#learning-outcomes",
+    "href": "HO_EX07b.html#learning-outcomes",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.1 Learning Outcomes",
+    "text": "29.1 Learning Outcomes\nText data is unstructured. The first job of any text-mining workflow is to give every token its own row, with metadata columns identifying which document the token came from. Once the data is tidy, the rest of the tidyverse becomes available for counting, filtering, ranking and visualising.\nThis chapter covers the full pipeline. The steps are bulk-importing many files from many folders, cleaning email headers and quoted text, tokenising with tidytext, visualising word frequencies as wordclouds, computing term frequency-inverse document frequency, identifying word pairs with widyr and drawing bigram networks with ggraph.\nThe dataset is the 20news corpus, a classic collection of newsgroup messages organised by topic folder.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#getting-started",
+    "href": "HO_EX07b.html#getting-started",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.2 Getting Started",
+    "text": "29.2 Getting Started",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#installing-and-launching-r-packages",
+    "href": "HO_EX07b.html#installing-and-launching-r-packages",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.2.1 Installing and launching R packages",
+    "text": "29.2.1 Installing and launching R packages\nThe text-mining workflow touches many packages.\n\ntidytext for tokenisation, stop-word removal and tf-idf\nwidyr for pairwise correlation across tokens\nwordcloud and ggwordcloud for wordclouds\ntextplot for high-level text visualisation\nDT for interactive HTML tables\nlubridate and hms for date and time handling\ntidygraph, ggraph and igraph for the bigram network graphs\ntidyverse for the underlying data manipulation\n\n\npacman::p_load(tidytext, widyr, wordcloud, DT, ggwordcloud,\n               textplot, lubridate, hms,\n               tidyverse, tidygraph, ggraph, igraph)",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#importing-multiple-text-files-from-multiple-folders",
+    "href": "HO_EX07b.html#importing-multiple-text-files-from-multiple-folders",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.3 Importing Multiple Text Files from Multiple Folders",
+    "text": "29.3 Importing Multiple Text Files from Multiple Folders\nThe 20news corpus is organised as one folder per newsgroup, with each message stored as a separate text file inside its folder. The import step has to walk this two-level structure, read every file and assemble one tibble keyed by newsgroup and message ID.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#creating-a-folder-list",
+    "href": "HO_EX07b.html#creating-a-folder-list",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.3.1 Creating a folder list",
+    "text": "29.3.1 Creating a folder list\n\nnews20 &lt;- \"data/20news/\"",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#defining-a-function-to-read-all-files-from-a-folder-into-a-data-frame",
+    "href": "HO_EX07b.html#defining-a-function-to-read-all-files-from-a-folder-into-a-data-frame",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.3.2 Defining a function to read all files from a folder into a data frame",
+    "text": "29.3.2 Defining a function to read all files from a folder into a data frame\n\nread_folder &lt;- function(infolder) {\n  tibble(file = dir(infolder,\n                    full.names = TRUE)) %&gt;%\n    mutate(text = map(file,\n                      read_lines)) %&gt;%\n    transmute(id = basename(file),\n              text) %&gt;%\n    unnest(text)\n}\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ndir(infolder, full.names = TRUE) lists every file in a folder with the full path. map(file, read_lines) reads each file as a vector of lines and stores the vector as a list-column. transmute() keeps only id (the filename) and text, dropping the full path. unnest(text) then flattens the list-column so each line of every file becomes its own row.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#importing-multiple-text-files-from-multiple-folders-1",
+    "href": "HO_EX07b.html#importing-multiple-text-files-from-multiple-folders-1",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.4 Importing Multiple Text Files from Multiple Folders",
+    "text": "29.4 Importing Multiple Text Files from Multiple Folders",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#reading-in-all-the-messages-from-the-20news-folder",
+    "href": "HO_EX07b.html#reading-in-all-the-messages-from-the-20news-folder",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.4.1 Reading in all the messages from the 20news folder",
+    "text": "29.4.1 Reading in all the messages from the 20news folder\n\nraw_text &lt;- tibble(folder = dir(news20,\n                                full.names = TRUE)) %&gt;%\n  filter(file.info(folder)$isdir) %&gt;%\n  mutate(folder_out = map(folder,\n                          read_folder)) %&gt;%\n  unnest(folder_out) %&gt;%\n  transmute(newsgroup = basename(folder),\n            id, text)\n\nwrite_rds(raw_text, \"data/news20.rds\")\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe outer pipeline applies read_folder() to every newsgroup folder via map(), producing a list-column of per-folder tibbles. filter(file.info(folder)$isdir) drops anything that is a file rather than a directory, which prevents stray entries like .DS_Store from breaking the pipeline. unnest() flattens the per-folder tibbles into a single long tibble, and transmute(newsgroup = basename(folder), ...) tags every row with its newsgroup. write_rds() caches the result so subsequent sessions skip the file-reading step.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#initial-eda",
+    "href": "HO_EX07b.html#initial-eda",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.5 Initial EDA",
+    "text": "29.5 Initial EDA\nThe first sanity check is the message count per newsgroup, which exposes any folders that are abnormally small or large.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nraw_text %&gt;%\n  group_by(newsgroup) %&gt;%\n  summarize(messages = n_distinct(id)) %&gt;%\n  ggplot(aes(messages, newsgroup)) +\n  geom_col(fill = \"lightblue\") +\n  labs(y = NULL)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nn_distinct(id) counts the number of unique message IDs per newsgroup. Putting messages on the x-axis and newsgroup on the y-axis produces a horizontal bar chart.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#introducing-tidytext",
+    "href": "HO_EX07b.html#introducing-tidytext",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6 Introducing tidytext",
+    "text": "29.6 Introducing tidytext\nThe tidytext workflow is built on one rule. Every token gets its own row. A token is usually a word, but it can also be an n-gram, a sentence or a regex match. Once the text is tokenised, the standard dplyr verbs apply. count() ranks tokens, filter() removes them and group_by() partitions by document.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#removing-headers-and-automated-email-signatures",
+    "href": "HO_EX07b.html#removing-headers-and-automated-email-signatures",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6.1 Removing headers and automated email signatures",
+    "text": "29.6.1 Removing headers and automated email signatures\nEach newsgroup message begins with a header block of fields like From: and Subject:. Many end with an automated signature after a line containing only --. Both are noise.\n\ncleaned_text &lt;- raw_text %&gt;%\n  group_by(newsgroup, id) %&gt;%\n  filter(cumsum(text == \"\") &gt; 0,\n         cumsum(str_detect(\n           text, \"^--\")) == 0) %&gt;%\n  ungroup()\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ncumsum(text == \"\") &gt; 0 keeps only rows that come after the first blank line, which is the boundary between header and body in standard email format. cumsum(str_detect(text, \"^--\")) == 0 keeps only rows that come before the first signature delimiter. Both conditions are applied per message because of group_by(newsgroup, id).",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#removing-lines-with-nested-text-representing-quotes-from-other-users",
+    "href": "HO_EX07b.html#removing-lines-with-nested-text-representing-quotes-from-other-users",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6.2 Removing lines with nested text representing quotes from other users",
+    "text": "29.6.2 Removing lines with nested text representing quotes from other users\n\ncleaned_text &lt;- cleaned_text %&gt;%\n  filter(str_detect(text, \"^[^&gt;]+[A-Za-z\\\\d]\")\n         | text == \"\",\n         !str_detect(text,\n                     \"writes(:|\\\\.\\\\.\\\\.)$\"),\n         !str_detect(text,\n                     \"^In article &lt;\")\n  )\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nThe leading &gt; is the standard quoting marker in email replies, so ^[^&gt;]+[A-Za-z\\\\d] keeps lines that do not start with &gt; and contain at least one letter or digit. The two negative str_detect() calls remove “Smith writes:” attribution lines and “In article &lt;…&gt;” reference lines that introduce quoted material.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#text-data-processing",
+    "href": "HO_EX07b.html#text-data-processing",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6.3 Text Data Processing",
+    "text": "29.6.3 Text Data Processing\n\nusenet_words &lt;- cleaned_text %&gt;%\n  unnest_tokens(word, text) %&gt;%\n  filter(str_detect(word, \"[a-z']$\"),\n         !word %in% stop_words$word)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nunnest_tokens(word, text) splits each row of the text column into one row per word, naming the new column word. By default the function lower-cases the tokens and drops punctuation. The filter() keeps only tokens ending in a letter or apostrophe (excluding pure numbers and emoticons) and removes the standard English stop words from stop_words$word.\n\n\nThe most common words in the corpus can then be counted directly.\n\nusenet_words %&gt;%\n  count(word, sort = TRUE)\n\n# A tibble: 5,542 × 2\n   word           n\n   &lt;chr&gt;      &lt;int&gt;\n 1 people        57\n 2 time          50\n 3 jesus         47\n 4 god           44\n 5 message       40\n 6 br            27\n 7 bible         23\n 8 drive         23\n 9 homosexual    23\n10 read          22\n# ℹ 5,532 more rows\n\n\nPer-newsgroup counts use the same idiom with a grouping column.\n\nwords_by_newsgroup &lt;- usenet_words %&gt;%\n  count(newsgroup, word, sort = TRUE) %&gt;%\n  ungroup()",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-words-with-wordcloud",
+    "href": "HO_EX07b.html#visualising-words-with-wordcloud",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6.4 Visualising words with wordcloud",
+    "text": "29.6.4 Visualising words with wordcloud\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwordcloud(words_by_newsgroup$word,\n          words_by_newsgroup$n,\n          max.words = 300)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nwordcloud() accepts a vector of words and a vector of frequencies, in this case the columns from words_by_newsgroup. max.words = 300 caps the cloud at the 300 highest-frequency tokens to keep the layout readable.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nWordclouds rank by size but the area encoding is unreliable. The eye estimates rectangle area poorly, and the layout puts long words at a disadvantage. The cloud is useful as an attention-grabbing overview, but the actual ranking should always be verified against a frequency table.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-words-with-ggwordcloud",
+    "href": "HO_EX07b.html#visualising-words-with-ggwordcloud",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.6.5 Visualising words with ggwordcloud",
+    "text": "29.6.5 Visualising words with ggwordcloud\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset.seed(1234)\n\nwords_by_newsgroup %&gt;%\n  group_by(newsgroup) %&gt;%\n  slice_max(n, n = 30) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(label = word,\n             size = n)) +\n  geom_text_wordcloud() +\n  theme_minimal() +\n  facet_wrap(~newsgroup)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nggwordcloud plugs into the ggplot2 grammar, so facet_wrap(~newsgroup) produces one wordcloud per newsgroup with consistent text sizing across panels. set.seed(1234) fixes the random placement so the layout is reproducible.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#basic-concept-of-tf-idf",
+    "href": "HO_EX07b.html#basic-concept-of-tf-idf",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7 Basic Concept of TF-IDF",
+    "text": "29.7 Basic Concept of TF-IDF\nTerm frequency-inverse document frequency (tf-idf) measures how distinctive a word is to a document relative to the whole corpus. The term frequency is high for words that appear often inside the document. The inverse document frequency is high for words that appear in few documents. Multiplying the two gives a score that downweights common words like “the” without requiring an external stop-word list.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#computing-tf-idf-within-newsgroups",
+    "href": "HO_EX07b.html#computing-tf-idf-within-newsgroups",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.1 Computing tf-idf within newsgroups",
+    "text": "29.7.1 Computing tf-idf within newsgroups\n\ntf_idf &lt;- words_by_newsgroup %&gt;%\n  bind_tf_idf(word, newsgroup, n) %&gt;%\n  arrange(desc(tf_idf))\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nbind_tf_idf(word, newsgroup, n) takes the token column, the document column and the count column. It appends three new columns named tf, idf and tf_idf. Sorting by tf_idf descending surfaces the words most distinctive to a particular newsgroup.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-tf-idf-as-an-interactive-table",
+    "href": "HO_EX07b.html#visualising-tf-idf-as-an-interactive-table",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.2 Visualising tf-idf as an interactive table",
+    "text": "29.7.2 Visualising tf-idf as an interactive table\nA DT table can be used to complement the visual discovery.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#implementing-the-interactive-tf-idf-table",
+    "href": "HO_EX07b.html#implementing-the-interactive-tf-idf-table",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.3 Implementing the interactive tf-idf table",
+    "text": "29.7.3 Implementing the interactive tf-idf table\n\nDT::datatable(tf_idf, filter = 'top') %&gt;%\n  formatRound(columns = c('tf', 'idf', 'tf_idf'),\n              digits = 3) %&gt;%\n  formatStyle(0,\n              target = 'row',\n              lineHeight = '25%')\n\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter = 'top' adds a search field above each column for live filtering. formatRound() truncates tf, idf and tf_idf to three decimal places, and formatStyle(0, target = 'row', lineHeight = '25%') compresses the row height so more rows fit on screen at once.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-tf-idf-within-newsgroups",
+    "href": "HO_EX07b.html#visualising-tf-idf-within-newsgroups",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.4 Visualising tf-idf within newsgroups",
+    "text": "29.7.4 Visualising tf-idf within newsgroups\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntf_idf %&gt;%\n  filter(str_detect(newsgroup, \"^sci\\\\.\")) %&gt;%\n  group_by(newsgroup) %&gt;%\n  slice_max(tf_idf, n = 12) %&gt;%\n  ungroup() %&gt;%\n  mutate(word = reorder(word, tf_idf)) %&gt;%\n  ggplot(aes(tf_idf,\n             word,\n             fill = newsgroup)) +\n  geom_col(show.legend = FALSE) +\n  facet_wrap(~ newsgroup, scales = \"free\") +\n  labs(x = \"tf-idf\",\n       y = NULL)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nstr_detect(newsgroup, \"^sci\\\\.\") keeps only the science-themed newsgroups (sci.crypt, sci.electronics, sci.med, sci.space). slice_max(tf_idf, n = 12) keeps the top 12 words per group. scales = \"free\" lets each facet have its own x-axis range so the bars use the full panel width.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nThe most distinctive words for each newsgroup are domain vocabulary, not stop words. sci.crypt shows cryptographic terms, sci.space shows planet names and sci.med shows clinical terms. The implicit stop-word filtering of tf-idf is what makes this readable without manual curation.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#counting-and-correlating-pairs-of-words-with-the-widyr-package",
+    "href": "HO_EX07b.html#counting-and-correlating-pairs-of-words-with-the-widyr-package",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.5 Counting and correlating pairs of words with the widyr package",
+    "text": "29.7.5 Counting and correlating pairs of words with the widyr package\nThe widyr package lets a tidy dataset be widened temporarily, processed with matrix operations and re-tidied. Pairwise correlation needs a wide token-by-document matrix to compute.\n\n\nnewsgroup_cors &lt;- words_by_newsgroup %&gt;%\n  pairwise_cor(newsgroup,\n               word,\n               n,\n               sort = TRUE)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\npairwise_cor() takes three columns, namely the items to correlate (newsgroups), the feature column (words) and the value column (counts). It widens internally to a newsgroup-by-word matrix, computes the Pearson correlation between every pair of newsgroups across all words, then returns a tidy long-format result with item1, item2 and correlation.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-correlation-as-a-network",
+    "href": "HO_EX07b.html#visualising-correlation-as-a-network",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.6 Visualising correlation as a network",
+    "text": "29.7.6 Visualising correlation as a network\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset.seed(2017)\n\nnewsgroup_cors %&gt;%\n  filter(correlation &gt; .025) %&gt;%\n  graph_from_data_frame() %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_edge_link(aes(alpha = correlation,\n                     width = correlation)) +\n  geom_node_point(size = 6,\n                  color = \"lightblue\") +\n  geom_node_text(aes(label = name),\n                 color = \"red\",\n                 repel = TRUE) +\n  theme_void()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter(correlation &gt; .025) drops the weakest pairs so the network is not solid. graph_from_data_frame() converts the long tibble into an igraph object whose nodes are the newsgroups and whose edges are the correlations. Mapping correlation to both alpha and width double-encodes the strength so weak pairs are faded thin lines and strong pairs are opaque thick lines. repel = TRUE from ggrepel prevents label collisions.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nNewsgroups within the same top-level category (comp.*, sci.*, talk.*) cluster together, confirming that vocabulary alone separates them. Cross-category edges reveal vocabulary overlaps, such as religion threads in talk.politics.* linking to soc.religion.christian.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#bigrams",
+    "href": "HO_EX07b.html#bigrams",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.7 Bigrams",
+    "text": "29.7.7 Bigrams\nA bigram is a pair of consecutive words. Bigrams preserve local context that single-word counts discard. For example, “not good” and “very good” are opposites but produce the same word counts when tokenised individually.\n\nbigrams &lt;- cleaned_text %&gt;%\n  unnest_tokens(bigram,\n                text,\n                token = \"ngrams\",\n                n = 2)\n\nbigrams\n\n# A tibble: 28,827 × 3\n   newsgroup   id    bigram    \n   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;     \n 1 alt.atheism 54256 &lt;NA&gt;      \n 2 alt.atheism 54256 &lt;NA&gt;      \n 3 alt.atheism 54256 as i      \n 4 alt.atheism 54256 i don't   \n 5 alt.atheism 54256 don't know\n 6 alt.atheism 54256 know this \n 7 alt.atheism 54256 this book \n 8 alt.atheism 54256 book i    \n 9 alt.atheism 54256 i will    \n10 alt.atheism 54256 will use  \n# ℹ 28,817 more rows\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ntoken = \"ngrams\" switches unnest_tokens() from single-word splitting to n-gram splitting, and n = 2 requests bigrams. The result is one row per consecutive word pair, with each word appearing twice (once as the second word of one pair and once as the first word of the next).",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#counting-bigrams",
+    "href": "HO_EX07b.html#counting-bigrams",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.8 Counting bigrams",
+    "text": "29.7.8 Counting bigrams\n\nbigrams_count &lt;- bigrams %&gt;%\n  filter(bigram != 'NA') %&gt;%\n  count(bigram, sort = TRUE)\n\nbigrams_count\n\n# A tibble: 19,888 × 2\n   bigram       n\n   &lt;chr&gt;    &lt;int&gt;\n 1 of the     169\n 2 in the     113\n 3 to the      74\n 4 to be       59\n 5 for the     52\n 6 i have      48\n 7 that the    47\n 8 if you      40\n 9 on the      39\n10 it is       38\n# ℹ 19,878 more rows\n\n\n\n\n\n\n\n\nTipReading the result\n\n\n\nThe top bigrams in any corpus are dominated by stop-word combinations like “of the”, “in the” and “to the”. Stop words are removed for single-word analysis for the same reason, and the same step is needed for bigrams.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#cleaning-bigrams",
+    "href": "HO_EX07b.html#cleaning-bigrams",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.9 Cleaning bigrams",
+    "text": "29.7.9 Cleaning bigrams\n\nbigrams_separated &lt;- bigrams %&gt;%\n  filter(bigram != 'NA') %&gt;%\n  separate(bigram, c(\"word1\", \"word2\"),\n           sep = \" \")\n\nbigrams_filtered &lt;- bigrams_separated %&gt;%\n  filter(!word1 %in% stop_words$word) %&gt;%\n  filter(!word2 %in% stop_words$word)\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nseparate(bigram, c(\"word1\", \"word2\"), sep = \" \") splits the bigram column into two columns at the space. Filtering each word against the stop-word list removes any bigram containing a stop word in either position, which is the standard cleaning step before counting.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#counting-the-bigrams-again",
+    "href": "HO_EX07b.html#counting-the-bigrams-again",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.10 Counting the bigrams again",
+    "text": "29.7.10 Counting the bigrams again\n\nbigram_counts &lt;- bigrams_filtered %&gt;%\n  count(word1, word2, sort = TRUE)",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#creating-a-network-graph-from-bigram-data-frame",
+    "href": "HO_EX07b.html#creating-a-network-graph-from-bigram-data-frame",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.11 Creating a network graph from bigram data frame",
+    "text": "29.7.11 Creating a network graph from bigram data frame\n\nbigram_graph &lt;- bigram_counts %&gt;%\n  filter(n &gt; 3) %&gt;%\n  graph_from_data_frame()\n\nbigram_graph\n\nIGRAPH 850eed7 DN-- 40 24 -- \n+ attr: name (v/c), n (e/n)\n+ edges from 850eed7 (vertex names):\n [1] 1          -&gt;2           1          -&gt;3           static     -&gt;void       \n [4] time       -&gt;pad         1          -&gt;4           infield    -&gt;fly        \n [7] mat        -&gt;28          vv         -&gt;vv          1          -&gt;5          \n[10] cock       -&gt;crow        noticeshell-&gt;widget      27         -&gt;1993       \n[13] 3          -&gt;4           child      -&gt;molestation cock       -&gt;crew       \n[16] gun        -&gt;violence    heat       -&gt;sink        homosexual -&gt;male       \n[19] homosexual -&gt;women       include    -&gt;xol         mary       -&gt;magdalene  \n[22] read       -&gt;write       rev        -&gt;20          tt         -&gt;ee         \n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter(n &gt; 3) keeps only bigrams that appear more than three times. graph_from_data_frame() builds an igraph object whose nodes are unique words and whose edges connect words that appear consecutively. Multi-edge chains (A -&gt; B -&gt; C) reveal common multi-word phrases without explicitly tokenising trigrams.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#visualising-a-network-of-bigrams-with-ggraph",
+    "href": "HO_EX07b.html#visualising-a-network-of-bigrams-with-ggraph",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.12 Visualising a network of bigrams with ggraph",
+    "text": "29.7.12 Visualising a network of bigrams with ggraph\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset.seed(1234)\n\nggraph(bigram_graph, layout = \"fr\") +\n  geom_edge_link() +\n  geom_node_point() +\n  geom_node_text(aes(label = name),\n                 vjust = 1,\n                 hjust = 1)\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngeom_node_text(aes(label = name)) adds a text label per node. The vjust = 1, hjust = 1 arguments push labels down and to the left so they sit clear of their points. The basic version lacks arrows, so the direction of each bigram (word1 -&gt; word2) is not visible.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#revised-version",
+    "href": "HO_EX07b.html#revised-version",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.7.13 Revised version",
+    "text": "29.7.13 Revised version\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nset.seed(1234)\n\na &lt;- grid::arrow(type = \"closed\",\n                 length = unit(.15, \"inches\"))\n\nggraph(bigram_graph, layout = \"fr\") +\n  geom_edge_link(aes(edge_alpha = n),\n                 show.legend = FALSE,\n                 arrow = a,\n                 end_cap = circle(.07, 'inches')) +\n  geom_node_point(color = \"lightblue\",\n                  size = 5) +\n  geom_node_text(aes(label = name),\n                 vjust = 1,\n                 hjust = 1) +\n  theme_void()\n\n\n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\ngrid::arrow() builds the arrow specification once and reuses it. end_cap = circle(.07, 'inches') reserves a circular gap at the destination node so the arrowhead does not disappear into the point. edge_alpha = n makes high-frequency bigrams more opaque, which is the same trick used in the earlier network plots.\n\n\n\n\n\n\n\n\nTipReading the plot\n\n\n\nMulti-word phrases emerge as chains in the graph. Common compound terms appear as word1 -&gt; word2 -&gt; word3 paths, surfacing semantic structure that neither single-word counts nor isolated bigram counts can reveal.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#references",
+    "href": "HO_EX07b.html#references",
+    "title": "Hands-on Exercise 7b",
+    "section": "29.8 References",
+    "text": "29.8 References\nKam, Tin Seong. R for Visual Analytics. Singapore Management University, 2024.\nRobinson, David, and Julia Silge. Text Mining with R: A Tidy Approach. O’Reilly Media, 2017.",
+    "crumbs": [
+      "Hands-on Exercise 7b"
+    ]
+  },
+  {
+    "objectID": "HO_EX07b.html#section",
+    "href": "HO_EX07b.html#section",
+    "title": "Hands-on Exercise 7b",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 29 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Text Trawler 📜\nPress any key to continue…",
+    "crumbs": [
+      "Hands-on Exercise 7b"
     ]
   }
 ]

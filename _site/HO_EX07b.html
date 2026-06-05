@@ -516,6 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introducing-tidytext" class="level2">
 <h2 class="anchored" data-anchor-id="introducing-tidytext"><span style="color:  #2C5282; font-size: 28px;">29.6 Introducing tidytext</span></h2>
 <p>The tidytext workflow is built on one rule. Every token gets its own row. A token is usually a word, but it can also be an n-gram, a sentence or a regex match. Once the text is tokenised, the standard <code>dplyr</code> verbs apply. <code>count()</code> ranks tokens, <code>filter()</code> removes them and <code>group_by()</code> partitions by document.</p>
+<p><img src="images/clipboard-120512561.png" class="img-fluid"></p>
 </section>
 <section id="removing-headers-and-automated-email-signatures" class="level2">
 <h2 class="anchored" data-anchor-id="removing-headers-and-automated-email-signatures"><span style="color:  #366092; font-size: 24px;">29.6.1 Removing headers and automated email signatures</span></h2>
@@ -719,6 +720,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-concept-of-tf-idf" class="level2">
 <h2 class="anchored" data-anchor-id="basic-concept-of-tf-idf"><span style="color:  #2C5282; font-size: 28px;">29.7 Basic Concept of TF-IDF</span></h2>
 <p>Term frequency-inverse document frequency (tf-idf) measures how distinctive a word is to a document relative to the whole corpus. The term frequency is high for words that appear often inside the document. The inverse document frequency is high for words that appear in few documents. Multiplying the two gives a score that downweights common words like “the” without requiring an external stop-word list.</p>
+<p><img src="images/clipboard-508796412.png" class="img-fluid"></p>
 </section>
 <section id="computing-tf-idf-within-newsgroups" class="level2">
 <h2 class="anchored" data-anchor-id="computing-tf-idf-within-newsgroups"><span style="color:  #366092; font-size: 24px;">29.7.1 Computing tf-idf within newsgroups</span></h2>
@@ -838,6 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="counting-and-correlating-pairs-of-words-with-the-widyr-package" class="level2">
 <h2 class="anchored" data-anchor-id="counting-and-correlating-pairs-of-words-with-the-widyr-package"><span style="color:  #366092; font-size: 24px;">29.7.5 Counting and correlating pairs of words with the widyr package</span></h2>
 <p>The <code>widyr</code> package lets a tidy dataset be widened temporarily, processed with matrix operations and re-tidied. Pairwise correlation needs a wide token-by-document matrix to compute.</p>
+<p><img src="images/clipboard-920136260.png" class="img-fluid"></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>newsgroup_cors <span class="ot">&lt;-</span> words_by_newsgroup <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairwise_cor</span>(newsgroup,</span>
@@ -1045,9 +1048,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>bigram_graph</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH be13699 DN-- 40 24 -- 
+<pre><code>IGRAPH 850eed7 DN-- 40 24 -- 
 + attr: name (v/c), n (e/n)
-+ edges from be13699 (vertex names):
++ edges from 850eed7 (vertex names):
  [1] 1          -&gt;2           1          -&gt;3           static     -&gt;void       
  [4] time       -&gt;pad         1          -&gt;4           infield    -&gt;fly        
  [7] mat        -&gt;28          vv         -&gt;vv          1          -&gt;5          
