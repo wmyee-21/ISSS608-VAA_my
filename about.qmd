@@ -16,14 +16,14 @@ This course is taught by **Dr. Kam Tin Seong**, Associate Professor of Informati
 
 The goals of this course are:
 
--   To share with you the principles, best practices and methods of visual analytics
--   To provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications.
+- To share with you the principles, best practices and methods of visual analytics
+- To provide you hands-on experiences in using commercial-off-the-shelf visual analytics software and programming tools to design visual analytics applications.
 
 ## [Learning Goals]{style="color: #2C5282; font-size: 28px;"}
 
 Through this course, I aim to:
 
--   Understand the basic concepts, theories and methodologies of visual analytics.
--   Analyse data using appropriate visual thinking and visual analytics techniques.
--   Present data using appropriate visual communication and graphical methods.
--   Design and implement cutting-edge visual analytics system for supporting decision making.
+- Understand the basic concepts, theories and methodologies of visual analytics.
+- Analyse data using appropriate visual thinking and visual analytics techniques.
+- Present data using appropriate visual communication and graphical methods.
+- Design and implement cutting-edge visual analytics system for supporting decision making.
