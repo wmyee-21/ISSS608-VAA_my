@@ -23,14 +23,14 @@ This site consists of my journey through the course, updated regularly as I prog
 ### [📘 Hands-on Exercises]{style="color: #366092; font-size: 20px;"}
 
 :::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
-![](images/clipboard-738692211.png){width="232"}
+![](https://r4va.netlify.app/chap17/img/image01.png){width="232"}
 
 ::: {style="flex: 1;"}
-**Hands-on Exercise 7 — Network Visualisation and Text Mining**
+**Hands-on Exercise 8 — Visualising and Analysing Time-oriented Data**
 
-Explored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.
+Explored three time-oriented displays in R, (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.
 
-[Read more →](HO_EX07a.html)
+[Read more →](HO_EX08.html)
 :::
 ::::
 
