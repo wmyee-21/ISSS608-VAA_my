@@ -1,0 +1,61 @@
+---
+title: "In-Class Exercise 8"
+author: "Yee Weicong Mark"
+date: "June 18, 2026"
+date-modified: "last-modified"
+execute:
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+format:
+  html:
+    css: styles.css
+---
+
+## [Visual Analysis of Time-Oriented Data with Tableau]{style="color:  #4682B4; font-size: 38px;"}
+
+In-class exercise 8 uses Tableau to build three time-oriented views. Each view is published to Tableau Public and embedded below. The three views are a control chart, a slopegraph and a trend-and-cycle view.
+
+```{=html}
+<script type='module' src='https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+```
+
+### Control Chart for Sales by Category
+
+Tableau is used to plot a control chart of sales by category. A control chart tracks a measure over time against a centre line with upper and lower control limits, which helps separate ordinary variation from unusual movements that may need a closer look.
+
+```{=html}
+<tableau-viz id='viz-ic08a'
+  src='https://public.tableau.com/views/IC_EX08a/ControlChartforSalesbyCategory'
+  width='100%' height='700' toolbar='bottom' hide-tabs>
+</tableau-viz>
+```
+
+The view is published to Tableau Public at [this URL](https://public.tableau.com/app/profile/mark.yee/viz/IC_EX08a/ControlChartforSalesbyCategory).
+
+### Slopegraph
+
+Tableau is used to plot a slopegraph. A slopegraph connects two points in time with a straight line for each category, which makes increases, decreases and changes in rank easy to read at a glance.
+
+```{=html}
+<tableau-viz id='viz-ic08b'
+  src='https://public.tableau.com/views/IC_EX08b/Slopgraph'
+  width='100%' height='700' toolbar='bottom' hide-tabs>
+</tableau-viz>
+```
+
+The view is published to Tableau Public at [this URL](https://public.tableau.com/app/profile/mark.yee/viz/IC_EX08b/Slopgraph).
+
+### Arrival Trend and Cycle
+
+Tableau is used to plot an arrival trend and cycle view. The view shows how a measure moves over time and how it repeats across a regular cycle such as the months of the year, which exposes both the long-run trend and the seasonal pattern.
+
+```{=html}
+<tableau-viz id='viz-ic08c'
+  src='https://public.tableau.com/views/IC_EX08c/ArrivalTrendandCycle'
+  width='100%' height='700' toolbar='bottom' hide-tabs>
+</tableau-viz>
+```
+
+The view is published to Tableau Public at [this URL](https://public.tableau.com/app/profile/mark.yee/viz/IC_EX08c/ArrivalTrendandCycle).

@@ -74,3 +74,15 @@ Built two treemap views to practise multivariate visual analysis. The first tree
 [Read more →](IC_EX05.html)
 :::
 ::::
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](images/clipboard-4099176191.png){width="232"}
+
+::: {style="flex: 1;"}
+**In-Class Exercise 8 — Visual Analysis of Time-oriented Data with Tableau**
+
+Built three time-oriented Tableau views and published each to Tableau Public, namely a control chart of sales by category, a slopegraph and a trend-and-cycle view of arrivals. Each view is embedded live on the exercise page.
+
+[Read more →](IC_EX08.html)
+:::
+::::

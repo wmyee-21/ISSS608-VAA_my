@@ -152,7 +152,7 @@
     "href": "index.html#latest-updates",
     "title": "My Visual Analytics Journey",
     "section": "Latest Updates",
-    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 8 — Visualising and Analysing Time-oriented Data\nExplored three time-oriented displays in R, (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 2 — Tracing an embargo leak across an autonomous multi-agent communications system\nThe analysis covers 912 messages across 23 rounds among seven AI agents communicating over six channels, reconstructing how the merger embargo was broken one hour early.\nRead more →"
+    "text": "Latest Updates\n\n📘 Hands-on Exercises\n\n\n\nHands-on Exercise 9 — Geospatial Choropleth, Point and Analytical Mapping\nExplored three geospatial mapping workflows with sf and tmap, (1) choropleth mapping covering shapefile and aspatial data import, georelational joins, qtm and tmap element layers, data classification methods, colour schemes, map layouts and small multiple facet maps, (2) geospatial point data covering aspatial-to-sf conversion with projection assignment and interactive proportional symbol maps in tmap view mode, and (3) analytical mapping covering rate maps, percentile maps and box maps built with custom break functions over Nigeria water-point data.\nRead more →\n\n\n\n\n🖥️ In-class Exercises\n\n\n\nIn-Class Exercise 8 — Visual Analysis of Time-oriented Data with Tableau\nBuilt three time-oriented Tableau views and published each to Tableau Public, namely a control chart of sales by category, a slopegraph and a trend-and-cycle view of arrivals. Each view is embedded live on the exercise page.\nRead more →\n\n\n\n\n📝 Take-Home Assignments\n\n\n\nTake-home Assignment 2 — Tracing an embargo leak across an autonomous multi-agent communications system\nThe analysis covers 912 messages across 23 rounds among seven AI agents communicating over six channels, reconstructing how the merger embargo was broken one hour early.\nRead more →"
   },
   {
     "objectID": "index.html#all-work",
@@ -162,53 +162,390 @@
     "text": "All Work\n\n\nHands-on Exercises\n\n\nIn-class Exercises\n\n\nTake-home Assignments\n\n\nWeekly practical exercises applying visual analytics techniques in R.\nView all →\n\n\nShort exercises completed during lessons to reinforce key concepts.\nView all →\n\n\nIndependent projects applying visual analytics to real-world datasets.\nView all →"
   },
   {
-    "objectID": "IC_EX05_index_entry.html",
-    "href": "IC_EX05_index_entry.html",
-    "title": "My Visual Analytics Journey",
+    "objectID": "IC_EX08.html",
+    "href": "IC_EX08.html",
+    "title": "In-Class Exercise 8",
     "section": "",
-    "text": "In-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →"
+    "text": "In-class exercise 8 uses Tableau to build three time-oriented views. Each view is published to Tableau Public and embedded below. The three views are a control chart, a slopegraph and a trend-and-cycle view.\n\n\n\nTableau is used to plot a control chart of sales by category. A control chart tracks a measure over time against a centre line with upper and lower control limits, which helps separate ordinary variation from unusual movements that may need a closer look.\n\n\nThe view is published to Tableau Public at this URL.\n\n\n\nTableau is used to plot a slopegraph. A slopegraph connects two points in time with a straight line for each category, which makes increases, decreases and changes in rank easy to read at a glance.\n\n\nThe view is published to Tableau Public at this URL.\n\n\n\nTableau is used to plot an arrival trend and cycle view. The view shows how a measure moves over time and how it repeats across a regular cycle such as the months of the year, which exposes both the long-run trend and the seasonal pattern.\n\n\nThe view is published to Tableau Public at this URL."
   },
   {
-    "objectID": "IC_EX04.html",
-    "href": "IC_EX04.html",
-    "title": "In-Class Exercise 4",
+    "objectID": "IC_EX08.html#visual-analysis-of-time-oriented-data-with-tableau",
+    "href": "IC_EX08.html#visual-analysis-of-time-oriented-data-with-tableau",
+    "title": "In-Class Exercise 8",
     "section": "",
-    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+    "text": "In-class exercise 8 uses Tableau to build three time-oriented views. Each view is published to Tableau Public and embedded below. The three views are a control chart, a slopegraph and a trend-and-cycle view.\n\n\n\nTableau is used to plot a control chart of sales by category. A control chart tracks a measure over time against a centre line with upper and lower control limits, which helps separate ordinary variation from unusual movements that may need a closer look.\n\n\nThe view is published to Tableau Public at this URL.\n\n\n\nTableau is used to plot a slopegraph. A slopegraph connects two points in time with a straight line for each category, which makes increases, decreases and changes in rank easy to read at a glance.\n\n\nThe view is published to Tableau Public at this URL.\n\n\n\nTableau is used to plot an arrival trend and cycle view. The view shows how a measure moves over time and how it repeats across a regular cycle such as the months of the year, which exposes both the long-run trend and the seasonal pattern.\n\n\nThe view is published to Tableau Public at this URL."
   },
   {
-    "objectID": "IC_EX04.html#programming-visual-analytics-with-tableau",
-    "href": "IC_EX04.html#programming-visual-analytics-with-tableau",
-    "title": "In-Class Exercise 4",
+    "objectID": "IC_EX05.html",
+    "href": "IC_EX05.html",
+    "title": "In-Class Exercise 5",
     "section": "",
-    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+    "text": "During in-class exercise 5, two treemap views were created to practise multivariate visual analysis in Tableau. The exercise explores how a treemap encodes measures simultaneously within a single spatial layout. The tile area carries one measure and tile colour carries a second, allowing both to be read at a glance without mentally joining two separate panels.\nThe dataset for the first view is Singapore private residential property transaction records sourced from URA, covering all of 2025. The combined dataset spans approximately 29,000 transactions across private apartments, condominiums, executive condominiums, and landed properties in all five planning regions of Singapore. The second view uses the Superstore sample dataset previously used.\n\n\nThe first view is a treemap where tile area represents the total number of transactions in each planning area and tile colour encodes the median unit price per square foot, using a sequential colour palette that runs from lighter shades for lower price levels to deeper shades for higher price levels. The two measures together reveal where the market is most active and whether that activity is concentrated in high-value or lower-value segments.\n\nThis report was published to Tableau Public at the following URL.\n\n\n\nThe second view is a treemap using the Superstore sample dataset, where tile area represents total sales revenue and tile colour encodes total profit, broken down by country and region. A diverging palette is used for profit, running from orange for loss-making markets to blue for profitable ones.\nThis report was published to Tableau Public at the following URL."
   },
   {
-    "objectID": "IC_EX02.html",
-    "href": "IC_EX02.html",
-    "title": "In-Class Exercise 2",
+    "objectID": "IC_EX05.html#visual-multivariate-analysis-with-tableau",
+    "href": "IC_EX05.html#visual-multivariate-analysis-with-tableau",
+    "title": "In-Class Exercise 5",
     "section": "",
-    "text": "Tableau Public is a free platform that allows users to explore, create, and share interactive data visualizations online. It serves as a public repository of data visualizations, enabling users to learn from millions of examples and develop their own skills. The platform is accessible to anyone, making it a valuable resource for students, aspiring data analysts, seasoned professionals, and data hobbyists. Tableau Public is not just a tool for creating visualizations; it’s a community where users can connect, learn, and showcase their work.\n\n\nDuring in-class exercise 2, a dashboard was created using the superstore data to show the sales and profit report for 2022-2025. This report was published to Tableau Public at the following URL."
+    "text": "During in-class exercise 5, two treemap views were created to practise multivariate visual analysis in Tableau. The exercise explores how a treemap encodes measures simultaneously within a single spatial layout. The tile area carries one measure and tile colour carries a second, allowing both to be read at a glance without mentally joining two separate panels.\nThe dataset for the first view is Singapore private residential property transaction records sourced from URA, covering all of 2025. The combined dataset spans approximately 29,000 transactions across private apartments, condominiums, executive condominiums, and landed properties in all five planning regions of Singapore. The second view uses the Superstore sample dataset previously used.\n\n\nThe first view is a treemap where tile area represents the total number of transactions in each planning area and tile colour encodes the median unit price per square foot, using a sequential colour palette that runs from lighter shades for lower price levels to deeper shades for higher price levels. The two measures together reveal where the market is most active and whether that activity is concentrated in high-value or lower-value segments.\n\nThis report was published to Tableau Public at the following URL.\n\n\n\nThe second view is a treemap using the Superstore sample dataset, where tile area represents total sales revenue and tile colour encodes total profit, broken down by country and region. A diverging palette is used for profit, running from orange for loss-making markets to blue for profitable ones.\nThis report was published to Tableau Public at the following URL."
   },
   {
-    "objectID": "IC_EX02.html#tableau-public",
-    "href": "IC_EX02.html#tableau-public",
-    "title": "In-Class Exercise 2",
+    "objectID": "IC_EX03.html",
+    "href": "IC_EX03.html",
+    "title": "In-Class Exercise 3",
     "section": "",
-    "text": "Tableau Public is a free platform that allows users to explore, create, and share interactive data visualizations online. It serves as a public repository of data visualizations, enabling users to learn from millions of examples and develop their own skills. The platform is accessible to anyone, making it a valuable resource for students, aspiring data analysts, seasoned professionals, and data hobbyists. Tableau Public is not just a tool for creating visualizations; it’s a community where users can connect, learn, and showcase their work.\n\n\nDuring in-class exercise 2, a dashboard was created using the superstore data to show the sales and profit report for 2022-2025. This report was published to Tableau Public at the following URL."
+    "text": "In-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\n\n\nDuring in-class exercise 3, a story was created using the superstore data to show the sales report. A four-view interactive Tableau dashboard exploring sales and profitability across the 2022–2025 Superstore dataset and two Pareto charts (by sub-category and by customer ID) were created.\nThis report was published to Tableau Public at the following URL.\n\nA side-by-side population pyramid dashboard comparing the demographic profiles of Ang Mo Kio, Tampines, and Punggol was also created. Each pyramid plots 5-year age bands against population counts, mirrored by gender with female in pink and male in blue. The three shapes shows us three different facts. Ang Mo Kio bulges in the 50 to 69 bands with thin youth representation. Tampines shows a bimodal profile combining established older residents with renewing young families. Punggol skews heavily toward children and parents in their 30s and 40s.\nThis report was published to Tableau Public at the following URL."
   },
   {
-    "objectID": "HO_EX_index.html",
-    "href": "HO_EX_index.html",
-    "title": "Hands-On Exercise Index",
+    "objectID": "IC_EX03.html#programming-interactive-data-visualisation-with-tableau",
+    "href": "IC_EX03.html#programming-interactive-data-visualisation-with-tableau",
+    "title": "In-Class Exercise 3",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →\n\n\n\n\n\nHands-on Exercise 8 — Visualising and Analysing Time-oriented Data\nExplored three time-oriented displays in R: (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.\nRead more →"
+    "text": "In-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\n\n\nDuring in-class exercise 3, a story was created using the superstore data to show the sales report. A four-view interactive Tableau dashboard exploring sales and profitability across the 2022–2025 Superstore dataset and two Pareto charts (by sub-category and by customer ID) were created.\nThis report was published to Tableau Public at the following URL.\n\nA side-by-side population pyramid dashboard comparing the demographic profiles of Ang Mo Kio, Tampines, and Punggol was also created. Each pyramid plots 5-year age bands against population counts, mirrored by gender with female in pink and male in blue. The three shapes shows us three different facts. Ang Mo Kio bulges in the 50 to 69 bands with thin youth representation. Tampines shows a bimodal profile combining established older residents with renewing young families. Punggol skews heavily toward children and parents in their 30s and 40s.\nThis report was published to Tableau Public at the following URL."
   },
   {
-    "objectID": "HO_EX_index.html#hands-on-exercises-index",
-    "href": "HO_EX_index.html#hands-on-exercises-index",
-    "title": "Hands-On Exercise Index",
+    "objectID": "IC_EX01.html",
+    "href": "IC_EX01.html",
+    "title": "In-Class Exercise 1",
     "section": "",
-    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →\n\n\n\n\n\nHands-on Exercise 8 — Visualising and Analysing Time-oriented Data\nExplored three time-oriented displays in R: (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.\nRead more →"
+    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+  },
+  {
+    "objectID": "IC_EX01.html#tableau-desktop",
+    "href": "IC_EX01.html#tableau-desktop",
+    "title": "In-Class Exercise 1",
+    "section": "",
+    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+  },
+  {
+    "objectID": "HO_EX09c.html#overview",
+    "href": "HO_EX09c.html#overview",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.1 Overview",
+    "text": "23.1 Overview",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#objectives",
+    "href": "HO_EX09c.html#objectives",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.1.1 Objectives",
+    "text": "23.1.1 Objectives\nThis exercise gives hands-on experience using appropriate R methods to plot analytical maps.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#learning-outcome",
+    "href": "HO_EX09c.html#learning-outcome",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.1.2 Learning Outcome",
+    "text": "23.1.2 Learning Outcome\nBy the end of this exercise you will be able to use appropriate functions of tmap and tidyverse to:\n\nimport geospatial data in rds format into the R environment,\ncreate cartographic quality choropleth maps with appropriate tmap functions,\ncreate a rate map,\ncreate a percentile map,\ncreate a box map.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#getting-started",
+    "href": "HO_EX09c.html#getting-started",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.2 Getting Started",
+    "text": "23.2 Getting Started",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#installing-and-loading-packages",
+    "href": "HO_EX09c.html#installing-and-loading-packages",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.2.1 Installing and Loading Packages",
+    "text": "23.2.1 Installing and Loading Packages\nThe sf, tmap and tidyverse packages are installed and loaded into the R environment.\n\npacman::p_load(tmap, tidyverse, sf)",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#importing-data",
+    "href": "HO_EX09c.html#importing-data",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.2.2 Importing Data",
+    "text": "23.2.2 Importing Data\nA prepared dataset called NGA_wp.rds is used. It is a polygon feature data frame holding information on the water points of Nigeria at the Local Government Area (LGA) level. read_rds() imports the file into R.\n\nNGA_wp &lt;- read_rds(\"data/rds/NGA_wp.rds\")",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#basic-choropleth-mapping",
+    "href": "HO_EX09c.html#basic-choropleth-mapping",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.3 Basic Choropleth Mapping",
+    "text": "23.3 Basic Choropleth Mapping",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#visualising-distribution-of-non-functional-water-point",
+    "href": "HO_EX09c.html#visualising-distribution-of-non-functional-water-point",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.3.1 Visualising Distribution of Non-Functional Water Point",
+    "text": "23.3.1 Visualising Distribution of Non-Functional Water Point\nTwo choropleth maps are built and arranged side by side. The first maps functional water points and the second maps total water points, both by LGA.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np1 &lt;- tm_shape(NGA_wp) +\n  tm_polygons(fill = \"wp_functional\",\n             fill.scale = tm_scale_intervals(\n               style = \"equal\",\n               n = 10,\n               values = \"brewer.blues\"),\n             fill.legend = tm_legend(\n               position = c(\"right\", \"bottom\"))) +\n  tm_borders(lwd = 0.1,\n             fill_alpha = 1) +\n  tm_title(\"Distribution of functional water point by LGAs\")\n\np2 &lt;- tm_shape(NGA_wp) +\n  tm_polygons(fill = \"total_wp\",\n              fill.scale = tm_scale_intervals(\n                style = \"equal\",\n                n = 10,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                position = c(\"right\", \"bottom\"))) +\n  tm_borders(lwd = 0.1,\n             fill_alpha = 1) +\n  tm_title(\"Distribution of total water point by LGAs\")\n\ntmap_arrange(p2, p1, nrow = 1)",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#choropleth-map-for-rates",
+    "href": "HO_EX09c.html#choropleth-map-for-rates",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.4 Choropleth Map for Rates",
+    "text": "23.4 Choropleth Map for Rates\nMapping rates rather than counts matters because water points are not equally distributed in space. Without accounting for how many water points are present in each area, the map shows total water point size rather than the topic of interest.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#deriving-proportion-of-functional-and-non-functional-water-points",
+    "href": "HO_EX09c.html#deriving-proportion-of-functional-and-non-functional-water-points",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.4.1 Deriving Proportion of Functional and Non-Functional Water Points",
+    "text": "23.4.1 Deriving Proportion of Functional and Non-Functional Water Points\nThe proportion of functional and non-functional water points in each LGA is tabulated. mutate() of dplyr derives two fields, pct_functional and pct_nonfunctional.\n\nNGA_wp &lt;- NGA_wp %&gt;%\n  mutate(pct_functional = wp_functional/total_wp) %&gt;%\n  mutate(pct_nonfunctional = wp_nonfunctional/total_wp)",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#plotting-map-of-rate",
+    "href": "HO_EX09c.html#plotting-map-of-rate",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.4.2 Plotting Map of Rate",
+    "text": "23.4.2 Plotting Map of Rate\nA choropleth map shows the distribution of the percentage of functional water points by LGA.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(NGA_wp) +\n  tm_polygons(\"pct_functional\",\n              fill.scale = tm_scale_intervals(\n                style = \"equal\",\n                n = 10,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                position = c(\"right\", \"bottom\"))) +\n  tm_borders(lwd = 0.1,\n             fill_alpha = 1) +\n  tm_title(\"Rate map of functional water point by LGAs\")",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#extreme-value-maps",
+    "href": "HO_EX09c.html#extreme-value-maps",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.5 Extreme Value Maps",
+    "text": "23.5 Extreme Value Maps\nExtreme value maps are variations of common choropleth maps where the classification highlights extreme values at the lower and upper ends of the scale to identify outliers. They add spatial features to approaches used in non-spatial exploratory data analysis.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#percentile-map",
+    "href": "HO_EX09c.html#percentile-map",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.5.1 Percentile Map",
+    "text": "23.5.1 Percentile Map\nThe percentile map is a special quantile map with six categories, 0 to 1 percent, 1 to 10 percent, 10 to 50 percent, 50 to 90 percent, 90 to 99 percent and 99 to 100 percent. The breakpoints are derived with the base R quantile command, passing an explicit vector of cumulative probabilities, c(0, .01, .1, .5, .9, .99, 1). The begin and endpoint must be included.\n\n23.5.1.1 Data Preparation\nStep 1 excludes records with NA values.\n\nNGA_wp &lt;- NGA_wp %&gt;%\n  drop_na()\n\nStep 2 creates the customised classification and extracts values.\n\npercent &lt;- c(0,.01,.1,.5,.9,.99,1)\nvar &lt;- NGA_wp[\"pct_functional\"] %&gt;%\n  st_set_geometry(NULL)\nquantile(var[,1], percent)\n\n       0%        1%       10%       50%       90%       99%      100% \n0.0000000 0.0000000 0.2169811 0.4791667 0.8611111 1.0000000 1.0000000 \n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nExtracting a variable from an sf data frame extracts the geometry as well. Many base R functions cannot handle the geometry, and quantile() gives an error. st_set_geometry(NULL) drops the geometry field.\n\n\n\n\n23.5.1.2 Why Write Functions\nWriting a function has three advantages over copy and paste. A function takes an evocative name that makes the code easier to understand. When requirements change, the code is updated in one place rather than many. The chance of incidental mistakes from copying and pasting is removed.\n\n\n23.5.1.3 Creating the get.var Function\nAn R function extracts a variable as a vector out of an sf data frame. The vname argument is the variable name as a quoted character, and df is the sf data frame. The function returns a vector of values without a column name.\n\nget.var &lt;- function(vname,df) {\n  v &lt;- df[vname] %&gt;%\n    st_set_geometry(NULL)\n  v &lt;- unname(v[,1])\n  return(v)\n}\n\n\n\n23.5.1.4 A Percentile Mapping Function\nA percentile mapping function is written with the code chunk below.\n\npercentmap &lt;- function(vnam, df, legtitle=NA, mtitle=\"Percentile Map\"){\n  percent &lt;- c(0,.01,.1,.5,.9,.99,1)\n  var &lt;- get.var(vnam, df)\n  bperc &lt;- quantile(var, percent)\n  tm_shape(df) +\n  tm_polygons() +\n  tm_shape(df) +\n     tm_polygons(vnam,\n             title=legtitle,\n             breaks=bperc,\n             palette=\"Blues\",\n          labels=c(\"&lt; 1%\", \"1% - 10%\", \"10% - 50%\", \"50% - 90%\", \"90% - 99%\", \"&gt; 99%\"))  +\n  tm_borders() +\n  tm_layout(main.title = mtitle)\n}\n\n\n\n23.5.1.5 Test Drive the Percentile Mapping Function\nThe function is run with the code chunk below.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npercentmap(\"total_wp\", NGA_wp)\n\n\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nThis is a bare bones implementation. Additional arguments such as the title and legend positioning could be passed to customise the map.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#box-map",
+    "href": "HO_EX09c.html#box-map",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.5.2 Box Map",
+    "text": "23.5.2 Box Map\nA box map is an augmented quartile map with an additional lower and upper category. When lower outliers are present, the starting break is the minimum value and the second break is the lower fence. When no lower outliers are present, the starting break is the lower fence and the second break is the minimum value, with no observations falling between them.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = NGA_wp,\n       aes(x = \"\",\n           y = wp_nonfunctional)) +\n  geom_boxplot()\n\n\n\n\nA box map displays summary statistics on a choropleth map using the principles of the boxplot. A custom breaks specification is used, and the break points vary depending on whether lower or upper outliers are present.\n\n23.5.2.1 Creating the boxbreaks Function\nThe R function below creates break points for a box map. The v argument is the vector of observations and mult is the multiplier for the interquartile range (IQR), defaulting to 1.5. The function returns a vector of seven break points.\n\nboxbreaks &lt;- function(v,mult=1.5) {\n  qv &lt;- unname(quantile(v))\n  iqr &lt;- qv[4] - qv[2]\n  upfence &lt;- qv[4] + mult * iqr\n  lofence &lt;- qv[2] - mult * iqr\n  # initialize break points vector\n  bb &lt;- vector(mode=\"numeric\",length=7)\n  # logic for lower and upper fences\n  if (lofence &lt; qv[1]) {  # no lower outliers\n    bb[1] &lt;- lofence\n    bb[2] &lt;- floor(qv[1])\n  } else {\n    bb[2] &lt;- lofence\n    bb[1] &lt;- qv[1]\n  }\n  if (upfence &gt; qv[5]) { # no upper outliers\n    bb[7] &lt;- upfence\n    bb[6] &lt;- ceiling(qv[5])\n  } else {\n    bb[6] &lt;- upfence\n    bb[7] &lt;- qv[5]\n  }\n  bb[3:5] &lt;- qv[2:4]\n  return(bb)\n}\n\n\n\n23.5.2.2 Creating the get.var Function\nThe R function below extracts a variable as a vector out of an sf data frame. The vname argument is the variable name as a quoted character and df is the sf data frame.\n\nget.var &lt;- function(vname,df) {\n  v &lt;- df[vname] %&gt;% st_set_geometry(NULL)\n  v &lt;- unname(v[,1])\n  return(v)\n}\n\n\n\n23.5.2.3 Test Drive the Newly Created Function\nThe new function is tested with the code chunk below.\n\nvar &lt;- get.var(\"wp_nonfunctional\", NGA_wp)\nboxbreaks(var)\n\n[1] -56.5   0.0  14.0  34.0  61.0 131.5 278.0\n\n\n\n\n23.5.2.4 Boxmap Function\nThe R function below creates a box map. The vnam argument is the variable name as a quoted character, df is the simple features polygon layer, legtitle is the legend title, mtitle is the map title and mult is the multiplier for the IQR. The function returns a tmap element.\n\nboxmap &lt;- function(vnam, df,\n                   legtitle=NA,\n                   mtitle=\"Box Map\",\n                   mult=1.5){\n  var &lt;- get.var(vnam,df)\n  bb &lt;- boxbreaks(var)\n  tm_shape(df) +\n    tm_polygons() +\n  tm_shape(df) +\n     tm_fill(vnam,title=legtitle,\n             breaks=bb,\n             palette=\"Blues\",\n          labels = c(\"lower outlier\",\n                     \"&lt; 25%\",\n                     \"25% - 50%\",\n                     \"50% - 75%\",\n                     \"&gt; 75%\",\n                     \"upper outlier\"))  +\n  tm_borders() +\n  tm_layout(main.title = mtitle)\n}\n\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntmap_mode(\"plot\")\nboxmap(\"wp_nonfunctional\", NGA_wp)\n\n\n\n\n\n\n\n\n\n\nTipReading the Plot\n\n\n\nThe box map separates the lower and upper outlier LGAs from the four quartile classes. The outlier categories draw the eye to areas whose non-functional water-point counts fall outside the bulk of the distribution.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#reference",
+    "href": "HO_EX09c.html#reference",
+    "title": "Hands-on Exercise 9c",
+    "section": "23.6 Reference",
+    "text": "23.6 Reference\nKam, T. S. (2025). R for Visual Analytics, Chapter 23, Analytical Mapping. Singapore Management University.",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09c.html#section",
+    "href": "HO_EX09c.html#section",
+    "title": "Hands-on Exercise 9c",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 23 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Outlier Hunter 🎯\nPress any key to continue…",
+    "crumbs": [
+      "9c. Analytical Mapping (Ch 23)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#overview",
+    "href": "HO_EX09a.html#overview",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.1 Overview",
+    "text": "21.1 Overview\nChoropleth mapping involves the symbolisation of enumeration units, such as countries, provinces, states, counties or census units, using area patterns or graduated colours. A social scientist may need a choropleth map to portray the spatial distribution of the aged population of Singapore by Master Plan 2014 Subzone Boundary.\nThis chapter plots functional and truthful choropleth maps with an R package called tmap.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#getting-started",
+    "href": "HO_EX09a.html#getting-started",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.2 Getting Started",
+    "text": "21.2 Getting Started\nThe key R package for this exercise is tmap. Four other packages are used alongside it.\n\nreadr for importing delimited text files,\ntidyr for tidying data,\ndplyr for wrangling data,\nsf for handling geospatial data.\n\nreadr, tidyr and dplyr are part of tidyverse, so only tidyverse needs to be installed.\n\npacman::p_load(sf, tmap, tidyverse)",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#importing-data-into-r",
+    "href": "HO_EX09a.html#importing-data-into-r",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.3 Importing Data into R",
+    "text": "21.3 Importing Data into R",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#the-data",
+    "href": "HO_EX09a.html#the-data",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.3.1 The Data",
+    "text": "21.3.1 The Data\nTwo datasets are used to create the choropleth map.\n\nMaster Plan 2014 Subzone Boundary (Web) (MP14_SUBZONE_WEB_PL) in ESRI shapefile format. This geospatial data holds the geographical boundary of Singapore at the planning subzone level, based on the Urban Redevelopment Authority (URA) Master Plan 2014.\nSingapore Residents by Planning Area / Subzone, Age Group, Sex and Type of Dwelling, June 2011 to 2020 (respopagesextod2011to2020.csv). This aspatial data file carries no coordinates, but its PA and SZ fields serve as unique identifiers to geocode to the MP14_SUBZONE_WEB_PL shapefile.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#importing-geospatial-data-into-r",
+    "href": "HO_EX09a.html#importing-geospatial-data-into-r",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.3.2 Importing Geospatial Data into R",
+    "text": "21.3.2 Importing Geospatial Data into R\nst_read() of sf imports the MP14_SUBZONE_WEB_PL shapefile into R as a simple feature data frame called mpsz.\n\nmpsz &lt;- st_read(dsn = \"data/geospatial\",\n                layer = \"MP14_SUBZONE_WEB_PL\")\n\nReading layer `MP14_SUBZONE_WEB_PL' from data source \n  `C:\\myvaa\\ISSS608-VAA_my\\data\\geospatial' using driver `ESRI Shapefile'\nSimple feature collection with 323 features and 15 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33\nProjected CRS: SVY21\n\n\nThe content of mpsz is examined with the code chunk below.\n\nmpsz\n\nSimple feature collection with 323 features and 15 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33\nProjected CRS: SVY21\nFirst 10 features:\n   OBJECTID SUBZONE_NO       SUBZONE_N SUBZONE_C CA_IND      PLN_AREA_N\n1         1          1    MARINA SOUTH    MSSZ01      Y    MARINA SOUTH\n2         2          1    PEARL'S HILL    OTSZ01      Y          OUTRAM\n3         3          3       BOAT QUAY    SRSZ03      Y SINGAPORE RIVER\n4         4          8  HENDERSON HILL    BMSZ08      N     BUKIT MERAH\n5         5          3         REDHILL    BMSZ03      N     BUKIT MERAH\n6         6          7  ALEXANDRA HILL    BMSZ07      N     BUKIT MERAH\n7         7          9   BUKIT HO SWEE    BMSZ09      N     BUKIT MERAH\n8         8          2     CLARKE QUAY    SRSZ02      Y SINGAPORE RIVER\n9         9         13 PASIR PANJANG 1    QTSZ13      N      QUEENSTOWN\n10       10          7       QUEENSWAY    QTSZ07      N      QUEENSTOWN\n   PLN_AREA_C       REGION_N REGION_C          INC_CRC FMEL_UPD_D   X_ADDR\n1          MS CENTRAL REGION       CR 5ED7EB253F99252E 2014-12-05 31595.84\n2          OT CENTRAL REGION       CR 8C7149B9EB32EEFC 2014-12-05 28679.06\n3          SR CENTRAL REGION       CR C35FEFF02B13E0E5 2014-12-05 29654.96\n4          BM CENTRAL REGION       CR 3775D82C5DDBEFBD 2014-12-05 26782.83\n5          BM CENTRAL REGION       CR 85D9ABEF0A40678F 2014-12-05 26201.96\n6          BM CENTRAL REGION       CR 9D286521EF5E3B59 2014-12-05 25358.82\n7          BM CENTRAL REGION       CR 7839A8577144EFE2 2014-12-05 27680.06\n8          SR CENTRAL REGION       CR 48661DC0FBA09F7A 2014-12-05 29253.21\n9          QT CENTRAL REGION       CR 1F721290C421BFAB 2014-12-05 22077.34\n10         QT CENTRAL REGION       CR 3580D2AFFBEE914C 2014-12-05 24168.31\n     Y_ADDR SHAPE_Leng SHAPE_Area                       geometry\n1  29220.19   5267.381  1630379.3 MULTIPOLYGON (((31495.56 30...\n2  29782.05   3506.107   559816.2 MULTIPOLYGON (((29092.28 30...\n3  29974.66   1740.926   160807.5 MULTIPOLYGON (((29932.33 29...\n4  29933.77   3313.625   595428.9 MULTIPOLYGON (((27131.28 30...\n5  30005.70   2825.594   387429.4 MULTIPOLYGON (((26451.03 30...\n6  29991.38   4428.913  1030378.8 MULTIPOLYGON (((25899.7 297...\n7  30230.86   3275.312   551732.0 MULTIPOLYGON (((27746.95 30...\n8  30222.86   2208.619   290184.7 MULTIPOLYGON (((29351.26 29...\n9  29893.78   6571.323  1084792.3 MULTIPOLYGON (((20996.49 30...\n10 30104.18   3454.239   631644.3 MULTIPOLYGON (((24472.11 29...\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nOnly the first ten records are displayed. The simple feature data frame holds 323 features and 15 fields, with a MULTIPOLYGON geometry projected in SVY21.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#importing-attribute-data-into-r",
+    "href": "HO_EX09a.html#importing-attribute-data-into-r",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.3.3 Importing Attribute Data into R",
+    "text": "21.3.3 Importing Attribute Data into R\nread_csv() of readr imports respopagesextod2011to2020.csv into an R data frame called popdata.\n\npopdata &lt;- read_csv(\"data/aspatial/respopagesextod2011to2020.csv\")",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#data-preparation",
+    "href": "HO_EX09a.html#data-preparation",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.3.4 Data Preparation",
+    "text": "21.3.4 Data Preparation\nA data table with year 2020 values is required before a thematic map can be prepared. The table should hold the variables PA, SZ, YOUNG, ECONOMY ACTIVE, AGED, TOTAL and DEPENDENCY.\n\nYOUNG covers age group 0 to 4 until age group 20 to 24,\nECONOMY ACTIVE covers age group 25 to 29 until age group 60 to 64,\nAGED covers age group 65 and above,\nTOTAL covers all age groups,\nDEPENDENCY is the ratio between the young and aged groups against the economy-active group.\n\n\n21.3.4.1 Data Wrangling\nThe wrangling uses pivot_wider() of tidyr and mutate(), filter(), group_by() and select() of dplyr.\n\npopdata2020 &lt;- popdata %&gt;%\n  filter(Time == 2020) %&gt;%\n  group_by(PA, SZ, AG) %&gt;%\n  summarise(`POP` = sum(`Pop`)) %&gt;%\n  ungroup() %&gt;%\n  pivot_wider(names_from=AG,\n              values_from=POP) %&gt;%\n  mutate(YOUNG = rowSums(.[3:6])\n         +rowSums(.[12])) %&gt;%\n  mutate(`ECONOMY ACTIVE` = rowSums(.[7:11])+\n         rowSums(.[13:15]))%&gt;%\n  mutate(`AGED`=rowSums(.[16:21])) %&gt;%\n  mutate(`TOTAL`=rowSums(.[3:21])) %&gt;%\n  mutate(`DEPENDENCY` = (`YOUNG` + `AGED`)\n         /`ECONOMY ACTIVE`) %&gt;%\n  select(`PA`, `SZ`, `YOUNG`,\n         `ECONOMY ACTIVE`, `AGED`,\n         `TOTAL`, `DEPENDENCY`)\n\n\n\n21.3.4.2 Joining the Attribute Data and Geospatial Data\nThe values in the PA and SZ fields are first converted to uppercase. The PA and SZ fields mix upper and lowercase, while SUBZONE_N and PLN_AREA_N are uppercase.\n\npopdata2020 &lt;- popdata2020 %&gt;%\n  mutate(across(c(PA, SZ), toupper)) %&gt;%\n  filter(`ECONOMY ACTIVE` &gt; 0)\n\nleft_join() of dplyr joins the geographical data and attribute table using the planning subzone name, with SUBZONE_N and SZ as the common identifier.\n\nmpsz_pop2020 &lt;- left_join(mpsz, popdata2020,\n                          by = c(\"SUBZONE_N\" = \"SZ\"))\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nleft_join() is called with the mpsz simple feature data frame as the left table so the output stays a simple feature data frame.\n\n\n\nwrite_rds(mpsz_pop2020, \"data/rds/mpszpop2020.rds\")",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#choropleth-mapping-geospatial-data-using-tmap",
+    "href": "HO_EX09a.html#choropleth-mapping-geospatial-data-using-tmap",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4 Choropleth Mapping Geospatial Data Using tmap",
+    "text": "21.4 Choropleth Mapping Geospatial Data Using tmap\nTwo approaches prepare a thematic map with tmap. The first plots a thematic map quickly with qtm(). The second plots a highly customisable thematic map with tmap elements.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#plotting-a-choropleth-map-quickly-by-using-qtm",
+    "href": "HO_EX09a.html#plotting-a-choropleth-map-quickly-by-using-qtm",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.1 Plotting a Choropleth Map Quickly by Using qtm()",
+    "text": "21.4.1 Plotting a Choropleth Map Quickly by Using qtm()\nqtm() is the quickest way to draw a choropleth map with tmap. It is concise and gives a good default visualisation in many cases.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntmap_mode(\"plot\")\nqtm(mpsz_pop2020,\n    fill = \"DEPENDENCY\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\ntmap_mode(\"plot\") produces a static map. The “view” option produces an interactive map instead. The fill argument maps the DEPENDENCY attribute to colour.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#creating-a-choropleth-map-by-using-tmaps-elements",
+    "href": "HO_EX09a.html#creating-a-choropleth-map-by-using-tmaps-elements",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.2 Creating a Choropleth Map by Using tmap’s Elements",
+    "text": "21.4.2 Creating a Choropleth Map by Using tmap’s Elements\nqtm() makes the aesthetics of individual layers harder to control. tmap’s drawing elements produce a high-quality cartographic choropleth map.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(fill = \"DEPENDENCY\",\n              fill.scale = tm_scale_intervals(\n                style = \"quantile\",\n                n = 5,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                title = \"Dependency ratio\")) +\n  tm_title(\"Distribution of Dependency Ratio by planning subzone\") +\n  tm_layout(frame = TRUE) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_compass(type=\"8star\", size = 2) +\n  tm_grid(alpha =0.2) +\n  tm_credits(\"Source: Planning Sub-zone boundary from Urban Redevelopment Authority (URA)\\n and Population data from Department of Statistics DOS\",\n             position = c(\"left\", \"bottom\"))\n\n\n\n\n\n21.4.2.1 Drawing a Base Map\nThe basic building block of tmap is tm_shape() followed by one or more layer elements such as tm_fill() and tm_polygons(). tm_shape() defines the input data and tm_polygons() draws the planning subzone polygons.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020) +\n  tm_polygons()\n\n\n\n\n\n\n21.4.2.2 Drawing a Choropleth Map Using tm_polygons()\nAssigning the target variable to tm_polygons() draws a choropleth map of that variable by planning subzone.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\")\n\n\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nThe default interval binning is “pretty”. The default colour scheme is YlOrRd of ColorBrewer. Missing values are shaded grey by default.\n\n\n\n\n21.4.2.3 Drawing a Choropleth Map Using tm_fill() and tm_borders()\ntm_polygons() is a wrapper of tm_fill() and tm_borders(). tm_fill() shades the polygons with the default colour scheme and tm_borders() adds the shapefile borders. The code chunk below draws a choropleth map with tm_fill() alone.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_fill(\"DEPENDENCY\")\n\n\n\n\nThe subzones are shaded by their dependency values. tm_borders() adds the subzone boundaries.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(fill = \"DEPENDENCY\") +\n  tm_borders(lwd = 0.01,\n             fill_alpha = 0.1)\n\n\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nThe alpha argument sets transparency between 0 (fully transparent) and 1 (fully opaque), defaulting to the colour’s own alpha. tm_borders() also takes col for border colour, lwd for border line width (default 1) and lty for border line type (default “solid”).",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#data-classification-methods-of-tmap",
+    "href": "HO_EX09a.html#data-classification-methods-of-tmap",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.3 Data Classification Methods of tmap",
+    "text": "21.4.3 Data Classification Methods of tmap\nMost choropleth maps employ a data classification method. Classification groups a large number of observations into data ranges or classes. tmap provides ten methods, namely fixed, sd, equal, pretty (default), quantile, kmeans, hclust, bclust, fisher and jenks. The style argument of tm_fill() or tm_polygons() selects the method.\n\n21.4.3.1 Plotting Choropleth Maps with Built-in Classification Methods\nThe code chunk below uses the jenks method with five classes.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"jenks\",\n        n = 5)) +\n  tm_borders(fill_alpha = 0.5)\n\n\n\n\nThe code chunk below uses the equal method.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"equal\",\n        n = 5)) +\n  tm_borders(fill_alpha = 0.5)\n\n\n\n\n\n\n\n\n\n\nTipReading the Plot\n\n\n\nThe quantile classification spreads observations more evenly across classes than the equal classification. The choice of method changes the visual story, so the same data can read very differently under different classifications.\n\n\n\n\n21.4.3.2 Plotting Choropleth Map with Custom Break\nFor the built-in styles, the category breaks are computed internally. The breaks argument of tm_fill() overrides these defaults. The breaks include a minimum and maximum, so n categories require n+1 break elements in increasing order.\nDescriptive statistics on the variable guide the break points. The code chunk below computes the statistics of the DEPENDENCY field.\n\nsummary(mpsz_pop2020$DEPENDENCY)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n 0.1111  0.7147  0.7867  0.8585  0.8763 19.0000      92 \n\n\nThe break points are set at 0.60, 0.70, 0.80 and 0.90, with a minimum of 0 and a maximum of 1.00. The breaks vector is therefore c(0, 0.60, 0.70, 0.80, 0.90, 1.00).\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n          breaks = c(0, 0.60, 0.70, 0.80, 0.90, 1.00)) +\n  tm_borders(fill_alpha = 0.5)\n\n\n\n\nDo It Yourself\nThe appearance of a choropleth map shifts with the classification, so testing alternatives is worthwhile.\n\nUsing what you have learned, prepare choropleth maps with different classification methods supported by tmap and compare their differences.\nPrepare choropleth maps with the same classification method but different numbers of classes (2, 6, 10, 20). Compare the output maps. What observation can you draw?\n\nAnswer to the First Task\nFour classification methods are applied to the same DEPENDENCY field with five classes each, then placed side by side with tmap_arrange().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndep_equal &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"equal\", n = 5,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Equal interval\")\n\ndep_quantile &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\", n = 5,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Quantile\")\n\ndep_jenks &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"jenks\", n = 5,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Jenks\")\n\ndep_sd &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"sd\",\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Standard deviation\")\n\ntmap_arrange(dep_equal, dep_quantile,\n             dep_jenks, dep_sd, ncol = 2)\n\n\n\n\n\n\n\n\n\n\nTipReading the Plot\n\n\n\nEqual interval divides the range into bands of equal width. The dependency ratio is right-skewed with a few very high values, so most subzones fall into the lowest band and the map reads as almost one colour. Quantile places an equal count of subzones in each class, which spreads the colours across the map and exposes far more spatial variation. Jenks groups the values at their natural breaks and produces a balanced map close to the quantile result. Standard deviation shades each subzone by its distance from the mean and highlights the extreme outliers rather than the general pattern. The same data therefore tells four different stories, and quantile and jenks reveal the most usable spatial structure for this variable.\n\n\nAnswer to the Second Task\nThe quantile method is held fixed while the number of classes is set to 2, 6, 10 and 20.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndep_n2 &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\", n = 2,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"2 classes\")\n\ndep_n6 &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\", n = 6,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"6 classes\")\n\ndep_n10 &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\", n = 10,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"10 classes\")\n\ndep_n20 &lt;- tm_shape(mpsz_pop2020) +\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\", n = 20,\n        values = \"brewer.blues\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"20 classes\")\n\ntmap_arrange(dep_n2, dep_n6,\n             dep_n10, dep_n20, ncol = 2)\n\n\n\n\n\n\n\n\n\n\nTipReading the Plot\n\n\n\nWith two classes the map shows only a broad split between low and high dependency and hides almost all local variation. Six and ten classes add progressively more detail and the spatial pattern becomes richer and easier to read. Twenty classes shade the map so finely that neighbouring colours are hard to tell apart and the legend grows too long to scan, so the map approaches a continuous wash that is harder to interpret. More classes show more detail only up to a point, and a moderate count of around five to seven balances detail against legibility for most readers.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#colour-scheme",
+    "href": "HO_EX09a.html#colour-scheme",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.4 Colour Scheme",
+    "text": "21.4.4 Colour Scheme\ntmap supports colour ramps defined by the user or drawn from the RColorBrewer package.\n\n21.4.4.1 Using ColourBrewer Palette\nThe preferred colour is assigned to the values argument of tm_scale_intervals().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\",\n        n = 5,\n        values = \"brewer.greens\")) +\n  tm_borders(fill_alpha = 0.5)\n\n\n\n\nA “-” prefix reverses the colour shading.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"quantile\",\n        n = 5,\n        values = \"-brewer.greens\")) +\n  tm_borders(fill_alpha = 0.5)",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#map-layouts",
+    "href": "HO_EX09a.html#map-layouts",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.5 Map Layouts",
+    "text": "21.4.5 Map Layouts\nMap layout refers to the combination of all map elements into a cohesive map. Map elements include the mapped objects, the title, the scale bar, the compass, the margins and the aspect ratios.\n\n21.4.5.1 Map Legend\nSeveral tm_legend() options change the placement, format and appearance of the legend.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(\"DEPENDENCY\",\n      fill.scale = tm_scale_intervals(\n        style = \"jenks\",\n        n = 5,\n        values = \"brewer.greens\"),\n      fill.legend = tm_legend(\n        title = \"Dependency ratio\")) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_title(\"Distribution of Dependency Ratio by planning subzone \\n(Jenks classification)\")\n\n\n\n\n\n\n21.4.5.2 Map Style\ntmap allows a wide variety of layout settings, called through tmap_style(). The code chunk below uses the classic style.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_fill(\"DEPENDENCY\",\n          style = \"quantile\",\n          palette = \"-Greens\") +\n  tm_borders(alpha = 0.5) +\n  tmap_style(\"classic\")\n\n\n\n\n\n\n21.4.5.3 Cartographic Furniture\ntmap provides arguments for other map furniture such as a compass, scale bar and grid lines. tm_compass(), tm_scale_bar() and tm_grid() add these elements to the choropleth map.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(fill = \"DEPENDENCY\",\n              fill.scale = tm_scale_intervals(\n                style = \"quantile\",\n                n = 5,\n                values = \"brewer.blues\"),\n              fill.legend = tm_legend(\n                title = \"Dependency ratio\")) +\n  tm_title(\"Distribution of Dependency Ratio by planning subzone\") +\n  tm_layout(frame = TRUE) +\n  tm_borders(fill_alpha = 0.5) +\n  tm_compass(type=\"8star\", size = 2) +\n  tm_grid(alpha =0.2) +\n  tm_credits(\"Source: Planning Sub-zone boundary from Urban Redevelopment Authority (URA)\\n and Population data from Department of Statistics DOS\",\n             position = c(\"left\", \"bottom\"))\n\n\n\n\nThe default style is reset with the code chunk below.\n\ntmap_style(\"white\")",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#drawing-small-multiple-choropleth-maps",
+    "href": "HO_EX09a.html#drawing-small-multiple-choropleth-maps",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.6 Drawing Small Multiple Choropleth Maps",
+    "text": "21.4.6 Drawing Small Multiple Choropleth Maps\nSmall multiple maps, also called facet maps, arrange many maps side by side and sometimes stacked vertically. They show how spatial relationships change with respect to another variable such as time. tmap plots small multiple maps in three ways, by assigning multiple values to at least one aesthetic argument, by defining a group-by variable in tm_facets() and by creating multiple stand-alone maps with tmap_arrange().\n\n21.4.6.1 By Assigning Multiple Values to at Least One Aesthetic Argument\nIn this example, small multiple choropleth maps are created by defining ncols in tm_fill().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_fill(c(\"YOUNG\", \"AGED\"),\n          style = \"equal\",\n          palette = \"Blues\") +\n  tm_layout(legend.position = c(\"right\", \"bottom\")) +\n  tm_borders(alpha = 0.5) +\n  tmap_style(\"white\")\n\n\n\n\nMultiple values are assigned to more than one aesthetic argument in this example.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020)+\n  tm_polygons(c(\"DEPENDENCY\",\"AGED\"),\n          style = c(\"equal\", \"quantile\"),\n          palette = list(\"Blues\",\"Greens\")) +\n  tm_layout(legend.position = c(\"right\", \"bottom\"))\n\n\n\n\n\n\n21.4.6.2 By Defining a Group-by Variable in tm_facets()\nMultiple small choropleth maps are created with tm_facets().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020) +\n  tm_fill(\"DEPENDENCY\",\n          style = \"quantile\",\n          palette = \"Blues\",\n          thres.poly = 0) +\n  tm_facets(by=\"REGION_N\",\n            free.coords=TRUE) +\n  tm_layout(legend.show = FALSE,\n            title.position = c(\"center\", \"center\"),\n            title.size = 20) +\n  tm_borders(alpha = 0.5)\n\n\n\n\n\n\n21.4.6.3 By Creating Multiple Stand-alone Maps with tmap_arrange()\nMultiple small choropleth maps are created as stand-alone maps and combined with tmap_arrange().\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nyoungmap &lt;- tm_shape(mpsz_pop2020)+\n  tm_polygons(\"YOUNG\",\n              style = \"quantile\",\n              palette = \"Blues\")\n\nagedmap &lt;- tm_shape(mpsz_pop2020)+\n  tm_polygons(\"AGED\",\n              style = \"quantile\",\n              palette = \"Blues\")\n\ntmap_arrange(youngmap, agedmap, asp=1, ncol=2)",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#mapping-spatial-object-meeting-a-selection-criterion",
+    "href": "HO_EX09a.html#mapping-spatial-object-meeting-a-selection-criterion",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.4.7 Mapping Spatial Object Meeting a Selection Criterion",
+    "text": "21.4.7 Mapping Spatial Object Meeting a Selection Criterion\nA selection function maps spatial objects meeting a criterion instead of creating small multiple maps.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(mpsz_pop2020[mpsz_pop2020$REGION_N==\"CENTRAL REGION\", ])+\n  tm_fill(\"DEPENDENCY\",\n          style = \"quantile\",\n          palette = \"Blues\",\n          legend.hist = TRUE,\n          legend.is.portrait = TRUE,\n          legend.hist.z = 0.1) +\n  tm_layout(legend.outside = TRUE,\n            legend.height = 0.45,\n            legend.width = 5.0,\n            legend.position = c(\"right\", \"bottom\"),\n            frame = FALSE) +\n  tm_borders(alpha = 0.5)",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#reference",
+    "href": "HO_EX09a.html#reference",
+    "title": "Hands-on Exercise 9a",
+    "section": "21.5 Reference",
+    "text": "21.5 Reference\nKam, T. S. (2025). R for Visual Analytics, Chapter 21, Choropleth Mapping with R. Singapore Management University.",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09a.html#section",
+    "href": "HO_EX09a.html#section",
+    "title": "Hands-on Exercise 9a",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 21 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Cartographer 🗺️\nPress any key to continue…",
+    "crumbs": [
+      "9a. Choropleth Mapping (Ch 21)"
+    ]
   },
   {
     "objectID": "HO_EX07b.html#learning-outcomes",
@@ -475,7 +812,7 @@
     "href": "HO_EX07b.html#creating-a-network-graph-from-bigram-data-frame",
     "title": "Hands-on Exercise 7b",
     "section": "29.7.11 Creating a network graph from bigram data frame",
-    "text": "29.7.11 Creating a network graph from bigram data frame\n\nbigram_graph &lt;- bigram_counts %&gt;%\n  filter(n &gt; 3) %&gt;%\n  graph_from_data_frame()\n\nbigram_graph\n\nIGRAPH 59d2a31 DN-- 40 24 -- \n+ attr: name (v/c), n (e/n)\n+ edges from 59d2a31 (vertex names):\n [1] 1          -&gt;2           1          -&gt;3           static     -&gt;void       \n [4] time       -&gt;pad         1          -&gt;4           infield    -&gt;fly        \n [7] mat        -&gt;28          vv         -&gt;vv          1          -&gt;5          \n[10] cock       -&gt;crow        noticeshell-&gt;widget      27         -&gt;1993       \n[13] 3          -&gt;4           child      -&gt;molestation cock       -&gt;crew       \n[16] gun        -&gt;violence    heat       -&gt;sink        homosexual -&gt;male       \n[19] homosexual -&gt;women       include    -&gt;xol         mary       -&gt;magdalene  \n[22] read       -&gt;write       rev        -&gt;20          tt         -&gt;ee         \n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter(n &gt; 3) keeps only bigrams that appear more than three times. graph_from_data_frame() builds an igraph object whose nodes are unique words and whose edges connect words that appear consecutively. Multi-edge chains (A -&gt; B -&gt; C) reveal common multi-word phrases without explicitly tokenising trigrams.",
+    "text": "29.7.11 Creating a network graph from bigram data frame\n\nbigram_graph &lt;- bigram_counts %&gt;%\n  filter(n &gt; 3) %&gt;%\n  graph_from_data_frame()\n\nbigram_graph\n\nIGRAPH d892c8e DN-- 40 24 -- \n+ attr: name (v/c), n (e/n)\n+ edges from d892c8e (vertex names):\n [1] 1          -&gt;2           1          -&gt;3           static     -&gt;void       \n [4] time       -&gt;pad         1          -&gt;4           infield    -&gt;fly        \n [7] mat        -&gt;28          vv         -&gt;vv          1          -&gt;5          \n[10] cock       -&gt;crow        noticeshell-&gt;widget      27         -&gt;1993       \n[13] 3          -&gt;4           child      -&gt;molestation cock       -&gt;crew       \n[16] gun        -&gt;violence    heat       -&gt;sink        homosexual -&gt;male       \n[19] homosexual -&gt;women       include    -&gt;xol         mary       -&gt;magdalene  \n[22] read       -&gt;write       rev        -&gt;20          tt         -&gt;ee         \n\n\n\n\n\n\n\n\nNoteThings to learn from the code chunk above\n\n\n\nfilter(n &gt; 3) keeps only bigrams that appear more than three times. graph_from_data_frame() builds an igraph object whose nodes are unique words and whose edges connect words that appear consecutively. Multi-edge chains (A -&gt; B -&gt; C) reveal common multi-word phrases without explicitly tokenising trigrams.",
     "crumbs": [
       "Hands-on Exercise 7b"
     ]
@@ -3298,60 +3635,207 @@
     "text": "★ ★ ★ ★ ★\n\nCHAPTER 17 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Time Lord ⏳\nPress any key to continue…"
   },
   {
-    "objectID": "IC_EX01.html",
-    "href": "IC_EX01.html",
-    "title": "In-Class Exercise 1",
-    "section": "",
-    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+    "objectID": "HO_EX09b.html#overview",
+    "href": "HO_EX09b.html#overview",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.1 Overview",
+    "text": "22.1 Overview\nProportional symbol maps, also known as graduated symbol maps, use the visual variable of size to represent differences in the magnitude of a discrete, abruptly changing phenomenon such as counts of people. Like choropleth maps, they come in classed and unclassed versions. The classed ones are known as range-graded or graduated symbols. The unclassed ones are called proportional symbols, where the area of each symbol is proportional to the value of the mapped attribute. This chapter creates a proportional symbol map showing the number of wins by Singapore Pools outlets with the tmap package.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
   },
   {
-    "objectID": "IC_EX01.html#tableau-desktop",
-    "href": "IC_EX01.html#tableau-desktop",
-    "title": "In-Class Exercise 1",
-    "section": "",
-    "text": "Tableau is a visual analytics authoring tool that enables users to connect to data sources (Excel, CSV, databases, cloud services), explore them through drag-and-drop interactions, and build interactive visualisations and dashboards without writing code.\n\n\nTableau Desktop connects to Excel files directly through its Connect pane. Superstore excel file was imported.\n\nA sheet in Tableau is a single visualisation workspace. Sheets from Superstore were explored."
+    "objectID": "HO_EX09b.html#learning-outcome",
+    "href": "HO_EX09b.html#learning-outcome",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.1.1 Learning Outcome",
+    "text": "22.1.1 Learning Outcome\nBy the end of this hands-on exercise you will be able to:\n\nimport an aspatial data file into R,\nconvert it into a simple point feature data frame and assign an appropriate projection reference,\nplot interactive proportional symbol maps.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
   },
   {
-    "objectID": "IC_EX03.html",
-    "href": "IC_EX03.html",
-    "title": "In-Class Exercise 3",
-    "section": "",
-    "text": "In-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\n\n\nDuring in-class exercise 3, a story was created using the superstore data to show the sales report. A four-view interactive Tableau dashboard exploring sales and profitability across the 2022–2025 Superstore dataset and two Pareto charts (by sub-category and by customer ID) were created.\nThis report was published to Tableau Public at the following URL.\n\nA side-by-side population pyramid dashboard comparing the demographic profiles of Ang Mo Kio, Tampines, and Punggol was also created. Each pyramid plots 5-year age bands against population counts, mirrored by gender with female in pink and male in blue. The three shapes shows us three different facts. Ang Mo Kio bulges in the 50 to 69 bands with thin youth representation. Tampines shows a bimodal profile combining established older residents with renewing young families. Punggol skews heavily toward children and parents in their 30s and 40s.\nThis report was published to Tableau Public at the following URL."
+    "objectID": "HO_EX09b.html#getting-started",
+    "href": "HO_EX09b.html#getting-started",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.2 Getting Started",
+    "text": "22.2 Getting Started\nThe tmap package and its related packages are installed and loaded into R.\n\npacman::p_load(sf, tmap, tidyverse)",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
   },
   {
-    "objectID": "IC_EX03.html#programming-interactive-data-visualisation-with-tableau",
-    "href": "IC_EX03.html#programming-interactive-data-visualisation-with-tableau",
-    "title": "In-Class Exercise 3",
-    "section": "",
-    "text": "In-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\n\n\nDuring in-class exercise 3, a story was created using the superstore data to show the sales report. A four-view interactive Tableau dashboard exploring sales and profitability across the 2022–2025 Superstore dataset and two Pareto charts (by sub-category and by customer ID) were created.\nThis report was published to Tableau Public at the following URL.\n\nA side-by-side population pyramid dashboard comparing the demographic profiles of Ang Mo Kio, Tampines, and Punggol was also created. Each pyramid plots 5-year age bands against population counts, mirrored by gender with female in pink and male in blue. The three shapes shows us three different facts. Ang Mo Kio bulges in the 50 to 69 bands with thin youth representation. Tampines shows a bimodal profile combining established older residents with renewing young families. Punggol skews heavily toward children and parents in their 30s and 40s.\nThis report was published to Tableau Public at the following URL."
+    "objectID": "HO_EX09b.html#geospatial-data-wrangling",
+    "href": "HO_EX09b.html#geospatial-data-wrangling",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.3 Geospatial Data Wrangling",
+    "text": "22.3 Geospatial Data Wrangling",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
   },
   {
-    "objectID": "IC_EX05.html",
-    "href": "IC_EX05.html",
-    "title": "In-Class Exercise 5",
-    "section": "",
-    "text": "During in-class exercise 5, two treemap views were created to practise multivariate visual analysis in Tableau. The exercise explores how a treemap encodes measures simultaneously within a single spatial layout. The tile area carries one measure and tile colour carries a second, allowing both to be read at a glance without mentally joining two separate panels.\nThe dataset for the first view is Singapore private residential property transaction records sourced from URA, covering all of 2025. The combined dataset spans approximately 29,000 transactions across private apartments, condominiums, executive condominiums, and landed properties in all five planning regions of Singapore. The second view uses the Superstore sample dataset previously used.\n\n\nThe first view is a treemap where tile area represents the total number of transactions in each planning area and tile colour encodes the median unit price per square foot, using a sequential colour palette that runs from lighter shades for lower price levels to deeper shades for higher price levels. The two measures together reveal where the market is most active and whether that activity is concentrated in high-value or lower-value segments.\n\nThis report was published to Tableau Public at the following URL.\n\n\n\nThe second view is a treemap using the Superstore sample dataset, where tile area represents total sales revenue and tile colour encodes total profit, broken down by country and region. A diverging palette is used for profit, running from orange for loss-making markets to blue for profitable ones.\nThis report was published to Tableau Public at the following URL."
+    "objectID": "HO_EX09b.html#the-data",
+    "href": "HO_EX09b.html#the-data",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.3.1 The Data",
+    "text": "22.3.1 The Data\nThe dataset is called SGPools_svy21, in csv file format. It has seven columns. The XCOORD and YCOORD columns are the x and y coordinates of Singapore Pools outlets and branches, given in the Singapore SVY21 Projected Coordinate System.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
   },
   {
-    "objectID": "IC_EX05.html#visual-multivariate-analysis-with-tableau",
-    "href": "IC_EX05.html#visual-multivariate-analysis-with-tableau",
-    "title": "In-Class Exercise 5",
+    "objectID": "HO_EX09b.html#data-import-and-preparation",
+    "href": "HO_EX09b.html#data-import-and-preparation",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.3.2 Data Import and Preparation",
+    "text": "22.3.2 Data Import and Preparation\nread_csv() of readr imports SGPools_svy21.csv into R as a tibble data frame called sgpools.\n\nsgpools &lt;- read_csv(\"data/aspatial/SGPools_svy21.csv\")\n\nThe imported data is examined with list().\n\nlist(sgpools)\n\n[[1]]\n# A tibble: 306 × 7\n   NAME           ADDRESS POSTCODE XCOORD YCOORD `OUTLET TYPE` `Gp1Gp2 Winnings`\n   &lt;chr&gt;          &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;\n 1 Livewire (Mar… 2 Bayf…    18972 30842. 29599. Branch                        5\n 2 Livewire (Res… 26 Sen…    98138 26704. 26526. Branch                       11\n 3 SportsBuzz (K… Lotus …   738078 20118. 44888. Branch                        0\n 4 SportsBuzz (P… 1 Sele…   188306 29777. 31382. Branch                       44\n 5 Prime Serango… Blk 54…   552542 32239. 39519. Branch                        0\n 6 Singapore Poo… 1A Woo…   731001 21012. 46987. Branch                        3\n 7 Singapore Poo… Blk 64…   370064 33990. 34356. Branch                       17\n 8 Singapore Poo… Blk 88…   370088 33847. 33976. Branch                       16\n 9 Singapore Poo… Blk 30…   540308 33910. 41275. Branch                       21\n10 Singapore Poo… Blk 20…   560202 29246. 38943. Branch                       25\n# ℹ 296 more rows\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nThe sgpools data is a tibble data frame rather than a common R data frame.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#creating-an-sf-data-frame-from-an-aspatial-data-frame",
+    "href": "HO_EX09b.html#creating-an-sf-data-frame-from-an-aspatial-data-frame",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.3.3 Creating an sf Data Frame from an Aspatial Data Frame",
+    "text": "22.3.3 Creating an sf Data Frame from an Aspatial Data Frame\nst_as_sf() of sf converts the sgpools data frame into a simple feature data frame.\n\nsgpools_sf &lt;- st_as_sf(sgpools,\n                       coords = c(\"XCOORD\", \"YCOORD\"),\n                       crs= 3414)\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nThe coords argument takes the x-coordinate column name first, then the y-coordinate column name. The crs argument takes the coordinate system in EPSG format. EPSG 3414 is the Singapore SVY21 Projected Coordinate System.\n\n\nThe basic information of sgpools_sf is displayed with the code chunk below.\n\nlist(sgpools_sf)\n\n[[1]]\nSimple feature collection with 306 features and 5 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 7844.194 ymin: 26525.7 xmax: 45176.57 ymax: 47987.13\nProjected CRS: SVY21 / Singapore TM\n# A tibble: 306 × 6\n   NAME                         ADDRESS POSTCODE `OUTLET TYPE` `Gp1Gp2 Winnings`\n * &lt;chr&gt;                        &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;\n 1 Livewire (Marina Bay Sands)  2 Bayf…    18972 Branch                        5\n 2 Livewire (Resorts World Sen… 26 Sen…    98138 Branch                       11\n 3 SportsBuzz (Kranji)          Lotus …   738078 Branch                        0\n 4 SportsBuzz (PoMo)            1 Sele…   188306 Branch                       44\n 5 Prime Serangoon North        Blk 54…   552542 Branch                        0\n 6 Singapore Pools Woodlands C… 1A Woo…   731001 Branch                        3\n 7 Singapore Pools 64 Circuit … Blk 64…   370064 Branch                       17\n 8 Singapore Pools 88 Circuit … Blk 88…   370088 Branch                       16\n 9 Singapore Pools Anchorvale … Blk 30…   540308 Branch                       21\n10 Singapore Pools Ang Mo Kio … Blk 20…   560202 Branch                       25\n# ℹ 296 more rows\n# ℹ 1 more variable: geometry &lt;POINT [m]&gt;\n\n\n\n\n\n\n\n\nNoteThings to Learn from the Code Chunk Above\n\n\n\nsgpools_sf is a point feature class. Its epsg ID is 3414. The bounding box gives the spatial extent of the geospatial data, and a new geometry column has been added.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#drawing-proportional-symbol-map",
+    "href": "HO_EX09b.html#drawing-proportional-symbol-map",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.4 Drawing Proportional Symbol Map",
+    "text": "22.4 Drawing Proportional Symbol Map\nThe view mode of tmap creates an interactive proportional symbol map. The code chunk below turns on the interactive mode.\n\ntmap_mode(\"view\")",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#an-interactive-point-symbol-map",
+    "href": "HO_EX09b.html#an-interactive-point-symbol-map",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.4.1 An Interactive Point Symbol Map",
+    "text": "22.4.1 An Interactive Point Symbol Map\nThe code chunk below creates an interactive point symbol map.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(sgpools_sf) +\n  tm_bubbles(fill = \"red\",\n           size = 1,\n           col = \"black\",\n           lwd = 1)",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#making-it-proportional",
+    "href": "HO_EX09b.html#making-it-proportional",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.4.2 Making It Proportional",
+    "text": "22.4.2 Making It Proportional\nA numerical variable is assigned to the size visual attribute to draw a proportional symbol map. The code chunk below assigns the variable Gp1Gp2 Winnings to size.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(sgpools_sf) +\n  tm_bubbles(fill = \"red\",\n             size = \"Gp1Gp2 Winnings\",\n             col = \"black\",\n             lwd = 1)",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#giving-it-a-different-colour",
+    "href": "HO_EX09b.html#giving-it-a-different-colour",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.4.3 Giving It a Different Colour",
+    "text": "22.4.3 Giving It a Different Colour\nThe colour visual attribute improves the proportional symbol map further. The code chunk below uses the OUTLET TYPE variable as the colour attribute.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(sgpools_sf) +\n  tm_bubbles(fill = \"OUTLET TYPE\",\n             size = \"Gp1Gp2 Winnings\",\n             col = \"black\",\n             lwd = 1)",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#faceted-maps-with-synchronised-views",
+    "href": "HO_EX09b.html#faceted-maps-with-synchronised-views",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.4.4 Faceted Maps with Synchronised Views",
+    "text": "22.4.4 Faceted Maps with Synchronised Views\nThe view mode of tmap also works with faceted plots. The sync argument in tm_facets() produces multiple maps with synchronised zoom and pan settings.\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntm_shape(sgpools_sf) +\n  tm_bubbles(fill = \"OUTLET TYPE\",\n             size = \"Gp1Gp2 Winnings\",\n             col = \"black\",\n             lwd = 1) +\n  tm_facets(by= \"OUTLET TYPE\",\n            nrow = 1,\n            sync = TRUE)\n\n\n\n\n\n\n\n\n\n\nTipReading the Plot\n\n\n\nThe two synchronised panels separate the branch outlets from the main outlets while keeping the same zoom and pan. Panning one panel moves the other, so the spatial spread of each outlet type can be compared directly.\n\n\nThe tmap viewer is switched back to plot mode before the session ends.\n\ntmap_mode(\"plot\")",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#reference",
+    "href": "HO_EX09b.html#reference",
+    "title": "Hands-on Exercise 9b",
+    "section": "22.5 Reference",
+    "text": "22.5 Reference\nKam, T. S. (2025). R for Visual Analytics, Chapter 22, Visualising Geospatial Point Data. Singapore Management University.",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX09b.html#section",
+    "href": "HO_EX09b.html#section",
+    "title": "Hands-on Exercise 9b",
+    "section": "★ ★ ★ ★ ★",
+    "text": "★ ★ ★ ★ ★\n\nCHAPTER 22 CLEARED!\n+1000 XP · ACHIEVEMENT UNLOCKED: Point Plotter 📍\nPress any key to continue…",
+    "crumbs": [
+      "9b. Geospatial Point Data (Ch 22)"
+    ]
+  },
+  {
+    "objectID": "HO_EX_index.html",
+    "href": "HO_EX_index.html",
+    "title": "Hands-On Exercise Index",
     "section": "",
-    "text": "During in-class exercise 5, two treemap views were created to practise multivariate visual analysis in Tableau. The exercise explores how a treemap encodes measures simultaneously within a single spatial layout. The tile area carries one measure and tile colour carries a second, allowing both to be read at a glance without mentally joining two separate panels.\nThe dataset for the first view is Singapore private residential property transaction records sourced from URA, covering all of 2025. The combined dataset spans approximately 29,000 transactions across private apartments, condominiums, executive condominiums, and landed properties in all five planning regions of Singapore. The second view uses the Superstore sample dataset previously used.\n\n\nThe first view is a treemap where tile area represents the total number of transactions in each planning area and tile colour encodes the median unit price per square foot, using a sequential colour palette that runs from lighter shades for lower price levels to deeper shades for higher price levels. The two measures together reveal where the market is most active and whether that activity is concentrated in high-value or lower-value segments.\n\nThis report was published to Tableau Public at the following URL.\n\n\n\nThe second view is a treemap using the Superstore sample dataset, where tile area represents total sales revenue and tile colour encodes total profit, broken down by country and region. A diverging palette is used for profit, running from orange for loss-making markets to blue for profitable ones.\nThis report was published to Tableau Public at the following URL."
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →\n\n\n\n\n\nHands-on Exercise 8 — Visualising and Analysing Time-oriented Data\nExplored three time-oriented displays in R: (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.\nRead more →\n\n\n\n\n\nHands-on Exercise 9 — Geospatial Choropleth, Point and Analytical Mapping\nExplored three geospatial mapping workflows with sf and tmap, (1) choropleth mapping covering shapefile and aspatial data import, georelational joins, qtm and tmap element layers, data classification methods, colour schemes, map layouts and small multiple facet maps, (2) geospatial point data covering aspatial-to-sf conversion with projection assignment and interactive proportional symbol maps in tmap view mode, and (3) analytical mapping covering rate maps, percentile maps and box maps built with custom break functions over Nigeria water-point data.\nRead more →"
+  },
+  {
+    "objectID": "HO_EX_index.html#hands-on-exercises-index",
+    "href": "HO_EX_index.html#hands-on-exercises-index",
+    "title": "Hands-On Exercise Index",
+    "section": "",
+    "text": "Hands-on Exercise 1 — Basic Principles and Essential Components of ggplot2\nExplore the Layered Grammar of Graphics and learn how ggplot2 implements it through its essential components.\nRead more →\n\n\n\n\n\nHands-on Exercise 2 — Beyond ggplot Fundamentals\nExplored several ggplot2 extensions for creating more elegant and effective statistical graphics — covering label placement, themes, and combining plots into one figure.\nRead more →\n\n\n\n\n\nHands-on Exercise 3 — Programming Interactive Data Visualisation and Animated Statistical Graphics with R\nExplored several R packages for adding interactivity to static ggplots covering hover tooltips, linked highlighting, click-throughs, and coordinated multiple views.\nExplored several R packages for adding motion to static ggplots covering frame transitions, easing functions, object constancy, and animated bubble charts.\nRead more →\n\n\n\n\n\nHands-on Exercise 4 — Funnel Plots, Distribution Charts, Visual Statistical Analysis, and Visualising Uncertainty\nExplored (1) fair comparisons across units of different sizes covering funnel plots, control limits, and overdispersion adjustments, (2) visualising distributions covering ridgeline plots, raincloud plots, quantile colouring, and gradient fills along the x-axis, (3) visual statistical analysis covering one-sample tests, ANOVA, correlation tests, and chi-square tests with statistical details embedded in the chart, and (4) visualising uncertainty covering standard error bars, confidence intervals, gradient intervals, and Hypothetical Outcome Plots (HOPs).\nRead more →\n\n\n\n\n\nHands-on Exercise 5 — Correlation Analysis, Heatmaps, Ternary Plots, Parallel Coordinates Plots, and Treemaps\nExplored (1) visual correlation analysis covering scatterplot matrices, corrgrams, glyph types, and hierarchical reordering, (2) heatmaps covering data transformation, clustering, seriation, and interactive versions, (3) ternary plots covering three-part compositional data with ggtern and plotly, (4) parallel coordinates plots covering grouping, scaling, faceting, and interactive D3 versions, and (5) treemaps covering hierarchical part-of-whole data, palette and layout choices, and drill-down interactivity.\nRead more →\n\n\n\n\n\nHands-on Exercise 7 — Network Visualisation and Text Mining\nExplored (1) network data analysis covering tidygraph object construction, ggraph static plots with multiple layouts, node and edge faceting, centrality metrics, community detection with concave hulls and interactive networks with visNetwork, (2) text data analysis covering bulk import from nested folders, header and quote cleaning, tokenisation with tidytext, wordclouds with wordcloud and ggwordcloud, tf-idf computation and visualisation, pairwise correlation across newsgroups and bigram networks with ggraph.\nRead more →\n\n\n\n\n\nHands-on Exercise 8 — Visualising and Analysing Time-oriented Data\nExplored three time-oriented displays in R: (1) calendar heatmaps covering date-time parsing and time-zone localisation with lubridate, deriving weekday and hour fields through a custom function, tile grids styled with theme_tufte, and faceting across the top attacking countries, (2) cycle plots covering month and year derivation, year-average reference lines, and facet_grid to separate seasonal pattern from long-run trend in visitor arrivals, and (3) slopegraphs covering two-point rank-and-value comparison of Asian rice yields with newggslopegraph from CGPfunctions.\nRead more →\n\n\n\n\n\nHands-on Exercise 9 — Geospatial Choropleth, Point and Analytical Mapping\nExplored three geospatial mapping workflows with sf and tmap, (1) choropleth mapping covering shapefile and aspatial data import, georelational joins, qtm and tmap element layers, data classification methods, colour schemes, map layouts and small multiple facet maps, (2) geospatial point data covering aspatial-to-sf conversion with projection assignment and interactive proportional symbol maps in tmap view mode, and (3) analytical mapping covering rate maps, percentile maps and box maps built with custom break functions over Nigeria water-point data.\nRead more →"
+  },
+  {
+    "objectID": "IC_EX02.html",
+    "href": "IC_EX02.html",
+    "title": "In-Class Exercise 2",
+    "section": "",
+    "text": "Tableau Public is a free platform that allows users to explore, create, and share interactive data visualizations online. It serves as a public repository of data visualizations, enabling users to learn from millions of examples and develop their own skills. The platform is accessible to anyone, making it a valuable resource for students, aspiring data analysts, seasoned professionals, and data hobbyists. Tableau Public is not just a tool for creating visualizations; it’s a community where users can connect, learn, and showcase their work.\n\n\nDuring in-class exercise 2, a dashboard was created using the superstore data to show the sales and profit report for 2022-2025. This report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "IC_EX02.html#tableau-public",
+    "href": "IC_EX02.html#tableau-public",
+    "title": "In-Class Exercise 2",
+    "section": "",
+    "text": "Tableau Public is a free platform that allows users to explore, create, and share interactive data visualizations online. It serves as a public repository of data visualizations, enabling users to learn from millions of examples and develop their own skills. The platform is accessible to anyone, making it a valuable resource for students, aspiring data analysts, seasoned professionals, and data hobbyists. Tableau Public is not just a tool for creating visualizations; it’s a community where users can connect, learn, and showcase their work.\n\n\nDuring in-class exercise 2, a dashboard was created using the superstore data to show the sales and profit report for 2022-2025. This report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "IC_EX04.html",
+    "href": "IC_EX04.html",
+    "title": "In-Class Exercise 4",
+    "section": "",
+    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "IC_EX04.html#programming-visual-analytics-with-tableau",
+    "href": "IC_EX04.html#programming-visual-analytics-with-tableau",
+    "title": "In-Class Exercise 4",
+    "section": "",
+    "text": "During in-class exercise 4, three views were created to practise statistical and survey visualisation in Tableau.\nThe first view is a histogram of the English score distribution. The bin width is set to 5 marks. A vertical reference line marks the cohort average of 67.18. The shape is left skewed with a long lower tail, which indicates that a small group of students underperform well below the mode of 70 to 80.\n\nThis report was published to Tableau Public at the following URL.\nThe second view is a boxplot of English scores by class, with individual student scores overlaid as jittered points to expose within class spread and outliers. Classes are sorted by median from 3A on the left to 3I on the right, which reveals a near monotonic decline in central tendency across the streamed classes. Class 3A has the highest median and the widest upper range, whereas class 3I has the lowest median and the narrowest spread at the bottom of the scale.\n\nThe third view is a diverging stacked bar chart of meal satisfaction scores across eight survey items, with the negative responses, Very Poor and Poor, anchored to the left of the zero baseline and the positive responses, Good and Excellent, extending to the right. Satisfactory is split across the centre. The overview panel shows that Taste of Meals Served carries the largest share of negative responses, while Courtesy of the Food Service Staff and Timeliness of Meals Served are the strongest performers. The two small multiple panels disaggregate the same structure by Ward and by Month, which allows ward level and temporal comparison without losing the overview.\n\nThis report was published to Tableau Public at the following URL."
+  },
+  {
+    "objectID": "IC_EX05_index_entry.html",
+    "href": "IC_EX05_index_entry.html",
+    "title": "My Visual Analytics Journey",
+    "section": "",
+    "text": "In-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →"
   },
   {
     "objectID": "IC_EX_index.html",
     "href": "IC_EX_index.html",
     "title": "In-Class Exercise Index",
     "section": "",
-    "text": "In-Class Exercise 1 — Tableau Desktop\nExplored and setup Tableau Desktop.\nRead more →\n\n\n\n\n\nIn-Class Exercise 2 — Tableau Public\nPublished first dashboard to Tableau Public.\nRead more →\n\n\n\n\n\nIn-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\nRead more →\n\n\n\n\n\nIn-Class Exercise 4, Programming Visual Analytics with Tableau\nBuilt three Tableau views, namely a histogram of English scores, a boxplot of English scores by class, and a diverging stacked bar chart of hospital meal satisfaction.\nRead more →\n\n\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →"
+    "text": "In-Class Exercise 1 — Tableau Desktop\nExplored and setup Tableau Desktop.\nRead more →\n\n\n\n\n\nIn-Class Exercise 2 — Tableau Public\nPublished first dashboard to Tableau Public.\nRead more →\n\n\n\n\n\nIn-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\nRead more →\n\n\n\n\n\nIn-Class Exercise 4, Programming Visual Analytics with Tableau\nBuilt three Tableau views, namely a histogram of English scores, a boxplot of English scores by class, and a diverging stacked bar chart of hospital meal satisfaction.\nRead more →\n\n\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →\n\n\n\n\n\nIn-Class Exercise 8 — Visual Analysis of Time-oriented Data with Tableau\nBuilt three time-oriented Tableau views and published each to Tableau Public, namely a control chart of sales by category, a slopegraph and a trend-and-cycle view of arrivals. Each view is embedded live on the exercise page.\nRead more →"
   },
   {
     "objectID": "IC_EX_index.html#in-class-exercises-index",
     "href": "IC_EX_index.html#in-class-exercises-index",
     "title": "In-Class Exercise Index",
     "section": "",
-    "text": "In-Class Exercise 1 — Tableau Desktop\nExplored and setup Tableau Desktop.\nRead more →\n\n\n\n\n\nIn-Class Exercise 2 — Tableau Public\nPublished first dashboard to Tableau Public.\nRead more →\n\n\n\n\n\nIn-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\nRead more →\n\n\n\n\n\nIn-Class Exercise 4, Programming Visual Analytics with Tableau\nBuilt three Tableau views, namely a histogram of English scores, a boxplot of English scores by class, and a diverging stacked bar chart of hospital meal satisfaction.\nRead more →\n\n\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →"
+    "text": "In-Class Exercise 1 — Tableau Desktop\nExplored and setup Tableau Desktop.\nRead more →\n\n\n\n\n\nIn-Class Exercise 2 — Tableau Public\nPublished first dashboard to Tableau Public.\nRead more →\n\n\n\n\n\nIn-Class Exercise 3 — Programming Interactive Data Visualisation with Tableau\nBuilt an interactive Superstore Sales Report covering a sales-vs-profit quadrant scatter by state, an annual sales and profit trend, and Pareto charts by sub-category and customer ID to identify the 80/20 contributors to profit. Built an interactive Population by Age and Planning Area dashboard covering side-by-side population pyramids for Ang Mo Kio, Tampines, and Punggol, showing age-group distributions split by gender to compare demographic profiles across mature and young estates.\nRead more →\n\n\n\n\n\nIn-Class Exercise 4, Programming Visual Analytics with Tableau\nBuilt three Tableau views, namely a histogram of English scores, a boxplot of English scores by class, and a diverging stacked bar chart of hospital meal satisfaction.\nRead more →\n\n\n\n\n\nIn-Class Exercise 5 — Visual Multivariate Analysis with Tableau\nBuilt two treemap views to practise multivariate visual analysis. The first treemap uses Singapore private residential property transaction data across 2025, encoding transaction volume as tile area and median unit price per square foot as tile colour to expose the joint distribution of market activity and price intensity across planning areas. The second treemap uses the Superstore sample dataset, encoding total sales as tile area and total profit as tile colour to reveal where revenue volume and margin diverge across geographic markets.\nRead more →\n\n\n\n\n\nIn-Class Exercise 8 — Visual Analysis of Time-oriented Data with Tableau\nBuilt three time-oriented Tableau views and published each to Tableau Public, namely a control chart of sales by category, a slopegraph and a trend-and-cycle view of arrivals. Each view is embedded live on the exercise page.\nRead more →"
   },
   {
     "objectID": "TH_EX01.html",

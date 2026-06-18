@@ -23,6 +23,8 @@ website:
         href: "HO_EX07a.html"
       - text: "Hands-on Exercise_8"
         href: "HO_EX08.html"
+      - text: "Hands-on Exercise_9"
+        href: "HO_EX09a.html"
     - text: "In-Class Exercises"
       menu:
       - text: "In-Class Exercise_1"
@@ -35,6 +37,8 @@ website:
         href: "IC_EX04.html"
       - text: "In-Class Exercise_5"
         href: "IC_EX05.html"
+      - text: "In-Class Exercise_8"
+        href: "IC_EX08.html"
     - text: "Take-Home Exercises"
       menu:
       - text: "Take-Home Exercise_1"
@@ -83,6 +87,16 @@ website:
           text: "Hands-on Exercise 7a"
         - href: HO_EX07b.qmd
           text: "Hands-on Exercise 7b"
+    - id: ho_ex09
+      title: "Hands-on Exercise 9"
+      style: "docked"
+      contents:
+        - href: HO_EX09a.qmd
+          text: "9a. Choropleth Mapping (Ch 21)"
+        - href: HO_EX09b.qmd
+          text: "9b. Geospatial Point Data (Ch 22)"
+        - href: HO_EX09c.qmd
+          text: "9c. Analytical Mapping (Ch 23)"
 
 format:
   html:

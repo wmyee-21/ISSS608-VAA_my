@@ -100,3 +100,15 @@ Explored three time-oriented displays in R: (1) calendar heatmaps covering date-
 [Read more →](HO_EX08.html)
 :::
 ::::
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](https://r4va.netlify.app/chap21_files/figure-html/unnamed-chunk-10-1.png){width="232"}
+
+::: {style="flex: 1;"}
+**Hands-on Exercise 9 — Geospatial Choropleth, Point and Analytical Mapping**
+
+Explored three geospatial mapping workflows with sf and tmap, (1) choropleth mapping covering shapefile and aspatial data import, georelational joins, qtm and tmap element layers, data classification methods, colour schemes, map layouts and small multiple facet maps, (2) geospatial point data covering aspatial-to-sf conversion with projection assignment and interactive proportional symbol maps in tmap view mode, and (3) analytical mapping covering rate maps, percentile maps and box maps built with custom break functions over Nigeria water-point data.
+
+[Read more →](HO_EX09a.html)
+:::
+::::
