@@ -380,8 +380,8 @@ box_inc <- ggplot(inc_nonzero, aes(x = total_incurred, y = "")) +
   theme(axis.text.y = element_blank())
 
 # Compose with patchwork
-(hist_prem / box_prem / hist_inc / box_inc) +
-  plot_layout(heights = c(1, 0.25, 1, 0.25))
+wrap_plots(hist_prem, box_prem, hist_inc, box_inc,
+           ncol = 1, heights = c(1, 0.25, 1, 0.25))
 ```
 
 The premium distribution is right skewed but reasonably concentrated. The median (258 EUR) sits below the mean (296 EUR), and shows a right skew.The interquartile range sits between 175 EUR (Q1) and 367 EUR (Q3), with most policies paying between those values. The incurred distribution is more extreme. The zero claim share is 86 percent of policy years, which is why the histogram filters to the claiming subset only and the policy years that pay no claim are not plotted. Among the 14 percent that do claim, the mean is roughly 1,750 EUR but the median is under 1,000 EUR, with a tail well past 5,000 EUR and a maximum near 580,000 EUR. Any chart of incurred amounts later should take this into consideration.
@@ -626,7 +626,7 @@ p_prem <- ggplot(yearly, aes(x = year, y = avg_premium)) +
   labs(title = "Avg premium per exposure", x = NULL, y = NULL) +
   theme_minimal()
 
-p_lr + p_freq + p_prem +
+wrap_plots(p_lr, p_freq, p_prem, nrow = 1) +
   plot_annotation(title = "Aggregate portfolio metrics by year")
 ```
 

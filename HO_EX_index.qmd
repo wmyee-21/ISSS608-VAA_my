@@ -112,3 +112,15 @@ Explored three geospatial mapping workflows with sf and tmap, (1) choropleth map
 [Read more →](HO_EX09a.html)
 :::
 ::::
+
+:::: {style="display: flex; align-items: center; gap: 10px; border-left: 4px solid #2C5282; padding: 10px; background-color: #f8f9fa; border-radius: 10px;"}
+![](https://r4va.netlify.app/chap31_files/figure-html/unnamed-chunk-6-1.png){width="232"}
+
+::: {style="flex: 1;"}
+**Hands-on Exercise 10 — Information Dashboard Design with R**
+
+Explored the building blocks of an information dashboard in R, (1) bullet charts and sparklines drawn with ggplot2, (2) static dashboard tables with inline bullet charts and sparklines built using gt and gtExtras, and (3) interactive dashboard tables built using reactable and reactablefmtr, covering highlighted points, labels, reference lines, bandlines and sparkbars over Coffee Chain sales data.
+
+[Read more →](HO_EX10.html)
+:::
+::::
